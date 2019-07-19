@@ -1,0 +1,22 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  color: #121212;
+  background-color: #e5e5e5;
+}
+
+.btn-primary {
+  color: #03dac5;
+  border: 2px solid #03dac5;
+  height: 48px;
+  transition: 500ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.btn-primary:hover {
+  color: #575757;
+  border-color: #575757;
+}
+
+footer {
+  background-color: #121212;
+}

@@ -1,0 +1,78 @@
+#desktop-navbar{display: none;}
+#desktop-navbar-nojs{display: none;}
+#mobile-navbar{display: block;}
+#mobile-navbar-nojs{display: block;}
+
+header{
+	position: fixed;
+	display: block;
+	width: 100%;
+	height: 100%;
+	top : 0;
+	left: 0;
+}
+
+nav{
+	position: absolute;
+	color: white;
+	width: 100%;
+	top : -1px;
+	width: calc(100% + 2px);
+	left: -1px;
+}
+
+#mobile-navbar{
+	font-size: 40px;
+	display: flex;
+}
+
+#mobile-navbar .bar{
+	position: relative;
+	width: 30px;
+	height: 4px;
+	background-color: white;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+#mobile-navbar > div{
+	width: max-content;
+	margin: 0.5rem 0 0.5rem 1rem;
+	cursor: pointer;
+	display: inline-block;
+}
+
+#mobile-navbar > ul{
+	left: -100%;
+	position: absolute;
+	background-color: rgb(20, 21, 24);
+	font-size: 20px;
+	top: calc(100% - 2px);
+	height: 100vh;
+}
+
+#mobile-navbar > ul > li{
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto;
+	align-items: center;
+	width: 100%;
+}
+
+#mobile-navbar button{
+	margin: 1rem 2rem;
+}
+
+#mobile-navbar .submenu > li{
+	padding-right: 1rem;
+}
+
+#mobile-navbar .submenu{
+	display: grid;
+	background-color: rgb(48, 64, 73);
+	overflow: hidden;
+}
+
+:focus {
+	outline: none !important;
+}
