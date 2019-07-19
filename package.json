@@ -4,7 +4,8 @@
   "description": "Grupo de extensão focado em segurança da informação.",
   "scripts": {
     "dev": "next",
-    "build": "next build && next export",
+    "build": "next build",
+    "export": "npm run build && next export",
     "start": "next start"
   },
   "dependencies": {
