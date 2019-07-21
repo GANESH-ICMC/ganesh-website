@@ -69,7 +69,7 @@ const News = () => (
           height: 250px;
         }
         .news-image {
-          background-image: url('http://www.placepuppy.net/400/400');
+          background-image: url('/static/400.jpg');
           height: 75px;
           width: 75px;
         }
