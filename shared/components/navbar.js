@@ -37,7 +37,7 @@ class Navbar extends React.Component {
                 <Link href="/">
                   <button onClick={updateNavbar}>
                     <img
-                      src="../static/ganesh.svg"
+                      src="/static/images/ganesh.svg"
                       style={{ height: "20px" }}
                     />
                   </button>
@@ -120,7 +120,7 @@ class Navbar extends React.Component {
                 <Link href="/">
                   <button onClick={updateNavbar}>
                     <img
-                      src="../static/ganesh.svg"
+                      src="/static/images/ganesh.svg"
                       style={{ height: "20px" }}
                       className="mx-auto"
                     />
@@ -175,7 +175,7 @@ class Navbar extends React.Component {
                 <button onClick={updateNavbar}>
                   <a href="/">
                     <img
-                      src="../static/ganesh.svg"
+                      src="/static/images/ganesh.svg"
                       style={{ height: "20px" }}
                     />
                   </a>
@@ -232,7 +232,7 @@ class Navbar extends React.Component {
                   <button onClick={updateNavbar}>
                     <a href="/">
                       <img
-                        src="../static/ganesh.svg"
+                        src="/static/images/ganesh.svg"
                         style={{ height: "20px" }}
                       />
                     </a>

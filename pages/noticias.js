@@ -65,11 +65,11 @@ const News = () => (
       </div>
       <style jsx>{`
         .container-top {
-          background-image: url(../static/bgfull.jpg);
+          background-image: url(/static/images/bgfull.jpg);
           height: 250px;
         }
         .news-image {
-          background-image: url('/static/400.jpg');
+          background-image: url(/static/images/400.jpg);
           height: 75px;
           width: 75px;
         }

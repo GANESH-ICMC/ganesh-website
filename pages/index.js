@@ -14,7 +14,7 @@ const Home = () => (
     <main>
       <div className='jumbotron bg-fixed bg-cover text-center text-white h-screen shadow-md bg-center'>
         <div className='container mx-auto flex flex-col items-center justify-center h-full p-4'>
-          <img src='../static/logo.svg' className='w-48' alt='Ganesh logo' />
+          <img src='/static/images/logo.svg' className='w-48' alt='Ganesh logo' />
           <h2 className='text-2xl'>
             Grupo de segurança focado em segurança da informação.
           </h2>
@@ -61,7 +61,7 @@ const Home = () => (
       </section>
       <style jsx>{`
         .jumbotron {
-          background-image: url(../static/bgfull.jpg);
+          background-image: url(/static/images/bgfull.jpg);
         }
       `}</style>
     </main>

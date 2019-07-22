@@ -39,7 +39,7 @@ const Activities = () => (
       </div>
       <style jsx>{`
         .container-top {
-          background-image: url(../static/bgfull.jpg);
+          background-image: url(/static/images/bgfull.jpg);
           height: 250px;
         }
       `}</style>
