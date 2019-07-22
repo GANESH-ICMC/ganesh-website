@@ -39,6 +39,7 @@ class Navbar extends React.Component {
                     <img
                       src="/static/images/ganesh.svg"
                       style={{ height: "20px" }}
+                      alt="Ganesh Logo"
                     />
                   </button>
                 </Link>
@@ -123,6 +124,7 @@ class Navbar extends React.Component {
                       src="/static/images/ganesh.svg"
                       style={{ height: "20px" }}
                       className="mx-auto"
+                      alt="Ganesh Logo"
                     />
                   </button>
                 </Link>
@@ -177,6 +179,7 @@ class Navbar extends React.Component {
                     <img
                       src="/static/images/ganesh.svg"
                       style={{ height: "20px" }}
+                      alt="Ganesh Logo"
                     />
                   </a>
                 </button>
@@ -234,6 +237,7 @@ class Navbar extends React.Component {
                       <img
                         src="/static/images/ganesh.svg"
                         style={{ height: "20px" }}
+                        alt="Ganesh Logo"
                       />
                     </a>
                   </button>
