@@ -1,7 +1,20 @@
-#desktop-navbar{display: none;}
-#desktop-navbar-nojs{display: none;}
-#mobile-navbar{display: block;}
-#mobile-navbar-nojs{display: block;}
+.desktop-navbar{display: none;}
+.desktop-navbar-nojs{display: none;}
+.mobile-navbar{display: block;}
+.mobile-navbar-nojs{display: block;}
+
+:root{
+	--navbar-hamburguer-click-transition: 200ms;
+}
+
+main{
+  position: relative;
+  transition: left 200ms linear
+}
+
+body{
+	position: relative;
+}
 
 header{
 	position: fixed;
@@ -9,6 +22,7 @@ header{
 	width: 100%;
 	height: 100%;
 	top : 0;
+  z-index: 1;
 	left: 0;
 }
 
@@ -21,57 +35,82 @@ nav{
 	left: -1px;
 }
 
-#mobile-navbar{
+.mobile-navbar{
 	font-size: 40px;
-	display: flex;
+	transition: background-color 200ms linear;
+	display: grid;
+	grid-template-columns: 100vw 100vw;
+	left: calc(-100vw + 1px);
+	position: relative;
 }
 
-#mobile-navbar .bar{
+.mobile-navbar .top-strip{
+	width: 100%;
+	height: max-content;
+}
+
+.mobile-navbar .hamburguer{
+	width: max-content;
+	height: max-content;
+	margin: 0.2rem 0.5rem;
+}
+
+.mobile-navbar .bar{
 	position: relative;
 	width: 30px;
 	height: 4px;
 	background-color: white;
-	margin-top: 8px;
-	margin-bottom: 8px;
+	margin: 8px 0;
+	top: 0;
 }
 
-#mobile-navbar > div{
-	width: max-content;
-	margin: 0.5rem 0 0.5rem 1rem;
-	cursor: pointer;
-	display: inline-block;
-}
-
-#mobile-navbar > ul{
-	left: -100%;
-	position: absolute;
+.mobile-navbar .menu{
+	/* left: -100%; */
+	position: relative;
 	background-color: rgb(20, 21, 24);
 	font-size: 20px;
-	top: calc(100% - 2px);
+	width: max-content;
+	justify-self: right;
+	/* top: calc(100% - 2px); */
 	height: 100vh;
 }
 
-#mobile-navbar > ul > li{
+.mobile-navbar .menu > li{
 	display: grid;
-	grid-template-columns: auto;
-	grid-template-rows: auto;
+  grid-template-columns: auto max-content;
 	align-items: center;
 	width: 100%;
+  cursor: pointer;
 }
 
-#mobile-navbar button{
-	margin: 1rem 2rem;
+.mobile-navbar button{
+	margin: 1rem 1rem;
+	text-align: left;
 }
 
-#mobile-navbar .submenu > li{
+.mobile-navbar span{
+	display: inline-block;
+  width: max-content;
+  height: max-content;
+  margin-right: 1rem;
+  justify-self: end;
+}
+
+.mobile-navbar .submenu > li{
 	padding-right: 1rem;
 }
 
-#mobile-navbar .submenu{
+.mobile-navbar .submenu{
 	display: grid;
 	background-color: rgb(48, 64, 73);
 	overflow: hidden;
+  grid-column: span 2;
 }
+
+/* .mobile-navbar .submenu::before{
+	display: contents;
+	content: "▼";
+} */
 
 :focus {
 	outline: none !important;

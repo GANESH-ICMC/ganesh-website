@@ -1,28 +1,28 @@
-#desktop-navbar-nojs{
+.desktop-navbar-nojs{
 	background-color: #121212;
 }
 
-#desktop-navbar-nojs > ul{
+.desktop-navbar-nojs > ul{
 	display: flex;
 	font-size: 16px;
 	justify-items: center;
 	color: white;
 }
 
-#desktop-navbar-nojs > ul > li > button{
+.desktop-navbar-nojs > ul > li > button{
 	height: 100%;
 	padding: 1rem;
 }
 
-#desktop-navbar-nojs > ul > li > button:hover{
+.desktop-navbar-nojs > ul > li > button:hover{
 	background-color: rgb(45, 45, 45);
 }
 
-#desktop-navbar-nojs > ul > li{
+.desktop-navbar-nojs > ul > li{
 	position: relative;
 }
 
-#desktop-navbar-nojs .submenu{
+.desktop-navbar-nojs .submenu{
 	background-color: rgb(27, 27, 27);
 	display: none;
 	position: absolute;
@@ -32,20 +32,20 @@
 	left: -21.42px;
 }
 
-#desktop-navbar-nojs .submenu li{
+.desktop-navbar-nojs .submenu li{
 	width: 8rem;
 	position: relative;
 }
 
-#desktop-navbar-nojs li:hover ul{
+.desktop-navbar-nojs li:hover ul{
 	display: grid;
 }
 
-#desktop-navbar-nojs .submenu button:hover{
+.desktop-navbar-nojs .submenu button:hover{
 	background-color: rgb(45, 45, 45);
 }
 
-#desktop-navbar-nojs .submenu button{
+.desktop-navbar-nojs .submenu button{
 	width: 100%;
 	padding: 1rem 1rem 1rem 1rem;
 	word-wrap: break-word;
