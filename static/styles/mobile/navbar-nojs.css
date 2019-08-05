@@ -1,20 +1,20 @@
-#desktop-navbar{display: none;}
-#desktop-navbar-nojs{display: none;}
-#mobile-navbar-nojs{display: block;}
-#mobile-navbar-nojs-nojs{display: block;}
+.desktop-navbar{display: none;}
+.desktop-navbar-nojs{display: none;}
+.mobile-navbar-nojs{display: block;}
+.mobile-navbar-nojs-nojs{display: block;}
 
 
-#mobile-navbar-nojs{
+.mobile-navbar-nojs{
 	background-color: #121212;
 	font-size: 40px;
 }
 
-#mobile-navbar-nojs > div{
+.mobile-navbar-nojs > div{
 	width: max-content;
 	margin-left: 1rem;
 }
 
-#mobile-navbar-nojs > div > ul{
+.mobile-navbar-nojs > div > ul{
 	display: none;
 	position: absolute;
 	width: max-content;
@@ -27,16 +27,16 @@
 	background-color: rgb(20, 21, 24);
 }
 
-#mobile-navbar-nojs > div > ul > li{
+.mobile-navbar-nojs > div > ul > li{
 	position: relative;
 	width: 100%;
 }
 
-#mobile-navbar-nojs > div:hover > ul{
+.mobile-navbar-nojs > div:hover > ul{
 	display: block;
 }
 
-#mobile-navbar-nojs #backdrop{
+.mobile-navbar-nojs #backdrop{
 	pointer-events: none;
 	opacity: 0;
 	background-color: black;
@@ -48,17 +48,17 @@
 	z-index: -999;
 }
 
-#mobile-navbar-nojs > div:hover > #backdrop{
+.mobile-navbar-nojs > div:hover > #backdrop{
 	opacity: 0.7;
 }
 
-#mobile-navbar-nojs button{
+.mobile-navbar-nojs button{
 	padding: 1rem 2rem;
 	width: 100%;
 	height: 100%;
 }
 
-#mobile-navbar-nojs .submenu{
+.mobile-navbar-nojs .submenu{
 	display: none;
 	position: absolute;
 	background-color: #121212;
@@ -68,10 +68,10 @@
 	background-color: #121212;
 }
 
-#mobile-navbar-nojs > div > ul > li:hover > ul{
+.mobile-navbar-nojs > div > ul > li:hover > ul{
 	display: block;
 }
 
-#mobile-navbar-nojs button:hover{
+.mobile-navbar-nojs button:hover{
 	background-color: rgb(45, 45, 45);
 }

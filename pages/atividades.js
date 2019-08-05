@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Head from '../shared/components/head';
-import Navbar from '../shared/components/navbar';
+import Navbar from '../shared/components/navbar/navbar';
 import Footer from '../shared/components/footer';
 
 const elements = [0, 1, 2, 3, 4, 5];
