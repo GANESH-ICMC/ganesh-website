@@ -7,13 +7,23 @@ import Footer from '../shared/components/footer';
 const Fronts = () => (
   <React.Fragment>
     <Head
-      title="Ganesh - Frentes"
-      description="Grupo de extensão focado em segurança da informação."
+      title="Ganesh - Areas"
+      description='Extracurricular group focused on information security.'
     />
     <Navbar />
     <main>
-      <h1>Fronts</h1>
+
+      <div className='flex justify-center items-center bg-fixed bg-cover bg-center container-top shadow-md'>
+        <h1 className='text-4xl text-center text-white'>Areas</h1>
+      </div>
       <style jsx>{``}</style>
+      <p>
+        {/* Todo
+        The research and development of the group is organized in four big study areas.
+        They are: Reverse Engineering, Networking, Web Security and Cryptography.
+         */}
+      </p>
+      
     </main>
     <Footer />
   </React.Fragment>

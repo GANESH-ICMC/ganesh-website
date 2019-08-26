@@ -8,7 +8,7 @@ const Contact = () => (
   <React.Fragment>
     <Head
       title="Ganesh - Contato"
-      description="Grupo de extensão focado em segurança da informação."
+      description='Extracurricular group focused on information security.'
     />
     <Navbar />
     <main>

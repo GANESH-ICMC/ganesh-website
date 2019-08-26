@@ -7,13 +7,13 @@ import Footer from '../shared/components/footer';
 const News = () => (
   <React.Fragment>
     <Head
-      title="Ganesh - Notícias"
-      description="Grupo de extensão focado em segurança da informação."
+      title="Ganesh - News"
+      description='Extracurricular group focused on information security.'
     />
     <Navbar />
     <main>
       <div className="flex justify-center items-center bg-fixed bg-cover bg-center container-top shadow-md">
-        <h1 className="text-4xl text-center text-white">Notícias</h1>
+        <h1 className="text-4xl text-center text-white">News</h1>
       </div>
       <div className="container mx-auto px-4 py-8">
         <div className="flex bg-white my-4 rounded-lg shadow-md">

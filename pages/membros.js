@@ -9,13 +9,13 @@ const elements = [0, 1, 2, 3, 4, 5];
 const Members = () => (
   <React.Fragment>
     <Head
-      title='Ganesh - Membros'
-      description='Grupo de extensão focado em segurança da informação.'
+      title='Ganesh - Members'
+      description='Extracurricular group focused on information security.'
     />
     <Navbar />
     <main>
       <div className='flex justify-center items-center bg-fixed bg-cover bg-center container-top shadow-md'>
-        <h1 className='text-4xl text-center text-white'>Membros</h1>
+        <h1 className='text-4xl text-center text-white'>Members</h1>
       </div>
       <div className='container mx-auto px-4 py-8'>
         <ul className='flex flex-row flex-wrap my-4'>

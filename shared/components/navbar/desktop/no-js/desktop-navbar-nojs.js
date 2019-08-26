@@ -16,42 +16,47 @@ export function DesktopNavbarNoJS(){
         <div className="flex-grow" />
         <li>
           <button>
-          <a href="/membros">Membros</a>
+          <a href="/membros">Members</a>
           </button>
         </li>
         <li>
-          <button>Frentes</button>
+          <button>Areas</button>
           <ul className="submenu">
           <li>
             <button>
-              <a href="">Eng. reversa</a>
+              <a href="">Reverse Engineering</a>
             </button>
           </li>
           <li>
             <button>
-              <a href="">Cryptografia</a>
+              <a href="">Cryptography</a>
             </button>
           </li>
           <li>
             <button>
-              <a href="">Web</a>
+              <a href="">Web Security</a>
+            </button>
+          </li>
+          <li>
+            <button>
+              <a href="">Networking</a>
             </button>
           </li>
           </ul>
         </li>
         <li>
           <button>
-          <a href="/atividades">Atividades</a>
+          <a href="/atividades">Activities</a>
           </button>
         </li>
         <li>
           <button>
-          <a href="/noticias">Noticias</a>
+          <a href="/noticias">News</a>
           </button>
         </li>
         <li>
           <button>
-          <a href="/contato">Contato</a>
+          <a href="/contato">Contact</a>
           </button>
         </li>
       </ul>

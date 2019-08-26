@@ -127,44 +127,49 @@ export const DesktopNavbar = React.forwardRef(({
         <div className="flex-grow" />
         <li href="/membros">
           <Link href="/membros">
-          <button>Membros</button>
+          <button>Members</button>
           </Link>
         </li>
         <li href="/frentes">
           <Link href="/frentes">
-          <button>Frentes</button>
+          <button>Areas</button>
           </Link>
           <ul className="submenu">
           <li>
             <Link href="">
-              <button>Eng. reversa</button>
+              <button>Rev. Engineering</button>
             </Link>
           </li>
           <li>
             <Link href="">
-              <button>Cryptografia</button>
+              <button>Cryptography</button>
             </Link>
           </li>
           <li>
             <Link href="">
-              <button>Web</button>
+              <button>Web Security</button>
             </Link>
+          </li>
+          <li>
+            <button>
+              <a href="">Networking</a>
+            </button>
           </li>
           </ul>
         </li>
         <li href="/atividades">
           <Link href="/atividades">
-          <button>Atividades</button>
+          <button>Activities</button>
           </Link>
         </li>
         <li href="/noticias">
           <Link href="/noticias">
-          <button>Noticias</button>
+          <button>News</button>
           </Link>
         </li>
         <li href="/contato">
           <Link href="/contato">
-          <button>Contato</button>
+          <button>Contact us</button>
           </Link>
         </li>
       </ul>
