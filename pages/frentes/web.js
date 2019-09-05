@@ -7,7 +7,7 @@ import Footer from '../../shared/components/footer';
 const Web = () => (
   <React.Fragment>
     <Head
-      title="Ganesh - News"
+      title="Ganesh - Web Security"
       description='Extracurricular group focused on information security.'
     />
     <Navbar />

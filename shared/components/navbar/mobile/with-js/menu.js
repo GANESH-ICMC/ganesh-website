@@ -42,6 +42,12 @@ export const NavbarMenu = React.forwardRef(({
         </button>
         </Link>
       </li>
+
+      <li>
+        <Link href="/aboutus">
+        <button>About Us</button>
+        </Link>
+      </li>
       <li onClick={()=>setIsOpen(s => !s)}>
         <button>
           Areas

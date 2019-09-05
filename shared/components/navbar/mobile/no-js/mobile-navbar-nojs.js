@@ -15,23 +15,37 @@ export function MobileNavbarNoJS(){
             </a>
           </button>
           </li>
+
+
+          <li>
+          <button>About Us</button>
+          <ul className="submenu">
+            <li>
+              <button><a href="/aboutus/icmc">Our Institute</a></button>
+            </li>
+            <li>
+              <button><a href="/aboutus/usp">Our University</a></button>
+            </li>
+          </ul>
+          </li>
+
           <li>
           <button>Areas</button>
           <ul className="submenu">
             <li>
-              <button><a href="/frente-cripto">Cryptography</a></button>
+              <button><a href="/frentes/cripto">Cryptography</a></button>
             </li>
             <li>
-              <button><a href="/frente-redes">Network Security</a></button>
+              <button><a href="/frentes/redes">Network Security</a></button>
             </li>
             <li>
-              <button><a href="/frente-privacidade">Privacy and GDPR</a></button>
+              <button><a href="/frentes/privacidade">Privacy and GDPR</a></button>
             </li>
             <li>
-              <button><a href="/frente-reversa">Rev. Engineering</a></button>
+              <button><a href="/frentes/reversa">Rev. Engineering</a></button>
             </li>
             <li>
-              <button><a href="/frente-web">Web Security</a></button>
+              <button><a href="/frentes/web">Web Security</a></button>
             </li>
           </ul>
           </li>

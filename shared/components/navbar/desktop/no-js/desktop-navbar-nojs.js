@@ -14,6 +14,19 @@ export function DesktopNavbarNoJS(){
           </button>
         </li>
         <div className="flex-grow" />
+
+        <li>
+          <button>About Us</button>
+          <ul className="submenu">
+            <li>
+              <button><a href="/aboutus/icmc">Our Institute</a></button>
+            </li>
+            <li>
+              <button><a href="/aboutus/usp">Our University</a></button>
+            </li>
+          </ul>
+        </li>
+
         <li>
           <button>Areas</button>
           <ul className="submenu">

@@ -119,61 +119,84 @@ export const DesktopNavbar = React.forwardRef(({
           <button>
             <img
               src="/static/images/ganesh.svg"
-              style={{ height: "20px" }}
+              style={{ height: "25px" }}
               alt="Ganesh Logo"
             />
           </button>
           </Link>
         </li>
+
         <div className="flex-grow" />
-        <li href="/frentes">
-          <Link href="/frentes">
-          <button>Areas</button>
-          </Link>
-          <ul className="submenu">
-            <li>
-              <Link href="/frentes/cripto">
-                <button>Cryptography</button>
-              </Link>
-            </li>
-            <li>
-              <Link href="/frentes/redes">
-                <button>Network Security</button>
-              </Link>
-            </li>
-            <li>
-              <Link href="/frentes/privacidade">
-                <button>Privacy and GDPR</button>
-              </Link>
-            </li>
-            <li>
-              <Link href="/frentes/reversa">
-                <button>Rev. Engineering</button>
-              </Link>
-            </li>
-            <li>
-              <Link href="/frentes/web">
-                <button>Web Security</button>
-              </Link>
-            </li>
-          </ul>
-        </li>
-        <li href="/atividades">
-          <Link href="/atividades">
-          <button>Activities</button>
-          </Link>
-        </li>
-        <li href="/noticias">
-          <Link href="/noticias">
-          <button>News</button>
-          </Link>
-        </li>
-        <li href="/contato">
-          <Link href="/contato">
-          <button>Contact</button>
-          </Link>
-        </li>
-      </ul>
+          
+          <li href="/aboutus">
+            <Link href="/aboutus">
+            <button>About Us</button>
+            </Link>
+            <ul className="submenu">
+              <li>
+                <Link href="/aboutus/icmc">
+                  <button>Our Institute</button>
+                </Link>
+              </li>
+              <li>
+                <Link href="/aboutus/usp">
+                  <button>Our University</button>
+                </Link>
+              </li>
+            </ul>
+          </li>
+
+          <li href="/frentes">
+            <Link href="/frentes">
+            <button>Areas</button>
+            </Link>
+            <ul className="submenu">
+              <li>
+                <Link href="/frentes/cripto">
+                  <button>Cryptography</button>
+                </Link>
+              </li>
+              <li>
+                <Link href="/frentes/redes">
+                  <button>Network Security</button>
+                </Link>
+              </li>
+              <li>
+                <Link href="/frentes/privacidade">
+                  <button>Privacy and GDPR</button>
+                </Link>
+              </li>
+              <li>
+                <Link href="/frentes/reversa">
+                  <button>Rev. Engineering</button>
+                </Link>
+              </li>
+              <li>
+                <Link href="/frentes/web">
+                  <button>Web Security</button>
+                </Link>
+              </li>
+            </ul>
+          </li>
+
+          <li href="/atividades">
+            <Link href="/atividades">
+            <button>Activities</button>
+            </Link>
+          </li>
+          
+          <li href="/noticias">
+            <Link href="/noticias">
+            <button>News</button>
+            </Link>
+          </li>
+
+          <li href="/contato">
+            <Link href="/contato">
+            <button>Contact</button>
+            </Link>
+          </li>
+        </ul>
       <div
         className="underbar"
         style={{

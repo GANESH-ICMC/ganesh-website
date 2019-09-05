@@ -28,7 +28,7 @@ const Fronts = () => (
           </li>
           <li className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-col mb-4'>
             <div className='rounded shadow-md bg-white mx-4'>
-              <div className='border-gray-700 border-4 rounded-t h-64' />
+              <div className='border-gray-700 border-4 rounded-t h-64 networking' />
               <div className='flex flex-col my-2 mx-4'>
                 <span className='text-gray-800 text-lg'>Network Security</span>
                 <span className='text-gray-800 text-base'>DESCREVA AQUI</span>
@@ -73,7 +73,9 @@ const Fronts = () => (
         }
         .reversing {
           background-image: url(/static/images/rev.jpg);
-          height: 200x;
+        }
+        .networking {
+          background-image: url(/static/images/networking.jpg);
         }
       `}</style>
     </main>

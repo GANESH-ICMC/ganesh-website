@@ -4,10 +4,10 @@ import Head from '../../shared/components/head';
 import Navbar from '../../shared/components/navbar/navbar';
 import Footer from '../../shared/components/footer';
 
-const Web = () => (
+const RevEngineering = () => (
   <React.Fragment>
     <Head
-      title="Ganesh - News"
+      title="Ganesh - Reverse Engineering"
       description='Extracurricular group focused on information security.'
     />
     <Navbar />
@@ -18,4 +18,4 @@ const Web = () => (
   </React.Fragment>
 );
 
-export default Web;
+export default RevEngineering;

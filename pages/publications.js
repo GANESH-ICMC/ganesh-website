@@ -5,50 +5,29 @@ import Navbar from '../shared/components/navbar/navbar';
 import Footer from '../shared/components/footer';
 
 
+
 const Contact = () => (
   <React.Fragment>
     <Head
-      title="Ganesh - Contact"
+      title="Ganesh - Publications"
       description='Extracurricular group focused on information security.'
     />
     <Navbar />
       <main>
         <div className="flex justify-center items-center bg-fixed bg-cover bg-center container-top shadow-md">
-          <h1 className="text-4xl text-center text-white">Contact</h1>
+          <h1 className="text-4xl text-center text-white">Publications</h1>
         </div>
         <div className="container mx-auto px-4 py-8">
-          <div className="flex bg-white my-4 rounded-lg shadow-md">
-            <div className="p-2 xl:p-4">
-              <div class="fb-page" data-href="https://www.facebook.com/ganeshICMC" data-tabs="messages" data-width="" data-height="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                <blockquote cite="https://www.facebook.com/ganeshICMC" class="fb-xfbml-parse-ignore">
-                  <a href="https://www.facebook.com/ganeshICMC">
-                    Ganesh
-                  </a>
-                </blockquote
-              ></div>
-            </div>
-            <div className="py-2 pr-2 xl:py-4 xl:pr-4">
-              <h2 className="news-title sm:text-lg">
-                Visit our social pages or e-mail us.
-              </h2>
-              <p className="hidden lg:block text-sm contact-a">
-              <div class="btn-group mr-2" role="group" aria-label="Second group">
-                <a href="https://github.com/GANESH-ICMC" target="_blank">
-                  <button type="button" class="btn btn-outline-success">
-                    <i class="fa fa-align-left fa-github" aria-hidden="true"></i>
-                      Github
-                    </button>
-                </a>
-						  </div>
-               
-                <a href="mailto:ganesh@icmc.usp.br">E-mail</a>
-              </p>
-              <h2 className="news-title sm:text-lg"></h2>
-              <p className="hidden lg:block text-sm contact-a">
-                MAPA AQUI
-              </p>
+          {/*Fazer daqui pra baixo*/}
+
+          
+          <div className="flex bg-white my-4 rounded-lg shadow-md" >
+            <div class="entry-content" itemprop="text" className="flex bg-white my-4 rounded-lg shadow-md entry-content">
+              <p><a href="http://www.comciencia.br/os-robos-podem-ser-hackeados/">E. F. Arantes, K. R. R. Castelo Branco, "Os robôs podem ser hackeados?" ComCiência Robotics Dossier, 2019.</a></p>
             </div>
           </div>
+
+
         </div>
         <style type="text/css">{`
           .fb-page, .fb-page * {
@@ -77,6 +56,9 @@ const Contact = () => (
           .container-top {
             background-image: url(/static/images/bgfull.jpg);
             height: 250px;
+          }
+          .entry-content ul > li{
+            margin: 15px 20px;
           }
           .news-image {
             background-image: url(/static/images/400.jpg);
