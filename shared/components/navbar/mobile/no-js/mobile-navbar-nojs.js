@@ -16,43 +16,38 @@ export function MobileNavbarNoJS(){
           </button>
           </li>
           <li>
-          <button>
-            <a href="/membros">Membros</a>
-          </button>
-          </li>
-          <li>
-          <button>Frentes</button>
+          <button>Areas</button>
           <ul className="submenu">
             <li>
-              <button>
-              <a href="">Eng. reversa</a>
-              </button>
+              <button><a href="/frente-cripto">Cryptography</a></button>
             </li>
             <li>
-              <button>
-              <a href="">Cryptografia</a>
-              </button>
+              <button><a href="/frente-redes">Network Security</a></button>
             </li>
             <li>
-              <button>
-              <a href="">Web</a>
-              </button>
+              <button><a href="/frente-privacidade">Privacy and GDPR</a></button>
+            </li>
+            <li>
+              <button><a href="/frente-reversa">Rev. Engineering</a></button>
+            </li>
+            <li>
+              <button><a href="/frente-web">Web Security</a></button>
             </li>
           </ul>
           </li>
           <li>
           <button>
-            <a href="/atividades">Atividades</a>
+            <a href="/atividades">Activities</a>
           </button>
           </li>
           <li>
           <button>
-            <a href="/noticias">Noticias</a>
+            <a href="/noticias">News</a>
           </button>
           </li>
           <li>
           <button>
-            <a href="/contato">Contato</a>
+            <a href="/contato">Contact us</a>
           </button>
           </li>
         </ul>

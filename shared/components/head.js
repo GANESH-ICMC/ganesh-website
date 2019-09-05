@@ -2,8 +2,8 @@ import React from 'react';
 import HeadNext from 'next/head';
 import { string } from 'prop-types';
 
-const defaultTitle = '';
-const defaultDescription = '';
+const defaultTitle = 'Ganesh';
+const defaultDescription = 'Extracurricular group focused on information security.';
 
 const Head = props => (
   <HeadNext>

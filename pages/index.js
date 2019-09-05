@@ -7,7 +7,7 @@ import Footer from '../shared/components/footer';
 const Home = () => (
   <React.Fragment>
     <Head
-      title='Ganesh - Start'
+      title='Ganesh - Home'
       description='Extracurricular group focused on information security.'
     />
     <Navbar />
@@ -66,7 +66,7 @@ const Home = () => (
       `}</style>
     </main>
     <Footer
-      title="Ganesh - Start"
+      title="Ganesh - Home"
       description='Extracurricular group focused on information security.'
     />
   </React.Fragment>

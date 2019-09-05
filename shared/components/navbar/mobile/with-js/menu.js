@@ -42,14 +42,9 @@ export const NavbarMenu = React.forwardRef(({
         </button>
         </Link>
       </li>
-      <li>
-        <Link href="/membros">
-        <button>Membros</button>
-        </Link>
-      </li>
       <li onClick={()=>setIsOpen(s => !s)}>
         <button>
-          Frentes
+          Areas
         </button>
         <span
           ref={submenuArrow}
@@ -67,35 +62,46 @@ export const NavbarMenu = React.forwardRef(({
             height: `${isOpen? submenu.current.originalHeight : 0}px`,
           }}
         >
-        <li><Link href="">
-            <button>Eng. reversa</button>
-          </Link>
-        </li>
-        <li>
-          <Link href="">
-            <button>Cryptografia</button>
-          </Link>
-        </li>
-        <li>
-          <Link href="">
-            <button>Web</button>
-          </Link>
-        </li>
+            <li>
+              <Link href="/frente-cripto">
+                <button>Cryptography</button>
+              </Link>
+            </li>
+            <li>
+              <Link href="/frente-redes">
+                <button>Network Security</button>
+              </Link>
+            </li>
+            <li>
+              <Link href="/frente-privacidade">
+                <button>Privacy and GDPR</button>
+              </Link>
+            </li>
+            <li>
+              <Link href="/frente-reversa">
+                <button>Rev. Engineering</button>
+              </Link>
+            </li>
+            <li>
+              <Link href="/frente-web">
+                <button>Web Security</button>
+              </Link>
+            </li>
         </ul>
       </li>
       <li>
         <Link href="/atividades">
-        <button>Atividades</button>
+        <button>Activities</button>
         </Link>
       </li>
       <li>
         <Link href="/noticias">
-        <button>Noticias</button>
+        <button>News</button>
         </Link>
       </li>
       <li>
         <Link href="/contato">
-        <button>Contato</button>
+        <button>Contact</button>
         </Link>
       </li>
     </ul>

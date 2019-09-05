@@ -125,36 +125,36 @@ export const DesktopNavbar = React.forwardRef(({
           </Link>
         </li>
         <div className="flex-grow" />
-        <li href="/membros">
-          <Link href="/membros">
-          <button>Members</button>
-          </Link>
-        </li>
         <li href="/frentes">
           <Link href="/frentes">
           <button>Areas</button>
           </Link>
           <ul className="submenu">
-          <li>
-            <Link href="">
-              <button>Rev. Engineering</button>
-            </Link>
-          </li>
-          <li>
-            <Link href="">
-              <button>Cryptography</button>
-            </Link>
-          </li>
-          <li>
-            <Link href="">
-              <button>Web Security</button>
-            </Link>
-          </li>
-          <li>
-            <button>
-              <a href="">Networking</a>
-            </button>
-          </li>
+            <li>
+              <Link href="/frente-cripto">
+                <button>Cryptography</button>
+              </Link>
+            </li>
+            <li>
+              <Link href="/frente-redes">
+                <button>Network Security</button>
+              </Link>
+            </li>
+            <li>
+              <Link href="/frente-privacidade">
+                <button>Privacy and GDPR</button>
+              </Link>
+            </li>
+            <li>
+              <Link href="/frente-reversa">
+                <button>Rev. Engineering</button>
+              </Link>
+            </li>
+            <li>
+              <Link href="/frente-web">
+                <button>Web Security</button>
+              </Link>
+            </li>
           </ul>
         </li>
         <li href="/atividades">
@@ -169,7 +169,7 @@ export const DesktopNavbar = React.forwardRef(({
         </li>
         <li href="/contato">
           <Link href="/contato">
-          <button>Contact us</button>
+          <button>Contact</button>
           </Link>
         </li>
       </ul>
