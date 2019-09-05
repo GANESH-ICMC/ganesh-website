@@ -46,10 +46,12 @@ const Fronts = () => (
           </li>
           <li className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-col mb-4'>
             <div className='rounded shadow-md bg-white mx-4'>
-              <div className='border-gray-700 border-4 rounded-t h-64' />
+              <div className='border-gray-700 border-4 rounded-t h-64 reversing'/>
               <div className='flex flex-col my-2 mx-4'>
                 <span className='text-gray-800 text-lg'>Reverse Engineering</span>
-                <span className='text-gray-800 text-base'>DESCREVA AQUI</span>
+                <span className='text-gray-800 text-base'>
+                  This area studies assembly languages, computer architectures, reverse engineering techniques, malwares and low level linux systems.
+                </span>
               </div>
             </div>
           </li>
@@ -68,6 +70,10 @@ const Fronts = () => (
         .container-top {
           background-image: url(/static/images/bgfull.jpg);
           height: 250px;
+        }
+        .reversing {
+          background-image: url(/static/images/rev.jpg);
+          height: 200x;
         }
       `}</style>
     </main>
