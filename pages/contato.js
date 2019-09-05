@@ -18,7 +18,13 @@ const Contact = () => (
         <div className="container mx-auto px-4 py-8">
           <div className="flex bg-white my-4 rounded-lg shadow-md">
             <div className="p-2 xl:p-4">
-              <div class="fb-page" data-href="https://www.facebook.com/ganeshICMC" data-tabs="messages" data-width="" data-height="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ganeshICMC" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ganeshICMC">Ganesh</a></blockquote></div>
+              <div class="fb-page" data-href="https://www.facebook.com/ganeshICMC" data-tabs="messages" data-width="" data-height="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                <blockquote cite="https://www.facebook.com/ganeshICMC" class="fb-xfbml-parse-ignore">
+                  <a href="https://www.facebook.com/ganeshICMC">
+                    Ganesh
+                  </a>
+                </blockquote
+              ></div>
             </div>
             <div className="py-2 pr-2 xl:py-4 xl:pr-4">
               <h2 className="news-title sm:text-lg">

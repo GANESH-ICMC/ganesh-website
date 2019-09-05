@@ -63,27 +63,27 @@ export const NavbarMenu = React.forwardRef(({
           }}
         >
             <li>
-              <Link href="/frente-cripto">
+              <Link href="/frentes/cripto">
                 <button>Cryptography</button>
               </Link>
             </li>
             <li>
-              <Link href="/frente-redes">
+              <Link href="/frentes/redes">
                 <button>Network Security</button>
               </Link>
             </li>
             <li>
-              <Link href="/frente-privacidade">
+              <Link href="/frentes/privacidade">
                 <button>Privacy and GDPR</button>
               </Link>
             </li>
             <li>
-              <Link href="/frente-reversa">
+              <Link href="/frentes/reversa">
                 <button>Rev. Engineering</button>
               </Link>
             </li>
             <li>
-              <Link href="/frente-web">
+              <Link href="/frentes/web">
                 <button>Web Security</button>
               </Link>
             </li>

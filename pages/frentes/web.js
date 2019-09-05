@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Head from '../shared/components/head';
-import Navbar from '../shared/components/navbar/navbar';
-import Footer from '../shared/components/footer';
+import Head from '../../shared/components/head';
+import Navbar from '../../shared/components/navbar/navbar';
+import Footer from '../../shared/components/footer';
 
-const FrenteWeb = () => (
+const Web = () => (
   <React.Fragment>
     <Head
       title="Ganesh - News"
@@ -18,4 +18,4 @@ const FrenteWeb = () => (
   </React.Fragment>
 );
 
-export default FrenteWeb;
+export default Web;

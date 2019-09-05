@@ -66,6 +66,7 @@ export const DesktopNavbar = React.forwardRef(({
   React.useEffect(() => { //underbar initialization
     const url = new URL(window.location.href);
     let listElements = navbar.current.querySelectorAll("ul > li");
+    underbarDefaultElement.current = listElements[0];
     for(let li of listElements){
       if(li.getAttribute("href") === url.pathname)
         underbarDefaultElement.current = li;
@@ -131,27 +132,27 @@ export const DesktopNavbar = React.forwardRef(({
           </Link>
           <ul className="submenu">
             <li>
-              <Link href="/frente-cripto">
+              <Link href="/frentes/cripto">
                 <button>Cryptography</button>
               </Link>
             </li>
             <li>
-              <Link href="/frente-redes">
+              <Link href="/frentes/redes">
                 <button>Network Security</button>
               </Link>
             </li>
             <li>
-              <Link href="/frente-privacidade">
+              <Link href="/frentes/privacidade">
                 <button>Privacy and GDPR</button>
               </Link>
             </li>
             <li>
-              <Link href="/frente-reversa">
+              <Link href="/frentes/reversa">
                 <button>Rev. Engineering</button>
               </Link>
             </li>
             <li>
-              <Link href="/frente-web">
+              <Link href="/frentes/web">
                 <button>Web Security</button>
               </Link>
             </li>
