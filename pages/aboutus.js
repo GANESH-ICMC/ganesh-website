@@ -4,10 +4,10 @@ import Head from '../shared/components/head';
 import Navbar from '../shared/components/navbar/navbar';
 import Footer from '../shared/components/footer';
 
-const Icmc = () => (
+const aboutus = () => (
   <React.Fragment>
     <Head
-      title='Ganesh - ICMC'
+      title='Ganesh - About Us'
       description='Extracurricular group focused on information security.'
     />
     <Navbar />
@@ -89,10 +89,10 @@ const Icmc = () => (
       `}</style>
     </main>
     <Footer
-      title="Ganesh - ICMC"
+      title="Ganesh - About Us"
       description='Extracurricular group focused on information security.'
     />
   </React.Fragment>
 );
 
-export default Icmc;
+export default aboutus;
