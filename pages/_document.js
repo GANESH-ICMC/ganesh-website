@@ -11,8 +11,6 @@ class MyDocument extends Document {
       <Html lang='en-us'>
         <Head />
         <body>
-          <div id="fb-root"></div>
-          <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"></script>
           <Main />
           <NextScript />
         </body>
