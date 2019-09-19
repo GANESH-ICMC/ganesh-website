@@ -28,8 +28,7 @@ class MyDocument extends Document {
             .album .photo a img {
               width: 100%;
             }
-            .album .images:after {
-              content: "";
+            .album .break {
               display: table;
               clear: both;
             }
@@ -38,7 +37,13 @@ class MyDocument extends Document {
               display: none;
             }
             .album .container img {
-              width: 100%;
+              display: block;
+              margin: 0px auto;
+              min-width: 100px;
+              min-height: 100px;
+              max-width: 100%;
+              max-height: 80vh;
+              cursor: zoom-in;
             }
             .album .container p {
               position: absolute;
@@ -51,7 +56,8 @@ class MyDocument extends Document {
               position: absolute;
               top: 10px;
               right: 15px;
-              color: white;
+              color: black;
+              text-shadow: 0px 0px 4px #FFFFFF;
               font-size: 35px;
             }
           `}</style>

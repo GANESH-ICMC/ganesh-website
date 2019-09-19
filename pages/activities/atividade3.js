@@ -6,26 +6,30 @@ import Footer from '../../shared/components/footer';
 
 function albumExpand(evt) {
   let link, img, container, containerImg;
-  link = this;
+  link = evt.currentTarget;
   img = link.getAttribute("href");
   container = link.parentNode.parentNode.parentNode.querySelector(".container");
   containerImg = container.querySelector("img");
   containerImg.src = img;
   container.style.display = "block";
-  if(evt) {
-    evt.preventDefault();
-  }
+  evt.preventDefault();
   return false;
 }
 
 function albumClose(evt) {
   let link, container;
-  link = this;
+  link = evt.currentTarget;
   container = link.parentNode;
   container.style.display = "none";
-  if(evt) {
-    evt.preventDefault();
-  }
+  evt.preventDefault();
+  return false;
+}
+
+function albumOpen(evt) {
+  let img, container;
+  img = evt.currentTarget;
+  window.open(img.src, "_blank");
+  //evt.preventDefault();
   return false;
 }
 
@@ -64,7 +68,7 @@ const atividade3 = () => (
               Lorem Ipsum.
             </p>
             <p className="album">
-              <div className="images">
+              <div className="photos">
                 <div className="photo">
                   <a href="/static/images/400.jpg" onClick={albumExpand} target="_blank"><img src="/static/images/400.jpg" alt="" /></a>
                 </div>
@@ -76,15 +80,21 @@ const atividade3 = () => (
                 </div>
                 <div className="photo">
                   <a href="/static/images/400.jpg" onClick={albumExpand} target="_blank"><img src="/static/images/400.jpg" alt="" /></a>
+                </div>
+                <div className="photo">
+                  <a href="https://cdn.pixabay.com/photo/2013/08/20/15/47/sunset-174276_960_720.jpg" onClick={albumExpand} target="_blank"><img src="https://cdn.pixabay.com/photo/2013/08/20/15/47/sunset-174276_960_720.jpg" alt="" /></a>
+                </div>
+                <div className="photo">
+                  <a href="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg" onClick={albumExpand} target="_blank"><img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg" alt="" /></a>
                 </div>
               </div>
+              <div className="break"></div>
               <div className="container">
                 <a href="#" onClick={albumClose} className="closebtn">&times;</a>
-                <img src="" alt="" />
+                <img src="" onClick={albumOpen} alt="" />
                 <p></p>
               </div>
             </p>
-            <script> albumLoad(); </script>
           </div>
         </div>
       </div>
