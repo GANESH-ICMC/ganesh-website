@@ -19,10 +19,10 @@ const Fronts = () => (
         <ul className='flex flex-row flex-wrap my-4'>
           <li className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-col mb-4'>
             <div className='rounded shadow-md bg-white mx-4'>
-              <div className='border-gray-700 border-4 rounded-t h-64' />
+              <div className='border-gray-700 border-4 rounded-t h-64 cryptography' />
               <div className='flex flex-col my-2 mx-4'>
                 <span className='text-gray-800 text-lg'>Cryptography</span>
-                <span className='text-gray-800 text-base'>DESCREVA AQUI</span>
+                <span className='text-gray-800 text-base'>This area focuses on the principles and methods of codification on comunication in order to make information unintelligible to non authorized third parties.</span>
               </div>
             </div>
           </li>
@@ -31,16 +31,7 @@ const Fronts = () => (
               <div className='border-gray-700 border-4 rounded-t h-64 networking' />
               <div className='flex flex-col my-2 mx-4'>
                 <span className='text-gray-800 text-lg'>Network Security</span>
-                <span className='text-gray-800 text-base'>DESCREVA AQUI</span>
-              </div>
-            </div>
-          </li>
-          <li className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-col mb-4'>
-            <div className='rounded shadow-md bg-white mx-4'>
-              <div className='border-gray-700 border-4 rounded-t h-64' />
-              <div className='flex flex-col my-2 mx-4'>
-                <span className='text-gray-800 text-lg'>Privacy and GDPR</span>
-                <span className='text-gray-800 text-base'>DESCREVA AQUI</span>
+                <span className='text-gray-800 text-base'>This area focuses in the studies of computer netwoks, contemplating communication protocols, wired and wireless technologies as well as sniffing, DoS and MITM attacks and cryptography stripping.</span>
               </div>
             </div>
           </li>
@@ -60,7 +51,7 @@ const Fronts = () => (
               <div className='border-gray-700 border-4 rounded-t h-64' />
               <div className='flex flex-col my-2 mx-4'>
                 <span className='text-gray-800 text-lg'>Web Security</span>
-                <span className='text-gray-800 text-base'>DESCREVA AQUI</span>
+                <span className='text-gray-800 text-base'>This group studies web vulnerabilities, attack methods, counter measures and mitigation in web services implementations and architetures.</span>
               </div>
             </div>
           </li>
@@ -76,6 +67,10 @@ const Fronts = () => (
         }
         .networking {
           background-image: url(/static/images/networking.jpg);
+        }
+        .cryptography {
+          width: 280px;
+          background-image: url(/static/images/cripto.jpg);
         }
       `}</style>
     </main>

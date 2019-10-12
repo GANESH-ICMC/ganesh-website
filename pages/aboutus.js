@@ -23,7 +23,7 @@ const aboutus = () => (
       <section>
         <div className='container h-full mx-auto flex flex-col items-center text-center py-4'>
           <h1 className='text-4xl font-bold py-8 md:py-16 px-4'>
-            Our Institute
+            About Us
           </h1>
           
           <div className='flex flex-row flex-wrap justify-center pb-8 md:pb-16'>
