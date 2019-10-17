@@ -43,14 +43,10 @@ export const NavbarMenu = React.forwardRef(({
         </Link>
       </li>
 
-      <li>
-        <Link href="/aboutus">
-        <button>About Us</button>
-        </Link>
-      </li>
+
       <li onClick={()=>setIsOpen(s => !s)}>
         <button>
-          Areas
+          About
         </button>
         <span
           ref={submenuArrow}
@@ -68,33 +64,30 @@ export const NavbarMenu = React.forwardRef(({
             height: `${isOpen? submenu.current.originalHeight : 0}px`,
           }}
         >
+        <li>
+          <Link href="/aboutus">
+            <button>About Us</button>
+          </Link>
+        </li>
             <li>
-              <Link href="/frentes/cripto">
-                <button>Cryptography</button>
+              <Link href="/aboutus/icmc">
+                <button>Our Institute</button>
               </Link>
             </li>
             <li>
-              <Link href="/frentes/redes">
-                <button>Network Security</button>
-              </Link>
-            </li>
-            <li>
-              <Link href="/frentes/privacidade">
-                <button>Privacy and GDPR</button>
-              </Link>
-            </li>
-            <li>
-              <Link href="/frentes/reversa">
-                <button>Rev. Engineering</button>
-              </Link>
-            </li>
-            <li>
-              <Link href="/frentes/web">
-                <button>Web Security</button>
+              <Link href="/aboutus/usp">
+                <button>Our University</button>
               </Link>
             </li>
         </ul>
       </li>
+
+      <li>
+        <Link href="/frentes">
+        <button>Areas</button>
+        </Link>
+      </li>
+
       <li>
         <Link href="/atividades">
         <button>Activities</button>

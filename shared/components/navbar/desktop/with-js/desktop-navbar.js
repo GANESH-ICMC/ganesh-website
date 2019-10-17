@@ -150,33 +150,6 @@ export const DesktopNavbar = React.forwardRef(({
             <Link href="/frentes">
             <button>Areas</button>
             </Link>
-            <ul className="submenu">
-              <li>
-                <Link href="/frentes/cripto">
-                  <button>Cryptography</button>
-                </Link>
-              </li>
-              <li>
-                <Link href="/frentes/redes">
-                  <button>Network Security</button>
-                </Link>
-              </li>
-              <li>
-                <Link href="/frentes/privacidade">
-                  <button>Privacy and GDPR</button>
-                </Link>
-              </li>
-              <li>
-                <Link href="/frentes/reversa">
-                  <button>Rev. Engineering</button>
-                </Link>
-              </li>
-              <li>
-                <Link href="/frentes/web">
-                  <button>Web Security</button>
-                </Link>
-              </li>
-            </ul>
           </li>
 
           <li href="/atividades">

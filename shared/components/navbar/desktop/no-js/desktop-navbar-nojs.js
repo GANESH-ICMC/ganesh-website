@@ -28,25 +28,11 @@ export function DesktopNavbarNoJS(){
         </li>
 
         <li>
-          <button>Areas</button>
-          <ul className="submenu">
-            <li>
-              <button><a href="/frentes/cripto">Cryptography</a></button>
-            </li>
-            <li>
-              <button><a href="/frentes/redes">Network Security</a></button>
-            </li>
-            <li>
-              <button><a href="/frentes/privacidade">Privacy and GDPR</a></button>
-            </li>
-            <li>
-              <button><a href="/frentes/reversa">Rev. Engineering</a></button>
-            </li>
-            <li>
-              <button><a href="/frentes/web">Web Security</a></button>
-            </li>
-          </ul>
+          <button>
+          <a href="/frentes">Areas</a>
+          </button>
         </li>
+        
         <li>
           <button>
           <a href="/atividades">Activities</a>
