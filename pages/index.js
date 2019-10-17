@@ -7,8 +7,8 @@ import Footer from '../shared/components/footer';
 const Home = () => (
   <React.Fragment>
     <Head
-      title='Ganesh - Início'
-      description='Grupo de extensão focado em segurança da informação.'
+      title='Ganesh - Home'
+      description='Extracurricular group focused on information security.'
     />
     <Navbar />
     <main>
@@ -16,43 +16,38 @@ const Home = () => (
         <div className='container mx-auto flex flex-col items-center justify-center h-full p-4'>
           <img src='/static/images/logo.svg' className='w-48' alt='Ganesh logo' />
           <h2 className='text-2xl'>
-            Grupo de segurança focado em segurança da informação.
+            Extracurricular group focused on information security.
           </h2>
         </div>
       </div>
       <section>
         <div className='container h-full mx-auto flex flex-col items-center text-center py-4'>
           <h1 className='text-4xl font-bold py-8 md:py-16 px-4'>
-            Grupo de extensão
+            Extracurricular group
           </h1>
           <div className='flex flex-row flex-wrap justify-center pb-8 md:pb-16'>
             <div className='w-full md:w-1/2 p-4'>
               <div className='bg-white rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-16 tracking-wide leading-relaxed'>
-                <p>
-                  Temos como missão conhecimento na área de segurança em
-                  computação e difundir esse conhecimento para alunos de
-                  graduação e para a comunidade em geral por meio do
-                  desenvolvimento de material didático, cursos específicos,
-                  palestras em escolas públicas e privadas e apoio no
-                  desenvolvimento de projetos.
+                <p align="justify">
+                  We have as our mission to adquire and spread knowledge
+                  on the area of information security to undergraduate 
+                  students and to the community in general. This is made
+                  through the development of class materials, specific 
+                  courses, workshops in public and private schools and 
+                  supporting the development of projects.
                 </p>
                 <button className='btn-primary w-full text-lg font-bold mt-4 md:mt-8'>
-                  Atividades
+                <a href="/atividades">Activities</a>
                 </button>
               </div>
             </div>
             <div className='w-full md:w-1/2 p-4'>
               <div className='bg-white rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-16 tracking-wide leading-relaxed'>
-                <p>
-                  Temos como missão conhecimento na área de segurança em
-                  computação e difundir esse conhecimento para alunos de
-                  graduação e para a comunidade em geral por meio do
-                  desenvolvimento de material didático, cursos específicos,
-                  palestras em escolas públicas e privadas e apoio no
-                  desenvolvimento de projetos.
+                <p align="justify">
+                  Our group is based at USP - University Of São Paulo, Campus São Carlos, within the Institute of Mathematical and Computer Sciences - ICMC, where we constantly develop and learn new techniques. Most of the group material is considered public and it is hosted on our Github, although a considerate amount of it is in portuguese, since our one of our big focuses are on the community of our region.
                 </p>
                 <button className='btn-primary w-full text-lg font-bold mt-4 md:mt-8'>
-                  Pesquisas
+                  <a href="https://github.com/ganesh-icmc">Github</a>
                 </button>
               </div>
             </div>
@@ -66,8 +61,8 @@ const Home = () => (
       `}</style>
     </main>
     <Footer
-      title="Ganesh - Início"
-      description="Grupo de extensão focado em segurança da informação."
+      title="Ganesh - Home"
+      description='Extracurricular group focused on information security.'
     />
   </React.Fragment>
 );

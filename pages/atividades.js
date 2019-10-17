@@ -9,13 +9,13 @@ const elements = [0, 1, 2, 3, 4, 5];
 const Activities = () => (
   <React.Fragment>
     <Head
-      title='Ganesh - Atividades'
-      description='Grupo de extensão focado em segurança da informação.'
+      title='Ganesh - Activities'
+      description='Extracurricular group focused on information security.'
     />
     <Navbar />
     <main>
       <div className='flex justify-center items-center bg-fixed bg-cover bg-center container-top shadow-md'>
-        <h1 className='text-4xl text-center text-white'>Atividades</h1>
+        <h1 className='text-4xl text-center text-white'>Activities</h1>
       </div>
       <div className='container mx-auto px-4 py-8'>
         <ul className='flex flex-row flex-wrap my-4'>
@@ -28,8 +28,8 @@ const Activities = () => (
                 <div className='rounded shadow-md bg-white mx-4'>
                   <div className='border-gray-700 border-4 rounded-t h-64' />
                   <div className='flex flex-col my-2 mx-4'>
-                    <span className='text-gray-800 text-lg'>Nome</span>
-                    <span className='text-gray-800 text-base'>Descrição</span>
+                    <span className='text-gray-800 text-lg'>Name</span>
+                    <span className='text-gray-800 text-base'>Description</span>
                   </div>
                 </div>
               </li>

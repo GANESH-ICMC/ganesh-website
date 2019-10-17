@@ -66,6 +66,7 @@ export const DesktopNavbar = React.forwardRef(({
   React.useEffect(() => { //underbar initialization
     const url = new URL(window.location.href);
     let listElements = navbar.current.querySelectorAll("ul > li");
+    underbarDefaultElement.current = listElements[0];
     for(let li of listElements){
       if(li.getAttribute("href") === url.pathname)
         underbarDefaultElement.current = li;
@@ -118,56 +119,57 @@ export const DesktopNavbar = React.forwardRef(({
           <button>
             <img
               src="/static/images/ganesh.svg"
-              style={{ height: "20px" }}
+              style={{ height: "25px" }}
               alt="Ganesh Logo"
             />
           </button>
           </Link>
         </li>
+
         <div className="flex-grow" />
-        <li href="/membros">
-          <Link href="/membros">
-          <button>Membros</button>
-          </Link>
-        </li>
-        <li href="/frentes">
-          <Link href="/frentes">
-          <button>Frentes</button>
-          </Link>
-          <ul className="submenu">
-          <li>
-            <Link href="">
-              <button>Eng. reversa</button>
+          
+          <li href="/aboutus">
+            <Link href="/aboutus">
+            <button>About Us</button>
+            </Link>
+            <ul className="submenu">
+              <li>
+                <Link href="/aboutus/icmc">
+                  <button>Our Institute</button>
+                </Link>
+              </li>
+              <li>
+                <Link href="/aboutus/usp">
+                  <button>Our University</button>
+                </Link>
+              </li>
+            </ul>
+          </li>
+
+          <li href="/frentes">
+            <Link href="/frentes">
+            <button>Areas</button>
             </Link>
           </li>
-          <li>
-            <Link href="">
-              <button>Cryptografia</button>
+
+          <li href="/atividades">
+            <Link href="/atividades">
+            <button>Activities</button>
             </Link>
           </li>
-          <li>
-            <Link href="">
-              <button>Web</button>
+          
+          <li href="/noticias">
+            <Link href="/noticias">
+            <button>News</button>
             </Link>
           </li>
-          </ul>
-        </li>
-        <li href="/atividades">
-          <Link href="/atividades">
-          <button>Atividades</button>
-          </Link>
-        </li>
-        <li href="/noticias">
-          <Link href="/noticias">
-          <button>Noticias</button>
-          </Link>
-        </li>
-        <li href="/contato">
-          <Link href="/contato">
-          <button>Contato</button>
-          </Link>
-        </li>
-      </ul>
+
+          <li href="/contato">
+            <Link href="/contato">
+            <button>Contact</button>
+            </Link>
+          </li>
+        </ul>
       <div
         className="underbar"
         style={{

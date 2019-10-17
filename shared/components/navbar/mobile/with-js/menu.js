@@ -42,14 +42,11 @@ export const NavbarMenu = React.forwardRef(({
         </button>
         </Link>
       </li>
-      <li>
-        <Link href="/membros">
-        <button>Membros</button>
-        </Link>
-      </li>
+
+
       <li onClick={()=>setIsOpen(s => !s)}>
         <button>
-          Frentes
+          About
         </button>
         <span
           ref={submenuArrow}
@@ -67,35 +64,43 @@ export const NavbarMenu = React.forwardRef(({
             height: `${isOpen? submenu.current.originalHeight : 0}px`,
           }}
         >
-        <li><Link href="">
-            <button>Eng. reversa</button>
-          </Link>
-        </li>
         <li>
-          <Link href="">
-            <button>Cryptografia</button>
+          <Link href="/aboutus">
+            <button>About Us</button>
           </Link>
         </li>
-        <li>
-          <Link href="">
-            <button>Web</button>
-          </Link>
-        </li>
+            <li>
+              <Link href="/aboutus/icmc">
+                <button>Our Institute</button>
+              </Link>
+            </li>
+            <li>
+              <Link href="/aboutus/usp">
+                <button>Our University</button>
+              </Link>
+            </li>
         </ul>
       </li>
+
+      <li>
+        <Link href="/frentes">
+        <button>Areas</button>
+        </Link>
+      </li>
+
       <li>
         <Link href="/atividades">
-        <button>Atividades</button>
+        <button>Activities</button>
         </Link>
       </li>
       <li>
         <Link href="/noticias">
-        <button>Noticias</button>
+        <button>News</button>
         </Link>
       </li>
       <li>
         <Link href="/contato">
-        <button>Contato</button>
+        <button>Contact</button>
         </Link>
       </li>
     </ul>

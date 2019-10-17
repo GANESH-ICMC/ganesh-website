@@ -14,44 +14,38 @@ export function DesktopNavbarNoJS(){
           </button>
         </li>
         <div className="flex-grow" />
+
         <li>
-          <button>
-          <a href="/membros">Membros</a>
-          </button>
-        </li>
-        <li>
-          <button>Frentes</button>
+          <button>About Us</button>
           <ul className="submenu">
-          <li>
-            <button>
-              <a href="">Eng. reversa</a>
-            </button>
-          </li>
-          <li>
-            <button>
-              <a href="">Cryptografia</a>
-            </button>
-          </li>
-          <li>
-            <button>
-              <a href="">Web</a>
-            </button>
-          </li>
+            <li>
+              <button><a href="/aboutus/icmc">Our Institute</a></button>
+            </li>
+            <li>
+              <button><a href="/aboutus/usp">Our University</a></button>
+            </li>
           </ul>
         </li>
+
         <li>
           <button>
-          <a href="/atividades">Atividades</a>
+          <a href="/frentes">Areas</a>
+          </button>
+        </li>
+        
+        <li>
+          <button>
+          <a href="/atividades">Activities</a>
           </button>
         </li>
         <li>
           <button>
-          <a href="/noticias">Noticias</a>
+          <a href="/noticias">News</a>
           </button>
         </li>
         <li>
           <button>
-          <a href="/contato">Contato</a>
+          <a href="/contato">Contact</a>
           </button>
         </li>
       </ul>
