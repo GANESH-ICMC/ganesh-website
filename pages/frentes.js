@@ -18,7 +18,7 @@ const Fronts = () => (
       <div className='container mx-auto px-4 py-8'>
         <ul className='flex flex-row flex-wrap my-4'>
           <li className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-col mb-4'>
-            <div className='rounded shadow-md bg-white mx-4'>
+            <div className='flex-auto rounded shadow-md bg-white mx-4'>
               <div className='border-gray-700 border-4 rounded-t h-64 cryptography' />
               <div className='flex flex-col my-2 mx-4'>
                 <span className='text-gray-800 text-lg'>Cryptography</span>
@@ -27,7 +27,7 @@ const Fronts = () => (
             </div>
           </li>
           <li className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-col mb-4'>
-            <div className='rounded shadow-md bg-white mx-4'>
+            <div className='flex-auto rounded shadow-md bg-white mx-4'>
               <div className='border-gray-700 border-4 rounded-t h-64 networking' />
               <div className='flex flex-col my-2 mx-4'>
                 <span className='text-gray-800 text-lg'>Network Security</span>
@@ -36,7 +36,7 @@ const Fronts = () => (
             </div>
           </li>
           <li className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-col mb-4'>
-            <div className='rounded shadow-md bg-white mx-4'>
+            <div className='flex-auto rounded shadow-md bg-white mx-4'>
               <div className='border-gray-700 border-4 rounded-t h-64 reversing'/>
               <div className='flex flex-col my-2 mx-4'>
                 <span className='text-gray-800 text-lg'>Reverse Engineering</span>
@@ -47,7 +47,7 @@ const Fronts = () => (
             </div>
           </li>
           <li className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-col mb-4'>
-            <div className='rounded shadow-md bg-white mx-4'>
+            <div className='flex-auto rounded shadow-md bg-white mx-4'>
               <div className='border-gray-700 border-4 rounded-t h-64' />
               <div className='flex flex-col my-2 mx-4'>
                 <span className='text-gray-800 text-lg'>Web Security</span>
@@ -69,7 +69,6 @@ const Fronts = () => (
           background-image: url(/static/images/networking.jpg);
         }
         .cryptography {
-          width: 280px;
           background-image: url(/static/images/cripto.jpg);
         }
       `}</style>

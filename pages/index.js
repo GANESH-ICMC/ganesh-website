@@ -21,12 +21,12 @@ const Home = () => (
         </div>
       </div>
       <section>
-        <div className='container h-full mx-auto flex flex-col items-center text-center py-4'>
+        <div className='container mx-auto flex flex-col items-center text-center py-4'>
           <h1 className='text-4xl font-bold py-8 md:py-16 px-4'>
             Extracurricular group
           </h1>
           <div className='flex flex-row flex-wrap justify-center pb-8 md:pb-16'>
-            <div className='w-full md:w-1/2 p-4'>
+            <div className='flex flex-column flex-wrap flex-auto w-full md:w-1/2 p-4'>
               <div className='bg-white rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-16 tracking-wide leading-relaxed'>
                 <p align="justify">
                   We have as our mission to adquire and spread knowledge
@@ -41,7 +41,7 @@ const Home = () => (
                 </button>
               </div>
             </div>
-            <div className='w-full md:w-1/2 p-4'>
+            <div className='flex flex-column flex-wrap flex-auto w-full md:w-1/2 p-4'>
               <div className='bg-white rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-16 tracking-wide leading-relaxed'>
                 <p align="justify">
                   Our group is based at USP - University Of São Paulo, Campus São Carlos, within the Institute of Mathematical and Computer Sciences - ICMC, where we constantly develop and learn new techniques. Most of the group material is considered public and it is hosted on our Github, although a considerate amount of it is in portuguese, since our one of our big focuses are on the community of our region.
