@@ -28,12 +28,12 @@ const Activities = () => (
                 </div>
               </li>
 
-              <li className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-col mb-4'>
+			<li className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-col mb-4'>
                 <div className='rounded shadow-md bg-white mx-4'>
                   <div className='border-gray-700 border-4 rounded-t h-64 NOME' />
                   <div className='flex flex-col my-2 mx-4'>
-                    <span className='text-gray-800 text-lg'>Safe Internet Day TV Report</span>
-                    <span className='text-gray-800 text-base'>April 14, 2019 - TV report at Futura channel about information security</span>
+                    <span className='text-gray-800 text-lg'>Vacation Course</span>
+                    <span className='text-gray-800 text-base'>July 1-5, 2019 - Vacation Course with theory and practice on various topics on attack and defense techniques.</span>
                   </div>
                 </div>
               </li>
@@ -42,7 +42,17 @@ const Activities = () => (
                 <div className='rounded shadow-md bg-white mx-4'>
                   <div className='border-gray-700 border-4 rounded-t h-64 NOME' />
                   <div className='flex flex-col my-2 mx-4'>
-                    <span className='text-gray-800 text-lg'>Minicurso VIM</span>
+                    <span className='text-gray-800 text-lg'>CryptoRave 2019 Travel</span>
+                    <span className='text-gray-800 text-base'>May 3-4, 2019 - Travel to visit the CryptoRave event at São Paulo</span>
+                  </div>
+                </div>
+              </li>
+
+              <li className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-col mb-4'>
+                <div className='rounded shadow-md bg-white mx-4'>
+                  <div className='border-gray-700 border-4 rounded-t h-64 NOME' />
+                  <div className='flex flex-col my-2 mx-4'>
+                    <span className='text-gray-800 text-lg'>VIM Course</span>
                     <span className='text-gray-800 text-base'>March 16, 2019 - Course about the basic usage of the VIM text editor</span>
                   </div>
                 </div>
@@ -62,8 +72,18 @@ const Activities = () => (
                 <div className='rounded shadow-md bg-white mx-4'>
                   <div className='border-gray-700 border-4 rounded-t h-64 NOME' />
                   <div className='flex flex-col my-2 mx-4'>
+                    <span className='text-gray-800 text-lg'>Safe Internet Day TV Report</span>
+                    <span className='text-gray-800 text-base'>February 5, 2019 - TV report at Futura channel about information security</span>
+                  </div>
+                </div>
+              </li>
+
+              <li className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-col mb-4'>
+                <div className='rounded shadow-md bg-white mx-4'>
+                  <div className='border-gray-700 border-4 rounded-t h-64 NOME' />
+                  <div className='flex flex-col my-2 mx-4'>
                     <span className='text-gray-800 text-lg'>WHOAMI movie </span>
-                    <span className='text-gray-800 text-base'>October 31, 2018 - In a partnership with the PET group we have organized the Screening of the german film "Whoami", witch has themes of security and privacy</span>
+                    <span className='text-gray-800 text-base'>October 31, 2018 - In a partnership with the PET group we have organized the Screening of the German film "Whoami", witch has themes of security and privacy</span>
                   </div>
                 </div>
               </li>
@@ -83,7 +103,7 @@ const Activities = () => (
                   <div className='border-gray-700 border-4 rounded-t h-64 NOME' />
                   <div className='flex flex-col my-2 mx-4'>
                     <span className='text-gray-800 text-lg'>Car Hacking Lecture</span>
-                    <span className='text-gray-800 text-base'>September 13, 2018 - Lecture about cybernetic veicular security organized by us and presented by the Secure Force enterprise</span>
+                    <span className='text-gray-800 text-base'>September 13, 2018 - Lecture about cybernetic vehicular security organized by us and presented by the Secure Force enterprise</span>
                   </div>
                 </div>
               </li>
@@ -113,8 +133,8 @@ const Activities = () => (
                 <div className='rounded shadow-md bg-white mx-4'>
                   <div className='border-gray-700 border-4 rounded-t h-64 NOME' />
                   <div className='flex flex-col my-2 mx-4'>
-                    <span className='text-gray-800 text-lg'>Regional Informatic School</span>
-                    <span className='text-gray-800 text-base'>March 12, 2018 - Course about Information Security Attack Techniques for the Regional Informatic School of Presidente Prudente, Marília and São Carlos cities</span>
+                    <span className='text-gray-800 text-lg'>Regional Informatics School</span>
+                    <span className='text-gray-800 text-base'>March 12-14, 2018 - Course about Information Security Attack Techniques for the Regional Informatics School of Presidente Prudente, Marília and São Carlos cities</span>
                   </div>
                 </div>
               </li>
@@ -134,7 +154,7 @@ const Activities = () => (
                   <div className='border-gray-700 border-4 rounded-t h-64 NOME' />
                   <div className='flex flex-col my-2 mx-4'>
                     <span className='text-gray-800 text-lg'>BlueBorne Presentation for Roadsec</span>
-                    <span className='text-gray-800 text-base'>November 11, 2017 - Demonstration about BlueBorne attack, witch exploits a Bluethoot vulnerability. The presentation was in Roadsec, the biggest security event on Latin America</span>
+                    <span className='text-gray-800 text-base'>November 11, 2017 - Demonstration about BlueBorne attack, witch exploits a Bluetooth vulnerability. The presentation was in Roadsec, the biggest security event on Latin America</span>
                   </div>
                 </div>
               </li>
@@ -154,7 +174,7 @@ const Activities = () => (
                   <div className='border-gray-700 border-4 rounded-t h-64 NOME' />
                   <div className='flex flex-col my-2 mx-4'>
                     <span className='text-gray-800 text-lg'>SEnC 2017 Course</span>
-                    <span className='text-gray-800 text-base'>September 19, 2017 - Course about Information Security Attack Techniques for USP's Computer Engineering Week (SEnC). This course had a duration of 8 hours and aimed to give a general vision on digital security through practical and theorical presentations</span>
+                    <span className='text-gray-800 text-base'>September 19, 2017 - Course about Information Security Attack Techniques for USP's Computer Engineering Week (SEnC). This course had a duration of 8 hours and aimed to give a general vision on digital security through presentations on theory and practice</span>
                   </div>
                 </div>
               </li>
