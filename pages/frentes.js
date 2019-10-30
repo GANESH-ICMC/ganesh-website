@@ -48,7 +48,7 @@ const Fronts = () => (
           </li>
           <li className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-col mb-4'>
             <div className='flex-auto rounded shadow-md bg-white mx-4'>
-              <div className='border-gray-700 border-4 rounded-t h-64' />
+              <div className='border-gray-700 border-4 rounded-t h-64 web' />
               <div className='flex flex-col my-2 mx-4'>
                 <span className='text-gray-800 text-lg'>Web Security</span>
                 <span className='text-gray-800 text-base'>This group studies web vulnerabilities, attack methods, counter measures and mitigation in web services implementations and architetures.</span>
@@ -70,6 +70,9 @@ const Fronts = () => (
         }
         .cryptography {
           background-image: url(/static/images/cripto.jpg);
+        }
+        .web {
+          background-image: url(/static/images/web.png);
         }
       `}</style>
     </main>
