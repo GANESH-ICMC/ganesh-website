@@ -22,7 +22,7 @@ const atividade4 = () => (
             <h2 className="news-title sm:text-lg">
               Pint of Science 2018
             </h2>
-            <h3 className="news-date text-xs pb-2 xl:pb-4">05/12/1999</h3>
+            <h3 className="news-date text-xs pb-2 xl:pb-4">15/05/2018</h3>
             <p>
               Every year, Pint of Science takes place in several cities around the world. 
               It consists of a scientific festival that aims in communicating contemporary science in an easy way to the general public. 

@@ -8,7 +8,7 @@ import Footer from '../../shared/components/footer';
 const atividade6 = () => (
   <React.Fragment>
     <Head
-      title="Ganesh - Pint of Science 2018"
+      title="Ganesh - Roadsec 2017"
       description='Extracurricular group focused on information security.'
     />
     <Navbar />
@@ -20,9 +20,9 @@ const atividade6 = () => (
         <div className="flex bg-white my-4 rounded-lg shadow-md">
           <div className="py-2 pr-2 xl:py-4 xl:pr-4">
             <h2 className="news-title sm:text-lg">
-              Pint of Science 2018
+              Roadsec 2017
             </h2>
-            <h3 className="news-date text-xs pb-2 xl:pb-4">05/12/1999</h3>
+            <h3 className="news-date text-xs pb-2 xl:pb-4">11/11/2017</h3>
             <p>
               We attended our first event as a group in 2017. Roadsec is the biggest Information Security event in Brazil.               
             </p>

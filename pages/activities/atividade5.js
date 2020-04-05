@@ -22,7 +22,7 @@ const atividade5 = () => (
             <h2 className="news-title sm:text-lg">
               Regional School of Informatics Workshop
             </h2>
-            <h3 className="news-date text-xs pb-2 xl:pb-4">05/12/1999</h3>
+            <h3 className="news-date text-xs pb-2 xl:pb-4">14/03/2018</h3>
             <p>
               In March 2018, we took part of the Regional School of Informatics organized by the Brazilian Computer Society. 
             </p>
