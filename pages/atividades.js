@@ -20,9 +20,7 @@ const Activities = () => (
 
               <li className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-col mb-4'>
                 <div className='rounded shadow-md bg-white mx-4'>
-                  <div className='border-gray-700 border-4 rounded-t h-64 NOME'> 
-		    <img src="../static/images/rev_silico_0.jpg" alt="Reverse Engineering Lecture" />
-		  </div>
+                  <div className='border-gray-700 border-4 rounded-t h-64 activity_016' />
                   <div className='flex flex-col my-2 mx-4'>
                     <span className='text-gray-800 text-lg'>in-silico Reverse Engineering Lecture</span>
                     <span className='text-gray-800 text-base'>September 14, 2019 - Lecture about techniques for analysing integrated cirtuits at silicon level. It was organized by us and presented by an IME-USP student</span>
@@ -187,6 +185,11 @@ const Activities = () => (
           background-image: url(/static/images/bgfull.jpg);
           height: 250px;
         }
+	.activity_016{
+	  background-image: url(/static/images/thumb_revsilicio_0.jpg);
+	  background-size: cover;
+	  background-position: center;
+	}
       `}</style>
     </main>
     <Footer />
