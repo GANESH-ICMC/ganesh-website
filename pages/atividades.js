@@ -161,7 +161,7 @@ const Activities = () => (
 
               <li className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-col mb-4'>
                 <div className='rounded shadow-md bg-white mx-4'>
-                  <div className='border-gray-700 border-4 rounded-t h-64 NOME' />
+                  <div className='border-gray-700 border-4 rounded-t h-64 activity_002' />
                   <div className='flex flex-col my-2 mx-4'>
                     <span className='text-gray-800 text-lg'>UNESP Rio Claro Course</span>
                     <span className='text-gray-800 text-base'>October 23, 2017 - Course about Information Security Attack Techniques at UNESP Rio Claro University</span>
@@ -192,6 +192,11 @@ const Activities = () => (
 	}
 	.activity_001 {
 	  background-image: url(/static/images/thumb_senc2017_0.jpg);
+	  background-size: cover;
+	  background-position: center;
+	}
+	.activity_002 {
+	  background-image: url(/static/images/thumb_unesp_0.jpg);
 	  background-size: cover;
 	  background-position: center;
 	}
