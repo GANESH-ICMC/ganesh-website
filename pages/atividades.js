@@ -40,7 +40,7 @@ const Activities = () => (
 
               <li className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-col mb-4'>
                 <div className='rounded shadow-md bg-white mx-4'>
-                  <div className='border-gray-700 border-4 rounded-t h-64 NOME' />
+                  <div className='border-gray-700 border-4 rounded-t h-64 activity_014' />
                   <div className='flex flex-col my-2 mx-4'>
                     <span className='text-gray-800 text-lg'>CryptoRave 2019 Travel</span>
                     <span className='text-gray-800 text-base'>May 3-4, 2019 - Travel to visit the CryptoRave event at São Paulo</span>
@@ -187,6 +187,11 @@ const Activities = () => (
         }
 	.activity_016 {
 	  background-image: url(/static/images/thumb_revsilicio_0.jpg);
+	  background-size: cover;
+	  background-position: center;
+	}
+	.activity_014 {
+	  background-image: url(/static/images/thumb_cryptorave2019_0.jpg);
 	  background-size: cover;
 	  background-position: center;
 	}
