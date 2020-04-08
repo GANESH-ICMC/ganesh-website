@@ -171,7 +171,7 @@ const Activities = () => (
 
               <li className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-col mb-4'>
                 <div className='rounded shadow-md bg-white mx-4'>
-                  <div className='border-gray-700 border-4 rounded-t h-64 NOME' />
+                  <div className='border-gray-700 border-4 rounded-t h-64 activity_001' />
                   <div className='flex flex-col my-2 mx-4'>
                     <span className='text-gray-800 text-lg'>SEnC 2017 Course</span>
                     <span className='text-gray-800 text-base'>September 19, 2017 - Course about Information Security Attack Techniques for USP's Computer Engineering Week (SEnC). This course had a duration of 8 hours and aimed to give a general vision on digital security through presentations on theory and practice</span>
@@ -185,8 +185,13 @@ const Activities = () => (
           background-image: url(/static/images/bgfull.jpg);
           height: 250px;
         }
-	.activity_016{
+	.activity_016 {
 	  background-image: url(/static/images/thumb_revsilicio_0.jpg);
+	  background-size: cover;
+	  background-position: center;
+	}
+	.activity_001 {
+	  background-image: url(/static/images/thumb_senc2017_0.jpg);
 	  background-size: cover;
 	  background-position: center;
 	}
