@@ -21,3 +21,9 @@ body {
 footer {
   background-color: #121212;
 }
+
+.frame{  
+    vertical-align: middle;
+    text-align: center;
+    display: table-cell;
+}     
