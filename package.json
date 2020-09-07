@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "next": "^9.0.2",
+    "next": "^9.5.3",
     "next-offline": "^4.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
