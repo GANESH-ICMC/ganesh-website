@@ -16,12 +16,12 @@ npm start
 
 ## Todo List
 - Fix mobile firefox bug (page not working)
-- Insert activities of the group
+- Insert (new) activities of the group
 - Insert news related to the group
-- Fix CSS margin of activities templates
+- Make the news page use react instead of hardcoded html
 - Insert web area image
 - Implement backend of the contact page
 
 ### Optional
 - Link the group blog at navbar
-- Use CSS to make React side-to-side containers being the same size
+- Use CSS to make React side-to-side containers be the same size
