@@ -18,10 +18,9 @@ npm start
 - Fix mobile firefox bug (page not working)
 - Insert (new) activities of the group
 - Insert news related to the group
-- Make the news page use react instead of hardcoded html
-- Insert web area image
+- Split activities and news correctly
 - Implement backend of the contact page
 
 ### Optional
-- Link the group blog at navbar
 - Use CSS to make React side-to-side containers be the same size
+- Link the group blog at navbar
