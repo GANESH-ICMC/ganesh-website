@@ -28,9 +28,14 @@ function Block({title, description, date, imagesrc}) {
 
 function App() {
   const [information, setInformation] = useState([
-    {title:"Teste", date:"01/01/2020", description:"Oi td bem", imagesrc:"/static/images/no_image_available.svg"},
-    {title:"Teste1", date:"02/02/2021", description:"To testando", imagesrc:"/static/images/no_image_available.svg"}
-  ])
+    {title: "CryptoRave 2019 Travel", date:"May 3-4, 2019 ", description:"Travel to visit the CryptoRave event at São Paulo", imagesrc:"/static/images/thumb_cryptorave2019_0.jpg"},
+    {title: "2019 Entry Process", date:"February 25, 2019", description:" The Entry process is composed of a series of classes introducing information security to prepare new members for the group's work", imagesrc:"/static/images/placeholder.jpg"},
+    {title: "Safe Internet Day TV Report", date:"February 5, 2019", description:" TV report at Futura channel about information security", imagesrc:"/static/images/thumb_futura_0.jpg"},
+    {title: "WHOAMI movie", date:"October 31, 2018", description:" In a partnership with the PET group we have organized the Screening of the German film \"Whoami\", which has the main themes being information security and privacy", imagesrc:"/static/images/thumb_whoami.jpg"},
+    {title: "15th H2HC Travel", date:"October 20-21, 2018", description:" Travel to visit the Hacker to Hacker Conference security event at São Paulo", imagesrc:"/static/images/thumb_h2hc2018_0.jpg"},
+    {title: "Admission Process of 2018", date:"March 23, 2018", description:" The admission process is composed of a series of classes introducing information security to prepare new members for the group's work", imagesrc:"/static/images/placeholder.jpg"},
+    {title: "Regional Informatics School", date:"March 12-14, 2018", description:" Course about Information Security Attack Techniques for the Regional Informatics School of Presidente Prudente, Marília and São Carlos cities", imagesrc:"/static/images/thumb_ris_0.jpg"},
+  ]);
 
   return (
       <div className="container mx-auto px-4 py-8">
