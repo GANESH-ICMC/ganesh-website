@@ -42,7 +42,7 @@ function Block({title, description, date, imagesrc, link}) {
 
 function App() {
   const [information, setInformation] = useState([
-    {title: "CryptoRave 2019 Travel", date:"May 3-4, 2019 ", description:"Travel to visit the CryptoRave event at São Paulo", imagesrc:"/static/images/thumb_cryptorave2019_0.jpg"},
+    {title: "CryptoRave 2019 Travel", date:"May 3-4, 2019 ", description:"Travel to visit the CryptoRave event at São Paulo", imagesrc:"/static/images/thumb_cryptorave2019_0.jpg", link: "http://localhost:3000/aboutus"},
     {title: "2019 Entry Process", date:"February 25, 2019", description:" The Entry process is composed of a series of classes introducing information security to prepare new members for the group's work", imagesrc:"/static/images/placeholder.jpg"},
     {title: "Safe Internet Day TV Report", date:"February 5, 2019", description:" TV report at Futura channel about information security", imagesrc:"/static/images/thumb_futura_0.jpg"},
     {title: "WHOAMI movie", date:"October 31, 2018", description:" In a partnership with the PET group we have organized the Screening of the German film \"Whoami\", which has the main themes being information security and privacy", imagesrc:"/static/images/thumb_whoami.jpg"},
@@ -56,7 +56,7 @@ function App() {
         {
           information.map((info,index) => (
           <div key={index}>
-            <Block title={info.title} date={info.date} description={info.description} imagesrc={info.imagesrc} /> 
+            <Block title={info.title} date={info.date} description={info.description} imagesrc={info.imagesrc} link={info.link} /> 
           </div>
           ))
         }
