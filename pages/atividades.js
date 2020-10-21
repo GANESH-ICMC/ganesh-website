@@ -9,9 +9,24 @@ import Footer from '../shared/components/footer';
 
 function Bloco({title, description, date, imagesrc}) {
   return (
-      <div className='rounded shadow-md bg-white mx-4'>
-        <div className='border-gray-700 border-4 rounded-t h-64 frame'>
-          <img src={imagesrc}/>
+      <div className='rounded shadow-md bg-white mx-4' style={{height: "100%"}}>
+        <div className = 'border-gray-700 border-4 rounded-t h-64 frame'
+        style = {
+          {
+            height: "200px",
+          }
+        } >
+          < img src = {
+            imagesrc
+          }
+          style = {
+            {
+              height: "100%",
+              width: "100%",
+              objectFit: "contain",
+            }
+          }
+          />
         </div>
         <div className='flex flex-col my-2 mx-4'>
           <span className='text-gray-800 text-lg'>{title}</span>
