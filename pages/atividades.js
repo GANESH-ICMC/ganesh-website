@@ -16,7 +16,7 @@ function Bloco({title, description, date, imagesrc}) {
                   {
                     height: "100%",
                     width: "100%",
-                    objectFit: "contain",
+                    objectFit: "cover",
                   }
                 }
           />
@@ -126,7 +126,7 @@ const Activities = () => (
 	  background-position: center;
 	}
         .img {
-          width=64px;
+          width: "64px";
           vertical-align:middle;
         }
       `}</style>
