@@ -5,17 +5,31 @@ import Head from '../shared/components/head';
 import Navbar from '../shared/components/navbar/navbar';
 import Footer from '../shared/components/footer';
 
-function Block({title, description, date, imagesrc}) {
+function Block({title, description, date, imagesrc, link}) {
   return (
     <div className="flex bg-white my-4 rounded-lg shadow-md">
       <div className="p-2 xl:p-4">
         <div className="news-image bg-local bg-center bg-cover rounded-lg">
-          <img src={imagesrc}/>
+          <img src={imagesrc} style={
+          {
+            height: "100%",
+            width: "100%",
+            objectFit: "contain",
+          }
+          }/>
         </div>
       </div>
       <div className="py-2 pr-2 xl:py-4 xl:pr-4">
-        <h2 className="news-title sm:text-lg">
-          {title}
+        <h2 className = "news-title sm:text-lg"
+        style = {
+          {
+            fontWeight: "bold",
+          }
+        } >
+        {
+            link ? <a className='text-gray-bold text-lg' style={{cursor: "pointer"}} href={link} >{title}</a> :
+            title
+        }
         </h2>
         <h3 className="news-date text-xs pb-2 xl:pb-4">{date}</h3>
         <p className="hidden lg:block text-sm">
