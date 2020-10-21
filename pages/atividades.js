@@ -7,7 +7,7 @@ import Footer from '../shared/components/footer';
 
 /* import '../public/static/styles/style.css'*/ 
 
-function Bloco({title, description, date, imagesrc}) {
+function Bloco({title, description, date, imagesrc, link}) {
   return (
       <div className='rounded shadow-md bg-white mx-4' style={{height: "100%"}}>
         <div className = 'border-gray-700 border-4 rounded-t h-64 frame' style={{height: "200px"}}>
@@ -22,8 +22,11 @@ function Bloco({title, description, date, imagesrc}) {
           />
         </div>
         <div className='flex flex-col my-2 mx-4' style={{padding: "5px"}}>
-          <span className='text-gray-800 text-lg'>{title}</span>
-          <span className='text-gray-800 text-base'>{date} - {description}</span>
+          {
+            link ? <a className='text-gray-bold text-lg' style={{fontWeight: "bold", cursor: "pointer"}} href={link} >{title}</a> :
+            <span className='text-gray-bold text-lg' style={{fontWeight: "bold"}}>{title}</span>
+          }
+          <span className='text-gray-800 text-base' style={{fontWeight: "400"}}>{date} - {description}</span>
         </div>
       </div>
   )
