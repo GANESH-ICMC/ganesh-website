@@ -21,7 +21,7 @@ function Bloco({title, description, date, imagesrc}) {
                 }
           />
         </div>
-        <div className='flex flex-col my-2 mx-4'>
+        <div className='flex flex-col my-2 mx-4' style={{padding: "5px"}}>
           <span className='text-gray-800 text-lg'>{title}</span>
           <span className='text-gray-800 text-base'>{date} - {description}</span>
         </div>
