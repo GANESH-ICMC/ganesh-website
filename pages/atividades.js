@@ -9,11 +9,19 @@ import Footer from '../shared/components/footer';
 
 function Bloco({title, description, date, imagesrc}) {
   return (
-      <div className='rounded shadow-md bg-white mx-4'>
-        <div className='border-gray-700 border-4 rounded-t h-64 frame'>
-          <img src={imagesrc}/>
+      <div className='rounded shadow-md bg-white mx-4' style={{height: "100%"}}>
+        <div className = 'border-gray-700 border-4 rounded-t h-64 frame'>
+          <img  src = {imagesrc}
+                style = {
+                  {
+                    height: "100%",
+                    width: "100%",
+                    objectFit: "cover",
+                  }
+                }
+          />
         </div>
-        <div className='flex flex-col my-2 mx-4'>
+        <div className='flex flex-col my-2 mx-4' style={{padding: "5px"}}>
           <span className='text-gray-800 text-lg'>{title}</span>
           <span className='text-gray-800 text-base'>{date} - {description}</span>
         </div>
@@ -118,7 +126,7 @@ const Activities = () => (
 	  background-position: center;
 	}
         .img {
-          width=64px;
+          width: "64px";
           vertical-align:middle;
         }
       `}</style>
