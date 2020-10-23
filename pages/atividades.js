@@ -7,7 +7,7 @@ import Footer from '../shared/components/footer';
 
 /* import '../public/static/styles/style.css'*/ 
 
-function Bloco({title, description, date, imagesrc}) {
+function Bloco({title, description, date, imagesrc, link}) {
   return (
       <div className='rounded shadow-md bg-white mx-4' style={{height: "100%"}}>
         <div className = 'border-gray-700 border-4 rounded-t h-64 frame'>
@@ -22,8 +22,11 @@ function Bloco({title, description, date, imagesrc}) {
           />
         </div>
         <div className='flex flex-col my-2 mx-4' style={{padding: "5px"}}>
-          <span className='text-gray-800 text-lg'>{title}</span>
-          <span className='text-gray-800 text-base'>{date} - {description}</span>
+          {
+            link ? <a className='text-gray-bold text-lg' style={{fontWeight: "bold", cursor: "pointer"}} href={link} >{title}</a> :
+            <span className='text-gray-bold text-lg' style={{fontWeight: "bold"}}>{title}</span>
+          }
+          <span className='text-gray-800 text-base' style={{fontWeight: "400"}}>{date} - {description}</span>
         </div>
       </div>
   )
@@ -31,7 +34,7 @@ function Bloco({title, description, date, imagesrc}) {
 
 function App() {
   const [information, setInformation] = useState([
-    {title: "SEnC 2019 Course", date:"September 24, 2019", description:"Course about Malwares and Viruses at USP's Computer Engineering Week (SEnC). The course aimed to explain the basis of Malwares, how they work, and a simple way to create a keylogger.", imagesrc:"/static/images/thumb_senc2019.jpg"},
+    {title: "SEnC 2019 Course", date:"September 24, 2019", description:"Course about Malwares and Viruses at USP's Computer Engineering Week (SEnC). The course aimed to explain the basis of Malwares, how they work, and a simple way to create a keylogger.", imagesrc:"/static/images/thumb_senc2019.jpg", link: "http://localhost:3000/aboutus"},
 	  {title: "in-silico Reverse Engineering Lecture", date:"September 14, 2019 ", description:"Lecture about techniques for analysing integrated cirtuits at silicon level. It was organized by us and presented by an IME-USP student", imagesrc:"/static/images/thumb_revsilicio_0.jpg"},
     {title: "Vacation Course", date:"July 1-5, 2019 ", description:"Vacation Course with theory and practice on various topics on attack and defense techniques.2", imagesrc:"/static/images/thumb_vacation_course.jpg"},
     {title: "VIM Course", date:"March 16, 2019", description:" Course about the basic usage of the VIM text editor", imagesrc:"/static/images/thumb_vim.png"},
@@ -50,7 +53,7 @@ function App() {
         {
           information.map((info, index) => (
             <li key={index} className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-col mb-4'>
-              <Bloco title={info.title} description={info.description} date={info.date} imagesrc={info.imagesrc} />
+              <Bloco title={info.title} description={info.description} date={info.date} imagesrc={info.imagesrc} link={info.link}/>
             </li>
           ))
         }
