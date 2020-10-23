@@ -13,8 +13,8 @@ function Block({title, description, date, imagesrc, link}) {
           <img src={imagesrc} style={
           {
             height: "100%",
-            width: "100%",
-            objectFit: "contain",
+            width: "110%",
+            objectFit: "cover",
           }
           }/>
         </div>
