@@ -10,7 +10,7 @@ import Footer from '../shared/components/footer';
 function Bloco({title, description, date, imagesrc, link}) {
   return (
       <div className='rounded shadow-md bg-white mx-4' style={{height: "100%"}}>
-        <div className = 'border-gray-700 border-4 rounded-t h-64 frame'>
+        <div className = 'border-gray-700 border-4 rounded-t h-64 '>
           <img  src = {imagesrc}
                 style = {
                   {
