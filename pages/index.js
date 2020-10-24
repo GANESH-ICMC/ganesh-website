@@ -36,12 +36,7 @@ function Home ({ t })  {
             <div className='flex flex-column flex-wrap flex-auto w-full md:w-1/2 p-4'>
               <div className='bg-white rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-16 tracking-wide leading-relaxed'>
                 <p align="justify">
-                  We have as our mission to adquire and spread knowledge
-                  on the area of information security to undergraduate 
-                  students and to the community in general. This is made
-                  through the development of class materials, specific 
-                  courses, workshops in public and private schools and 
-                  supporting the development of projects.
+                  {t('mission')}
                 </p>
                 <button className='btn-primary w-full text-lg font-bold mt-4 md:mt-8'>
                 <a href="/atividades">Activities</a>
@@ -51,7 +46,7 @@ function Home ({ t })  {
             <div className='flex flex-column flex-wrap flex-auto w-full md:w-1/2 p-4'>
               <div className='bg-white rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-16 tracking-wide leading-relaxed'>
                 <p align="justify">
-                  Our group is based at USP - University Of São Paulo, Campus São Carlos, within the Institute of Mathematical and Computer Sciences - ICMC, where we constantly develop and learn new techniques. Most of the group material is considered public and it is hosted on our Github, although a considerate amount of it is in portuguese, since our one of our big focuses are on the community of our region.
+                  {t('based')}
                 </p>
                 <button className='btn-primary w-full text-lg font-bold mt-4 md:mt-8'>
                   <a href="https://github.com/ganesh-icmc">Github</a>
