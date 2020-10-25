@@ -4,6 +4,8 @@ import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from "constants";
 
 import { useTranslation } from "react-i18next";
 
+import { LanguageToggle, LanguageSwitcher } from "../../../language_switcher"
+
 const BACKGROUND_COLOR = "18, 18, 18"; //rgb
 const ANIMATION_TIME = 50; //frames
 
@@ -174,20 +176,21 @@ export const DesktopNavbar = React.forwardRef(({
             </Link>
           </li>
 
-          <li>
-            <div class="inline-block">
-              <select
-              value={i18n.language}
-              onChange={(e) =>
-                  i18n.changeLanguage(e.target.value)
-                }
-              class="my-6 block appearance-none bg-transparent rounded shadow-none leading-tight">
-                <option value="br">Português BR</option>
-                <option value="en">English</option>
-              </select>
-              
-            </div>
 
+          <li>
+            <button>{ LanguageSwitcher() }</button>
+            <ul className="submenu">
+              <li>
+                  <button onClick={
+                    () => i18n.changeLanguage("br")
+                  }>Português BR</button>
+              </li>
+              <li>
+                  <button onClick={
+                    () => i18n.changeLanguage("en")
+                  }>English</button>
+              </li>
+            </ul>
           </li>
 
         </ul>

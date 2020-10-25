@@ -1,5 +1,9 @@
 import React from "react";
 import Link from "next/link";
+
+import { useTranslation } from "react-i18next";
+
+import LanguageToggle from "../../../language_switcher"
 import LanguageSwitcher from "../../../language_switcher"
 
 export const NavbarMenu = React.forwardRef(({
@@ -28,6 +32,8 @@ export const NavbarMenu = React.forwardRef(({
       submenu.current.style.display = "";
     });
   }, []);
+
+  const { i18n } = useTranslation();
 
   return (
     <ul ref={list} className="menu">
@@ -105,8 +111,15 @@ export const NavbarMenu = React.forwardRef(({
         </Link>
       </li>
 
-       <li>
-          <LanguageSwitcher />
+      <li>
+          <button onClick={
+            () => i18n.changeLanguage("br")
+          }>Português BR</button>
+      </li>
+      <li>
+          <button onClick={
+            () => i18n.changeLanguage("en")
+          }>English</button>
       </li>
     </ul>
   );
