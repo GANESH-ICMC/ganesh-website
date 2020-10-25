@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from "constants";
 
+import LanguageSwitcher from "../../../language_switcher"
+
 const BACKGROUND_COLOR = "18, 18, 18"; //rgb
 const ANIMATION_TIME = 50; //frames
 
@@ -169,6 +171,11 @@ export const DesktopNavbar = React.forwardRef(({
             <button>Contact</button>
             </Link>
           </li>
+
+          <li>
+            <LanguageSwitcher />
+          </li>
+
         </ul>
       <div
         className="underbar"

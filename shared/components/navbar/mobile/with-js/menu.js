@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import LanguageSwitcher from "../../../language_switcher"
 
 export const NavbarMenu = React.forwardRef(({
   animationTime = 200,
@@ -102,6 +103,10 @@ export const NavbarMenu = React.forwardRef(({
         <Link href="/contato">
         <button>Contact</button>
         </Link>
+      </li>
+
+       <li>
+          <LanguageSwitcher />
       </li>
     </ul>
   );

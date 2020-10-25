@@ -1,14 +1,21 @@
 import React from 'react';
 
+import '../locale/index_locale';
 import Head from '../shared/components/head';
 import Navbar from '../shared/components/navbar/navbar';
 import Footer from '../shared/components/footer';
 
-const Home = () => (
+import { withTranslation } from 'react-i18next';
+
+function Home ({ t })  {
+
+  //const { t, i18n } = useTranslation();
+
+  return (
   <React.Fragment>
     <Head
       title='Ganesh - Home'
-      description='Extracurricular group focused on information security.'
+      description={t('description')}
     />
     <Navbar />
     <main>
@@ -16,7 +23,7 @@ const Home = () => (
         <div className='container mx-auto flex flex-col items-center justify-center h-full p-4'>
           <img src='/static/images/logo.svg' className='w-48' alt='Ganesh logo' />
           <h2 className='text-2xl'>
-            Extracurricular group focused on information security.
+            <p>{t('description')}</p>
           </h2>
         </div>
       </div>
@@ -67,4 +74,6 @@ const Home = () => (
   </React.Fragment>
 );
 
-export default Home;
+}
+
+export default withTranslation()(Home);
