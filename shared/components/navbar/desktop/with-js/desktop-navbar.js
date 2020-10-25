@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from "constants";
 
-import LanguageSwitcher from "../../../language_switcher"
+import { useTranslation } from "react-i18next";
 
 const BACKGROUND_COLOR = "18, 18, 18"; //rgb
 const ANIMATION_TIME = 50; //frames
@@ -102,6 +102,8 @@ export const DesktopNavbar = React.forwardRef(({
     else setShow(false);
   }
 
+  const { i18n } = useTranslation();
+
   return (
     <div
       className={`desktop-navbar${show? " shadow-md" : ""}`}
@@ -173,7 +175,19 @@ export const DesktopNavbar = React.forwardRef(({
           </li>
 
           <li>
-            <LanguageSwitcher />
+            <div class="inline-block">
+              <select
+              value={i18n.language}
+              onChange={(e) =>
+                  i18n.changeLanguage(e.target.value)
+                }
+              class="my-6 block appearance-none bg-transparent rounded shadow-none leading-tight">
+                <option value="br">Português BR</option>
+                <option value="en">English</option>
+              </select>
+              
+            </div>
+
           </li>
 
         </ul>
