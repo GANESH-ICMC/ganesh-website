@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../locale/index_locale';
+import '../locale/locale';
 import Head from '../shared/components/head';
 import Navbar from '../shared/components/navbar/navbar';
 import Footer from '../shared/components/footer';
@@ -30,7 +30,7 @@ function Home ({ t })  {
       <section>
         <div className='container mx-auto flex flex-col items-center text-center py-4'>
           <h1 className='text-4xl font-bold py-8 md:py-16 px-4'>
-            Extracurricular group
+            {t('extragroup')}
           </h1>
           <div className='flex flex-row flex-wrap justify-center pb-8 md:pb-16'>
             <div className='flex flex-column flex-wrap flex-auto w-full md:w-1/2 p-4'>
@@ -39,7 +39,7 @@ function Home ({ t })  {
                   {t('mission')}
                 </p>
                 <button className='btn-primary w-full text-lg font-bold mt-4 md:mt-8'>
-                <a href="/atividades">Activities</a>
+                <a href="/atividades">{t('activities')}</a>
                 </button>
               </div>
             </div>

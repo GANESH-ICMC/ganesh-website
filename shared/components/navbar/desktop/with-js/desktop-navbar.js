@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from "constants";
 
-import '../../../../../locale/navbar_locale'
+import '../../../../../locale/locale'
 import { useTranslation, withTranslation } from "react-i18next";
 
 

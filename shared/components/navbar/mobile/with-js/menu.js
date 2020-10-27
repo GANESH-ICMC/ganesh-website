@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import '../../../../../locale/navbar_locale'
+import '../../../../../locale/locale'
 import { useTranslation } from "react-i18next";
 
 import LanguageToggle from "../../../language_switcher"
