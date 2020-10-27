@@ -17,7 +17,7 @@ const resources = {
   br: {
     translation: {
       "aboutus":    "Sobre Nós",
-      "institute":  "Nosso Inssituto",
+      "institute":  "Nosso Instituto",
       "university": "Nossa Universidade",
       "areas":      "Frentes",
       "activities": "Atividades",
