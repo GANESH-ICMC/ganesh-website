@@ -4,7 +4,10 @@ import Head from '../shared/components/head';
 import Navbar from '../shared/components/navbar/navbar';
 import Footer from '../shared/components/footer';
 
-const Fronts = () => (
+import "../locale/areas_locale"
+import { withTranslation } from 'react-i18next';
+
+const Fronts = ({t}) => (
   <React.Fragment>
     <Head
       title="Ganesh - Areas"
@@ -21,8 +24,8 @@ const Fronts = () => (
             <div className='flex-auto rounded shadow-md bg-white mx-4'>
               <div className='border-gray-700 border-4 rounded-t h-64 cryptography' />
               <div className='flex flex-col my-2 mx-4'>
-                <span className='text-gray-800 text-lg'>Cryptography</span>
-                <span className='text-gray-800 text-base'>This area focuses on the principles and methods of codification on comunication in order to make information unintelligible to non authorized third parties.</span>
+                <span className='text-gray-800 text-lg'>{t('tcripto')}</span>
+                <span className='text-gray-800 text-base'>{t('cripto')}</span>
               </div>
             </div>
           </li>
@@ -30,8 +33,8 @@ const Fronts = () => (
             <div className='flex-auto rounded shadow-md bg-white mx-4'>
               <div className='border-gray-700 border-4 rounded-t h-64 networking' />
               <div className='flex flex-col my-2 mx-4'>
-                <span className='text-gray-800 text-lg'>Network Security</span>
-                <span className='text-gray-800 text-base'>This area focuses in the studies of computer netwoks, contemplating communication protocols, wired and wireless technologies as well as sniffing, DoS and MITM attacks and cryptography stripping.</span>
+                <span className='text-gray-800 text-lg'>{t('tnetwork')}</span>
+                  <span className='text-gray-800 text-base'>{t('network')}</span>
               </div>
             </div>
           </li>
@@ -39,9 +42,9 @@ const Fronts = () => (
             <div className='flex-auto rounded shadow-md bg-white mx-4'>
               <div className='border-gray-700 border-4 rounded-t h-64 reversing'/>
               <div className='flex flex-col my-2 mx-4'>
-                <span className='text-gray-800 text-lg'>Reverse Engineering</span>
+                <span className='text-gray-800 text-lg'>{t('trev')}</span>
                 <span className='text-gray-800 text-base'>
-                  This area studies assembly languages, computer architectures, reverse engineering techniques, malwares and low level linux systems.
+                  {t('rev')}
                 </span>
               </div>
             </div>
@@ -50,8 +53,10 @@ const Fronts = () => (
             <div className='flex-auto rounded shadow-md bg-white mx-4'>
               <div className='border-gray-700 border-4 rounded-t h-64 web' />
               <div className='flex flex-col my-2 mx-4'>
-                <span className='text-gray-800 text-lg'>Web Security</span>
-                <span className='text-gray-800 text-base'>This group studies web vulnerabilities, attack methods, counter measures and mitigation in web services implementations and architetures.</span>
+                <span className='text-gray-800 text-lg'>{t('tweb')}</span>
+                <span className='text-gray-800 text-base'>
+                  {t('web')}
+                </span>
               </div>
             </div>
           </li>
@@ -80,4 +85,4 @@ const Fronts = () => (
   </React.Fragment>
 );
 
-export default Fronts;
+export default withTranslation()(Fronts);
