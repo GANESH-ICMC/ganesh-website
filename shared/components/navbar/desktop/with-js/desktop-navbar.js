@@ -2,6 +2,10 @@ import React from "react";
 import Link from "next/link";
 import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from "constants";
 
+import { useTranslation } from "react-i18next";
+
+import { LanguageToggle, LanguageSwitcher } from "../../../language_switcher"
+
 const BACKGROUND_COLOR = "18, 18, 18"; //rgb
 const ANIMATION_TIME = 50; //frames
 
@@ -100,6 +104,8 @@ export const DesktopNavbar = React.forwardRef(({
     else setShow(false);
   }
 
+  const { i18n } = useTranslation();
+
   return (
     <div
       className={`desktop-navbar${show? " shadow-md" : ""}`}
@@ -169,6 +175,24 @@ export const DesktopNavbar = React.forwardRef(({
             <button>Contact</button>
             </Link>
           </li>
+
+
+          <li>
+            <button>{ LanguageSwitcher() }</button>
+            <ul className="submenu">
+              <li>
+                  <button onClick={
+                    () => i18n.changeLanguage("br")
+                  }>Português BR</button>
+              </li>
+              <li>
+                  <button onClick={
+                    () => i18n.changeLanguage("en")
+                  }>English</button>
+              </li>
+            </ul>
+          </li>
+
         </ul>
       <div
         className="underbar"
