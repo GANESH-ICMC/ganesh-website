@@ -2,7 +2,9 @@ import React from "react";
 import Link from "next/link";
 import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from "constants";
 
-import { useTranslation } from "react-i18next";
+import '../../../../../locale/locale'
+import { useTranslation, withTranslation } from "react-i18next";
+
 
 import { LanguageToggle, LanguageSwitcher } from "../../../language_switcher"
 
@@ -104,7 +106,7 @@ export const DesktopNavbar = React.forwardRef(({
     else setShow(false);
   }
 
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <div
@@ -136,17 +138,17 @@ export const DesktopNavbar = React.forwardRef(({
           
           <li href="/aboutus">
             <Link href="/aboutus">
-            <button>About Us</button>
+            <button>{t('aboutus')}</button>
             </Link>
             <ul className="submenu">
               <li>
                 <Link href="/aboutus/icmc">
-                  <button>Our Institute</button>
+                  <button>{t('institute')}</button>
                 </Link>
               </li>
               <li>
                 <Link href="/aboutus/usp">
-                  <button>Our University</button>
+                  <button>{t("university")}</button>
                 </Link>
               </li>
             </ul>
@@ -154,25 +156,25 @@ export const DesktopNavbar = React.forwardRef(({
 
           <li href="/frentes">
             <Link href="/frentes">
-            <button>Areas</button>
+              <button>{t("areas")}</button>
             </Link>
           </li>
 
           <li href="/atividades">
             <Link href="/atividades">
-            <button>Activities</button>
+              <button>{t("activities")}</button>
             </Link>
           </li>
           
           <li href="/noticias">
             <Link href="/noticias">
-            <button>News</button>
+            <button>{t("news")}</button>
             </Link>
           </li>
 
           <li href="/contato">
             <Link href="/contato">
-            <button>Contact</button>
+            <button>{t("contact")}</button>
             </Link>
           </li>
 

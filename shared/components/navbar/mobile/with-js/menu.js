@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
+import '../../../../../locale/locale'
 import { useTranslation } from "react-i18next";
 
 import LanguageToggle from "../../../language_switcher"
@@ -33,7 +34,7 @@ export const NavbarMenu = React.forwardRef(({
     });
   }, []);
 
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <ul ref={list} className="menu">
@@ -53,7 +54,7 @@ export const NavbarMenu = React.forwardRef(({
 
       <li onClick={()=>setIsOpen(s => !s)}>
         <button>
-          About
+          {t('about')}.
         </button>
         <span
           ref={submenuArrow}
@@ -73,17 +74,17 @@ export const NavbarMenu = React.forwardRef(({
         >
         <li>
           <Link href="/aboutus">
-            <button>About Us</button>
+            <button>{t("aboutus")}</button>
           </Link>
         </li>
             <li>
               <Link href="/aboutus/icmc">
-                <button>Our Institute</button>
+                <button>{t("institute")}</button>
               </Link>
             </li>
             <li>
               <Link href="/aboutus/usp">
-                <button>Our University</button>
+                <button>{t("university")}</button>
               </Link>
             </li>
         </ul>
@@ -91,23 +92,23 @@ export const NavbarMenu = React.forwardRef(({
 
       <li>
         <Link href="/frentes">
-        <button>Areas</button>
+        <button>{t("areas")}</button>
         </Link>
       </li>
 
       <li>
         <Link href="/atividades">
-        <button>Activities</button>
+        <button>{t("activities")}</button>
         </Link>
       </li>
       <li>
         <Link href="/noticias">
-        <button>News</button>
+        <button>{t("news")}</button>
         </Link>
       </li>
       <li>
         <Link href="/contato">
-        <button>Contact</button>
+        <button>{t("contact")}</button>
         </Link>
       </li>
 
