@@ -54,7 +54,7 @@ export const NavbarMenu = React.forwardRef(({
 
       <li onClick={()=>setIsOpen(s => !s)}>
         <button>
-          {t('aboutus')}
+          {t('about')}.
         </button>
         <span
           ref={submenuArrow}

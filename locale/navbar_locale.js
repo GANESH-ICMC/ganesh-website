@@ -5,6 +5,7 @@ import { initReactI18next } from "react-i18next";
 const resources = {
   en: {
     translation: {
+      "about":      "About",
       "aboutus":    "About Us",
       "institute":  "Our Institute",
       "university": "Our University",
@@ -16,6 +17,7 @@ const resources = {
   },
   br: {
     translation: {
+      "about":      "Sobre",
       "aboutus":    "Sobre Nós",
       "institute":  "Nosso Instituto",
       "university": "Nossa Universidade",
