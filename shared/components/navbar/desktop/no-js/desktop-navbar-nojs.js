@@ -24,6 +24,9 @@ export function DesktopNavbarNoJS(){
             <li>
               <button><a href="/aboutus/usp">Our University</a></button>
             </li>
+            <li>
+              <button><a href="https://medium.com/ganeshicmc/">Our Blog</a></button>
+            </li>
           </ul>
         </li>
 
