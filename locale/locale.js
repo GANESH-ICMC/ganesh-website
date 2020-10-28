@@ -7,6 +7,7 @@ import index_br from "./br/index.json"
 import navbar_en from "./en/navbar.json"
 import navbar_br from "./br/navbar.json"
 
+
 import areas_en from "./en/areas.json"
 import areas_br from "./br/areas.json"
 

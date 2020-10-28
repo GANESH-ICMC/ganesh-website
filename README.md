@@ -15,12 +15,11 @@ npm start
 
 
 ## Todo List
-- Fix mobile firefox bug (page not working)
-- Insert (new) activities of the group
-- Insert news related to the group
-- Split activities and news correctly
-- Implement backend of the contact page
+- Investigate mobile firefox bug (page not working sometimes)
+- Insert (new) activities of the group (2020)
+- Insert news related to the group (2020)
+
+Check the issues for updated activities to be done.
 
 ### Optional
-- Use CSS to make React side-to-side containers be the same size
 - Link the group blog at navbar

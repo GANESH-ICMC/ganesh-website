@@ -87,6 +87,11 @@ export const NavbarMenu = React.forwardRef(({
                 <button>{t("navbar:university")}</button>
               </Link>
             </li>
+            <li>
+              <Link href="https://medium.com/ganeshicmc/">
+                <button>{t("blog")}</button>
+              </Link>
+            </li>
         </ul>
       </li>
 
