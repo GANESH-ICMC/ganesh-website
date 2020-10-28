@@ -1,0 +1,10 @@
+{
+    "cripto"  : "Esta frente foca nos princípios de métodos de codificação em comunicações para que a informação seja ininteligível para terceiros não autorizados.",
+    "rev"     : "Esta frente estuda linguagens assembly, arquiteturas de computadores, técnicas de engenharia reversa, malwares e sistemas linux em baixo nível.",
+    "web"     : "Esta frente estuda vulnerabilidades web, métodos de ataque, contramedidas e mitigações em implementações de serviços web e arquiteturas.",
+    "network" : "Esta frente foca nos estudos de redes computacionais, contemplando protocolos de comunicação, tecnologias com ou sem fio assim como sniffing, DoS, ataques MITM e remoção de criptografias.",
+    "tcripto" : "Criptografia",
+    "trev"    : "Engenharia Reversa",
+    "tweb"    : "Segurança Web",
+    "tnetwork": "Segurança de Redes"
+}

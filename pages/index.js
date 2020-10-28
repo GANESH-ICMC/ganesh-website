@@ -1,6 +1,5 @@
 import React from 'react';
 
-import '../locale/locale';
 import Head from '../shared/components/head';
 import Navbar from '../shared/components/navbar/navbar';
 import Footer from '../shared/components/footer';
@@ -15,7 +14,7 @@ function Home ({ t })  {
   <React.Fragment>
     <Head
       title='Ganesh - Home'
-      description={t('description')}
+      description={t('index:description')}
     />
     <Navbar />
     <main>
@@ -23,20 +22,20 @@ function Home ({ t })  {
         <div className='container mx-auto flex flex-col items-center justify-center h-full p-4'>
           <img src='/static/images/logo.svg' className='w-48' alt='Ganesh logo' />
           <h2 className='text-2xl'>
-            <p>{t('description')}</p>
+            <p>{t('index:description')}</p>
           </h2>
         </div>
       </div>
       <section>
         <div className='container mx-auto flex flex-col items-center text-center py-4'>
           <h1 className='text-4xl font-bold py-8 md:py-16 px-4'>
-            {t('extragroup')}
+            {t('index:extragroup')}
           </h1>
           <div className='flex flex-row flex-wrap justify-center pb-8 md:pb-16'>
             <div className='flex flex-column flex-wrap flex-auto w-full md:w-1/2 p-4'>
               <div className='bg-white rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-16 tracking-wide leading-relaxed'>
                 <p align="justify">
-                  {t('mission')}
+                  {t('index:mission')}
                 </p>
                 <button className='btn-primary w-full text-lg font-bold mt-4 md:mt-8'>
                 <a href="/atividades">{t('activities')}</a>
@@ -46,7 +45,7 @@ function Home ({ t })  {
             <div className='flex flex-column flex-wrap flex-auto w-full md:w-1/2 p-4'>
               <div className='bg-white rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-16 tracking-wide leading-relaxed'>
                 <p align="justify">
-                  {t('based')}
+                  {t('index:based')}
                 </p>
                 <button className='btn-primary w-full text-lg font-bold mt-4 md:mt-8'>
                   <a href="https://github.com/ganesh-icmc">Github</a>

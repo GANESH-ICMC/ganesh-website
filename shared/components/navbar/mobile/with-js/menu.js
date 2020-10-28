@@ -54,7 +54,7 @@ export const NavbarMenu = React.forwardRef(({
 
       <li onClick={()=>setIsOpen(s => !s)}>
         <button>
-          {t('about')}.
+          {t('navbar:about')}.
         </button>
         <span
           ref={submenuArrow}
@@ -74,22 +74,22 @@ export const NavbarMenu = React.forwardRef(({
         >
         <li>
           <Link href="/aboutus">
-            <button>{t("aboutus")}</button>
+            <button>{t("navbar:aboutus")}</button>
           </Link>
         </li>
             <li>
               <Link href="/aboutus/icmc">
-                <button>{t("institute")}</button>
+                <button>{t("navbar:institute")}</button>
               </Link>
             </li>
             <li>
               <Link href="/aboutus/usp">
-                <button>{t("university")}</button>
+                <button>{t("navbar:university")}</button>
               </Link>
             </li>
             <li>
               <Link href="https://medium.com/ganeshicmc/">
-                <button>{t("blog")}</button>
+                <button>{t("navbar:blog")}</button>
               </Link>
             </li>
         </ul>
@@ -97,23 +97,23 @@ export const NavbarMenu = React.forwardRef(({
 
       <li>
         <Link href="/frentes">
-        <button>{t("areas")}</button>
+        <button>{t("navbar:areas")}</button>
         </Link>
       </li>
 
       <li>
         <Link href="/atividades">
-        <button>{t("activities")}</button>
+        <button>{t("navbar:activities")}</button>
         </Link>
       </li>
       <li>
         <Link href="/noticias">
-        <button>{t("news")}</button>
+        <button>{t("navbar:news")}</button>
         </Link>
       </li>
       <li>
         <Link href="/contato">
-        <button>{t("contact")}</button>
+        <button>{t("navbar:contact")}</button>
         </Link>
       </li>
 

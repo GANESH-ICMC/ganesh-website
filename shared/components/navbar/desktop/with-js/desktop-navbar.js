@@ -138,22 +138,22 @@ export const DesktopNavbar = React.forwardRef(({
           
           <li href="/aboutus">
             <Link href="/aboutus">
-            <button>{t('aboutus')}</button>
+            <button>{t('navbar:aboutus')}</button>
             </Link>
             <ul className="submenu">
               <li>
                 <Link href="/aboutus/icmc">
-                  <button>{t('institute')}</button>
+                  <button>{t('navbar:institute')}</button>
                 </Link>
               </li>
               <li>
                 <Link href="/aboutus/usp">
-                  <button>{t("university")}</button>
+                  <button>{t("navbar:university")}</button>
                 </Link>
               </li>
               <li>
                 <Link href="https://medium.com/ganeshicmc/">
-                  <button>{t("blog")}</button>
+                  <button>{t("navbar:blog")}</button>
                 </Link>
               </li>
             </ul>
@@ -161,25 +161,25 @@ export const DesktopNavbar = React.forwardRef(({
 
           <li href="/frentes">
             <Link href="/frentes">
-              <button>{t("areas")}</button>
+              <button>{t("navbar:areas")}</button>
             </Link>
           </li>
 
           <li href="/atividades">
             <Link href="/atividades">
-              <button>{t("activities")}</button>
+              <button>{t("navbar:activities")}</button>
             </Link>
           </li>
           
           <li href="/noticias">
             <Link href="/noticias">
-            <button>{t("news")}</button>
+            <button>{t("navbar:news")}</button>
             </Link>
           </li>
 
           <li href="/contato">
             <Link href="/contato">
-            <button>{t("contact")}</button>
+            <button>{t("navbar:contact")}</button>
             </Link>
           </li>
 

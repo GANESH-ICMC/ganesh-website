@@ -1,0 +1,10 @@
+{
+  "cripto"  : "This area focuses on the principles and methods of codification on comunication in order to make information unintelligible to non authorized third parties.",
+  "rev"     : "This area studies assembly languages, computer architectures, reverse engineering techniques, malwares and low level linux systems.",
+  "web"     : "This group studies web vulnerabilities, attack methods, counter measures and mitigation in web services implementations and architetures.",
+  "network" : "This area focuses in the studies of computer networks, contemplating communication protocols, wired and wireless technologies as well as sniffing, DoS, MITM attacks and cryptography stripping.",
+  "tcripto" : "Cryptography",
+  "trev"    : "Reverse Engineering",
+  "tweb"    : "Web Security",
+  "tnetwork": "Network Security"
+}
