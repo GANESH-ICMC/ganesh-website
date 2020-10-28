@@ -153,7 +153,7 @@ export const DesktopNavbar = React.forwardRef(({
               </li>
               <li>
                 <Link href="https://medium.com/ganeshicmc/">
-                  <button>{t("blog")}</button>
+                  <button>{t("navbar:blog")}</button>
                 </Link>
               </li>
             </ul>
