@@ -10,17 +10,22 @@ import navbar_br from "./br/navbar.json"
 import areas_en from "./en/areas.json"
 import areas_br from "./br/areas.json"
 
+import aboutus_en from "./en/aboutus.json"
+import aboutus_br from "./br/aboutus.json"
+
 /*Localization for index page. Use as template.*/
 
 const resources = {
   en: {
     index: index_en,
     navbar: navbar_en,
+    aboutus: aboutus_en,
     areas: areas_en
   },
   br: {
     index: index_br,
     navbar: navbar_br,
+    aboutus: aboutus_br,
     areas: areas_br
   }
 };

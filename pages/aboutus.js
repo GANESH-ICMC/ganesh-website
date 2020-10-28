@@ -4,11 +4,15 @@ import Head from '../shared/components/head';
 import Navbar from '../shared/components/navbar/navbar';
 import Footer from '../shared/components/footer';
 
-const aboutus = () => (
+import { Trans, withTranslation } from 'react-i18next';
+
+function aboutus ({ t }){
+
+return (
   <React.Fragment>
     <Head
       title='Ganesh - About Us'
-      description='Extracurricular group focused on information security.'
+      description={t('index:description')}
     />
     <Navbar />
     <main>
@@ -16,7 +20,7 @@ const aboutus = () => (
         <div className='container mx-auto flex flex-col items-center justify-center h-full p-4'>
           <img src='/static/images/logo.svg' className='w-48' alt='Ganesh logo' />
           <h2 className='text-2xl'>
-            Extracurricular group focused on information security.
+            {t('index:description')}
           </h2>
         </div>
       </div>
@@ -30,7 +34,9 @@ const aboutus = () => (
             <div className='w-full md:w p-4'>
               <div className='bg-white rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-16 tracking-wide leading-relaxed'>
                 <p align="justify">
-                  Ganesh is one of the most venerated gods of hinduism, known as the simple of logical solutions, also referenced as the "Destroyer of Obstacles". Inspired by this divinity and by the growing importance of the security of the information on the context of the current life, some students from ICMC-USP decided to create an extracurricular group in this area. As the principal goal, the group pretends do spread a culture of awereness about the need of protecting data and systems. To do so, <a href="/atividades">activities</a> of research, education and extension related to the theme are realized by the group.
+                  <Trans i18nKey="aboutus:ganesh_god">
+                    Ganesh is one of the most venerated gods of hinduism, known as the simple of logical solutions, also referenced as the "Destroyer of Obstacles". Inspired by this divinity and by the growing importance of the security of the information on the context of the current life, some students from ICMC-USP decided to create an extracurricular group in this area. As the principal goal, the group pretends do spread a culture of awereness about the need of protecting data and systems. To do so, <a href="/atividades">activities</a> of research, education and extension related to the theme are realized by the group.
+                  </Trans>
                 </p>
               </div>
             </div>
@@ -95,4 +101,7 @@ const aboutus = () => (
   </React.Fragment>
 );
 
-export default aboutus;
+}
+
+
+export default withTranslation() (aboutus);
