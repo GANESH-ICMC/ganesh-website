@@ -24,8 +24,8 @@ const Fronts = ({t}) => (
             <div className='flex-auto rounded shadow-md bg-white mx-4'>
               <div className='border-gray-700 border-4 rounded-t h-64 cryptography' />
               <div className='flex flex-col my-2 mx-4'>
-                <span className='text-gray-800 text-lg'><b>{t('tcripto')}</b></span>
-                <span className='text-gray-800 text-base'>{t('cripto')}</span>
+                <span className='text-gray-800 text-lg'><b>{t('areas:tcripto')}</b></span>
+                <span className='text-gray-800 text-base'>{t('areas:cripto')}</span>
               </div>
             </div>
           </li>
@@ -33,8 +33,8 @@ const Fronts = ({t}) => (
             <div className='flex-auto rounded shadow-md bg-white mx-4'>
               <div className='border-gray-700 border-4 rounded-t h-64 networking' />
               <div className='flex flex-col my-2 mx-4'>
-                <span className='text-gray-800 text-lg'><b>{t('tnetwork')}</b></span>
-                  <span className='text-gray-800 text-base'>{t('network')}</span>
+                <span className='text-gray-800 text-lg'><b>{t('areas:tnetwork')}</b></span>
+                  <span className='text-gray-800 text-base'>{t('areas:network')}</span>
               </div>
             </div>
           </li>
@@ -42,9 +42,9 @@ const Fronts = ({t}) => (
             <div className='flex-auto rounded shadow-md bg-white mx-4'>
               <div className='border-gray-700 border-4 rounded-t h-64 reversing'/>
               <div className='flex flex-col my-2 mx-4'>
-                <span className='text-gray-800 text-lg'><b>{t('trev')}</b></span>
+                <span className='text-gray-800 text-lg'><b>{t('areas:trev')}</b></span>
                 <span className='text-gray-800 text-base'>
-                  {t('rev')}
+                  {t('areas:rev')}
                 </span>
               </div>
             </div>
@@ -55,7 +55,7 @@ const Fronts = ({t}) => (
               <div className='flex flex-col my-2 mx-4'>
                 <span className='text-gray-800 text-lg'><b>{t('tweb')}</b></span>
                 <span className='text-gray-800 text-base'>
-                  {t('web')}
+                  {t('areas:web')}
                 </span>
               </div>
             </div>
