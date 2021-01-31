@@ -7,13 +7,17 @@ import index_br from "./br/index.json"
 import navbar_en from "./en/navbar.json"
 import navbar_br from "./br/navbar.json"
 
-
 import areas_en from "./en/areas.json"
 import areas_br from "./br/areas.json"
 
 import aboutus_en from "./en/aboutus.json"
 import aboutus_br from "./br/aboutus.json"
 
+import usp_en from "./en/usp.json"
+import usp_br from "./br/usp.json"
+
+import icmc_en from "./en/icmc.json"
+import icmc_br from "./br/icmc.json"
 /*Localization for index page. Use as template.*/
 
 const resources = {
@@ -21,13 +25,17 @@ const resources = {
     index: index_en,
     navbar: navbar_en,
     aboutus: aboutus_en,
-    areas: areas_en
+    areas: areas_en,
+    usp: usp_en,
+    icmc: icmc_en
   },
   br: {
     index: index_br,
     navbar: navbar_br,
     aboutus: aboutus_br,
-    areas: areas_br
+    areas: areas_br,
+    usp: usp_br,
+    icmc: icmc_br
   }
 };
 
