@@ -44,20 +44,24 @@ return (
             <div className='w-full md:w-1/2 p-4'>
               <div className='bg-white rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-16 tracking-wide leading-relaxed'>
                 <p align="justify">
-                  With the formal start in 2017, the group has been seeking to learn and teach the most it can about security in general.
+                  <Trans i18nKey="aboutus:formal_start">
+                    With the formal start in 2017, the group has been seeking to learn and teach the most it can about security in general.
+                  </Trans>
                 </p>
                 <p align="justify">
-                  To do so, we are organized in five main study and research areas, they are: Cryptography, Network Security, Privacy and GDPR, Reverse Engineering and Web Security. Each of them is described with more details in the respective <a href="/frentes">area page.</a>
+                  <Trans i18nKey="aboutus:group_areas">
+                  To do so, we are organized in five main study and research areas, they are: Cryptography, Network Security, Privacy and GDPR, Reverse Engineering and Web Security. Each of them is described with more details in the respective</Trans> <a href="/frentes"><Trans i18nKey="aboutus:area_page">area page.</Trans></a>
                 </p>
               </div>
             </div>
             <div className='w-full md:w-1/2 p-4'>
               <div className='bg-white rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-16 tracking-wide leading-relaxed'>
                 <p align="justify">
-                  The group is a non lucrative association and it is open to partnerships. It is mainly formed by undergraduation students of the <a href="/aboutus/usp">University Of São Paulo</a> and located in São Carlos, Brazil, although it is open to the participation of external colaborators if they wish to do so. 
+                  <Trans i18nKey="aboutus:non_lucrative">
+                  The group is a non lucrative association and it is open to partnerships. It is mainly formed by undergraduation students of the </Trans><a href="/aboutus/usp"><Trans i18nKey="aboutus:usp">University Of São Paulo</Trans></a> <Trans i18nKey="aboutus:location">and located in São Carlos, Brazil, although it is open to the participation of external colaborators if they wish to do so.</Trans>
                 </p>
                 <p align="justify"> 
-                  In order to make the knowledge gained by the group public, most of our materials are currently stored at our <a href="https://github.com/ganesh-icmc">Github</a>.
+                  <Trans i18nKey="aboutus:knowledge">In order to make the knowledge gained by the group public, most of our materials are currently stored at our</Trans> <a href="https://github.com/ganesh-icmc"> Github</a>.
                 </p>
               </div>
             </div>
