@@ -42,7 +42,7 @@ return (
 
                     <p>The university was founded in 1934, regrouping already existing schools in the state of São Paulo, such as the Faculdade de Direito do Largo de São Francisco (Faculty of Law), the Escola Politécnica (Engineering School) and the Escola Superior de Agricultura Luiz de Queiroz (College of Agriculture). The university's foundation is marked by the creation in 1934 of the Faculdade de Filosofia, Ciências e Letras (Faculty of Philosophy, Sciences and Letters, 1934-1968), and has subsequently created new departments, becoming one of the largest institutions of higher education in Latin America, with approximately 90,000 enrolled students. Currently, it has eleven campuses, four of them in the city of São Paulo. The remaining campuses are in the cities of Bauru, Lorena, Piracicaba, Pirassununga, Ribeirão Preto and two in São Carlos.</p>
                   </Trans>
-                </p>.
+                </p>
               </div>
             </div>
             
