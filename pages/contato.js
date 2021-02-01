@@ -14,13 +14,6 @@ class Contact extends Component {
     }
   }
 
-  sendEmail = _ => {
-    const { email } = this.state;
-    console.log("Trying to send email");
-    fetch('http://127.0.0.1:9999/send-email?sender=${email.sender}&topic=${email.topic}&text=${email.text}')
-    .catch(err => console.log(err))
-  }
-
   render() {
     const { email } = this.state;
     return (
@@ -37,8 +30,8 @@ class Contact extends Component {
             <div className="container mx-auto px-4 py-8">
               <div className="flex bg-white my-4 rounded-lg shadow-md">
                 <div className="p-2 xl:p-4">
-                  <div class="fb-page">
-                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FganeshICMC&tabs=messages%2Ctimeline%2Cevents&width=200&height=400&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="200" height="400" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                  <div className="fb-page">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FganeshICMC&tabs=messages%2Ctimeline%2Cevents&width=200&height=400&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="200" height="400" scrolling="no" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                   </div>
                   <p className="hidden lg:block text-sm contact-a">
                     <a href="https://github.com/GANESH-ICMC" target="_blank">Github</a>
@@ -50,30 +43,30 @@ class Contact extends Component {
                     Visit our social pages or e-mail us.
                   </h2>
                   <p className="text-sm">
-                    <form action="http://ganesh.icmc.usp.br:9999/send-email" method="get" className="form">
+                    <form action="http://localhost:3000/api/contact/email" method="post" className="form">
                       <div className="text-input">
-                        <label for="form-contact-mail">Your e-mail:</label>
+                        <label htmlFor="form-contact-mail">Your e-mail:</label>
                         <span>
                           <input type="email" name="sender" id="form-contact-mail" required="required"
                           onChange={e => this.setState({email: { ...email, sender: e.target.value} })} />
                         </span>
                       </div>
                       <div className="text-input">
-                        <label for="form-contact-subject">Subject:</label>
+                        <label htmlFor="form-contact-subject">Subject:</label>
                         <span>
                           <input type="text" name="topic" id="form-contact-subject" required="required"
                           onChange={e => this.setState({email: { ...email, subject: e.target.value} })}   />
                         </span>
                       </div>
                       <div className="textarea-input">
-                        <label for="form-contact-body">Message:</label>
+                        <label htmlFor="form-contact-body">Message:</label>
                         <span>
                           <textarea name="text" id="form-contact-body" required="required"
                           onChange={e => this.setState({email: { ...email, text: e.target.value} })} ></textarea>
                         </span>
                       </div>
                       <div className="submit-input">
-                        <button type="submit" onclick={this.sendEmail}>Send &#187;</button>
+                        <button type="submit">Send &#187;</button>
                       </div>
                     </form>
                   </p>
