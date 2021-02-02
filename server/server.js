@@ -1,9 +1,3 @@
-// const express = require('express');
-// const cors = require('cors')
-
-
-// app.listen(9999, () => console.log("Running on port 9999"));
-
 const express = require('express');
 const cors = require('cors');
 const next = require('next');
@@ -19,7 +13,6 @@ const PORT = process.env.port || 3000;
 app.prepare().then(() => {
   const server = express();
 
-  // server.use(express.json());
   server.use(express.urlencoded({ extended: true })); // allows parsing html forms content from post request
   server.use(cors());
 

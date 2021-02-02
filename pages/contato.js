@@ -5,6 +5,8 @@ import Head from '../shared/components/head';
 import Navbar from '../shared/components/navbar/navbar';
 import Footer from '../shared/components/footer';
 
+import { loadScriptFromURL } from '../shared/load_script';
+
 class Contact extends Component {
   state = {
     email: {
@@ -14,8 +16,18 @@ class Contact extends Component {
     }
   }
 
+  componentDidMount() {
+    loadScriptFromURL("https://www.google.com/recaptcha/api.js");
+    window.onSubmit = this.onSubmit;
+  }
+
+  onSubmit(token) {
+    document.getElementById("contact-form").submit();
+  }
+
   render() {
     const { email } = this.state;
+
     return (
       <React.Fragment>
         <Head
@@ -42,8 +54,7 @@ class Contact extends Component {
                   <h2 className="news-title sm:text-lg">
                     Visit our social pages or e-mail us.
                   </h2>
-                  <p className="text-sm">
-                    <form action="http://localhost:3000/api/contact/email" method="post" className="form">
+                    <form action="http://127.0.0.1:3000/api/contact/email" method="post" className="form" id="contact-form">
                       <div className="text-input">
                         <label htmlFor="form-contact-mail">Your e-mail:</label>
                         <span>
@@ -65,11 +76,22 @@ class Contact extends Component {
                           onChange={e => this.setState({email: { ...email, text: e.target.value} })} ></textarea>
                         </span>
                       </div>
+                      <div className="text-input" style={{display: "none"}}>
+                        <label htmlFor="form-contact-captcha">Captcha:</label>
+                        <span>
+                          <textarea name="g-recaptcha-response" id="g-recaptcha-response" required="required"></textarea>
+                        </span>
+                      </div>
                       <div className="submit-input">
-                        <button type="submit">Send &#187;</button>
+                        <button type="submit" 
+                                className="g-recaptcha" 
+                                data-sitekey={process.env.CAPTCHA_SITE_KEY} // weird warning on client: "Warning: Extra attributes from the server: data-sitekey"
+                                data-callback="onSubmit"
+                                data-action='submit'>
+                                  Send &#187;
+                        </button>
                       </div>
                     </form>
-                  </p>
                 </div>
               </div>
             </div>
