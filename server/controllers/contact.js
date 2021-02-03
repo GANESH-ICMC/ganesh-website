@@ -38,7 +38,7 @@ const email = async (req, res) => {
     return res.status(400).send();
   }
   
-  const captchaResult = await validateCaptcha(CAPTCHA_SERVER_KEY, userCaptchaToken[0]);
+  const captchaResult = await validateCaptcha(CAPTCHA_SERVER_KEY, userCaptchaToken);
   if (captchaResult === RESPONSES.WRONG_TOKEN) {
     return res.status(400).send();
   } else if (captchaResult === RESPONSES.SERVER_ERROR) {
