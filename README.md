@@ -20,6 +20,3 @@ npm start
 - Insert news related to the group (2020)
 
 Check the issues for updated activities to be done.
-
-### Optional
-- Link the group blog at navbar
