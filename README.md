@@ -29,7 +29,3 @@ npm start
 - Fix the "email sent" message styling in contact page. It's really ugly right now.
 
 Check the issues for updated activities to be done.
-
-### Optional
-
-- Link the group blog at navbar
