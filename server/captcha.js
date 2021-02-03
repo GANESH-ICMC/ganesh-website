@@ -9,6 +9,8 @@ const validateCaptcha = async (key, token) => {
     const captchaResult = await axios.post(captchaURL, {});
 
     if (!captchaResult.data.success) {
+      console.log(`CAPTCHA: ${captchaResult.data}`);
+
       // User sent the wrong captcha token
       return RESPONSES.WRONG_TOKEN;
     }

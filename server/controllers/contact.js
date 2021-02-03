@@ -33,6 +33,8 @@ const email = async (req, res) => {
   const { sender, topic, text, 'g-recaptcha-response': userCaptchaToken } = req.body;
 
   if (!sender || !topic || !text || !userCaptchaToken) {
+    console.log('EMAIL: Missing something in request');
+    console.log(`sender:${sender} topic:${topic} text:${text} token:${userCaptchaToken}`)
     return res.status(400).send();
   }
   
