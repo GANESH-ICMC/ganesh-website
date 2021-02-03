@@ -8,38 +8,48 @@ import Footer from '../shared/components/footer';
 import { loadScriptFromURL } from '../shared/load_script';
 
 class Contact extends Component {
-  state = {
-    email: {
-      sender: '',
-      subject: '',
-      text: ''
-    }
-  }
-
   componentDidMount() {
     loadScriptFromURL("https://www.google.com/recaptcha/api.js");
     window.onSubmit = this.onSubmit;
+    window.checkMissingField = this.checkMissingField;
+  }
+
+  checkMissingField() {
+    var email = document.getElementById("form-contact-mail").value;
+    var subject = document.getElementById("form-contact-subject").value;
+    var message = document.getElementById("form-contact-body").value;
+
+    if (!email || !subject || !message) {
+      return true;
+    }
+    return false;
   }
 
   onSubmit(token) {
+    document.getElementById("contact-form-msg-success").style.display = 'none';
+    document.getElementById("contact-form-msg-error").style.display = 'none';
+    document.getElementById("contact-form-msg-required").style.display = 'none';
+
+    if (checkMissingField()) {
+      document.getElementById("contact-form-msg-required").style.display = 'inline-block';
+      return;
+    }
+
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "api/contact/email"); 
     xhr.onload = function(event) { 	
       if (xhr.status === 200) {
         document.getElementById("contact-form").reset();
-        document.getElementById("contact-form-msg").innerHTML = "Email sent. Thank you very much for your interest!"
+        document.getElementById("contact-form-msg-success").style.display = 'inline-block';
       } else {
-        document.getElementById("contact-form-msg").innerHTML = "Something went wrong. Please try again."
+        document.getElementById("contact-form-msg-error").style.display = 'inline-block';
       }
-      document.getElementById("contact-form-msg").style.display = 'inline-block';
     }; 
     var formData = new FormData(document.getElementById("contact-form"));
     xhr.send(formData);
   }
 
   render() {
-    const { email } = this.state;
-
     return (
       <React.Fragment>
         <Head
@@ -70,22 +80,19 @@ class Contact extends Component {
                       <div className="text-input">
                         <label htmlFor="form-contact-mail">Your e-mail:</label>
                         <span>
-                          <input type="email" name="sender" id="form-contact-mail" required="required"
-                          onChange={e => this.setState({email: { ...email, sender: e.target.value} })} />
+                          <input type="email" name="sender" id="form-contact-mail" required="required" />
                         </span>
                       </div>
                       <div className="text-input">
                         <label htmlFor="form-contact-subject">Subject:</label>
                         <span>
-                          <input type="text" name="topic" id="form-contact-subject" required="required"
-                          onChange={e => this.setState({email: { ...email, subject: e.target.value} })}   />
+                          <input type="text" name="topic" id="form-contact-subject" required="required" />
                         </span>
                       </div>
                       <div className="textarea-input">
                         <label htmlFor="form-contact-body">Message:</label>
                         <span>
-                          <textarea name="text" id="form-contact-body" required="required"
-                          onChange={e => this.setState({email: { ...email, text: e.target.value} })} ></textarea>
+                          <textarea name="text" id="form-contact-body" required="required"></textarea>
                         </span>
                       </div>
                       <div className="text-input" style={{display: "none"}}>
@@ -97,13 +104,27 @@ class Contact extends Component {
                       <div className="submit-input">
                         <button type="submit" 
                                 className="g-recaptcha" 
-                                data-sitekey={process.env.CAPTCHA_SITE_KEY}
+                                data-sitekey="6LdZzEYaAAAAALHY-vNI5efmMURk-eLvKstUmZsA" // Remember to update this
                                 data-callback="onSubmit"
                                 data-action='submit'>
                                   Send &#187;
                         </button>
                       </div>
-                      <div id="contact-form-msg" className='bg-gray-300 rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-4' style={{display: "none"}}></div>
+                      <div id="contact-form-msg-success" className='bg-gray-300 rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-4' style={{display: "none"}}>
+                        <span>
+                          <p>Email sent. Thank you very much for your interest!</p>
+                        </span>
+                      </div>
+                      <div id="contact-form-msg-error" className='bg-gray-300 rounded-lg shadow-md font-bold text-red-700 flex flex-col items-center justify-center p-8 md:p-4' style={{display: "none"}}>
+                        <span>
+                          <p>Something went wrong. Please try again.</p>
+                        </span>
+                      </div>
+                      <div id="contact-form-msg-required" className='bg-gray-300 rounded-lg shadow-md font-bold flex text-red-700 flex-col items-center justify-center p-8 md:p-4' style={{display: "none"}}>
+                        <span>
+                          <p>All fields are required.</p>
+                        </span>
+                      </div>
                     </form>
                 </div>
               </div>

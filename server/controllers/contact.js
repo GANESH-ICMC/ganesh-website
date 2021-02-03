@@ -31,6 +31,10 @@ const sendEmail = async (to, from, subject, text) => {
 
 const email = async (req, res) => {
   const { sender, topic, text, 'g-recaptcha-response': userCaptchaToken } = req.body;
+
+  if (!sender || !topic || !text || !userCaptchaToken) {
+    return res.status(400).send();
+  }
   
   const captchaResult = await validateCaptcha(CAPTCHA_SERVER_KEY, userCaptchaToken[0]);
   if (captchaResult === RESPONSES.WRONG_TOKEN) {

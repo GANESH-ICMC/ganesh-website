@@ -4,7 +4,9 @@ New Ganesh website (In construction)
 
 ## Building
 
-Remember to set the env variables. All of them are documented in [.env.template](.env.template)
+Remember to set the env variables. All of them are documented in [.env.template](.env.template).
+
+Also, change the site api key in [contato.js](pages/contato.js).
 
 After that, to build the project:
 
