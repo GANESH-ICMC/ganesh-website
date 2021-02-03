@@ -104,7 +104,7 @@ class Contact extends Component {
                       <div className="submit-input">
                         <button type="submit" 
                                 className="g-recaptcha" 
-                                data-sitekey="6LdZzEYaAAAAALHY-vNI5efmMURk-eLvKstUmZsA" // Remember to update this
+                                data-sitekey="6LfAlEgaAAAAAJ4GFmybrmC2ByuG76zu30aCfE1J"
                                 data-callback="onSubmit"
                                 data-action='submit'>
                                   Send &#187;
