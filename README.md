@@ -24,6 +24,7 @@ npm start
 - Investigate mobile firefox bug (page not working sometimes)
 - Insert (new) activities of the group (2020)
 - Insert news related to the group (2020)
+- Fix the "email sent" message styling in contact page. It's really ugly right now.
 
 Check the issues for updated activities to be done.
 

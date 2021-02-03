@@ -22,7 +22,19 @@ class Contact extends Component {
   }
 
   onSubmit(token) {
-    document.getElementById("contact-form").submit();
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "api/contact/email"); 
+    xhr.onload = function(event) { 	
+      if (xhr.status === 200) {
+        document.getElementById("contact-form").reset();
+        document.getElementById("contact-form-msg").innerHTML = "Email sent. Thank you very much for your interest!"
+      } else {
+        document.getElementById("contact-form-msg").innerHTML = "Something went wrong. Please try again."
+      }
+      document.getElementById("contact-form-msg").style.display = 'inline-block';
+    }; 
+    var formData = new FormData(document.getElementById("contact-form"));
+    xhr.send(formData);
   }
 
   render() {
@@ -54,7 +66,7 @@ class Contact extends Component {
                   <h2 className="news-title sm:text-lg">
                     Visit our social pages or e-mail us.
                   </h2>
-                    <form action="http://127.0.0.1:3000/api/contact/email" method="post" className="form" id="contact-form">
+                    <form action="/api/contact/email" method="post" className="form" id="contact-form">
                       <div className="text-input">
                         <label htmlFor="form-contact-mail">Your e-mail:</label>
                         <span>
@@ -85,12 +97,13 @@ class Contact extends Component {
                       <div className="submit-input">
                         <button type="submit" 
                                 className="g-recaptcha" 
-                                data-sitekey={process.env.CAPTCHA_SITE_KEY} // weird warning on client: "Warning: Extra attributes from the server: data-sitekey"
+                                data-sitekey={process.env.CAPTCHA_SITE_KEY}
                                 data-callback="onSubmit"
                                 data-action='submit'>
                                   Send &#187;
                         </button>
                       </div>
+                      <div id="contact-form-msg" className='bg-gray-300 rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-4' style={{display: "none"}}></div>
                     </form>
                 </div>
               </div>
