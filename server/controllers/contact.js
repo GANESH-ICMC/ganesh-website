@@ -3,10 +3,7 @@ const sgMail = require('@sendgrid/mail');
 const { validateCaptcha } = require('../captcha');
 const { RESPONSES } = require('../responses');
 
-// echo "export SENDGRID_API_KEY='YOUR_API_KEY'" > sendgrid.env
-// echo "sendgrid.env" >> .gitignore
-// source ./sendgrid.env
-sgMail.setApiKey(process.env.SENDGRID_API_KEY); // If this doesn't work check if the key is at the env
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const CAPTCHA_SERVER_KEY = process.env.CAPTCHA_SERVER_KEY;
 

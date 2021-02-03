@@ -8,4 +8,4 @@
 /out
 
 # Creds
-/server/sendgrid.env
+.env
