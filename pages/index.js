@@ -38,7 +38,7 @@ function Home ({ t })  {
                   {t('index:mission')}
                 </p>
                 <button className='btn-primary w-full text-lg font-bold mt-4 md:mt-8'>
-                <a href="/atividades">{t('activities')}</a>
+                <a href="/atividades">{t('index:activities')}</a>
                 </button>
               </div>
             </div>
