@@ -29,7 +29,8 @@ function Bloco({title, description, date, imagesrc, link}) {
             link ? <a className='text-gray-bold text-lg' style={{fontWeight: "bold", cursor: "pointer"}} href={link} >{title}</a> :
             <span className='text-gray-bold text-lg' style={{fontWeight: "bold"}}>{title}</span>
           }
-          <span className='text-gray-800 text-base' style={{fontWeight: "400"}}>{date} - {description}</span>
+          <span className='text-gray-600 text-base' style={{fontSize: "15px"}}>{date}</span>
+          <span className='text-gray-800 text-base' style={{fontWeight: "400"}}>{description}</span>
         </div>
       </div>
   );
