@@ -53,7 +53,7 @@ const Fronts = ({t}) => (
             <div className='flex-auto rounded shadow-md bg-white mx-4'>
               <div className='border-gray-700 border-4 rounded-t h-64 web' />
               <div className='flex flex-col my-2 mx-4'>
-                <span className='text-gray-800 text-lg'><b>{t('tweb')}</b></span>
+                <span className='text-gray-800 text-lg'><b>{t('areas:tweb')}</b></span>
                 <span className='text-gray-800 text-base'>
                   {t('areas:web')}
                 </span>
