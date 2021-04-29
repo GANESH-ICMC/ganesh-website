@@ -10,31 +10,13 @@ import { loadScriptFromURL } from '../shared/load_script';
 class Contact extends Component {
   componentDidMount() {
     loadScriptFromURL("https://www.google.com/recaptcha/api.js");
-    window.onSubmit = this.onSubmit;
-    window.checkMissingField = this.checkMissingField;
+    
+    document.getElementById("contact-form").addEventListener('submit', this.formSubmit);
+
+    window.sendEmail = this.sendEmail;
   }
 
-  checkMissingField() {
-    var email = document.getElementById("form-contact-mail").value;
-    var subject = document.getElementById("form-contact-subject").value;
-    var message = document.getElementById("form-contact-body").value;
-
-    if (!email || !subject || !message) {
-      return true;
-    }
-    return false;
-  }
-
-  onSubmit(token) {
-    document.getElementById("contact-form-msg-success").style.display = 'none';
-    document.getElementById("contact-form-msg-error").style.display = 'none';
-    document.getElementById("contact-form-msg-required").style.display = 'none';
-
-    if (checkMissingField()) {
-      document.getElementById("contact-form-msg-required").style.display = 'inline-block';
-      return;
-    }
-
+  sendEmail() {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "api/contact/email"); 
     xhr.onload = function(event) { 	
@@ -44,9 +26,22 @@ class Contact extends Component {
       } else {
         document.getElementById("contact-form-msg-error").style.display = 'inline-block';
       }
+      
+      grecaptcha.reset();
+      document.getElementById("form-contact-button").disabled = false;
     }; 
     var formData = new FormData(document.getElementById("contact-form"));
     xhr.send(formData);
+  }
+
+  formSubmit(e) {
+    e.preventDefault();
+
+    document.getElementById("contact-form-msg-success").style.display = 'none';
+    document.getElementById("contact-form-msg-error").style.display = 'none';
+    document.getElementById("form-contact-button").disabled = true;
+
+    grecaptcha.execute();
   }
 
   render() {
@@ -95,35 +90,25 @@ class Contact extends Component {
                           <textarea name="text" id="form-contact-body" required="required"></textarea>
                         </span>
                       </div>
-                      <div className="text-input" style={{display: "none"}}>
-                        <label htmlFor="form-contact-captcha">Captcha:</label>
-                        <span>
-                          <textarea name="g-recaptcha-response" id="g-recaptcha-response" required="required"></textarea>
-                        </span>
+                      <div className="g-recaptcha"
+                          data-sitekey="6Lf1S6AaAAAAAPol7TZH0VCmlPFnFQCRBRYXlmRv"
+                          data-callback="sendEmail"
+                          data-size="invisible">
                       </div>
                       <div className="submit-input">
-                        <button type="submit" 
-                                className="g-recaptcha" 
-                                data-sitekey="6LfAlEgaAAAAAJ4GFmybrmC2ByuG76zu30aCfE1J"
-                                data-callback="onSubmit"
-                                data-action='submit'>
-                                  Send &#187;
-                        </button>
+                        <button type="submit" id="form-contact-button">Send &#187;</button>
                       </div>
-                      <div id="contact-form-msg-success" className='bg-gray-300 rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-4' style={{display: "none"}}>
-                        <span>
-                          <p>Email sent. Thank you very much for your interest!</p>
-                        </span>
-                      </div>
-                      <div id="contact-form-msg-error" className='bg-gray-300 rounded-lg shadow-md font-bold text-red-700 flex flex-col items-center justify-center p-8 md:p-4' style={{display: "none"}}>
-                        <span>
-                          <p>Something went wrong. Please try again.</p>
-                        </span>
-                      </div>
-                      <div id="contact-form-msg-required" className='bg-gray-300 rounded-lg shadow-md font-bold flex text-red-700 flex-col items-center justify-center p-8 md:p-4' style={{display: "none"}}>
-                        <span>
-                          <p>All fields are required.</p>
-                        </span>
+                      <div className="reply-input">
+                        <div id="contact-form-msg-success" className='bg-gray-300 rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-4' style={{display: "none"}}>
+                          <span>
+                            <p>Email sent. Thank you very much for your interest!</p>
+                          </span>
+                        </div>
+                        <div id="contact-form-msg-error" className='bg-gray-300 rounded-lg shadow-md font-bold text-red-700 flex flex-col items-center justify-center p-8 md:p-4' style={{display: "none"}}>
+                          <span>
+                            <p>Something went wrong. Please try again.</p>
+                          </span>
+                        </div>
                       </div>
                     </form>
                 </div>
@@ -199,6 +184,9 @@ class Contact extends Component {
               .form .submit-input button:hover {
                 color: rgb(0, 0, 0);
                 background-color: rgb(66, 220, 163);
+              }
+              .form .reply-input {
+                text-align: center;
               }
               .fb-page, .fb-page * {
                 position: static !important;
