@@ -91,7 +91,7 @@ class Contact extends Component {
                         </span>
                       </div>
                       <div className="g-recaptcha"
-                          data-sitekey="6LeRs0gaAAAAAHyKc0txhg2KNCaRYEjTp4G9EOZr"
+                          data-sitekey="6Lf1S6AaAAAAAPol7TZH0VCmlPFnFQCRBRYXlmRv"
                           data-callback="sendEmail"
                           data-size="invisible">
                       </div>
