@@ -21,6 +21,9 @@ import icmc_br from "./br/icmc.json"
 
 import activities_en from "./en/activities.json"
 import activities_br from "./br/activities.json"
+
+import news_en from "./en/news.json"
+import news_br from "./br/news.json"
 /*Localization for index page. Use as template.*/
 
 
@@ -32,7 +35,8 @@ const resources = {
     areas: areas_en,
     usp: usp_en,
     icmc: icmc_en,
-		activities: activities_en
+    activities: activities_en,
+    news: news_en
   },
   br: {
     index: index_br,
@@ -41,7 +45,8 @@ const resources = {
     areas: areas_br,
     usp: usp_br,
     icmc: icmc_br,
-		activities: activities_br
+		activities: activities_br,
+    news: news_br
   }
 };
 
