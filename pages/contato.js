@@ -5,6 +5,10 @@ import Head from '../shared/components/head';
 import Navbar from '../shared/components/navbar/navbar';
 import Footer from '../shared/components/footer';
 
+import {Trans, withTranslation} from 'react-i18next';
+
+
+
 import { loadScriptFromURL } from '../shared/load_script';
 
 class Contact extends Component {
@@ -45,6 +49,7 @@ class Contact extends Component {
   }
 
   render() {
+    const { t } = this.props;
     return (
       <React.Fragment>
         <Head
@@ -54,7 +59,7 @@ class Contact extends Component {
         <Navbar />
           <main>
             <div className="flex justify-center items-center bg-fixed bg-cover bg-center container-top shadow-md">
-              <h1 className="text-4xl text-center text-white">Contact</h1>
+              <h1 className="text-4xl text-center text-white"><Trans i18nKey="contact:title">Contact</Trans></h1>
             </div>
             <div className="container mx-auto px-4 py-8">
               <div className="flex bg-white my-4 rounded-lg shadow-md">
@@ -68,24 +73,24 @@ class Contact extends Component {
                   </p>
                 </div>
                 <div className="py-2 pr-2 xl:py-4 xl:pr-4 contact-form">
-                  <h2 className="news-title sm:text-lg">
+                  <h2 className="news-title sm:text-lg"> <Trans i18nKey="contact:visitsocial">
                     Visit our social pages or e-mail us.
-                  </h2>
+                  </Trans></h2>
                     <form action="/api/contact/email" method="post" className="form" id="contact-form">
                       <div className="text-input">
-                        <label htmlFor="form-contact-mail">Your e-mail:</label>
+                        <label htmlFor="form-contact-mail"><Trans i18nKey="contact:email">Your e-mail:</Trans></label>
                         <span>
                           <input type="email" name="sender" id="form-contact-mail" required="required" />
                         </span>
                       </div>
                       <div className="text-input">
-                        <label htmlFor="form-contact-subject">Subject:</label>
+                        <label htmlFor="form-contact-subject"><Trans i18nKey="contact:subject">Subject:</Trans></label>
                         <span>
                           <input type="text" name="topic" id="form-contact-subject" required="required" />
                         </span>
                       </div>
                       <div className="textarea-input">
-                        <label htmlFor="form-contact-body">Message:</label>
+                        <label htmlFor="form-contact-body"><Trans i18nKey="contact:message">Message:</Trans></label>
                         <span>
                           <textarea name="text" id="form-contact-body" required="required"></textarea>
                         </span>
@@ -260,4 +265,5 @@ class Contact extends Component {
   }
 }
 
-export default Contact;
+//export default Contact;
+export default withTranslation()(Contact);
