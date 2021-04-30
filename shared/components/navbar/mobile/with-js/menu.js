@@ -14,6 +14,7 @@ export const NavbarMenu = React.forwardRef(({
   let submenuArrow = React.useRef();
   let submenu = React.useRef({originalHeight: 10});
   const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpenLanguage, setIsOpenLanguage] = React.useState(false);
 
   React.useEffect(()=>{
     if(isOpen){
@@ -54,7 +55,7 @@ export const NavbarMenu = React.forwardRef(({
 
       <li onClick={()=>setIsOpen(s => !s)}>
         <button>
-          {t('navbar:about')}.
+          {t('navbar:about')}
         </button>
         <span
           ref={submenuArrow}
@@ -117,16 +118,40 @@ export const NavbarMenu = React.forwardRef(({
         </Link>
       </li>
 
-      <li>
-          <button onClick={
-            () => i18n.changeLanguage("br")
-          }>Português BR</button>
+    
+      <li onClick={()=>setIsOpenLanguage(s => !s)}>
+      <button>
+        {'🇧🇷/🇬🇧'}
+      </button>
+      <span
+        ref={submenuArrow}
+        style={{
+          transition: `transform ${animationTime}ms linear`,
+          transform: `rotate(${isOpenLanguage? 90 : 0}deg)`,
+      }}>
+            ⮞
+        </span>
+      <ul
+        className="submenu"
+        ref={submenu}
+        style={{
+          transition: `height 200ms linear`,
+          height: `${isOpenLanguage? submenu.current.originalHeight : 0}px`,
+        }}
+      >
+        <li>
+            <button onClick={
+              () => i18n.changeLanguage("br")
+            }>Português BR</button>
+        </li>
+        <li>
+            <button onClick={
+              () => i18n.changeLanguage("en")
+            }>English</button>
+        </li>
+      </ul>
       </li>
-      <li>
-          <button onClick={
-            () => i18n.changeLanguage("en")
-          }>English</button>
-      </li>
+
     </ul>
   );
 });
