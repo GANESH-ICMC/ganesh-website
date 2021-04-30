@@ -13,6 +13,7 @@ export const NavbarMenu = React.forwardRef(({
   list = list || React.useRef();
   let submenuArrow = React.useRef();
   let submenu = React.useRef({originalHeight: 10});
+  let submenuLanguage = React.useRef({originalHeight: 10});
   const [isOpen, setIsOpen] = React.useState(false);
   const [isOpenLanguage, setIsOpenLanguage] = React.useState(false);
 
@@ -32,6 +33,13 @@ export const NavbarMenu = React.forwardRef(({
       submenu.current.originalHeight = submenu.current.clientHeight;
       submenu.current.style.height = buffer;
       submenu.current.style.display = "";
+
+      submenuLanguage.current.style.display = "block";
+      const buffer2 = submenuLanguage.current.style.height;
+      submenuLanguage.current.style.height = "";
+      submenuLanguage.current.originalHeight = submenuLanguage.current.clientHeight;
+      submenuLanguage.current.style.height = buffer2;
+      submenuLanguage.current.style.display = "";
     });
   }, []);
 
@@ -133,10 +141,10 @@ export const NavbarMenu = React.forwardRef(({
         </span>
       <ul
         className="submenu"
-        ref={submenu}
+        ref={submenuLanguage}
         style={{
           transition: `height 200ms linear`,
-          height: `${isOpenLanguage? submenu.current.originalHeight : 0}px`,
+          height: `${isOpenLanguage? submenuLanguage.current.originalHeight : 0}px`,
         }}
       >
         <li>
