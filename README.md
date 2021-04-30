@@ -21,6 +21,15 @@ and to run
 npm start
 ```
 
+### Docker
+
+To deploy it using Docker:
+
+```bash
+docker build -t ganesh-website .
+docker run -d -p 3000:3000 ganesh-website # change the port binding to the correct one (or use Nginx to configure it)
+```
+
 ## Todo List
 
 - Investigate mobile firefox bug (page not working sometimes)
