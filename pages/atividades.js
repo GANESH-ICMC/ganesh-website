@@ -1,6 +1,7 @@
 import React from 'react';
 import { Component, useState } from 'react';
 
+
 import i18n from '../locale/locale.js';
 import { Trans, withTranslation, useTranslation } from 'react-i18next';
 
@@ -11,8 +12,10 @@ import Footer from '../shared/components/footer';
 /* import '../public/static/styles/style.css'*/ 
 
 function Bloco({title, description, date, imagesrc, link}) {
+	const { t, i18n } = useTranslation();
+
   return (
-      <div className='rounded shadow-md bg-white mx-4' style={{height: "100%"}}>
+      <div className='rounded shadow-md bg-white mx-4' style={{height: "100%", display: "flex", flexFlow: "column nowrap"}}>
         <div className = 'border-gray-700 border-4 rounded-t h-64 '>
           <img  src = {imagesrc}
                 style = {
@@ -24,18 +27,19 @@ function Bloco({title, description, date, imagesrc, link}) {
                 }
           />
         </div>
-        <div className='flex flex-col my-2 mx-4' style={{padding: "5px"}}>
+        <div className='flex flex-col my-2 mx-4' style={{padding: "5px", flexGrow: 1}}>
           {
-            link ? <a className='text-gray-bold text-lg' style={{fontWeight: "bold", cursor: "pointer"}} href={link} >{title}</a> :
+            link ? <a className='text-gray-bold text-lg' style={{fontWeight: "bold", cursor: "pointer"}} href={link} target="_blank">{title}</a> :
             <span className='text-gray-bold text-lg' style={{fontWeight: "bold"}}>{title}</span>
           }
           <span className='text-gray-600 text-base' style={{fontSize: "15px"}}>{date}</span>
-          <span className='text-gray-800 text-base' style={{fontWeight: "400"}}>{description}</span>
+          <span className='text-gray-800 text-base' style={{fontWeight: "400", flexGrow: 1}}>{description}</span>
+
+	        <button id="card-button" className="btn btn-primary flex-end" type="button" style={{marginTop:"16px"}}><a href={link} target="_blank">{t('activities:seemore')}</a></button>
         </div>
       </div>
   );
 }
-
 
 function App() {
 	const { t, i18n } = useTranslation();
