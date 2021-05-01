@@ -64,3 +64,21 @@ footer {
     width: 200px;
   }
 }
+
+.FAQ__question {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+}
+
+.FAQ__question:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.FAQ__answer--hidden {
+  display: none;
+}
+
