@@ -35,7 +35,7 @@ function Bloco({title, description, date, imagesrc, link}) {
           <span className='text-gray-600 text-base' style={{fontSize: "15px"}}>{date}</span>
           <span className='text-gray-800 text-base' style={{fontWeight: "400", flexGrow: 1}}>{description}</span>
 
-	        <button id="card-button" className="btn btn-primary flex-end" type="button" style={{marginTop:"16px"}}><a href={link} target="_blank">{t('activities:seemore')}</a></button>
+	        <button id="card-button" className="btn btn-primary flex-end" type="button" style={{marginTop:"16px"}}><a href={link} target="_blank" style={{display:"block"}}>{t('activities:seemore')}</a></button>
         </div>
       </div>
   );
