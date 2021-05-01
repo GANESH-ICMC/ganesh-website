@@ -93,28 +93,6 @@ FAQ.Question = Question;
 FAQ.Answer = Answer;
 
 
-
-// Automating stuff
-function Bloco({question, answer, questionId}) {
-  console.log(questionId, question, answer)
-
-  return (
-    <FAQ.QAItem>
-      <FAQ.Question answerId={questionId}>
-        {(isOpen, onToggle) => {
-          return (
-            <>
-             {isOpen ? "Open " : "Close "}
-              <span>{question}</span>
-            </>
-          );
-        }}
-      </FAQ.Question>
-      <FAQ.Answer id={questionId}>{answer}</FAQ.Answer>
-    </FAQ.QAItem>
-  );
-}
-
 function App() {
 	const { t, i18n } = useTranslation();
 	var cards = t('faq:dropdown', { returnObjects: true});

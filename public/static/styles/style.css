@@ -66,11 +66,14 @@ footer {
 }
 
 .FAQ__question {
-  background: none;
-  border: none;
-  width: 100%;
+  margin: auto;
+  background: white;
+  border: gray;
+  display: block;
+  padding: 20px;
+  width: 80%;
   text-align: left;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .FAQ__question:hover {
@@ -80,5 +83,11 @@ footer {
 
 .FAQ__answer--hidden {
   display: none;
+}
+
+.FAQ__answer {
+  padding: 8px;
+  margin: auto;
+  width: 80%;
 }
 
