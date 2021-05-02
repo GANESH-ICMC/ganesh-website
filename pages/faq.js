@@ -67,14 +67,21 @@ function Question({ children, isOpen, answerId, onToggle }) {
 }
 
 function Answer({ children, id, isOpen }) {
+
+  const answers = children.split('\n')
+
+
   const mergedClassname = classNames("FAQ__answer", {
     "FAQ__answer--hidden": !isOpen
   });
   return (
     <dd>
-      <p className={mergedClassname} id={id}>
-        {children}
-      </p>
+      <div className={mergedClassname} id={id}>
+        
+        { answers.map((v,i) => <p key={'answer-p-'+i}>{v}</p>) }
+        
+        {/* {children} */}
+      </div>
     </dd>
   );
 }
@@ -101,7 +108,7 @@ function App() {
     <div className='container mx-auto'>
         {
           cards.map((info, index) => (
-            <li key={index} className='w-full flex flex-col mb-4'>
+            <li key={index} className='FAQ__item  w-full flex flex-col mb-4'>
             <FAQ>                   
               <FAQ.QAItem>
                 <FAQ.Question answerId={info.id}>
