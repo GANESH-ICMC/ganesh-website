@@ -106,6 +106,7 @@ footer {
 
 .FAQ__answer p {
   margin-top: 8px;
+  text-align: justify;
 }
 
 .FAQ__answer p:first-child {
