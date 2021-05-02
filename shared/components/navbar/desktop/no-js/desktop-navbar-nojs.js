@@ -51,6 +51,11 @@ export function DesktopNavbarNoJS(){
           <a href="/contato">Contact</a>
           </button>
         </li>
+        <li>
+          <button>
+          <a href="/faq">FAQ</a>
+          </button>
+        </li>
       </ul>
     </div>
   );

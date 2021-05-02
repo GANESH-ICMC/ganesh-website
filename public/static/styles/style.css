@@ -64,3 +64,50 @@ footer {
     width: 200px;
   }
 }
+
+.FAQ__item { 
+  display: block;
+  margin: 16px auto 0 auto;
+  width: 80%;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.FAQ__item:first-child { 
+  margin-top: 0px;
+}
+
+.FAQ__question {
+  display: block;
+  width: 100%;
+  background: #fff;
+  border: gray;
+  padding: 20px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.FAQ__question:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.FAQ__answer {
+  padding: 20px;
+  background-color: #fff;
+  border-top: solid 1px #ccc
+}
+
+.FAQ__answer p {
+  margin-top: 8px;
+}
+
+.FAQ__answer p:first-child {
+  margin-top: 0px;
+}
+
+.FAQ__answer--hidden {
+  display: none;
+}
+
+
+

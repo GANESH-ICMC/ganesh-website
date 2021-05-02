@@ -125,6 +125,11 @@ export const NavbarMenu = React.forwardRef(({
         <button>{t("navbar:contact")}</button>
         </Link>
       </li>
+      <li>
+        <Link href="/faq">
+        <button>FAQ</button>
+        </Link>
+      </li>
 
     
       <li onClick={()=>setIsOpenLanguage(s => !s)}>

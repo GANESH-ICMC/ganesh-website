@@ -54,6 +54,11 @@ export function MobileNavbarNoJS(){
             <a href="/contato">Contact us</a>
           </button>
           </li>
+          <li>
+          <button>
+            <a href="/faq">FAQ</a>
+          </button>
+          </li>
         </ul>
       </div>
     </div>
