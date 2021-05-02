@@ -183,6 +183,12 @@ export const DesktopNavbar = React.forwardRef(({
             </Link>
           </li>
 
+          <li href="/faq">
+            <Link href="/faq">
+            <button>FAQ</button>
+            </Link>
+          </li>
+
 
           <li>
             <button>{ LanguageSwitcher() }</button>
