@@ -16,20 +16,13 @@ return (
     />
     <Navbar />
     <main>
-      <div className='jumbotron bg-fixed bg-cover text-center text-white h-screen shadow-md bg-center'>
-        <div className='container mx-auto flex flex-col items-center justify-center h-full p-4'>
-          <img src='/static/images/logo.svg' className='w-48' alt='Ganesh logo' />
-          <h2 className='text-2xl'>
-            {t('index:description')}
-          </h2>
-        </div>
+      <div className="flex justify-center items-center bg-fixed bg-cover bg-center container-top shadow-md">
+        <h1 className="text-4xl text-center text-white"><Trans i18nKey="aboutus:title">About Us</Trans></h1>
       </div>
+
       <section>
         <div className='container h-full mx-auto flex flex-col items-center text-center py-4'>
-          <h1 className='text-4xl font-bold py-8 md:py-16 px-4'>
-            About Us
-          </h1>
-          
+                    
           <div className='flex flex-row flex-wrap justify-center pb-8 md:pb-16'>
             <div className='w-full md:w p-4'>
               <div className='bg-white rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-16 tracking-wide leading-relaxed'>
@@ -69,8 +62,9 @@ return (
         </div>
       </section>
       <style jsx>{`
-        .jumbotron {
+        .container-top {
           background-image: url(/static/images/bgfull.jpg);
+          height: 250px;
         }
 
         a:link {

@@ -16,23 +16,12 @@ return (
     />
     <Navbar />
     <main>
-      <div className='jumbotron bg-fixed bg-cover text-center text-white h-screen shadow-md bg-center'>
-        <div className='container mx-auto flex flex-col items-center justify-center h-full p-4'>
-          <img src='/static/images/logo.svg' className='w-48' alt='Ganesh logo' />
-          <h2 className='text-2xl'>
-            <Trans i18nKey="usp:extracurricular">
-            Extracurricular group focused on information security.
-            </Trans>
-          </h2>
-        </div>
+      <div className="flex justify-center items-center bg-fixed bg-cover bg-center container-top shadow-md">
+        <h1 className="text-4xl text-center text-white"><Trans i18nKey="usp:ouruni">Our University</Trans></h1>
       </div>
+
       <section>
         <div className='container h-full mx-auto flex flex-col items-center text-center py-4'>
-          <h1 className='text-4xl font-bold py-8 md:py-16 px-4'>
-            <Trans i18nKey="usp:ouruni">
-              Our University
-            </Trans>
-          </h1>
           <div className='flex flex-row flex-wrap justify-center pb-8 md:pb-16'>
             <div className='w-full md:w-full p-4'>
               <div className='bg-white rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-16 tracking-wide leading-relaxed' align="justify">
@@ -76,46 +65,47 @@ return (
         </div>
       </section>
       <style jsx>{`
-      .jumbotron {
-        background-image: url(/static/images/bgfull.jpg);
-      }
-      .video-container {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 */
-        height: 0;
-      }
-      .video-container iframe {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-      }
+        .container-top {
+          background-image: url(/static/images/bgfull.jpg);
+          height: 250px;
+        }
 
-      a:link {
-        color: blue;
-        background-color: transparent;
-        text-decoration: none;
-      }
+        .video-container {
+          position: relative;
+          padding-bottom: 56.25%; /* 16:9 */
+          height: 0;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
 
-      a:visited {
-        color: purple;
-        background-color: transparent;
-        text-decoration: none;
-      }
+        a:link {
+          color: blue;
+          background-color: transparent;
+          text-decoration: none;
+        }
 
-      a:hover {
-        color: red;
-        background-color: transparent;
-        text-decoration: underline;
-      }
+        a:visited {
+          color: purple;
+          background-color: transparent;
+          text-decoration: none;
+        }
 
-      a:active {
-        color: yellow;
-        background-color: transparent;
-        text-decoration: underline;
-      }
+        a:hover {
+          color: red;
+          background-color: transparent;
+          text-decoration: underline;
+        }
 
+        a:active {
+          color: yellow;
+          background-color: transparent;
+          text-decoration: underline;
+        }
       `}</style>
     </main>
     <Footer
