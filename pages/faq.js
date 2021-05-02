@@ -1,5 +1,5 @@
 import React from 'react';
-import { Component, useState } from 'react';
+import { Component, useState, useEffect } from 'react';
 
 
 import i18n from '../locale/locale.js';
@@ -20,12 +20,22 @@ function FAQ({
   open: openFromProps,
   onToggle: onToggleFromProps = () => {}
 }) {
+
   const isControlled = () => (openFromProps ? true : false);
   const [open, setIsOpen] = useState(defaultOpen);
   const getOpen = () => (isControlled() ? openFromProps : open);
   const isOpen = index => {
-    return getOpen().includes(index) ? false : true;
+    return getOpen().includes(index) ? true : false;
   };
+
+  // Start all opens and close on render
+  useEffect(() => {
+    React.Children.map(children, (child, index) => {
+      onToggle(index)
+    })
+  }, [])
+
+
   const onToggle = index => {
     if (isControlled()) {
       onToggleFromProps(index);
