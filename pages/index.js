@@ -3,6 +3,8 @@ import React from 'react';
 import Head from '../shared/components/head';
 import Navbar from '../shared/components/navbar/navbar';
 import Footer from '../shared/components/footer';
+import ActivityCard from '../shared/components/cards/ActivityCard'
+
 
 import { withTranslation } from 'react-i18next';
 
@@ -33,15 +35,15 @@ function Home ({ t })  {
         <div className="container mx-auto">
           <div className="flex flex-row items-center py-8">
             
-            <div className="Home__AboutUs_Text px-8 w-3/5">
+            <div className="Home__AboutUs_Text px-8 w-1/2">
               <h1 className="text-4xl font-bold">Sobre o Ganesh</h1>
               <p className="my-2">Recusou internalizar as diversidades dos indivíduos silenciados por seus lugares de dores infligindo sentimentos de dor na alma dos menos privilegiados. Abusou psicologicamente da mulher fenotipicamente negra ressignificando a conversa com inverdades.</p>
               <p className="my-2">Incentivou a erradicação da mulher branca socialmente privilegiada, em detrimento da pauta antirracial com o intuito egoístico que transcendem a normalidade dos fatos.</p>
             </div>
 
-            <div className="Home__AboutUs_Image px-8 w-2/5">
-              <img src='/static/images/logo.svg' className='w-48' alt='Ganesh logo' />
-            </div>
+            {/* <div className="Home__AboutUs_Image px-2 w-2/5">
+              <img src='https://cdn.discordapp.com/attachments/837775182525366302/838531622139592717/ganesh-group.png' className='w-5/5' alt='Ganesh logo' />
+            </div> */}
 
           </div>
         </div>
@@ -54,10 +56,13 @@ function Home ({ t })  {
             
             <div className="Home__Activities_Image px-8 w-2/5">
               {/* Last Activity Card */}
-              <div className="bg-white rounded-lg shadow-lg w-full p-4">
-                <h4>Última Atualização</h4>
-                <p>Lorem Ipsum Dolor Sit amet velar tamen</p>
-              </div>
+              <ActivityCard 
+                title="Lorem Ipsim" 
+                date="Lorem ipsum"
+                description="Lorem ipsum"
+                imagesrc="http://localhost:3000/static/images/thumb_senc2019.jpg"
+                linl="#"
+                />
             </div>
 
             <div className="Home__Activities_Text px-8 w-3/5">
@@ -125,6 +130,15 @@ function Home ({ t })  {
         .jumbotron {
           background-image: url(/static/images/bgfull.jpg);
         }
+
+        .Home__AboutUs {
+          background-color: #fff;
+          background-image: url('https://cdn.discordapp.com/attachments/837775182525366302/838531622139592717/ganesh-group.png');
+          background-size: 52%;
+          background-repeat: no-repeat;
+          background-position: right;
+        }
+
       `}</style>
     </main>
     <Footer

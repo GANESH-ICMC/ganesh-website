@@ -31,8 +31,6 @@ body {
   background-color: #0ca899;
 }
 
-
-
 footer {
   background-color: #121212;
 }
@@ -80,6 +78,8 @@ footer {
   }
 }
 
+/* FAQ Page Styles */
+
 .FAQ__item { 
   display: block;
   margin: 16px auto 0 auto;
@@ -92,7 +92,6 @@ footer {
     width: 100%;
   }
 }
-
 
 .FAQ__item:first-child { 
   margin-top: 0px;
@@ -131,6 +130,8 @@ footer {
 .FAQ__answer--hidden {
   display: none;
 }
+
+
 
 
 
