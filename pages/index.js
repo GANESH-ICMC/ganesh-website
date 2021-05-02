@@ -18,6 +18,7 @@ function Home ({ t })  {
     />
     <Navbar />
     <main>
+      {/* Top-level Jumbotron */}
       <div className='jumbotron bg-fixed bg-cover text-center text-white h-screen shadow-md bg-center'>
         <div className='container mx-auto flex flex-col items-center justify-center h-full p-4'>
           <img src='/static/images/logo.svg' className='w-48' alt='Ganesh logo' />
@@ -26,6 +27,64 @@ function Home ({ t })  {
           </h2>
         </div>
       </div>
+
+      {/* First Section: About Ganesh */}
+      <section className="Home__AboutUs container mx-auto" style={{backgroundColor: "#fff" }}>
+        <div className="flex flex-row items-center py-8">
+            
+            <div className="Home__AboutUs_Text px-8 w-3/5">
+              <h1 className="text-4xl font-bold">Sobre o Ganesh</h1>
+              <p className="my-2">Recusou internalizar as diversidades dos indivíduos silenciados por seus lugares de dores infligindo sentimentos de dor na alma dos menos privilegiados. Abusou psicologicamente da mulher fenotipicamente negra ressignificando a conversa com inverdades.</p>
+              <p className="my-2">Incentivou a erradicação da mulher branca socialmente privilegiada, em detrimento da pauta antirracial com o intuito egoístico que transcendem a normalidade dos fatos.</p>
+            </div>
+
+            <div className="Home__AboutUs_Image px-8 w-2/5">
+              <img src='/static/images/logo.svg' className='w-48' alt='Ganesh logo' />
+            </div>
+            
+        </div>
+      </section>
+
+      {/* Second Section: Activities */}
+      <section className="Home__AboutUs container mx-auto">
+        <div className="flex flex-row items-center py-8">
+            
+            <div className="Home__AboutUs_Image px-8 w-2/5">
+              
+              {/* Last Activity Card */}
+              <div className="bg-white rounded-lg shadow-lg w-full p-4">
+                <h4>Última Atualização</h4>
+                <p>Lorem Ipsum Dolor Sit amet velar tamen</p>
+              </div>
+           
+            </div>
+
+            <div className="Home__AboutUs_Text px-8 w-3/5">
+              <h1 className="text-4xl font-bold">Frentes e Atividades</h1>
+              <p className="my-2">Recusou internalizar as diversidades dos indivíduos silenciados por seus lugares de dores infligindo sentimentos de dor na alma dos menos privilegiados. Abusou psicologicamente da mulher fenotipicamente negra ressignificando a conversa com inverdades.</p>
+              <p className="my-2">Incentivou a erradicação da mulher branca socialmente privilegiada, em detrimento da pauta antirracial com o intuito egoístico que transcendem a normalidade dos fatos.</p>
+            </div>
+
+        </div>
+      </section>
+
+      {/* Third Section: Gitbook & Material*/}
+      <section className="Home__AboutUs container mx-auto">
+        <div className="flex flex-row items-center py-8">
+            
+            <div className="Home__AboutUs_Image px-8 w-4/5">
+              <h2 className="text-2xl font-bold">Conheça nosso material de estudos para iniciantes!</h2>
+            </div>
+
+            <div className="Home__AboutUs_Text px-8 w-1/5">
+              <a href="#" className="btn btn-primary p-2">GUIA DE SEGURANÇA</a>
+            </div>
+
+        </div>
+      </section>
+
+      
+
       <section>
         <div className='container mx-auto flex flex-col items-center text-center py-4'>
           <h1 className='text-4xl font-bold py-8 md:py-16 px-4'>
@@ -55,6 +114,9 @@ function Home ({ t })  {
           </div>
         </div>
       </section>
+
+
+
       <style jsx>{`
         .jumbotron {
           background-image: url(/static/images/bgfull.jpg);
