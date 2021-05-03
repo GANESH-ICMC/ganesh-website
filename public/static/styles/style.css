@@ -78,6 +78,36 @@ footer {
   }
 }
 
+/** Home Page Styles */
+.Home__AboutUs { 
+  background-color: #fff; 
+  background-image: url('https://cdn.discordapp.com/attachments/837775182525366302/838531622139592717/ganesh-group.png');
+  background-size:  52%;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.Home__AboutUs_MobileImage { 
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .Home__AboutUs { 
+    background-image: none;
+  }
+
+  .Home__AboutUs .container > * { 
+    flex-flow: column nowrap;
+  }
+  
+  .Home__AboutUs_MobileImage,
+  .Home__AboutUs_Text { 
+    width: 100%;
+    display: block;
+  }
+}
+
+
 /* FAQ Page Styles */
 
 .FAQ__item { 

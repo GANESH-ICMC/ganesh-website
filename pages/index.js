@@ -33,17 +33,17 @@ function Home ({ t })  {
       {/* First Section: About Ganesh */}
       <section className="Home__AboutUs" style={{backgroundColor: "#fff" }}>
         <div className="container mx-auto">
-          <div className="flex flex-row items-center py-8">
+          <div className="flex flex-row items-center py-12">
             
-            <div className="Home__AboutUs_Text px-8 w-1/2">
+            <div className="Home__AboutUs_Text px-8 w-1/2 md:w-2/2">
               <h1 className="text-4xl font-bold">Sobre o Ganesh</h1>
               <p className="my-2">Recusou internalizar as diversidades dos indivíduos silenciados por seus lugares de dores infligindo sentimentos de dor na alma dos menos privilegiados. Abusou psicologicamente da mulher fenotipicamente negra ressignificando a conversa com inverdades.</p>
               <p className="my-2">Incentivou a erradicação da mulher branca socialmente privilegiada, em detrimento da pauta antirracial com o intuito egoístico que transcendem a normalidade dos fatos.</p>
             </div>
-
-            {/* <div className="Home__AboutUs_Image px-2 w-2/5">
+            
+            <div className="Home__AboutUs_MobileImage px-2">
               <img src='https://cdn.discordapp.com/attachments/837775182525366302/838531622139592717/ganesh-group.png' className='w-5/5' alt='Ganesh logo' />
-            </div> */}
+            </div>
 
           </div>
         </div>
@@ -130,15 +130,6 @@ function Home ({ t })  {
         .jumbotron {
           background-image: url(/static/images/bgfull.jpg);
         }
-
-        .Home__AboutUs {
-          background-color: #fff;
-          background-image: url('https://cdn.discordapp.com/attachments/837775182525366302/838531622139592717/ganesh-group.png');
-          background-size: 52%;
-          background-repeat: no-repeat;
-          background-position: right;
-        }
-
       `}</style>
     </main>
     <Footer
