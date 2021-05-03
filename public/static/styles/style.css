@@ -107,6 +107,29 @@ footer {
   }
 }
 
+.Home__Activities_Text { 
+  width: 70%;
+}
+
+.Home__Activities_Card { 
+  width: 30%;
+}
+
+@media (max-width: 768px) {
+  .Home__Activities .container > * { 
+    flex-flow: column nowrap;
+  }
+
+  .Home__Activities_Text { 
+    width: 100%;
+  }
+  
+  .Home__Activities_Card { 
+    width: 350px;
+    margin: 1rem auto 0 auto
+  }
+}
+
 
 /* FAQ Page Styles */
 
@@ -161,7 +184,24 @@ footer {
   display: none;
 }
 
+/* Activity Card */
 
+.ActivityCard { 
+  overflow: hidden;
+}
 
+.ActivityCard .btn { 
+  display: block;
+  padding: 0.5rem;
+  height: auto;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.ActivityCard__Image { 
+  height: "100%";
+  width: "100%";
+  objectFit: "cover";
+}
 
 

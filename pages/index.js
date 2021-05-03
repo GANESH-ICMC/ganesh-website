@@ -52,23 +52,24 @@ function Home ({ t })  {
       {/* Second Section: Activities */}
       <section className="Home__Activities">
         <div className="container mx-auto">
-          <div className="flex flex-row items-center py-8">
+          <div className="flex flex-row-reverse items-center py-12">
             
-            <div className="Home__Activities_Image px-8 w-2/5">
-              {/* Last Activity Card */}
-              <ActivityCard 
-                title="Lorem Ipsim" 
-                date="Lorem ipsum"
-                description="Lorem ipsum"
-                imagesrc="http://localhost:3000/static/images/thumb_senc2019.jpg"
-                linl="#"
-                />
-            </div>
-
-            <div className="Home__Activities_Text px-8 w-3/5">
+            <div className="Home__Activities_Text px-8">
               <h1 className="text-4xl font-bold">Frentes e Atividades</h1>
               <p className="my-2">Recusou internalizar as diversidades dos indivíduos silenciados por seus lugares de dores infligindo sentimentos de dor na alma dos menos privilegiados. Abusou psicologicamente da mulher fenotipicamente negra ressignificando a conversa com inverdades.</p>
               <p className="my-2">Incentivou a erradicação da mulher branca socialmente privilegiada, em detrimento da pauta antirracial com o intuito egoístico que transcendem a normalidade dos fatos.</p>
+            </div>
+            
+            <div className="Home__Activities_Card px-8">
+              {/* Last Activity Card */}
+              <ActivityCard 
+                title="Minicurso SEnC 2019" 
+                date="24 de Setembro, 2019"
+                // description="Minicurso sobre malwares e vírus na Semana da Engenharia de Computação (SEnC) da USP. O curso almejou..."
+                description=""
+                imagesrc="http://localhost:3000/static/images/thumb_senc2019.jpg"
+                link="#"
+                />
             </div>
 
           </div>
