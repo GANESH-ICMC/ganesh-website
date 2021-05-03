@@ -63,7 +63,7 @@ function Home ({ t })  {
             <div className="Home__Activities_Card px-8">
               {/* Last Activity Card */}
               <ActivityCard 
-                title="Minicurso SEnC 2019" 
+                title="Minicurso SEnC 2019 - Malwares" 
                 date="24 de Setembro, 2019"
                 // description="Minicurso sobre malwares e vírus na Semana da Engenharia de Computação (SEnC) da USP. O curso almejou..."
                 description=""
