@@ -33,7 +33,7 @@ function Home ({ t })  {
       {/* First Section: About Ganesh */}
       <section className="Home__AboutUs" style={{backgroundColor: "#fff" }}>
         <div className="container mx-auto">
-          <div className="flex flex-row items-center py-12">
+          <div className="flex flex-row items-center py-12 md:py-24">
             
             <div className="Home__AboutUs_Text px-8 w-1/2 md:w-2/2">
               <h1 className="text-4xl font-bold">Sobre o Ganesh</h1>
@@ -52,7 +52,7 @@ function Home ({ t })  {
       {/* Second Section: Activities */}
       <section className="Home__Activities">
         <div className="container mx-auto">
-          <div className="flex flex-row-reverse items-center py-12">
+          <div className="flex flex-row-reverse items-center py-12 md:py-16">
             
             <div className="Home__Activities_Text px-8">
               <h1 className="text-4xl font-bold">Frentes e Atividades</h1>
