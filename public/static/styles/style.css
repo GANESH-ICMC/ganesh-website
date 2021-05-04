@@ -25,6 +25,7 @@ body {
   border-radius: 3px;
   padding: .5rem 1.4rem;
   border-color: #009688;
+  white-space: nowrap;
 }
 
 .btn-secondary:hover { 
@@ -127,6 +128,17 @@ footer {
   .Home__Activities_Card { 
     width: 350px;
     margin: 1rem auto 0 auto
+  }
+}
+
+@media (max-width: 768px) {
+  .Home__Material .container > * { 
+    flex-flow: column nowrap;
+    text-align: center;
+  }
+
+  .Home__Material .btn { 
+    margin-top: 1rem;
   }
 }
 

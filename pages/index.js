@@ -78,16 +78,11 @@ function Home ({ t })  {
       {/* Third Section: Gitbook & Material*/}
       <section className="Home__Material" style={{backgroundColor: "#001e47" }}>
         <div className="container mx-auto">
-          <div className="flex flex-row items-center py-8">
+          <div className="flex flex-row items-center py-8 px-6">
               
-              <div className="Home__Material_Text px-8 w-4/5">
-                <h2 className="text-2xl text-white font-bold">Conheça nosso material de estudos para iniciantes!</h2>
-              </div>
-
-              <div className="Home__Material_Button px-8 w-1/5">
-                <a href="#" className="btn btn-secondary p-2">GITBOOK</a>
-              </div>
-
+              <h2 className="text-2xl text-white font-bold flex-grow px-2">Conheça nosso material de estudos para iniciantes em Segurança da Informação!</h2>
+              <a href="https://gitbook.ganeshicmc.com/" className="btn btn-secondary p-2">VER GITBOOK</a>
+              
           </div>
         </div>
       </section>
