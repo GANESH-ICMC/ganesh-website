@@ -10,7 +10,7 @@ import { withTranslation } from 'react-i18next';
 
 function Home ({ t })  {
 
-  //const { t, i18n } = useTranslation();
+  const lastActivity = t('activities:activitycards', { returnObjects: true})[0];
 
   return (
   <React.Fragment>
@@ -63,12 +63,11 @@ function Home ({ t })  {
             <div className="Home__Activities_Card px-8">
               {/* Last Activity Card */}
               <ActivityCard 
-                title="Minicurso SEnC 2019 - Malwares" 
-                date="24 de Setembro, 2019"
-                // description="Minicurso sobre malwares e vírus na Semana da Engenharia de Computação (SEnC) da USP. O curso almejou..."
+                title={lastActivity.title} 
+                date={lastActivity.date}
                 description=""
-                imagesrc="http://localhost:3000/static/images/thumb_senc2019.jpg"
-                link="#"
+                imagesrc={lastActivity.imagesrc}
+                link={lastActivity.link}
                 />
             </div>
 
