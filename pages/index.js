@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 
 import Head from '../shared/components/head';
 import Navbar from '../shared/components/navbar/navbar';
@@ -37,8 +38,13 @@ function Home ({ t })  {
             
             <div className="Home__AboutUs_Text px-8 w-1/2 md:w-2/2">
               <h1 className="text-4xl font-bold">Sobre o Ganesh</h1>
-              <p className="my-2">Recusou internalizar as diversidades dos indivíduos silenciados por seus lugares de dores infligindo sentimentos de dor na alma dos menos privilegiados. Abusou psicologicamente da mulher fenotipicamente negra ressignificando a conversa com inverdades.</p>
-              <p className="my-2">Incentivou a erradicação da mulher branca socialmente privilegiada, em detrimento da pauta antirracial com o intuito egoístico que transcendem a normalidade dos fatos.</p>
+              <p className="my-2">O Ganesh é um grupo extracurricular da Universidade de São Paulo (USP), baseado em São Carlos. Temos como nossa missão adquirir e divulgar conhecimentos na área de segurança da informação para estudantes de graduação e para a comunidade geral.</p>
+              <p className="my-2">Isso é realizado pelo desenvolvimento de materiais de ensino em salas de aula, cursos especializados, workshops em escolas públicas e privadas e acompanhando o desenvolvimento de projetos.</p>
+
+              <p className="mt-8">
+                <Link href="/aboutus"><a className="btn btn-secondary btn-shadow btn-large p-2">SAIBA MAIS</a></Link>
+              </p>
+              
             </div>
             
             <div className="Home__AboutUs_MobileImage px-2">
