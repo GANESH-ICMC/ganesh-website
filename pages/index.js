@@ -44,7 +44,6 @@ function Home ({ t })  {
               <p className="mt-8">
                 <Link href="/aboutus"><a className="btn btn-secondary btn-shadow btn-large p-2">SAIBA MAIS</a></Link>
               </p>
-              
             </div>
             
             <div className="Home__AboutUs_MobileImage px-2">
@@ -61,9 +60,33 @@ function Home ({ t })  {
           <div className="flex flex-row-reverse items-center py-12 md:py-16">
             
             <div className="Home__Activities_Text px-8">
-              <h1 className="text-4xl font-bold">Frentes e Atividades</h1>
-              <p className="my-2">Recusou internalizar as diversidades dos indivíduos silenciados por seus lugares de dores infligindo sentimentos de dor na alma dos menos privilegiados. Abusou psicologicamente da mulher fenotipicamente negra ressignificando a conversa com inverdades.</p>
-              <p className="my-2">Incentivou a erradicação da mulher branca socialmente privilegiada, em detrimento da pauta antirracial com o intuito egoístico que transcendem a normalidade dos fatos.</p>
+              <div>
+                <h1 className="text-4xl font-bold">Frentes de Estudo</h1>
+                <p className="my-2">Nos organizamos em 5 frentes de estudo, sendo elas: Criptografia, Engenharia Reversa, Redes, Hardware Hacking e Segurança Web. Cada uma delas desenvolve materiais tanto independentemente como em conjunto, interfaceando as diferentes áreas.</p>
+                <p className="my-2">Cada frente se reúne semanalmente para desenvolver minicursos, ferramentas e materiais de estudo, que em maioria são disponibilizados publicamente no nosso Github.</p>
+
+                <p className="mt-8 md:hidden">
+                  <Link href="/frentes">
+                    <a className="btn btn-secondary btn-shadow btn-large p-2">VER FRENTES</a>
+                  </Link>
+                </p>
+              </div>
+              
+              <div className="mt-4">
+                <h1 className="text-4xl font-bold">Outras Atividades</h1>
+                <p className="my-2">O grupo constantemente estuda e desenvolve técnicas e materiais referentes à área de Segurança da Informação. Um dos nossos objetivos é desenvolver projetos e atividades que interagem com o público externo, como o nosso canal do YouTube, o processo anual de ingresso e participações em competições da área de Segurança da Informação - Capture The Flag (CTF).</p>
+                <p className="my-2">Frequentemente obtemos boas classificações nas competições que participamos e somos considerados um dos melhores times do Brasil, além do melhor time universitário do país.</p>
+
+                <p className="mt-8">
+                  <Link href="/frentes">
+                    <a className="hidden md:inline-block btn btn-secondary btn-shadow btn-large p-2 mr-8">VER FRENTES</a>
+                  </Link>
+
+                  <Link href="/atividades">
+                    <a className="btn btn-secondary btn-shadow btn-large p-2">VER ATIVIDADES</a>
+                  </Link>
+                </p>
+              </div>
             </div>
             
             <div className="Home__Activities_Card px-8">
@@ -71,7 +94,7 @@ function Home ({ t })  {
               <ActivityCard 
                 title={lastActivity.title} 
                 date={lastActivity.date}
-                description=""
+                description={lastActivity.description.substr(0, lastActivity.description.indexOf(" ", 100)) + '...'}
                 imagesrc={lastActivity.imagesrc}
                 link={lastActivity.link}
                 />
@@ -92,40 +115,6 @@ function Home ({ t })  {
           </div>
         </div>
       </section>
-
-      
-
-      {/* <section>
-        <div className='container mx-auto flex flex-col items-center text-center py-4'>
-          <h1 className='text-4xl font-bold py-8 md:py-16 px-4'>
-            {t('index:extragroup')}
-          </h1>
-          <div className='flex flex-row flex-wrap justify-center pb-8 md:pb-16'>
-            <div className='flex flex-column flex-wrap flex-auto w-full md:w-1/2 p-4'>
-              <div className='bg-white rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-16 tracking-wide leading-relaxed'>
-                <p align="justify">
-                  {t('index:mission')}
-                </p>
-                <button className='btn-primary w-full text-lg font-bold mt-4 md:mt-8'>
-                <a href="/atividades">{t('index:activities')}</a>
-                </button>
-              </div>
-            </div>
-            <div className='flex flex-column flex-wrap flex-auto w-full md:w-1/2 p-4'>
-              <div className='bg-white rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-16 tracking-wide leading-relaxed'>
-                <p align="justify">
-                  {t('index:based')}
-                </p>
-                <button className='btn-primary w-full text-lg font-bold mt-4 md:mt-8'>
-                  <a href="https://github.com/ganesh-icmc">Github</a>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-
 
       <style jsx>{`
         .jumbotron {
