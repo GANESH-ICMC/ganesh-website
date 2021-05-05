@@ -39,7 +39,7 @@ function Home ({ t })  {
             <div className="Home__AboutUs_Text px-8 w-1/2 md:w-2/2">
               <h1 className="text-4xl font-bold">Sobre o Ganesh</h1>
               <p className="my-2">O Ganesh é um grupo extracurricular da Universidade de São Paulo (USP), baseado em São Carlos. Temos como nossa missão adquirir e divulgar conhecimentos na área de segurança da informação para estudantes de graduação e para a comunidade geral.</p>
-              <p className="my-2">Isso é realizado pelo desenvolvimento de materiais de ensino em salas de aula, cursos especializados, workshops em escolas públicas e privadas e acompanhando o desenvolvimento de projetos.</p>
+              <p className="my-2">Isso é realizado pelo desenvolvimento de materiais de ensino em salas de aula, cursos especializados, workshops em escolas públicas e privadas e através da elaboração de projetos.</p>
 
               <p className="mt-8">
                 <Link href="/aboutus"><a className="btn btn-secondary btn-shadow btn-large p-2">SAIBA MAIS</a></Link>

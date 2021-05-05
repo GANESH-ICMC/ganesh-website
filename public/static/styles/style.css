@@ -115,6 +115,11 @@ footer {
     width: 100%;
     display: block;
   }
+
+  .Home__AboutUs_Text p:last-child { 
+    margin-bottom: 2rem;
+    text-align: center;
+  }
 }
 
 .Home__Activities_Text { 
