@@ -1,12 +1,19 @@
+import { useEffect } from 'react'
 import React from 'react';
 
 import Head from '../shared/components/head';
 import Navbar from '../shared/components/navbar/navbar';
 import Footer from '../shared/components/footer';
 
+import initMaps from '../public/static/scripts/customMap'
+
 import { Trans, withTranslation } from 'react-i18next';
 
 function aboutus ({ t }){
+
+  useEffect(() => { 
+    initMaps()
+  }, [])
 
   return (
     <React.Fragment>
