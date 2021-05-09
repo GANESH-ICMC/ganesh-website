@@ -6,8 +6,7 @@ import Navbar from '../shared/components/navbar/navbar';
 import Footer from '../shared/components/footer';
 import ActivityCard from '../shared/components/cards/ActivityCard'
 
-
-import { withTranslation } from 'react-i18next';
+import { Trans, withTranslation } from 'react-i18next';
 
 function Home ({ t })  {
 
@@ -37,12 +36,12 @@ function Home ({ t })  {
           <div className="flex flex-row items-center py-12 md:py-24">
             
             <div className="Home__AboutUs_Text px-8 w-1/2 md:w-2/2">
-              <h1 className="text-4xl font-bold">Sobre o Ganesh</h1>
-              <p className="my-2">O Ganesh é um grupo extracurricular da Universidade de São Paulo (USP), baseado em São Carlos. Temos como nossa missão adquirir e divulgar conhecimentos na área de segurança da informação para estudantes de graduação e para a comunidade geral.</p>
-              <p className="my-2">Isso é realizado pelo desenvolvimento de materiais de ensino em salas de aula, cursos especializados, workshops em escolas públicas e privadas e através da elaboração de projetos.</p>
+              <h1 className="text-4xl font-bold"><Trans i18nKey="index:sobre">About Ganesh</Trans></h1>
+              <p className="my-2"><Trans i18nKey="index:sobre1">Ganesh is an extracurricular group from University of São Paulo (USP), at São Carlos city. Our mission is to adquire and spread knowledge about information security for undergraduate students and for the general comunity.</Trans></p>
+              <p className="my-2"><Trans i18nKey="index:sobre2">This is accomplished through the development of teaching material in classrooms, specialized courses, workshops in public and private schools and through elaboration of projects.</Trans></p>
 
               <p className="mt-8">
-                <Link href="/aboutus"><a className="btn btn-secondary btn-shadow btn-large p-2">SAIBA MAIS</a></Link>
+                <Link href="/aboutus"><a className="btn btn-secondary btn-shadow btn-large p-2"><Trans i18nKey="index:saibamais">LEARN MORE</Trans></a></Link>
               </p>
             </div>
             
@@ -61,29 +60,29 @@ function Home ({ t })  {
             
             <div className="Home__Activities_Text px-8">
               <div>
-                <h1 className="text-4xl font-bold">Frentes de Estudo</h1>
-                <p className="my-2">Nos organizamos em 5 frentes de estudo, sendo elas: Criptografia, Engenharia Reversa, Redes, Hardware Hacking e Segurança Web. Cada uma delas desenvolve materiais tanto independentemente como em conjunto, interfaceando as diferentes áreas.</p>
-                <p className="my-2">Cada frente se reúne semanalmente para desenvolver minicursos, ferramentas e materiais de estudo, que em maioria são disponibilizados publicamente no nosso Github.</p>
+                <h1 className="text-4xl font-bold"><Trans i18nKey="index:frentes">Areas of Study</Trans></h1>
+                <p className="my-2"><Trans i18nKey="index:frentes1">We organize ourselves in 5 areas of study, them being: Criptografy, Reverse Engineering, Networks, Hardware Hacking and Web Security. Each one develops materials both by themselves and with anoter, interfacing different areas.</Trans></p>
+                <p className="my-2"><Trans i18nKey="index:frentes2">Every area has a weekly reunion to develop minicourses, tools and study materials, of which most are publicaly available at our Github.</Trans></p>
 
                 <p className="mt-8 md:hidden">
                   <Link href="/frentes">
-                    <a className="btn btn-secondary btn-shadow btn-large p-2">VER FRENTES</a>
+                    <a className="btn btn-secondary btn-shadow btn-large p-2"><Trans i18nKey="index:verfrentes">VIEW AREAS</Trans></a>
                   </Link>
                 </p>
               </div>
               
               <div className="mt-4">
-                <h1 className="text-4xl font-bold">Outras Atividades</h1>
-                <p className="my-2">O grupo constantemente estuda e desenvolve técnicas e materiais referentes à área de Segurança da Informação. Um dos nossos objetivos é desenvolver projetos e atividades que interagem com o público externo, como o nosso canal do YouTube, o processo anual de ingresso e participações em competições da área de Segurança da Informação - Capture The Flag (CTF).</p>
-                <p className="my-2">Frequentemente obtemos boas classificações nas competições que participamos e somos considerados um dos melhores times do Brasil, além do melhor time universitário do país.</p>
+                <h1 className="text-4xl font-bold"><Trans i18nKey="index:outrasatividades">Other Activities</Trans></h1>
+                <p className="my-2"><Trans i18nKey="index:outrasatividades1">The group constantly studies and develops techniques and materials about the Information Security area. One of our objectives is to develop projects and activites that interact with the external public, like our YouTube channel, the anual entrance process and participation in competitions of the Information Security area - Capture The Flag (CTF).</Trans></p>
+                <p className="my-2"><Trans i18nKey="index:outrasatividades2">We often get a nice rank in the competitions we partake and we are regarded as one of the best Brazzilian teams, and also the best university team of the country.</Trans></p>
 
                 <p className="mt-8">
                   <Link href="/frentes">
-                    <a className="hidden md:inline-block btn btn-secondary btn-shadow btn-large p-2 mr-8">VER FRENTES</a>
+                    <a className="hidden md:inline-block btn btn-secondary btn-shadow btn-large p-2 mr-8"><Trans i18nKey="index:verfrentes">VIEW AREAS</Trans></a>
                   </Link>
 
                   <Link href="/atividades">
-                    <a className="btn btn-secondary btn-shadow btn-large p-2">VER ATIVIDADES</a>
+                    <a className="btn btn-secondary btn-shadow btn-large p-2"><Trans i18nKey="index:veratividades">VIEW ACTIVITIES</Trans></a>
                   </Link>
                 </p>
               </div>
@@ -109,8 +108,8 @@ function Home ({ t })  {
         <div className="container mx-auto">
           <div className="flex flex-row items-center py-8 px-6">
               
-              <h2 className="text-2xl text-white font-bold flex-grow px-2">Conheça nosso material de estudos para iniciantes em Segurança da Informação!</h2>
-              <a href="https://gitbook.ganeshicmc.com/" target="_blank" className="btn btn-secondary p-2">VER GITBOOK</a>
+              <h2 className="text-2xl text-white font-bold flex-grow px-2"><Trans i18nKey="index:material">See our study material for beginners in Information Security! (in Portuguese)</Trans></h2>
+              <a href="https://gitbook.ganeshicmc.com/" target="_blank" className="btn btn-secondary p-2"><Trans i18nKey="index:vergitbook">VIEW GITBOOK</Trans></a>
               
           </div>
         </div>
