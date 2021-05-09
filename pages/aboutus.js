@@ -34,13 +34,13 @@ function aboutus ({ t }){
             <div className="flex flex-row-reverse items-center py-8 md:py-12">
               
               <div className="AboutUs__GroupIntro_Text text-justify px-8 md:px-12 flex-grow">
-                <h1 className="text-4xl font-bold">Objetivos do Ganesh</h1>
+                <h1 className="text-4xl font-bold"><Trans i18nKey="aboutus:goals_title">Objetivos do Ganesh</Trans></h1>
                 
-                <p className="my-4">Ganesh é um dos deuses mais venerados do hinduísmo, referido como <strong>"Destruidor de Obstáculos"</strong> e <strong>"Mestre do Intelecto"</strong>. Inspirados por essa divindade e pela crescente importância da <strong>Segurança da Informação</strong> no contexto atual, alguns estudantes do ICMC-USP (Instituto de Ciências Matemáticas e de Computação) decidiram criar um grupo extracurricular na área.</p>
+                <p className="my-4"><Trans i18nKey="aboutus:ganesh_god">Ganesh é um dos deuses mais venerados do hinduísmo, referido como <strong>"Destruidor de Obstáculos"</strong> e <strong>"Mestre do Intelecto"</strong>. Inspirados por essa divindade e pela crescente importância da <strong>Segurança da Informação</strong> no contexto atual, alguns estudantes do ICMC-USP (Instituto de Ciências Matemáticas e de Computação) decidiram criar um grupo extracurricular na área.</Trans></p>
 
-                <p className="my-4">Por meio do estudo e do desenvolvimento de técnicas e algoritmos voltados para a segurança de sistemas computacionais e redes de computadores, o grupo visa o aprendizado, difusão e troca de conhecimentos e experiências entre os membros.</p>
+                <p className="my-4"><Trans i18nKey="aboutus:goals">Por meio do estudo e do desenvolvimento de técnicas e algoritmos voltados para a segurança de sistemas computacionais e redes de computadores, o grupo visa o aprendizado, difusão e troca de conhecimentos e experiências entre os membros.</Trans></p>
                 
-                <p className="my-4">Além disto, o grupo também visa a integração e interação com outros grupos externos à Universidade, bem como a difusão de suas experiências e conhecimentos junto a comunidade externa por meio de atividades, minicursos e palestras.</p>
+                <p className="my-4"><Trans i18nKey="aboutus:external">Além disto, o grupo também visa a integração e interação com outros grupos externos à Universidade, bem como a difusão de suas experiências e conhecimentos junto a comunidade externa por meio de atividades, minicursos e palestras.</Trans></p>
               </div>
               
               <div className="AboutUs__GroupIntro_Image px-8">
@@ -59,23 +59,23 @@ function aboutus ({ t }){
             <div className="flex flex-row items-start py-8 md:py-12">
               
               <div className="AboutUs__Organization_Text text-justify text-white px-8 md:px-12 w-1/2">
-                <h1 className="text-4xl font-bold">Organização do Grupo</h1>
+                <h1 className="text-4xl font-bold"><Trans i18nKey="aboutus:organization_title">Organização do Grupo</Trans></h1>
                 
-                <p className="my-4">Com a sua fundação dada formalmente em 2017, o Ganesh é organizado em <strong>Frentes de Estudos e Pesquisa</strong>, tendo atualmente as seguintes frentes ativas: Criptografia, Redes e Pentesting, Engenharia Reversa, Segurança Web e Hardware Hacking. </p>
+                <p className="my-4"><Trans i18nKey="aboutus:formal_start">Com a sua fundação dada formalmente em 2017, o Ganesh é organizado em <strong>Frentes de Estudos e Pesquisa</strong>, tendo atualmente as seguintes frentes ativas: Criptografia, Redes e Pentesting, Engenharia Reversa, Segurança Web e Hardware Hacking. </Trans></p>
 
-                <p className="my-4">Desta forma, fica ao critério dos membros decidir quais dos temas possui mais interesse e participar das diversas reuniões semanais que ocorrem durante o semestre letivo.</p>
+                <p className="my-4"><Trans i18nKey="aboutus:meetings">Desta forma, fica ao critério dos membros decidir quais dos temas possui mais interesse e participar das diversas reuniões semanais que ocorrem durante o semestre letivo.</Trans></p>
 
-                <p className="my-4">Por fim, o grupo permite a participação de pessoas não vinculadas à USP como colaboradores, permitindo sua participação nas demais atividades e possui uma estrutura bastante flexível e horizontal que pode ser vista com mais detalhes no nosso <strong><a href="#" target="_blank">Estatuto de Regras</a></strong>.</p>
+                <p className="my-4"><Trans i18nKey="aboutus:colaborators">Por fim, o grupo permite a participação de pessoas não vinculadas à USP como colaboradores, permitindo sua participação nas demais atividades e possui uma estrutura bastante flexível e horizontal que pode ser vista com mais detalhes no nosso <a href="#" target="_blank">Estatuto de Regras</a>.</Trans></p>
               </div>
 
               <div className="AboutUs__Organization_Text text-justify text-white px-8 md:px-12 w-1/2">
                 <h1 className="text-4xl font-bold">Quero me tornar Membro!</h1>
                 
-                <p className="my-4">Para se tornar um membro do Ganesh, o unico pré-requisito é a participação ativa do <strong>PIng</strong> (Processo de Ingresso) que ocorre no decorrer do primeiro semestre letivo todos os anos.</p>
+                <p className="my-4"><Trans i18nKey="aboutus:ping1">Para se tornar um membro do Ganesh, o unico pré-requisito é a participação ativa do <strong>PIng</strong> (Processo de Ingresso) que ocorre no decorrer do primeiro semestre letivo todos os anos.</Trans></p>
 
-                <p className="my-4">Durante o processo, cada participante irá participar de aulas que introduzem conceitos básicos das diferentes frentes, além de resolver desafios práticos semanais no CTF do processo (Obs: não é necessário possuir conhecimentos prévios para participar). </p>
+                <p className="my-4"><Trans i18nKey="aboutus:ping2">Durante o processo, cada participante irá participar de aulas que introduzem conceitos básicos das diferentes frentes, além de resolver desafios práticos semanais no CTF do processo (Obs: não é necessário possuir conhecimentos prévios para participar). </Trans></p>
 
-                <p className="my-4">Ao fim do PIng, os participantes que se engajaram e tiverem interesse de continuar no grupo podem iniciar suas participações nas frentes desejadas após assinarem um <strong><a href="#" target="_blank">Termo de Responsabilidade</a></strong>. Esse termo define as diretivas éticas que devem ser respeitadas mediante risco de afastamento temporário ou permanente em caso de infrações.</p>
+                <p className="my-4"><Trans i18nKey="aboutus:ping3">Ao fim do PIng, os participantes que se engajaram e tiverem interesse de continuar no grupo podem iniciar suas participações nas frentes desejadas após assinarem um <a href="#" target="_blank">Termo de Responsabilidade</a>. Esse termo define as diretivas éticas que devem ser respeitadas mediante risco de afastamento temporário ou permanente em caso de infrações.</Trans></p>
               </div>
 
             </div>
