@@ -58,21 +58,25 @@ function aboutus ({ t }){
 
                 <p className="my-4">Desta forma, fica ao critério dos membros decidir quais dos temas possui mais interesse e participar das diversas reuniões semanais que ocorrem durante o semestre letivo.</p>
 
-                <p className="my-4">Por fim, o grupo permite a participação de pessoas não vinculadas à USP como colaboradores, permitindo sua participação nas demais atividades e possui uma estrutura bastante flexível e horizontal.</p>
+                <p className="my-4">Por fim, o grupo permite a participação de pessoas não vinculadas à USP como colaboradores, permitindo sua participação nas demais atividades e possui uma estrutura bastante flexível e horizontal que pode ser vista com mais detalhes no nosso <strong><a href="#" target="_blank">Estatuto de Regras</a></strong>.</p>
               </div>
 
               <div className="AboutUs__Organization_Text text-justify text-white px-8 md:px-12 w-1/2">
-                <h1 className="text-4xl font-bold">Ingresso e Estatuto</h1>
+                <h1 className="text-4xl font-bold">Quero me tornar Membro!</h1>
                 
-                <p className="my-4">Para se tornar um membro do Ganesh, o unico pré-requisito é a participação ativa do <strong>PInG</strong> (Processo de Ingredo do Ganesh) que ocorre no decorrer do primeiro semestre letivo todos os anos.</p>
+                <p className="my-4">Para se tornar um membro do Ganesh, o unico pré-requisito é a participação ativa do <strong>PIng</strong> (Processo de Ingresso) que ocorre no decorrer do primeiro semestre letivo todos os anos.</p>
 
-                <p className="my-4">Durante o processo, cada participante irá participar de aulas que introduzem conceitos básicos das diferentes frentes, além de resolver desafios práticos semanais no CTF (Capture the Flag) do processo (Obs: não é obrigatório possuir conhecimentos prévios nos assuntos). </p>
+                <p className="my-4">Durante o processo, cada participante irá participar de aulas que introduzem conceitos básicos das diferentes frentes, além de resolver desafios práticos semanais no CTF do processo (Obs: não é necessário possuir conhecimentos prévios para participar). </p>
 
-                <p className="my-4">Ao fim do PInG, os participantes que se engajaram e tiverem interesse de continuar no grupo podem iniciar suas participações nas frentes desejadas após assinarem um <strong>Termo de Responsabilidade</strong>. Esse termo define as diretivas éticas que devem ser respeitadas mediante risco de afastamento temporário ou permanente em caso de infrações.</p>
+                <p className="my-4">Ao fim do PIng, os participantes que se engajaram e tiverem interesse de continuar no grupo podem iniciar suas participações nas frentes desejadas após assinarem um <strong><a href="#" target="_blank">Termo de Responsabilidade</a></strong>. Esse termo define as diretivas éticas que devem ser respeitadas mediante risco de afastamento temporário ou permanente em caso de infrações.</p>
               </div>
 
             </div>
           </div>
+        </section>
+
+        <section className="AboutUs__Map">
+          <div id="map"></div>
         </section>
 
         {/* <section>
@@ -137,37 +141,33 @@ function aboutus ({ t }){
           .AboutUs__GroupIntro_Image img:hover { 
             filter: grayscale(20%);
           }
-
-
-          a:link {
-            color: blue;
-            background-color: transparent;
-            text-decoration: none;
+          
+          .AboutUs__Organization a,
+          .AboutUs__GroupIntro a { 
+            color: #0ca899;
           }
-
-          a:visited {
-            color: purple;
-            background-color: transparent;
-            text-decoration: none;
-          }
-
-          a:hover {
-            color: red;
-            background-color: transparent;
+          
+          .AboutUs__Organization a:hover,
+          .AboutUs__GroupIntro a:hover { 
+            color: #009688;
             text-decoration: underline;
           }
-
-          a:active {
-            color: yellow;
-            background-color: transparent;
-            text-decoration: underline;
+          
+          .AboutUs__Map #map { 
+            height: 300px;
           }
+
         `}</style>
       </main>
       <Footer
         title="Ganesh - About Us"
         description='Extracurricular group focused on information security.'
       />
+
+      {/* Google Maps Scripts */}
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAeBwdE6sYsi91nCp7tS1JDaUfFz4v0zU&callback=initMaps" type="text/javascript"></script>
+	    <script src="/static/scripts/customMap.js" type="text/javascript"></script>
+
     </React.Fragment>
   );
 
