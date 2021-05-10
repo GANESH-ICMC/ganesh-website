@@ -69,7 +69,7 @@ function aboutus ({ t }){
               </div>
 
               <div className="AboutUs__Organization_Text text-justify text-white px-8 md:px-12 w-1/2">
-                <h1 className="text-4xl font-bold">Quero me tornar Membro!</h1>
+                <h1 className="text-4xl font-bold"><Trans i18nKey="aboutus:ping_title">Quero me tornar Membro!</Trans></h1>
                 
                 <p className="my-4"><Trans i18nKey="aboutus:ping1">Para se tornar um membro do Ganesh, o unico pré-requisito é a participação ativa do <strong>PIng</strong> (Processo de Ingresso) que ocorre no decorrer do primeiro semestre letivo todos os anos.</Trans></p>
 
