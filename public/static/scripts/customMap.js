@@ -6,7 +6,7 @@
 // - Import the googlemaps script above
 // - after window load call the map init
 
-export default function initMaps() {
+function initMaps() {
   
   var ICMC = {
       lat: -22.007020,
@@ -311,3 +311,7 @@ export default function initMaps() {
       map.setCenter(center);
   });
 }
+
+window.addEventListener('load', () => { 
+  initMaps()
+});

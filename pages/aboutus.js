@@ -1,19 +1,12 @@
-import { useEffect } from 'react'
 import React from 'react';
 
 import Head from '../shared/components/head';
 import Navbar from '../shared/components/navbar/navbar';
 import Footer from '../shared/components/footer';
 
-import initMaps from '../public/static/scripts/customMap'
-
 import { Trans, withTranslation } from 'react-i18next';
 
 function aboutus ({ t }){
-
-  useEffect(() => { 
-    initMaps()
-  }, [])
 
   return (
     <React.Fragment>
@@ -83,7 +76,7 @@ function aboutus ({ t }){
         </section>
 
         <section className="AboutUs__Map">
-          <div id="map"></div>
+          <iframe src="/map" style={{display: "block", width: "100%", height: "300px"}}></iframe>
         </section>
 
         <style jsx>{`
@@ -146,11 +139,6 @@ function aboutus ({ t }){
         title="Ganesh - About Us"
         description='Extracurricular group focused on information security.'
       />
-
-      {/* Google Maps Scripts */}
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAeBwdE6sYsi91nCp7tS1JDaUfFz4v0zU&callback=initMaps" type="text/javascript"></script>
-	    <script src="/static/scripts/customMap.js" type="text/javascript"></script>
-
     </React.Fragment>
   );
 
