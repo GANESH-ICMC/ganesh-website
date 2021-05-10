@@ -82,21 +82,21 @@ return (
           background-image: url(/static/images/bgfull.jpg);
           height: 250px;
         }
-	.activity_003 {
-	  background-image: url(/static/images/thumb_blueborne_0.jpg);
-	  background-size: cover;
-	  background-position: center;
-	}
-	.activity_002 {
-	  background-image: url(/static/images/thumb_unesp_0.jpg);
-	  background-size: cover;
-	  background-position: center;
-	}
-	.activity_001 {
-	  background-image: url(/static/images/thumb_senc2017_0.jpg);
-	  background-size: cover;
-	  background-position: center;
-	}
+        .activity_003 {
+          background-image: url(/static/images/thumb_blueborne_0.jpg);
+          background-size: cover;
+          background-position: center;
+        }
+        .activity_002 {
+          background-image: url(/static/images/thumb_unesp_0.jpg);
+          background-size: cover;
+          background-position: center;
+        }
+        .activity_001 {
+          background-image: url(/static/images/thumb_senc2017_0.jpg);
+          background-size: cover;
+          background-position: center;
+        }
         .img {
           width: "64px";
           vertical-align:middle;

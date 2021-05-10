@@ -8,96 +8,139 @@ import { Trans, withTranslation } from 'react-i18next';
 
 function aboutus ({ t }){
 
-return (
-  <React.Fragment>
-    <Head
-      title='Ganesh - About Us'
-      description={t('index:description')}
-    />
-    <Navbar />
-    <main>
-      <div className="flex justify-center items-center bg-fixed bg-cover bg-center container-top shadow-md">
-        <h1 className="text-4xl text-center text-white"><Trans i18nKey="aboutus:title">About Us</Trans></h1>
-      </div>
+  return (
+    <React.Fragment>
+      <Head
+        title='Ganesh - About Us'
+        description={t('index:description')}
+      />
+      <Navbar />
+      <main>
+        {/* Top-level Jumbotron */}
+        <div className="flex justify-center items-center bg-fixed bg-cover bg-center container-top shadow-md">
+          <h1 className="text-4xl text-center text-white"><Trans i18nKey="aboutus:title">About Us</Trans></h1>
+        </div>
 
-      <section>
-        <div className='container h-full mx-auto flex flex-col items-center text-center py-4'>
-                    
-          <div className='flex flex-row flex-wrap justify-center pb-8 md:pb-16'>
-            <div className='w-full md:w p-4'>
-              <div className='bg-white rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-16 tracking-wide leading-relaxed'>
-                <p align="justify">
-                  <Trans i18nKey="aboutus:ganesh_god">
-                    Ganesh is one of the most venerated gods of hinduism, known as the simple of logical solutions, also referenced as the "Destroyer of Obstacles". Inspired by this divinity and by the growing importance of the security of the information on the context of the current life, some students from ICMC-USP decided to create an extracurricular group in this area. As the principal goal, the group pretends do spread a culture of awereness about the need of protecting data and systems. To do so, <a href="/atividades">activities</a> of research, education and extension related to the theme are realized by the group.
-                  </Trans>
-                </p>
-              </div>
-            </div>
+        {/* First Section - Group Name */}
+        <section className="AboutUs__GroupIntro" style={{backgroundColor: "#fff" }}>
+          <div className="container mx-auto">
+            <div className="flex flex-row-reverse items-center py-8 md:py-12">
+              
+              <div className="AboutUs__GroupIntro_Text text-justify px-8 md:px-12 flex-grow">
+                <h1 className="text-4xl text-left font-bold"><Trans i18nKey="aboutus:goals_title">Ganesh's Goals</Trans></h1>
+                
+                <p className="my-4"><Trans i18nKey="aboutus:ganesh_god">Ganesh is one of the most venerated gods of hinduism, referenced as the <strong>"Destroyer of Obstacles"</strong> and the <strong>"Master of Intelect"</strong>. Inspired by this divinity and by the growing importance of <strong>Information Security</strong> on the context of the current life, some students from ICMC-USP decided to create an extracurricular group in this area.</Trans></p>
 
-            <div className='w-full md:w-1/2 p-4'>
-              <div className='bg-white rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-16 tracking-wide leading-relaxed'>
-                <p align="justify">
-                  <Trans i18nKey="aboutus:formal_start">
-                    With the formal start in 2017, the group has been seeking to learn and teach the most it can about security in general.
-                  </Trans>
-                </p>
-                <p align="justify">
-                  <Trans i18nKey="aboutus:group_areas">
-                  To do so, we are organized in five main study and research areas, they are: Cryptography, Network Security, Privacy and GDPR, Reverse Engineering and Web Security. Each of them is described with more details in the respective</Trans> <a href="/frentes"><Trans i18nKey="aboutus:area_page">area page.</Trans></a>
-                </p>
+                <p className="my-4"><Trans i18nKey="aboutus:goals">Through studying and developing techniques and algorithms geared towared computer systems and computer networks security, the group aims to provide the members an easied learning and knowledge exchange experience.</Trans></p>
+                
+                <p className="my-4"><Trans i18nKey="aboutus:external">Other than that, the group also aims to integrate and interact with groups external to the University, as well as spreading its experiences and gathered knowledge along the external comunity through activities, mini courses and public talks.</Trans></p>
               </div>
-            </div>
-            <div className='w-full md:w-1/2 p-4'>
-              <div className='bg-white rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-16 tracking-wide leading-relaxed'>
-                <p align="justify">
-                  <Trans i18nKey="aboutus:non_lucrative">
-                  The group is a non lucrative association and it is open to partnerships. It is mainly formed by undergraduation students of the </Trans><a href="/aboutus/usp"><Trans i18nKey="aboutus:usp">University Of São Paulo</Trans></a> <Trans i18nKey="aboutus:location">and located in São Carlos, Brazil, although it is open to the participation of external colaborators if they wish to do so.</Trans>
-                </p>
-                <p align="justify"> 
-                  <Trans i18nKey="aboutus:knowledge">In order to make the knowledge gained by the group public, most of our materials are currently stored at our</Trans> <a href="https://github.com/ganesh-icmc"> Github</a>.
-                </p>
+              
+              <div className="AboutUs__GroupIntro_Image px-8">
+                <a href="https://pt.wikipedia.org/wiki/Ganexa" target="_blank">
+                  <img src='/static/images/pages/aboutus_ganesh.jpg' alt='Ganesha God'/>
+                </a>
               </div>
+
             </div>
           </div>
-        </div>
-      </section>
-      <style jsx>{`
-        .container-top {
-          background-image: url(/static/images/bgfull.jpg);
-          height: 250px;
-        }
+        </section>
 
-        a:link {
-          color: blue;
-          background-color: transparent;
-          text-decoration: none;
-        }
+        {/* First Section - Group Organization */}
+        <section className="AboutUs__Organization" style={{backgroundColor: "#333" }}>
+          <div className="container mx-auto">
+            <div className="flex flex-row items-start py-8 md:py-12">
+              
+              <div className="AboutUs__Organization_Org text-justify text-white px-8 md:px-12 md:w-1/2">
+                <h1 className="text-4xl text-left font-bold"><Trans i18nKey="aboutus:organization_title">Organização do Grupo</Trans></h1>
+                
+                <p className="my-4"><Trans i18nKey="aboutus:formal_start">With the formal start in 2017, Ganesh is organized in <strong>Study and Research Areas</strong>, being actually composed by the following active areas: Cryptography, Network and Pentesting, Reverse Engineering, Web Security and Hardware Hacking.</Trans></p>
 
-        a:visited {
-          color: purple;
-          background-color: transparent;
-          text-decoration: none;
-        }
+                <p className="my-4"><Trans i18nKey="aboutus:meetings">That way, it is on the members criteria to decide which topics are the most interesting ones and to participate in several weekly meetings that happen during the school semester.</Trans></p>
 
-        a:hover {
-          color: red;
-          background-color: transparent;
-          text-decoration: underline;
-        }
+                <p className="my-4"><Trans i18nKey="aboutus:colaborators">Also, the group allows that people that are not linked to University of São Paulo participate as colaborators, allowing them to participate in its activities and meetings. The group has a really flexile and horizontal structure that can be checked with more detail in our <a href="#" target="_blank">Rule Statute</a>(in Portuguese).</Trans></p>
+              </div>
 
-        a:active {
-          color: yellow;
-          background-color: transparent;
-          text-decoration: underline;
-        }
-      `}</style>
-    </main>
-    <Footer
-      title="Ganesh - About Us"
-      description='Extracurricular group focused on information security.'
-    />
-  </React.Fragment>
-);
+              <div className="AboutUs__Organization_Ping text-justify text-white px-8 md:px-12 md:w-1/2">
+                <h1 className="text-4xl text-left font-bold"><Trans i18nKey="aboutus:ping_title">I want to become a Member!</Trans></h1>
+                
+                <p className="my-4"><Trans i18nKey="aboutus:ping1">To become a member at Ganesh, the only pre-requisite is to participate in our <strong>PIng (Ingress Process)</strong> that occurs throughout the first semester of the school year, which happens yearly.</Trans></p>
+
+                <p className="my-4"><Trans i18nKey="aboutus:ping2">During the process, every participant will participate in classes that will introduce them to basic concepts of different areas, other than solving practical weekly Capture the Flag challenges made for the process. It is not necessary to have previous knowledge to participate on it.</Trans></p>
+
+                <p className="my-4"><Trans i18nKey="aboutus:ping3">At the end of the PIng, the participants that are interested in continuing to participate in the group can start their participations in the area weekly meetings after signing a <a href="#" target="_blank">Responsability Term</a>.. This term defines the ethical guidelines that should be followed, at risk of being temporarily of permanently removed from the group in case of infractions.</Trans></p>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <section className="AboutUs__Map">
+          <iframe src="/map" style={{display: "block", width: "100%", height: "300px"}}></iframe>
+        </section>
+
+        <style jsx>{`
+          .container-top {
+            background-image: url(/static/images/bgfull.jpg);
+            height: 250px;
+          }
+
+          .AboutUs__GroupIntro_Image img { 
+            display: block;
+            max-width: 350px;
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            filter: grayscale(60%);
+            transition: filter 0.5s;
+            transition-timing-function: ease-in-out;
+          }
+          
+          .AboutUs__GroupIntro_Image img:hover { 
+            filter: grayscale(20%);
+          }
+          
+          .AboutUs__Organization a,
+          .AboutUs__GroupIntro a { 
+            color: #0ca899;
+          }
+          
+          .AboutUs__Organization a:hover,
+          .AboutUs__GroupIntro a:hover { 
+            color: #009688;
+            text-decoration: underline;
+          }
+          
+          .AboutUs__Map #map { 
+            height: 300px;
+          }
+
+          @media (max-width: 768px) {
+            .AboutUs__GroupIntro .container > *,
+            .AboutUs__Organization .container > * { 
+              flex-flow: column nowrap;
+              text-align: center;
+            }
+
+            .AboutUs__GroupIntro_Image img { 
+              max-width: 100%;
+            }
+
+            .AboutUs__Organization_Ping h1 {
+              border-top: solid 1px #666;
+              margin-top: 1rem;
+              padding-top: 1rem; 
+            }
+          }
+
+        `}</style>
+      </main>
+      <Footer
+        title="Ganesh - About Us"
+        description='Extracurricular group focused on information security.'
+      />
+    </React.Fragment>
+  );
 
 }
 
