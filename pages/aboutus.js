@@ -34,7 +34,7 @@ function aboutus ({ t }){
             <div className="flex flex-row-reverse items-center py-8 md:py-12">
               
               <div className="AboutUs__GroupIntro_Text text-justify px-8 md:px-12 flex-grow">
-                <h1 className="text-4xl font-bold"><Trans i18nKey="aboutus:goals_title">Objetivos do Ganesh</Trans></h1>
+                <h1 className="text-4xl text-left font-bold"><Trans i18nKey="aboutus:goals_title">Objetivos do Ganesh</Trans></h1>
                 
                 <p className="my-4"><Trans i18nKey="aboutus:ganesh_god">Ganesh é um dos deuses mais venerados do hinduísmo, referido como <strong>"Destruidor de Obstáculos"</strong> e <strong>"Mestre do Intelecto"</strong>. Inspirados por essa divindade e pela crescente importância da <strong>Segurança da Informação</strong> no contexto atual, alguns estudantes do ICMC-USP (Instituto de Ciências Matemáticas e de Computação) decidiram criar um grupo extracurricular na área.</Trans></p>
 
@@ -58,8 +58,8 @@ function aboutus ({ t }){
           <div className="container mx-auto">
             <div className="flex flex-row items-start py-8 md:py-12">
               
-              <div className="AboutUs__Organization_Text text-justify text-white px-8 md:px-12 w-1/2">
-                <h1 className="text-4xl font-bold"><Trans i18nKey="aboutus:organization_title">Organização do Grupo</Trans></h1>
+              <div className="AboutUs__Organization_Org text-justify text-white px-8 md:px-12 md:w-1/2">
+                <h1 className="text-4xl text-left font-bold"><Trans i18nKey="aboutus:organization_title">Organização do Grupo</Trans></h1>
                 
                 <p className="my-4"><Trans i18nKey="aboutus:formal_start">Com a sua fundação dada formalmente em 2017, o Ganesh é organizado em <strong>Frentes de Estudos e Pesquisa</strong>, tendo atualmente as seguintes frentes ativas: Criptografia, Redes e Pentesting, Engenharia Reversa, Segurança Web e Hardware Hacking. </Trans></p>
 
@@ -68,8 +68,8 @@ function aboutus ({ t }){
                 <p className="my-4"><Trans i18nKey="aboutus:colaborators">Por fim, o grupo permite a participação de pessoas não vinculadas à USP como colaboradores, permitindo sua participação nas demais atividades e possui uma estrutura bastante flexível e horizontal que pode ser vista com mais detalhes no nosso <a href="#" target="_blank">Estatuto de Regras</a>.</Trans></p>
               </div>
 
-              <div className="AboutUs__Organization_Text text-justify text-white px-8 md:px-12 w-1/2">
-                <h1 className="text-4xl font-bold"><Trans i18nKey="aboutus:ping_title">Quero me tornar Membro!</Trans></h1>
+              <div className="AboutUs__Organization_Ping text-justify text-white px-8 md:px-12 md:w-1/2">
+                <h1 className="text-4xl text-left font-bold"><Trans i18nKey="aboutus:ping_title">Quero me tornar Membro!</Trans></h1>
                 
                 <p className="my-4"><Trans i18nKey="aboutus:ping1">Para se tornar um membro do Ganesh, o unico pré-requisito é a participação ativa do <strong>PIng</strong> (Processo de Ingresso) que ocorre no decorrer do primeiro semestre letivo todos os anos.</Trans></p>
 
@@ -85,48 +85,6 @@ function aboutus ({ t }){
         <section className="AboutUs__Map">
           <div id="map"></div>
         </section>
-
-        {/* <section>
-          <div className='container h-full mx-auto flex flex-col items-center text-center py-4'>
-                      
-            <div className='flex flex-row flex-wrap justify-center pb-8 md:pb-16'>
-              <div className='w-full md:w p-4'>
-                <div className='bg-white rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-16 tracking-wide leading-relaxed'>
-                  <p align="justify">
-                    <Trans i18nKey="aboutus:ganesh_god">
-                      Ganesh is one of the most venerated gods of hinduism, known as the simple of logical solutions, also referenced as the "Destroyer of Obstacles". Inspired by this divinity and by the growing importance of the security of the information on the context of the current life, some students from ICMC-USP decided to create an extracurricular group in this area. As the principal goal, the group pretends do spread a culture of awereness about the need of protecting data and systems. To do so, <a href="/atividades">activities</a> of research, education and extension related to the theme are realized by the group.
-                    </Trans>
-                  </p>
-                </div>
-              </div>
-
-              <div className='w-full md:w-1/2 p-4'>
-                <div className='bg-white rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-16 tracking-wide leading-relaxed'>
-                  <p align="justify">
-                    <Trans i18nKey="aboutus:formal_start">
-                      With the formal start in 2017, the group has been seeking to learn and teach the most it can about security in general.
-                    </Trans>
-                  </p>
-                  <p align="justify">
-                    <Trans i18nKey="aboutus:group_areas">
-                    To do so, we are organized in five main study and research areas, they are: Cryptography, Network Security, Privacy and GDPR, Reverse Engineering and Web Security. Each of them is described with more details in the respective</Trans> <a href="/frentes"><Trans i18nKey="aboutus:area_page">area page.</Trans></a>
-                  </p>
-                </div>
-              </div>
-              <div className='w-full md:w-1/2 p-4'>
-                <div className='bg-white rounded-lg shadow-md font-bold flex flex-col items-center justify-center p-8 md:p-16 tracking-wide leading-relaxed'>
-                  <p align="justify">
-                    <Trans i18nKey="aboutus:non_lucrative">
-                    The group is a non lucrative association and it is open to partnerships. It is mainly formed by undergraduation students of the </Trans><a href="/aboutus/usp"><Trans i18nKey="aboutus:usp">University Of São Paulo</Trans></a> <Trans i18nKey="aboutus:location">and located in São Carlos, Brazil, although it is open to the participation of external colaborators if they wish to do so.</Trans>
-                  </p>
-                  <p align="justify"> 
-                    <Trans i18nKey="aboutus:knowledge">In order to make the knowledge gained by the group public, most of our materials are currently stored at our</Trans> <a href="https://github.com/ganesh-icmc"> Github</a>.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
 
         <style jsx>{`
           .container-top {
@@ -162,6 +120,24 @@ function aboutus ({ t }){
           
           .AboutUs__Map #map { 
             height: 300px;
+          }
+
+          @media (max-width: 768px) {
+            .AboutUs__GroupIntro .container > *,
+            .AboutUs__Organization .container > * { 
+              flex-flow: column nowrap;
+              text-align: center;
+            }
+
+            .AboutUs__GroupIntro_Image img { 
+              max-width: 100%;
+            }
+
+            .AboutUs__Organization_Ping h1 {
+              border-top: solid 1px #666;
+              margin-top: 1rem;
+              padding-top: 1rem; 
+            }
           }
 
         `}</style>
