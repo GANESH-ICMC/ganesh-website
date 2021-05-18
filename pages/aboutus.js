@@ -58,7 +58,7 @@ function aboutus ({ t }){
 
                 <p className="my-4"><Trans i18nKey="aboutus:meetings">That way, it is on the members criteria to decide which topics are the most interesting ones and to participate in several weekly meetings that happen during the school semester.</Trans></p>
 
-                <p className="my-4"><Trans i18nKey="aboutus:colaborators">Also, the group allows that people that are not linked to University of São Paulo participate as colaborators, allowing them to participate in its activities and meetings. The group has a really flexile and horizontal structure that can be checked with more detail in our <a href="#" target="_blank">Rule Statute</a>(in Portuguese).</Trans></p>
+                <p className="my-4"><Trans i18nKey="aboutus:colaborators">Also, the group allows that people that are not linked to University of São Paulo participate as colaborators, allowing them to participate in its activities and meetings. The group has a really flexile and horizontal structure that can be checked with more detail in our <a href="/static/pdfs/EstatutoGanesh.pdf" target="_blank">Rule Statute</a>(in Portuguese).</Trans></p>
               </div>
 
               <div className="AboutUs__Organization_Ping text-justify text-white px-8 md:px-12 md:w-1/2">
@@ -68,7 +68,7 @@ function aboutus ({ t }){
 
                 <p className="my-4"><Trans i18nKey="aboutus:ping2">During the process, every participant will participate in classes that will introduce them to basic concepts of different areas, other than solving practical weekly Capture the Flag challenges made for the process. It is not necessary to have previous knowledge to participate on it.</Trans></p>
 
-                <p className="my-4"><Trans i18nKey="aboutus:ping3">At the end of the PIng, the participants that are interested in continuing to participate in the group can start their participations in the area weekly meetings after signing a <a href="#" target="_blank">Responsability Term</a>.. This term defines the ethical guidelines that should be followed, at risk of being temporarily of permanently removed from the group in case of infractions.</Trans></p>
+                <p className="my-4"><Trans i18nKey="aboutus:ping3">At the end of the PIng, the participants that are interested in continuing to participate in the group can start their participations in the area weekly meetings after signing a <a href="/static/pdfs/Termo.pdf" target="_blank">Responsability Term</a>. This term defines the ethical guidelines that should be followed, at risk of being temporarily of permanently removed from the group in case of infractions.</Trans></p>
               </div>
 
             </div>
