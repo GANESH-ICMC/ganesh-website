@@ -43,7 +43,7 @@ app.prepare().then(() => {
 
   // Starting HTTP
   var httpServer = http.createServer(server)
-  httpServer.listen(PORT, (err) => {
+  server.listen(PORT, (err) => {
     if (err) throw err
       console.log('Listen HTTP on port ', PORT);
   });
