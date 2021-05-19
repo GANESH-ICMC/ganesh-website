@@ -13,4 +13,4 @@ ENV NODE_ENV production
 
 EXPOSE 3000
 
-CMD ["yarn", "run", "start"]
+CMD ["sh", "-c", "source .env && yarn run start"]
