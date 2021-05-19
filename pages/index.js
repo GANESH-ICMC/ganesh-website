@@ -93,7 +93,7 @@ function Home ({ t })  {
               <ActivityCard 
                 title={lastActivity.title} 
                 date={lastActivity.date}
-                description={lastActivity.description.substr(0, lastActivity.description.indexOf(" ", 100)) + '...'}
+                description={lastActivity.description.substr(0, lastActivity.description.indexOf(" ", 150)) + '...'}
                 imagesrc={lastActivity.imagesrc}
                 link={lastActivity.link}
                 />

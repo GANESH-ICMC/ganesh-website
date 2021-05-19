@@ -10,7 +10,7 @@ function ActivityCard({ title, date, description, imagesrc, link}) {
   return (
     <div className="ActivityCard bg-white rounded-lg shadow-lg w-full flex flex-col">
       <img className="ActivityCard__Image border-gray-700 border-4" src={imagesrc} />
-      <div className="ActivityCard__Content p-4 flex-grow">
+      <div className="ActivityCard__Content p-4 my-2 flex-grow">
         
         <h4 className="ActivityCard__Title font-bold">{title}</h4>
         
