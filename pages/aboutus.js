@@ -21,7 +21,7 @@ function aboutus ({ t }){
           <h1 className="text-4xl text-center text-white"><Trans i18nKey="aboutus:title">About Us</Trans></h1>
         </div>
 
-        {/* First Section - Group Name */}
+        {/* Section - Group Name */}
         <section className="AboutUs__GroupIntro" style={{backgroundColor: "#fff" }}>
           <div className="container mx-auto">
             <div className="flex flex-row-reverse items-center py-8 md:py-12">
@@ -46,7 +46,30 @@ function aboutus ({ t }){
           </div>
         </section>
 
-        {/* First Section - Group Organization */}
+        {/* Section - CTF Team */}
+        <section className="AboutUs__CTF_Team" style={{backgroundColor: "#333", color: "#ededed"}}>
+          <div className="container mx-auto">
+            <div className="flex flex-row items-center py-8 md:py-12">
+              
+              <div className="AboutUs__CTF_Team_Text text-justify px-8 md:px-12 flex-grow">
+                <h1 className="text-4xl text-left font-bold">Capture the Flags</h1>
+                
+                <p className="my-4">Além dos objetivos educacionais, o Ganesh também atua como um time de CTF (Capture the Flag) sendo atualmente o <strong>2º melhor time nacional</strong> e <strong>1º na categoria universitário</strong>. Nessas competições, nossos membros são desafiados a encontrar vulnerabilidades em diferentes cenários e encontrarem as Flags&#123;...&#125;, textos específicos que comprovam a solução de um desafio.</p>
+
+                <p className="my-4">Os CTF's são uma ótima maneira de testar os conhecimentos de segurança obtidos em cenários controlados e emocionantes, além de proporcionarem o aprendizado de novos temas e networking com outros entusiastas de segurança.</p>
+                
+                <p className="my-4">Para saber mais sobre nosso time e as competições que participamos acesse a nossa página no <a href="https://ctftime.org/team/54706" target="_blank">CTF Time</a>. Caso queira conhecer mais sobre os CTF's nacionais recomendamos uma visita ao site do <a href="https://ctf-br.org/" target="_blank">CTF-BR</a> em que somos afiliados.</p>
+              </div>
+              
+              <div className="AboutUs__CTF_Team_Image px-8">
+                <img src='/static/images/pages/hacker_demo1.png' alt='Ganesha God'/>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* Section - Group Organization */}
         <section className="AboutUs__Organization" style={{backgroundColor: "#333" }}>
           <div className="container mx-auto">
             <div className="flex flex-row items-start py-8 md:py-12">
@@ -100,12 +123,28 @@ function aboutus ({ t }){
             filter: grayscale(20%);
           }
           
+          .AboutUs__CTF_Team { 
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), 
+                        url('/static/images/pages/aboutus_ctfbg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            overflow: hidden;
+          }
+
+          .AboutUs__CTF_Team_Image { 
+            min-width: 300px;
+            // align-self: end;
+            // margin-bottom: -3.2rem;
+          }
+
           .AboutUs__Organization a,
+          .AboutUs__CTF_Team a,
           .AboutUs__GroupIntro a { 
             color: #0ca899;
           }
           
           .AboutUs__Organization a:hover,
+          .AboutUs__CTF_Team a:hover,
           .AboutUs__GroupIntro a:hover { 
             color: #009688;
             text-decoration: underline;
