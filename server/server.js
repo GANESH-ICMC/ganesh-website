@@ -22,11 +22,11 @@ const upload = multer(); // handles forms data
 
 // Configure HTTPS
 var httpsCredentials = { key: undefined, cert: undefined, ca: undefined }
-if(CERTIFICATE_KEY_PATH && CERTIFICATE_CERT_PATH && CERTIFICATE_CA_PATH ){
+if(CERTIFICATE_KEY_PATH && CERTIFICATE_CERT_PATH){
   httpsCredentials = {
     key:  fs.readFileSync(process.env.CERTIFICATE_KEY_PATH),
     cert: fs.readFileSync(process.env.CERTIFICATE_CERT_PATH),
-    ca:   fs.readFileSync(process.env.CERTIFICATE_CA_PATH)
+//    ca:   fs.readFileSync(process.env.CERTIFICATE_CA_PATH)
   };
 }
 
@@ -49,7 +49,7 @@ app.prepare().then(() => {
   });
 
   // Starting HTTPS if certificate setted
-  if(CERTIFICATE_KEY_PATH && CERTIFICATE_CERT_PATH && CERTIFICATE_CA_PATH){
+  if(CERTIFICATE_KEY_PATH && CERTIFICATE_CERT_PATH){
     var httpsServer = https.createServer(httpsCredentials, server)
     httpsServer.listen(HTTPS_PORT, (err) => {
       if (err) throw err
