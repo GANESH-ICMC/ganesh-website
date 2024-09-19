@@ -194,14 +194,16 @@ export const DesktopNavbar = React.forwardRef(({
             <button>{ LanguageSwitcher() }</button>
             <ul className="submenu">
               <li>
-                  <button onClick={
-                    () => i18n.changeLanguage("br")
-                  }>Português BR</button>
+                <button onClick={
+                  () => i18n.changeLanguage("br")}
+                  className="flex items-center"
+                ><img alt="Português (BR)" className="w-8 pr-2" src="/static/images/icons/BR.svg"/>Português (BR)</button>
               </li>
               <li>
-                  <button onClick={
-                    () => i18n.changeLanguage("en")
-                  }>English</button>
+                <button onClick={
+                  () => i18n.changeLanguage("en")}
+                  className="flex items-center"
+                ><img alt="English" className="w-8 pr-2" src="/static/images/icons/US.svg"/>English</button>
               </li>
             </ul>
           </li>

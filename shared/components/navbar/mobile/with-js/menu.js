@@ -71,7 +71,7 @@ export const NavbarMenu = React.forwardRef(({
             transition: `transform ${animationTime}ms linear`,
             transform: `rotate(${isOpen? 90 : 0}deg)`,
         }}>
-            ⮞
+            ▶
         </span>
         <ul
           className="submenu"
@@ -134,7 +134,7 @@ export const NavbarMenu = React.forwardRef(({
     
       <li onClick={()=>setIsOpenLanguage(s => !s)}>
       <button>
-        {'🇧🇷/🇬🇧'}
+        <img className="w-6" style={{filter: "invert(1)"}} src="/static/images/icons/globe.svg"/>
       </button>
       <span
         ref={submenuArrow}
@@ -142,7 +142,7 @@ export const NavbarMenu = React.forwardRef(({
           transition: `transform ${animationTime}ms linear`,
           transform: `rotate(${isOpenLanguage? 90 : 0}deg)`,
       }}>
-            ⮞
+            ▶
         </span>
       <ul
         className="submenu"
@@ -153,14 +153,16 @@ export const NavbarMenu = React.forwardRef(({
         }}
       >
         <li>
-            <button onClick={
-              () => i18n.changeLanguage("br")
-            }>Português BR</button>
+          <button onClick={
+            () => i18n.changeLanguage("br")}
+            className="flex items-center"
+          ><img alt="Português (BR)" className="w-8 pr-2" src="/static/images/icons/BR.svg"/>Português (BR)</button>
         </li>
         <li>
-            <button onClick={
-              () => i18n.changeLanguage("en")
-            }>English</button>
+          <button onClick={
+            () => i18n.changeLanguage("en")}
+            className="flex items-center"
+          ><img alt="English" className="w-8 pr-2" src="/static/images/icons/US.svg"/>English</button>
         </li>
       </ul>
       </li>

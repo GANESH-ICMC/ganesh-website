@@ -2,13 +2,15 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 export function LanguageSwitcher() {
-
+  return <img className="w-6" style={{filter: "invert(1)"}} src="/static/images/icons/globe.svg"/>;
+  /*
   const { i18n } = useTranslation();
 
   if (i18n.language == "en") return "English";
   if (i18n.language == "br") return "Português BR";
 
   else return "English";
+  */
 }
 
 export function LanguageToggle() {
