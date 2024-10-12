@@ -14,14 +14,17 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(cuid())
-  email     String   @unique
-  name      String?
-  password  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  role      String   @default("USER")
-  Posts     Post[]
+  id       String @id @default(cuid())
+  email    String @unique
+  password String
+}
+
+model Author {
+  id     String  @id @default(cuid())
+  github String  @unique
+  posts  Post[]
+  name   String?
+  avatar String?
 }
 
 model Post {
@@ -32,9 +35,8 @@ model Post {
   images    String[]
   type      String
   published Boolean  @default(false)
-  author    User     @relation(fields: [authorId], references: [id])
+  author    Author   @relation(fields: [authorId], references: [id])
   authorId  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
-

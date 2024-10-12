@@ -4,6 +4,7 @@ import { z } from "zod";
 import prisma from "@/services/prisma";
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
+import { addAuthor } from "./author";
 
 const FormSchema = z.object({
   title: z.string().min(5).max(50),
@@ -12,86 +13,141 @@ const FormSchema = z.object({
   images: z.array(z.string()),
   type: z.enum(['artigo', 'dica', 'atividade', 'noticia']),
   published: z.boolean(),
-  authorId: z.string()
+  authorGithub: z.string(),
+  authorId: z.string(),
 })
 
 const CreatePost = FormSchema.omit({ authorId: true })
 const UpdatePost = FormSchema.omit({ authorId: true })
 
-export const createPost = async (formData: FormData) => { 
+export type State = {
+  errors?: {
+    title?: string[];
+    content?: string[];
+    status?: string[];
+    type?: string[];
+    published?: string[];
+    images?: string[];
+    authorGithub?: string[];
+  };
+  message?: string | null;
+};
+
+export const createPost = async (prevState: State, formData: FormData): Promise<State> => {
   const validatedFields = CreatePost.safeParse({
     title: formData.get('title'),
     summary: formData.get('summary'),
     content: formData.get('content'),
     images: formData.getAll('images'),
-    type: formData.get('type'),
+    type: formData.get('typeId'),
     published: formData.get('published') === 'true',
+    authorGithub: formData.get('authorGithub')
   })
 
   if (!validatedFields.success) {
-    return { error: validatedFields.error }
+    return {
+      errors: validatedFields.error.flatten().fieldErrors,
+      message: 'Missing Fields. Failed to Create Post.',
+    };
   }
 
   try {
-    const post = await prisma.post.create({
-      data: {
-        ...validatedFields.data,
-        authorId: "1"
-      }
-    })
+    const newAuthor = await addAuthor(validatedFields.data.authorGithub);
+
+    if (newAuthor) {
+      const post = await prisma.post.create({
+        data: {
+          title: validatedFields.data.title,
+          summary: validatedFields.data.summary,
+          content: validatedFields.data.content,
+          images: validatedFields.data.images,
+          type: validatedFields.data.type,
+          published: validatedFields.data.published,
+          author: {
+            connect: {
+              github: newAuthor.github,
+              name: newAuthor.name,
+              avatar: newAuthor.avatar,
+            },
+          }
+        }
+      })
+    }
   } catch (e) {
     return {
-      error: e,
       message: 'Database Error: Could not create post',
      }
   }
 
-  revalidatePath('/posts');
-  redirect('/posts');
+  revalidatePath('/dashboard/posts');
+  redirect('/dashboard/posts');
 }
 
-export const updatePost = async (id: string, formData: FormData) => {
+export const updatePost = async (prevState: State, formData: FormData, id: string): Promise<State> => {
   const validatedFields = UpdatePost.safeParse({
     title: formData.get('title'),
     summary: formData.get('summary'),
     content: formData.get('content'),
     images: formData.getAll('images'),
-    type: formData.get('type'),
+    type: formData.get('typeId'),
     published: formData.get('published') === 'true',
+    authorGithub: formData.get('authorGithub')
   })
 
   if (!validatedFields.success) {
-    return { error: validatedFields.error }
+    return {
+      errors: validatedFields.error.flatten().fieldErrors,
+      message: 'Missing Fields. Failed to Create Post.',
+    };
   }
 
   try {
+    const author = await addAuthor(validatedFields.data.authorGithub);
+
+    if (!author) {
+      return {
+        message: 'Could not find author',
+      }
+    }
+
     const post = await prisma.post.update({
       where: { id },
-      data: validatedFields.data
+      data: {
+          title: validatedFields.data.title,
+          summary: validatedFields.data.summary,
+          content: validatedFields.data.content,
+          images: validatedFields.data.images,
+          type: validatedFields.data.type,
+          published: validatedFields.data.published,
+          author: {
+            connect: {
+              github: author.github,
+              name: author.name,
+              avatar: author.avatar,
+            },
+          }
+        }
     })
   } catch (e) {
+    console.error(e);
     return {
-      error: e,
       message: 'Database Error: Could not update post',
     }
   }
 
-  revalidatePath('/posts');
-  redirect('/posts');
+  revalidatePath('/dashboard/posts');
+  redirect('/dashboard/posts');
 }
 
 export const deletePost = async (id: string) => {
   try {
-    const post = await prisma.post.delete({
+    await prisma.post.delete({
       where: { id }
     })
+    revalidatePath('/dashboard/posts');
+    console.log('Deleted post with id:', id);
   } catch (e) {
-    return {
-      error: e,
-      message: 'Database Error: Could not delete post',
-    }
+    console.error(e);
+    throw new Error('Database Error: Could not delete post');
   }
-
-  revalidatePath('/posts');
-  redirect('/posts');
 }
