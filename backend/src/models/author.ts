@@ -3,4 +3,5 @@ export interface Author {
   github: string
   name?: string
   avatar?: string
+  postCount?: number
 }

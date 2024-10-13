@@ -11,7 +11,7 @@ const FormSchema = z.object({
   summary: z.string().min(3).max(200),
   content: z.string().min(3),
   images: z.array(z.string()),
-  type: z.enum(['artigo', 'dica', 'atividade', 'noticia']),
+  type: z.enum(['artigo', 'dica', 'atividade', 'notícia']),
   published: z.boolean(),
   authorGithub: z.string(),
   authorId: z.string(),

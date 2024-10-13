@@ -2,23 +2,91 @@ import prisma from '@/services/prisma';
 import { Post, PostForm } from '@/models/post';
 import { Author } from '@/models/author';
 
+const ITEMS_PER_PAGE = 5;
+
+export const fetchAuthorsPages = async (): Promise<number> => {
+  try {
+    const count = await prisma.author.count();
+
+    return Math.ceil(count / ITEMS_PER_PAGE);
+  } catch (e) {
+    console.error(e);
+    throw new Error('Failed to fetch total number of authors.');
+  }
+}
+
 export const fetchAuthors = async (): Promise<Author[]> => {
   try {
-    const data = await prisma.author.findMany({}) as Author[];
+    const data = await prisma.author.findMany({});
 
-    return data.map((author) => ({
-      ...author,
+    const authors: Author[] = data.map((author) => ({
+      id: author.id,
+      github: author.github,
+      name: author.name ?? undefined,
+      avatar: author.avatar ?? undefined,
     }));
+
+    return authors;
   } catch (e) {
     console.error(e);
     return [];
   }
 }
 
-const ITEMS_PER_PAGE = 5;
-export const fetchPostsPages = async (): Promise<number> => {
+export const fetchAuthorsByPage = async (page: number): Promise<Author[]> => {
   try {
-    const count = await prisma.post.count();
+    const data = await prisma.author.findMany({
+      skip: (page - 1) * ITEMS_PER_PAGE,
+      take: ITEMS_PER_PAGE,
+      include: {
+        posts: true,
+      }
+    });
+
+    const authors: Author[] = data.map((author) => ({
+      id: author.id,
+      github: author.github,
+      name: author.name ?? undefined,
+      avatar: author.avatar ?? undefined,
+      postCount: author.posts.length,
+    }));
+
+    return authors;
+  } catch (e) {
+    console.error(e);
+    return [];
+  }
+}
+
+export const fetchAuthorById = async (id: string): Promise<Author | null> => {
+  try {
+    const data = await prisma.author.findUnique({
+      where: { id }
+    });
+
+    if (!data) {
+      return null;
+    }
+
+    const author: Author = {
+      id: data.id,
+      github: data.github,
+      name: data.name ?? undefined,
+      avatar: data.avatar ?? undefined,
+    };
+
+    return author;
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
+}
+
+export const fetchPostsPages = async (type?: PostForm['type']): Promise<number> => {
+  try {
+    const count = await prisma.post.count(
+      type ? { where: { type } } : undefined
+    );
 
     return Math.ceil(count / ITEMS_PER_PAGE);
   } catch (e) {

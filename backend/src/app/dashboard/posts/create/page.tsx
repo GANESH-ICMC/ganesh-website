@@ -1,4 +1,4 @@
-import Breadcrumbs from '@/components/posts/breadcrumbs';
+import Breadcrumbs from '@/components/breadcrumbs';
 import Form from '@/components/posts/create-form';
 import { fetchAuthors } from '@/services/data';
  

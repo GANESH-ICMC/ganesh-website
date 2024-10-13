@@ -1,8 +1,11 @@
+export type PostType = 'artigo' | 'dica' | 'atividade' | 'notícia';
+export const postTypes: PostType[] = ['artigo', 'dica', 'atividade', 'notícia'];
+
 export interface Post {
   id: string
   title: string
   summary?: string
-  type: 'artigo' | 'dica' | 'atividade' | 'noticia'
+  type: PostType
   createdAt: Date
   published: boolean
   authorGithub: string
@@ -15,9 +18,7 @@ export interface PostForm {
   content: string
   images: string[]
   createdAt: Date
-  type: 'artigo' | 'dica' | 'atividade' | 'noticia'
+  type: PostType
   published: boolean
   authorGithub: string
 }
-
-export const postTypes = ["artigo", "dica", "atividade", "noticia"];

@@ -1,8 +1,9 @@
 export default function Page() {
   return (
-    <div>
-      <h1>Page</h1>
-      <p>This is a page</p>
+    <div className="w-full md:mb-16">
+      <div className="flex w-full items-center justify-between">
+        <h1 className={`text-2xl`}>Dashboard</h1>
+      </div>
     </div>
   )
 }

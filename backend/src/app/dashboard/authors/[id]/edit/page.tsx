@@ -1,6 +1,6 @@
-import Form from '@/components/posts/edit-form';
+import Form from '@/components/authors/edit-form';
 import Breadcrumbs from '@/components/breadcrumbs';
-import { fetchAuthors, fetchPostById } from '@/services/data';
+import { fetchAuthorById } from '@/services/data';
 import { notFound } from 'next/navigation';
 
 import type { Metadata } from 'next';
@@ -10,12 +10,11 @@ export const metadata: Metadata = {
 
 export default async function Page({ params }: { params: { id: string } }) {
   const { id } = params;
-  const [post, authors] = await Promise.all([
-    fetchPostById(id),
-    fetchAuthors(),
+  const [author] = await Promise.all([
+    fetchAuthorById(id),
   ]);
 
-  if (!post) {
+  if (!author) {
     notFound();
   }
 
@@ -23,15 +22,15 @@ export default async function Page({ params }: { params: { id: string } }) {
     <main>
       <Breadcrumbs
         breadcrumbs={[
-          { label: 'Posts', href: '/dashboard/posts' },
+          { label: 'Authors', href: '/dashboard/authors' },
           {
-            label: 'Edit Post',
-            href: `/dashboard/posts/${id}/edit`,
+            label: 'Edit Author Info',
+            href: `/dashboard/authors/${id}/edit`,
             active: true,
           },
         ]}
       />
-      <Form post={post} authors={authors} />
+      <Form author={author} />
     </main>
   );
 }
