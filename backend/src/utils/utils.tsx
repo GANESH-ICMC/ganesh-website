@@ -1,1 +1,0 @@
-// here we will create random utility functions that we can use in the project
