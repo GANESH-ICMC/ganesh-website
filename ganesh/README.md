@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Projeto Ganesh
 
-## Getting Started
+Este é um projeto feito em Nextjs, Prisma e Postgres, para ser uma versão nova do site do Ganesh.
+Algumas funcionalidades:
+- Autenticação
+- Criação de conteúdo (artigo, dicas, atividades ou notícias)
+- Alteração de dados do autor
 
-First, run the development server:
+### Como rodar?
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Rode todos os passos a seguir no diretório `/ganesh`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Instale as dependências do projeto com `npm install`.
+2. Sincronize com os schemas do projeto com `npx prisma generate`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+###### Apenas na primeira vez
+3. Rode o postgres com `docker compose run backend`.
+4. Realize as migrations no postgres com `npx prisma migrate dev` em um outro terminal.
+5. Adicione o primeiro dado ao bd com `npx prisma db push`.
+6. Volte no terminal que está rodando o backend, e o interrompa.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+###### Para rodar todas as vezes
+7.  Rode backend com `docker compose up -d`.
+8.  Execute o projeto next com `npm run dev`.
+9.  Na página inicial, você poderá logar com email: `admin@example.com` e senha: `password`.
 
-## Learn More
+### Próximos passos
 
-To learn more about Next.js, take a look at the following resources:
+- Alterar um pouco das rotas (o atual começará com a rota `admin`)
+- Trazer parte dos códigos do site antigo para o novo.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Alguns prints de tela
+![image](https://github.com/user-attachments/assets/716faa2a-e72d-47f2-8e82-a6089babc849)
+![image](https://github.com/user-attachments/assets/9ff10f76-7b14-4a6b-af40-1783f023bbc3)
