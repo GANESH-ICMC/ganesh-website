@@ -2,7 +2,7 @@ import Link from 'next/link';
 import NavLinks from './nav-links';
 import { PowerIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
-// import { signOut } from '@/auth';
+import { signOut } from '../auth';
 
 export const experimental_ppr = true;
 
@@ -10,12 +10,12 @@ export default function SideNav() {
   return (
     <div className="flex h-full flex-col px-3 py-4 md:px-2">
       <Link
-        className="mb-2 flex h-20 items-end justify-start rounded-md bg-primary p-4 md:h-40"
+        className="mb-2 flex h-20 items-end justify-start rounded-md bg-background p-4 md:h-40"
         href="/"
       >
         <div className="w-32 text-white md:w-40">
           <Image
-            src="/images/ganesh-logo.svg"
+            src="/images/ganesh-logo-coloured.png"
             height={60}
             width={60}
             alt="Ganesh Logo" />
@@ -27,7 +27,7 @@ export default function SideNav() {
         <form
           action={async () => {
             'use server';
-            // await signOut();
+            await signOut();
           }}
         >
           <button className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-green-200 hover:text-green-700 md:flex-none md:justify-start md:p-2 md:px-3">

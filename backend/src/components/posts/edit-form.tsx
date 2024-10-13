@@ -12,7 +12,7 @@ import {
   DocumentCheckIcon
 } from '@heroicons/react/24/outline';
 import { Button } from '@/components/button';
-import { useActionState } from '@/utils/client';
+import { useActionState } from '@/lib/utils';
 import { PostForm, postTypes } from '@/models/post';
 import { State, updatePost } from '@/services/post';
 import { Author } from '@/models/author';

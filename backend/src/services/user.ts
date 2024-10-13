@@ -4,6 +4,7 @@ import { z } from "zod";
 import prisma from "@/services/prisma";
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
+import { verifyAndRedirect } from "@/lib/session";
 
 const FormSchema = z.object({
   email: z.string().email(),
@@ -15,6 +16,8 @@ const FormSchema = z.object({
 const CreateUser = FormSchema;
 
 export const createUser = async (formData: FormData) => {
+  verifyAndRedirect();
+
   const validatedFields = CreateUser.safeParse({
     email: formData.get('email'),
     name: formData.get('name'),
@@ -44,6 +47,8 @@ export const createUser = async (formData: FormData) => {
 }
 
 export const updateUser = async (id: string, formData: FormData) => {
+  verifyAndRedirect();
+
   const validatedFields = CreateUser.safeParse({
     email: formData.get('email'),
     name: formData.get('name'),
@@ -74,6 +79,8 @@ export const updateUser = async (id: string, formData: FormData) => {
 }
 
 export const deleteUser = async (id: string) => {
+  verifyAndRedirect();
+
   try {
     await prisma.user.delete({
       where: { id }

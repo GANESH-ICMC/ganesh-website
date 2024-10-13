@@ -1,18 +1,13 @@
 "use server"
 
-import { z } from "zod";
 import prisma from "@/services/prisma";
 import { revalidatePath } from 'next/cache';
-import { redirect } from 'next/navigation';
-
-const FormSchema = z.object({
-  id: z.string(),
-  github: z.string(),
-  name: z.string().optional(),
-  avatar: z.string().optional(),
-});
+import { AuthorSchema } from "@/lib/zod";
+import { verifyAndRedirect } from "@/lib/session";
 
 export const addAuthor = async (github: string) => {
+  verifyAndRedirect();
+  
   try {
     const authorExists = await prisma.author.findUnique({
       where: { github },
@@ -41,7 +36,9 @@ export const addAuthor = async (github: string) => {
 }
 
 export const updateAuthor = async (id: string, formData: FormData) => {
-  const validatedFields = FormSchema.safeParse({
+  verifyAndRedirect();
+
+  const validatedFields = AuthorSchema.safeParse({
     id,
     github: formData.get('github'),
     name: formData.get('name'),
@@ -73,6 +70,8 @@ export const updateAuthor = async (id: string, formData: FormData) => {
 }
 
 export const deleteAuthor = async (id: string) => {
+  verifyAndRedirect();
+
   try {
     const author = await prisma.author.findUnique({
       where: { id },

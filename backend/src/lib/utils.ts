@@ -1,5 +1,9 @@
 "use client"
 
+import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
+import { useState } from 'react';
+
 export const generatePagination = (currentPage: number, totalPages: number) => {
   // If the total number of pages is 7 or less,
   // display all pages without any ellipsis.
@@ -33,8 +37,19 @@ export const generatePagination = (currentPage: number, totalPages: number) => {
   ];
 };
 
-import { type ClassValue, clsx } from "clsx"
 
 export function cn(...inputs: ClassValue[]) {
-  return clsx(inputs)
+  return twMerge(clsx(inputs))
+}
+
+type Action<State, FormData> = (state: State, formData: FormData) => Promise<State> | State;
+export function useActionState<State, FormData>(action: Action<State, FormData>, initialState: State) {
+  const [state, setState] = useState<State>(initialState);
+  
+  const formAction = async (formData: FormData) => {
+    const newState = await action(state, formData);
+    setState(newState);
+  };
+
+  return [state, formAction] as [State, (formData: FormData) => Promise<void>];
 }

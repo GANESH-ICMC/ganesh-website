@@ -1,24 +1,14 @@
 'use server'
 
-import { z } from "zod";
 import prisma from "@/services/prisma";
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { addAuthor } from "./author";
+import { PostSchema } from "@/lib/zod";
+import { verifyAndRedirect } from "@/lib/session";
 
-const FormSchema = z.object({
-  title: z.string().min(5).max(50),
-  summary: z.string().min(3).max(200),
-  content: z.string().min(3),
-  images: z.array(z.string()),
-  type: z.enum(['artigo', 'dica', 'atividade', 'notícia']),
-  published: z.boolean(),
-  authorGithub: z.string(),
-  authorId: z.string(),
-})
-
-const CreatePost = FormSchema.omit({ authorId: true })
-const UpdatePost = FormSchema.omit({ authorId: true })
+const CreatePost = PostSchema.omit({ authorId: true })
+const UpdatePost = PostSchema.omit({ authorId: true })
 
 export type State = {
   errors?: {
@@ -34,6 +24,8 @@ export type State = {
 };
 
 export const createPost = async (prevState: State, formData: FormData): Promise<State> => {
+  verifyAndRedirect();
+
   const validatedFields = CreatePost.safeParse({
     title: formData.get('title'),
     summary: formData.get('summary'),
@@ -84,6 +76,8 @@ export const createPost = async (prevState: State, formData: FormData): Promise<
 }
 
 export const updatePost = async (prevState: State, formData: FormData, id: string): Promise<State> => {
+  verifyAndRedirect();
+
   const validatedFields = UpdatePost.safeParse({
     title: formData.get('title'),
     summary: formData.get('summary'),
@@ -140,6 +134,8 @@ export const updatePost = async (prevState: State, formData: FormData, id: strin
 }
 
 export const deletePost = async (id: string) => {
+  verifyAndRedirect();
+
   try {
     await prisma.post.delete({
       where: { id }
