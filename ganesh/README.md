@@ -8,25 +8,25 @@ Algumas funcionalidades:
 
 ### Como rodar?
 
-Rode todos os passos a seguir no diretório `/ganesh`
+Rode todos os passos a seguir no diretório `/ganesh`, em um ambiente *linux (ou WSL)* 
 
 1. Instale as dependências do projeto com `npm install`.
 2. Sincronize com os schemas do projeto com `npx prisma generate`.
 
 ###### Apenas na primeira vez
-3. Rode o postgres com `docker compose run backend`.
+3. Rode o backend com `docker compose up -d`.
 4. Realize as migrations no postgres com `npx prisma migrate dev` em um outro terminal.
-5. Adicione o primeiro dado ao bd com `npx prisma db push`.
-6. Volte no terminal que está rodando o backend, e o interrompa.
+5. Adicione o primeiro dado ao bd com `npx prisma db seed`.
+6. Termine o backend com `docker compose down`.
 
 ###### Para rodar todas as vezes
-7.  Rode backend com `docker compose up -d`.
+7. Rode o backend com `docker compose up -d`.
 8.  Execute o projeto next com `npm run dev`.
 9.  Na página inicial, você poderá logar com email: `admin@example.com` e senha: `password`.
+10. Caso queira terminar, `docker compose down`.
 
 ### Próximos passos
 
-- Alterar um pouco das rotas (o atual começará com a rota `admin`)
 - Trazer parte dos códigos do site antigo para o novo.
 
 ### Alguns prints de tela

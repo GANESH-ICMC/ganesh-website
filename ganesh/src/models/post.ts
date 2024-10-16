@@ -21,4 +21,6 @@ export interface PostForm {
   type: PostType
   published: boolean
   authorGithub: string
+  authorName: string
+  authorAvatar?: string
 }

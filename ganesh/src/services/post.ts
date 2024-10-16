@@ -71,8 +71,8 @@ export const createPost = async (prevState: State, formData: FormData): Promise<
      }
   }
 
-  revalidatePath('/dashboard/posts');
-  redirect('/dashboard/posts');
+  revalidatePath('/admin/dashboard/posts');
+  redirect('/admin/dashboard/posts');
 }
 
 export const updatePost = async (prevState: State, formData: FormData, id: string): Promise<State> => {
@@ -129,8 +129,8 @@ export const updatePost = async (prevState: State, formData: FormData, id: strin
     }
   }
 
-  revalidatePath('/dashboard/posts');
-  redirect('/dashboard/posts');
+  revalidatePath('/admin/dashboard/posts');
+  redirect('/admin/dashboard/posts');
 }
 
 export const deletePost = async (id: string) => {
@@ -140,7 +140,7 @@ export const deletePost = async (id: string) => {
     await prisma.post.delete({
       where: { id }
     })
-    revalidatePath('/dashboard/posts');
+    revalidatePath('/admin/dashboard/posts');
     console.log('Deleted post with id:', id);
   } catch (e) {
     console.error(e);
