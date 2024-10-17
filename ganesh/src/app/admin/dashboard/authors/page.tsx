@@ -1,6 +1,5 @@
 import Pagination from '@/components/pagination';
 import Table from '@/components/authors/table';
-import { CreatePost } from '@/components/posts/buttons';
 import { Suspense } from 'react';
 import { fetchAuthorsPages } from '@/services/data';
 

@@ -38,7 +38,7 @@ export default function Form({ authors }: { authors: Author[] }) {
     errors: { authorGithub: [] },
   });
   const [filteredAuthors, setFilteredAuthors] = useState(authors);
-  const handleInputChange = (e: any) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setGithubState((prevState) => ({ ...prevState, authorGithub: value }));
     

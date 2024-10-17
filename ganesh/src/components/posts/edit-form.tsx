@@ -39,7 +39,7 @@ export default function Form({ post, authors }: { post: PostForm; authors: Autho
     errors: { authorGithub: [] },
   });
   const [filteredAuthors, setFilteredAuthors] = useState(authors);
-  const handleInputChange = (e: any) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setGithubState((prevState) => ({ ...prevState, authorGithub: value }));
     
@@ -103,7 +103,7 @@ export default function Form({ post, authors }: { post: PostForm; authors: Autho
           {/* Post Title */}
           <div className="mb-4">
             <label htmlFor="title" className="mb-2 block text-sm font-medium">
-              Dê um título para o post
+              Dê um títulon top para o post
             </label>
             <div className="relative mt-2 rounded-md">
               <div className="relative">

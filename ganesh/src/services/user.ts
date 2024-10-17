@@ -30,7 +30,7 @@ export const createUser = async (formData: FormData) => {
   }
 
   try {
-    const user = await prisma.user.create({
+    await prisma.user.create({
       data: {
         ...validatedFields.data,
       }
@@ -61,7 +61,7 @@ export const updateUser = async (id: string, formData: FormData) => {
   }
 
   try {
-    const user = await prisma.user.update({
+    await prisma.user.update({
       where: { id },
       data: {
         ...validatedFields.data,

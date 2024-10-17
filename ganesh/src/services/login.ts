@@ -8,7 +8,7 @@ export async function authenticate(
   formData: FormData,
 ) {
   try {
-    const user = await signIn('credentials', {
+    await signIn('credentials', {
       email: formData.get('email') as string,
       password: formData.get('password') as string,
       redirectTo: '/admin/dashboard',
