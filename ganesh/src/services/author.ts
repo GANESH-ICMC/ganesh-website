@@ -54,7 +54,7 @@ export const updateAuthor = async (id: string, formData: FormData) => {
   }
 
   try {
-    const author = await prisma.author.update({
+    await prisma.author.update({
       where: { id },
       data: {
         github: validatedFields.data.github,

@@ -47,7 +47,7 @@ export const createPost = async (prevState: State, formData: FormData): Promise<
     const newAuthor = await addAuthor(validatedFields.data.authorGithub);
 
     if (newAuthor) {
-      const post = await prisma.post.create({
+      await prisma.post.create({
         data: {
           title: validatedFields.data.title,
           summary: validatedFields.data.summary,
@@ -66,6 +66,7 @@ export const createPost = async (prevState: State, formData: FormData): Promise<
       })
     }
   } catch (e) {
+    console.error(e);
     return {
       message: 'Database Error: Could not create post',
      }
@@ -104,7 +105,7 @@ export const updatePost = async (prevState: State, formData: FormData, id: strin
       }
     }
 
-    const post = await prisma.post.update({
+    await prisma.post.update({
       where: { id },
       data: {
           title: validatedFields.data.title,
