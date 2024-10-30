@@ -4,6 +4,7 @@ import prisma from "@/services/prisma";
 import { revalidatePath } from 'next/cache';
 import { AuthorSchema } from "@/lib/zod";
 import { verifyAndRedirect } from "@/lib/session";
+import { redirect } from "next/navigation";
 
 export const addAuthor = async (github: string) => {
   verifyAndRedirect();
@@ -38,6 +39,8 @@ export const addAuthor = async (github: string) => {
 export const updateAuthor = async (id: string, formData: FormData) => {
   verifyAndRedirect();
 
+  console.log('updateAuthor', id, formData);
+
   const validatedFields = AuthorSchema.safeParse({
     id,
     github: formData.get('github'),
@@ -46,14 +49,12 @@ export const updateAuthor = async (id: string, formData: FormData) => {
   });
 
   if (!validatedFields.success) {
-    return {
-      errors: validatedFields.error.flatten().fieldErrors,
-      message: 'Missing Fields. Failed to Update Author.',
-    };
+    console.error(validatedFields.error);
+    return;
   }
 
   try {
-    const author = await prisma.author.update({
+    await prisma.author.update({
       where: { id },
       data: {
         github: validatedFields.data.github,
@@ -61,12 +62,12 @@ export const updateAuthor = async (id: string, formData: FormData) => {
         avatar: validatedFields.data.avatar,
       }
     });
-
-    revalidatePath('/authors');
-    return author;
   } catch (e) {
     console.error(e);
   }
+  
+  revalidatePath('/admin/dashboard/authors');
+  redirect('/admin/dashboard/authors');
 }
 
 export const deleteAuthor = async (id: string) => {

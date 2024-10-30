@@ -1,12 +1,12 @@
 import Pagination from '@/components/pagination';
 import Table from '@/components/posts/table';
 import { CreatePost } from '@/components/posts/buttons';
-import { Suspense, useEffect, useState } from 'react';
-import { fetchPosts, fetchPostsPages } from '@/services/data';
+import { Suspense } from 'react';
+import { fetchPostsPages } from '@/services/data';
 
 import type { Metadata } from 'next';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/posts/tabs';
-import { Post, PostType, postTypes } from '@/models/post';
+import { PostType, postTypes } from '@/models/post';
 export const metadata: Metadata = {
   title: 'Posts',
 };

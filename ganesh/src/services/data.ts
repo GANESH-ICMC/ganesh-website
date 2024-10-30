@@ -155,6 +155,8 @@ export const fetchPostById = async (id: string): Promise<PostForm | null> => {
         author: {
           select: {
             github: true,
+            name: true,
+            avatar: true,
           }
         }
       }
@@ -175,6 +177,8 @@ export const fetchPostById = async (id: string): Promise<PostForm | null> => {
       type: data.type as PostForm['type'], 
       published: data.published,
       authorGithub: data.author.github,
+      authorName: data.author.name ?? 'Anônimo',
+      authorAvatar: data.author.avatar ?? undefined,
     };
 
     return postForm;

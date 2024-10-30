@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import { UpdatePost, DeletePost } from '@/components/posts/buttons';
 import PostStatus from '@/components/posts/status';
 import { fetchPosts } from '@/services/data';

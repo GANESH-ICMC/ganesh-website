@@ -53,3 +53,24 @@ export function useActionState<State, FormData>(action: Action<State, FormData>,
 
   return [state, formAction] as [State, (formData: FormData) => Promise<void>];
 }
+
+export function formatDate(date: string) {
+  const now = new Date();
+  const dateToCompare = new Date(date);
+  const diff = now.getTime() - dateToCompare.getTime();
+  if (diff < 1000 * 60 * 60) {
+    const minutes = Math.round(diff / (1000 * 60));
+    if (minutes === 0) return 'Agora';
+    else if (minutes === 1) return '1 minuto atrás';
+    return `${minutes} minutos atrás`;
+  } else if (diff < 1000 * 60 * 60 * 24) {
+    const hours = Math.round(diff / (1000 * 60 * 60));
+    if (hours === 1) return '1 hora atrás';
+    return `${Math.round(diff / (1000 * 60 * 60))} horas atrás`;
+  } else if (diff < 1000 * 60 * 60 * 24 * 7) {
+    const days = Math.round(diff / (1000 * 60 * 60 * 24));
+    if (days === 1) return '1 dia atrás';
+    return `${Math.round(diff / (1000 * 60 * 60 * 24))} dias atrás`;
+  }
+  return new Date(date).toLocaleDateString('pt-BR');
+}

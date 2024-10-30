@@ -1,31 +1,38 @@
 version: "3.8"
 services:
-  backend:
+  app:
     build: .
     restart: on-failure
     ports:
-      - 4000:4000
+      - 3000:3000
+    environment:
+      DATABASE_URL: ${DATABASE_URL_PRODUCTION}
+      NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}  # Fix typo here too
     volumes:
-      - .:/app
-      - /app/node_modules
-      - logs:/app/logs
+      - .:/app # Mount the local directory into the container
+      - node_modules:/app/node_modules # Ensure node_modules inside the container is not overwritten
     depends_on:
       - postgres
+    networks:
+      - app-network
 
   postgres:
     image: postgres:13-alpine
     restart: on-failure
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: postgres
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - 5432:5432
     volumes:
-      - postgres_data:/var/lib/postgresql/data/
+      - postgres_database:/var/lib/postgresql/data/
+    networks:
+      - app-network
 
 volumes:
-  postgres_data:
-  logs:
-  redis_db_data:
-    external: false
+  postgres_database:
+  node_modules: 
+
+networks:
+  app-network:

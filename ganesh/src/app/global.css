@@ -16,3 +16,22 @@ input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+/* Ensure bullets for unordered lists are visible */
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  /* Adds padding to position bullets correctly */
+}
+
+/* Ensure numbers for ordered lists are visible */
+ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+
+/* Ensure list items have a visible color */
+li {
+  color: inherit;
+  /* Or set a specific color like 'black' */
+}
