@@ -15,7 +15,7 @@ export default async function PostsTable({
   return (
     <div className="mt-6 flow-root">
       <div className="inline-block min-w-full align-middle">
-        <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
+        <div className="rounded-lg bg-adminForeground p-2 md:pt-0">
           <div className="md:hidden">
             {posts?.map((post) => (
               <div
@@ -37,7 +37,7 @@ export default async function PostsTable({
                     <p className="">
                       {post.authorGithub}
                     </p>
-                    <p className="text-sm">{new Intl.DateTimeFormat('pt-BR', {timeZone: 'UTC'}).format(post.createdAt)}</p>
+                    <p className="text-sm">{new Intl.DateTimeFormat('pt-BR', { timeZone: 'UTC' }).format(post.createdAt)}</p>
                   </div>
                   <div className="flex justify-end gap-2">
                     <UpdatePost id={post.id} />
@@ -47,7 +47,7 @@ export default async function PostsTable({
               </div>
             ))}
           </div>
-          <table className="hidden min-w-full text-gray-900 md:table">
+          <table className="hidden min-w-full text-gray-100 md:table">
             <thead className="rounded-lg text-left text-sm font-normal">
               <tr>
                 <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
@@ -73,11 +73,11 @@ export default async function PostsTable({
                 </th>
               </tr>
             </thead>
-            <tbody className="bg-white">
+            <tbody className="bg-adminBackground">
               {posts?.map((post) => (
                 <tr
                   key={post.id}
-                  className="w-full border-b py-3 text-sm last-of-type:border-none [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg"
+                  className="border-gray-700 w-full border-b py-3 text-sm last-of-type:border-none [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg"
                 >
                   <td className="whitespace-nowrap py-3 pl-6">
                     <div className="flex items-center gap-3">
@@ -94,7 +94,7 @@ export default async function PostsTable({
                     {post.authorGithub}
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
-                    {new Intl.DateTimeFormat('pt-BR', {timeZone: 'UTC'}).format(post.createdAt)}
+                    {new Intl.DateTimeFormat('pt-BR', { timeZone: 'UTC' }).format(post.createdAt)}
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
                     <PostStatus published={post.published} />

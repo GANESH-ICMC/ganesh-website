@@ -6,16 +6,16 @@ import {
   UserCircleIcon,
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import { Button } from '@/components/button';
+import { Button } from '@/components/button/button';
 import { updateAuthor } from '@/services/author';
 import { Author } from '@/models/author';
 
 export default function EditInvoiceForm({
   author,
-  }: {
+}: {
   author: Author;
-  }) {
-  
+}) {
+
   const updateAuthorWithId = updateAuthor.bind(null, author.id);
 
   return (

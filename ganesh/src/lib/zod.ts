@@ -12,8 +12,11 @@ export const signInSchema = z.object({
 
 export const PostSchema = z.object({
   title: z.string().min(5).max(50),
-  summary: z.string().min(3).max(200),
+  title_en: z.string(),
+  summary: z.string().min(3).max(300),
+  summary_en: z.string(),
   content: z.string().min(3),
+  content_en: z.string(),
   images: z.array(z.string()),
   type: z.enum(['artigo', 'dica', 'atividade', 'notícia']),
   published: z.boolean(),

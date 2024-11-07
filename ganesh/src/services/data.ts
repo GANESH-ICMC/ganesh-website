@@ -8,6 +8,10 @@ export const fetchAuthorsPages = async (): Promise<number> => {
   try {
     const count = await prisma.author.count();
 
+    if (!count) {
+      return 1;
+    }
+
     return Math.ceil(count / ITEMS_PER_PAGE);
   } catch (e) {
     console.error(e);
@@ -87,6 +91,10 @@ export const fetchPostsPages = async (type?: PostForm['type']): Promise<number> 
     const count = await prisma.post.count(
       type ? { where: { type } } : undefined
     );
+    
+    if (!count) {
+      return 1;
+    }
 
     return Math.ceil(count / ITEMS_PER_PAGE);
   } catch (e) {
@@ -107,7 +115,9 @@ export const fetchPosts = async (page: number, type?: PostForm['type']): Promise
       select: {
         id: true,
         title: true,
+        title_en: true,
         summary: true,
+        summary_en: true,
         type: true,
         createdAt: true,
         published: true,
@@ -126,13 +136,15 @@ export const fetchPosts = async (page: number, type?: PostForm['type']): Promise
     const posts: Post[] = data.map((post) => ({
       id: post.id,
       title: post.title,
+      title_en: post.title_en ?? undefined,
       summary: post.summary ?? undefined,
-      type: post.type as PostForm['type'], 
+      summary_en: post.summary_en ?? undefined,
+      type: post.type as PostForm['type'],
       createdAt: new Date(post.createdAt),
       published: post.published,
-      authorGithub: post.author.github, 
+      authorGithub: post.author.github,
     }));
-    
+
     return posts;
   } catch (e) {
     console.error(e);
@@ -146,8 +158,11 @@ export const fetchPostById = async (id: string): Promise<PostForm | null> => {
       where: { id },
       select: {
         title: true,
+        title_en: true,
         summary: true,
+        summary_en: true,
         content: true,
+        content_en: true,
         images: true,
         createdAt: true,
         type: true,
@@ -170,11 +185,14 @@ export const fetchPostById = async (id: string): Promise<PostForm | null> => {
     const postForm: PostForm = {
       id: id,
       title: data.title,
+      title_en: data.title_en ?? undefined,
       summary: data.summary ?? undefined,
+      summary_en: data.summary_en ?? undefined,
       content: data.content,
+      content_en: data.content_en ?? undefined,
       images: data.images,
       createdAt: new Date(data.createdAt),
-      type: data.type as PostForm['type'], 
+      type: data.type as PostForm['type'],
       published: data.published,
       authorGithub: data.author.github,
       authorName: data.author.name ?? 'Anônimo',

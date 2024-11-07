@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import LoginForm from '@/components/login/login-form';
- 
+
 export default function LoginPage() {
   return (
     <main className="flex items-center justify-center md:h-screen">
@@ -9,7 +9,7 @@ export default function LoginPage() {
           <div className="w-32 text-white md:w-40 flex justify-center">
             <Image
               className='md:w-16'
-              src="/images/ganesh-logo-coloured.png"
+              src="/images/logo/ganesh-logo-coloured.png"
               height={50}
               width={50}
               alt="Ganesh Logo" />

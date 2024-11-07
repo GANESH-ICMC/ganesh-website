@@ -11,7 +11,7 @@ import {
   BookmarkIcon,
   DocumentCheckIcon
 } from '@heroicons/react/24/outline';
-import { Button } from '@/components/button';
+import { Button } from '@/components/button/button';
 import { useActionState } from '@/lib/utils';
 import { postTypes } from '@/models/post';
 import { createPost, State } from '@/services/post';
@@ -21,7 +21,7 @@ import Preview from '@/components/preview/preview';
 import Modal from '@/components/modal';
 
 export default function Form({ authors }: { authors: Author[] }) {
-  
+
   const initialState: State = { message: null, errors: {} };
   const [state, formAction] = useActionState(createPost, initialState);
 
@@ -41,7 +41,7 @@ export default function Form({ authors }: { authors: Author[] }) {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setGithubState((prevState) => ({ ...prevState, authorGithub: value }));
-    
+
     // Filter the authors based on the input
     setFilteredAuthors(
       authors.filter((author) =>
@@ -66,7 +66,7 @@ export default function Form({ authors }: { authors: Author[] }) {
     setImageState((prevState) => ({ ...prevState, images: newImages }));
   };
   const addImageField = () => {
-    if (imageState.images[imageState.images.length - 1] === "") return; 
+    if (imageState.images[imageState.images.length - 1] === "") return;
     setImageState((prevState) => ({
       ...prevState,
       images: [...prevState.images, ""], // Add an empty string for a new URL input
@@ -92,12 +92,12 @@ export default function Form({ authors }: { authors: Author[] }) {
           onClick={() => {
             setIsMarkdownOpen(true);
           }}
-          className="absolute right-3 top-2 px-3 py-1 text-sm font-medium text-white bg-green-500 rounded-md hover:bg-green-600"
+          className="absolute right-3 top-2 px-3 py-1 text-base font-medium text-white bg-green-600 rounded-md hover:bg-green-700"
         >
           Preview Markdown
         </button>
 
-        <div className="rounded-md bg-gray-50 p-4 md:p-6">
+        <div className="rounded-md bg-adminForeground text-gray-50 p-4 md:p-6">
           {/* Post Title */}
           <div className="mb-4">
             <label htmlFor="title" className="mb-2 block text-sm font-medium">
@@ -110,10 +110,10 @@ export default function Form({ authors }: { authors: Author[] }) {
                   name="title"
                   type="text"
                   placeholder="Título"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border py-2 pl-10 text-sm outline-2 placeholder:text-gray-300 bg-black border-gray-500"
                   aria-describedby="title-error"
                 />
-                <BookmarkIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <BookmarkIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-300" />
               </div>
               <div id="title-error" aria-live="polite" aria-atomic="true">
                 {state?.errors?.title &&
@@ -136,11 +136,19 @@ export default function Form({ authors }: { authors: Author[] }) {
                 <textarea
                   id="summary"
                   name="summary"
-                  rows={4} 
+                  rows={4}
                   placeholder="Sumário"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border py-2 pl-10 text-sm outline-2 placeholder:text-gray-300 bg-black border-gray-500"
                 />
-                <Bars4Icon className="pointer-events-none absolute left-3 top-5 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <Bars4Icon className="pointer-events-none absolute left-3 top-5 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-300" />
+              </div>
+              <div id="content-error" aria-live="polite" aria-atomic="true">
+                {state?.errors?.summary &&
+                  state.errors.summary.map((error: string) => (
+                    <p className="mt-2 text-sm text-red-500" key={error}>
+                      {error}
+                    </p>
+                  ))}
               </div>
             </div>
           </div>
@@ -159,12 +167,12 @@ export default function Form({ authors }: { authors: Author[] }) {
                   name="content"
                   placeholder="Conteúdo"
                   rows={20} // Adjust the number of rows to make it larger
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm font-mono outline-2 placeholder:text-gray-500"
+                  className="peer block w-full rounded-md border py-2 pl-10 text-sm font-mono outline-2 placeholder:text-gray-300 bg-black border-gray-500"
                   aria-describedby="content-error"
                   value={txtContent}
                   onInput={handleContentChange}
                 />
-                <BookOpenIcon className="pointer-events-none absolute left-3 top-5 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                <BookOpenIcon className="pointer-events-none absolute left-3 top-5 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-300" />
               </div>
               {/* Error Message */}
               <div id="content-error" aria-live="polite" aria-atomic="true">
@@ -182,9 +190,9 @@ export default function Form({ authors }: { authors: Author[] }) {
           <div className="mb-4">
             <label htmlFor="images" className="mb-2 block text-sm font-medium">
               Insira imagens de thumbnail do post (URLs)
-              <p className='text-xs text-gray-600'>Adicione as imagens no repositório do Github e coloque a URL delas aqui</p>
+              <p className='text-xs text-primary'>Adicione as imagens no repositório do Github e coloque a URL delas aqui</p>
             </label>
-            
+
             <div className="relative mt-2 rounded-md">
               {imageState.images.map((image: string, index: number) => (
                 <div className="relative mb-2" key={index}>
@@ -195,9 +203,9 @@ export default function Form({ authors }: { authors: Author[] }) {
                     value={image}
                     onChange={(e) => handleImageChange(e, index)}
                     placeholder="Copie a URL aqui"
-                    className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                    className="peer block w-full rounded-md border py-2 pl-10 text-sm outline-2 placeholder:text-gray-300 bg-black border-gray-500"
                   />
-                  <CameraIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                  <CameraIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-300" />
                 </div>
               ))}
 
@@ -221,7 +229,7 @@ export default function Form({ authors }: { authors: Author[] }) {
               <select
                 id="type"
                 name="typeId"
-                className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full cursor-pointer rounded-md border py-2 pl-10 text-sm outline-2 placeholder:text-gray-300 bg-black border-gray-500"
                 defaultValue=""
                 aria-describedby="type-error"
               >
@@ -251,7 +259,7 @@ export default function Form({ authors }: { authors: Author[] }) {
             <legend className="mb-2 block text-sm font-medium">
               Selecione o status do post
             </legend>
-            <div className="rounded-md border border-gray-200 bg-white px-[14px] py-3">
+            <div className="rounded-md border bg-adminForeground border-none px-[14px] py-3">
               <div className="flex gap-4">
                 <div className="flex items-center">
                   <input
@@ -263,7 +271,7 @@ export default function Form({ authors }: { authors: Author[] }) {
                   />
                   <label
                     htmlFor="false"
-                    className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-600"
+                    className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-gray-600 px-3 py-1.5 text-xs font-medium text-gray-100"
                   >
                     Não Publicado <ClockIcon className="h-4 w-4" />
                   </label>
@@ -279,7 +287,7 @@ export default function Form({ authors }: { authors: Author[] }) {
                   />
                   <label
                     htmlFor="true"
-                    className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-green-500 px-3 py-1.5 text-xs font-medium text-white"
+                    className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-green-600 px-3 py-1.5 text-xs font-medium text-white"
                   >
                     Publicado <CheckIcon className="h-4 w-4" />
                   </label>
@@ -306,20 +314,20 @@ export default function Form({ authors }: { authors: Author[] }) {
                 id="authorGithub"
                 name="authorGithub"
                 type="text"
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border py-2 pl-10 text-sm outline-2 placeholder:text-gray-300 bg-black border-gray-500"
                 value={githubState.authorGithub} // Assuming `state.authorGithub` holds the input value
                 onChange={(e) => handleInputChange(e)} // Handle input change
                 aria-describedby="authorGithub-error"
                 placeholder="Escreva ou selecione o username"
               />
-              <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
-      
+              <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-300" />
+
               {filteredAuthors.length > 0 && (
-                <ul className="list-none absolute z-10 mt-1 w-full bg-white border border-gray-200 rounded-md shadow-lg">
+                <ul className="list-none absolute z-10 mt-1 w-full bg-black border border-gray-500 rounded-md shadow-lg">
                   {filteredAuthors.map((author) => (
                     <li
                       key={author.id}
-                      className="list-none cursor-pointer px-4 py-2 text-sm hover:bg-gray-100"
+                      className="list-none cursor-pointer px-4 py-2 text-sm hover:bg-adminForeground"
                       onClick={() => handleSelect(author.github)}
                     >
                       {author.github}
