@@ -22,7 +22,7 @@ export function UpdatePost({ id }: { id: string }) {
   return (
     <Link
       href={`/admin/dashboard/posts/${id}/edit`}
-      className="rounded-md border p-2 hover:bg-gray-100"
+      className="rounded-md border p-2 border-gray-400 hover:border-white hover:bg-adminForeground text-gray-400 hover:text-white"
     >
       <PencilIcon className="w-5" />
     </Link>
@@ -44,7 +44,7 @@ export function DeletePost({ id }: { id: string }) {
               </form>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="rounded-md border p-2 hover:bg-gray-100">
+                className="rounded-md border p-2 border-gray-400 hover:border-white hover:bg-adminForeground text-gray-400 hover:text-white">
                 Cancelar
               </button>
             </div>

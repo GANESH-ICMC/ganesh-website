@@ -6,6 +6,10 @@ import { redirect } from 'next/navigation';
 import { addAuthor } from "./author";
 import { PostSchema } from "@/lib/zod";
 import { verifyAndRedirect } from "@/lib/session";
+import translate from 'translate';
+
+translate.engine = 'deepl';
+translate.key = process.env.DEEPL_API_KEY;
 
 const CreatePost = PostSchema.omit({ authorId: true })
 const UpdatePost = PostSchema.omit({ authorId: true })
@@ -13,6 +17,7 @@ const UpdatePost = PostSchema.omit({ authorId: true })
 export type State = {
   errors?: {
     title?: string[];
+    summary?: string[];
     content?: string[];
     status?: string[];
     type?: string[];
@@ -47,11 +52,20 @@ export const createPost = async (prevState: State, formData: FormData): Promise<
     const newAuthor = await addAuthor(validatedFields.data.authorGithub);
 
     if (newAuthor) {
+      const title_en = await translate(validatedFields.data.title, { from: 'pt', to: 'en' });
+      const summary_en = await translate(validatedFields.data.summary, { from: 'pt', to: 'en' });
+      const content_en = await translate(validatedFields.data.content, { from: 'pt', to: 'en' });
+
+      console.log(title_en);
+
       await prisma.post.create({
         data: {
           title: validatedFields.data.title,
+          title_en: title_en,
           summary: validatedFields.data.summary,
+          summary_en: summary_en,
           content: validatedFields.data.content,
+          content_en: content_en,
           images: validatedFields.data.images,
           type: validatedFields.data.type,
           published: validatedFields.data.published,
@@ -69,7 +83,7 @@ export const createPost = async (prevState: State, formData: FormData): Promise<
     console.error(e);
     return {
       message: 'Database Error: Could not create post',
-     }
+    }
   }
 
   revalidatePath('/admin/dashboard/posts');
@@ -81,8 +95,11 @@ export const updatePost = async (prevState: State, formData: FormData, id: strin
 
   const validatedFields = UpdatePost.safeParse({
     title: formData.get('title'),
+    title_en: formData.get('title_en'),
     summary: formData.get('summary'),
+    summary_en: formData.get('summary_en'),
     content: formData.get('content'),
+    content_en: formData.get('content_en'),
     images: formData.getAll('images'),
     type: formData.get('typeId'),
     published: formData.get('published') === 'true',
@@ -90,9 +107,10 @@ export const updatePost = async (prevState: State, formData: FormData, id: strin
   })
 
   if (!validatedFields.success) {
+    console.log(validatedFields.error.flatten().fieldErrors);
     return {
       errors: validatedFields.error.flatten().fieldErrors,
-      message: 'Missing Fields. Failed to Create Post.',
+      message: 'Missing Fields. Could not update post',
     };
   }
 
@@ -108,20 +126,23 @@ export const updatePost = async (prevState: State, formData: FormData, id: strin
     await prisma.post.update({
       where: { id },
       data: {
-          title: validatedFields.data.title,
-          summary: validatedFields.data.summary,
-          content: validatedFields.data.content,
-          images: validatedFields.data.images,
-          type: validatedFields.data.type,
-          published: validatedFields.data.published,
-          author: {
-            connect: {
-              github: author.github,
-              name: author.name,
-              avatar: author.avatar,
-            },
-          }
+        title: validatedFields.data.title,
+        title_en: validatedFields.data.title_en,
+        summary: validatedFields.data.summary,
+        summary_en: validatedFields.data.summary_en,
+        content: validatedFields.data.content,
+        content_en: validatedFields.data.content_en,
+        images: validatedFields.data.images,
+        type: validatedFields.data.type,
+        published: validatedFields.data.published,
+        author: {
+          connect: {
+            github: author.github,
+            name: author.name,
+            avatar: author.avatar,
+          },
         }
+      }
     })
   } catch (e) {
     console.error(e);

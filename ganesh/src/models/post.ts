@@ -4,7 +4,9 @@ export const postTypes: PostType[] = ['artigo', 'dica', 'atividade', 'notícia']
 export interface Post {
   id: string
   title: string
+  title_en?: string
   summary?: string
+  summary_en?: string
   type: PostType
   createdAt: Date
   published: boolean
@@ -14,8 +16,11 @@ export interface Post {
 export interface PostForm {
   id: string
   title: string
+  title_en?: string
   summary?: string
+  summary_en?: string
   content: string
+  content_en?: string
   images: string[]
   createdAt: Date
   type: PostType

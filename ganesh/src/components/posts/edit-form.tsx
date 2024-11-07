@@ -11,21 +11,23 @@ import {
   BookmarkIcon,
   DocumentCheckIcon
 } from '@heroicons/react/24/outline';
-import { Button } from '@/components/button';
+import { Button } from '@/components/button/button';
 import Modal from '@/components/modal';
 import { useActionState } from '@/lib/utils';
 import { PostForm, postTypes } from '@/models/post';
 import { State, updatePost } from '@/services/post';
 import { Author } from '@/models/author';
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import Preview from '@/components/preview/preview';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './tabs';
+import Table from './table';
 
 export default function Form({ post, authors }: { post: PostForm; authors: Author[] }) {
 
   const initialState: State = { message: null, errors: {} };
   const updatePostWithId = (state: State, formData: FormData) => updatePost(state, formData, post.id);
   const [state, formAction] = useActionState(updatePostWithId, initialState);
-  
+
   // to open the markdown modal with the content
   const [isMarkdownOpen, setIsMarkdownOpen] = useState(false);
   const [txtContent, setTxtContent] = useState(post.content);
@@ -42,7 +44,7 @@ export default function Form({ post, authors }: { post: PostForm; authors: Autho
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setGithubState((prevState) => ({ ...prevState, authorGithub: value }));
-    
+
     // Filter the authors based on the input
     setFilteredAuthors(
       authors.filter((author) =>
@@ -67,7 +69,7 @@ export default function Form({ post, authors }: { post: PostForm; authors: Autho
     setImageState((prevState) => ({ ...prevState, images: newImages }));
   };
   const addImageField = () => {
-    if (imageState.images[imageState.images.length - 1] === "") return; 
+    if (imageState.images[imageState.images.length - 1] === "") return;
     setImageState((prevState) => ({
       ...prevState,
       images: [...prevState.images, ""], // Add an empty string for a new URL input
@@ -94,94 +96,174 @@ export default function Form({ post, authors }: { post: PostForm; authors: Autho
           onClick={() => {
             setIsMarkdownOpen(true);
           }}
-          className="absolute right-3 top-2 px-3 py-1 text-sm font-medium text-white bg-green-500 rounded-md hover:bg-green-600"
+          className="absolute right-3 top-2 px-3 py-1 text-base font-medium text-white bg-green-600 rounded-md hover:bg-green-700"
         >
           Preview Markdown
         </button>
 
-        <div className="rounded-md bg-gray-50 p-4 md:p-6">
-          {/* Post Title */}
-          <div className="mb-4">
-            <label htmlFor="title" className="mb-2 block text-sm font-medium">
-              Dê um títulon top para o post
-            </label>
-            <div className="relative mt-2 rounded-md">
-              <div className="relative">
-                <input
-                  id="title"
-                  name="title"
-                  type="text"
-                  placeholder="Título"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
-                  aria-describedby="title-error"
-                  defaultValue={post.title}
-                />
-                <BookmarkIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
-              </div>
-              <div id="title-error" aria-live="polite" aria-atomic="true">
-                {state?.errors?.title &&
-                  state.errors.title.map((error: string) => (
-                    <p className="mt-2 text-sm text-red-500" key={error}>
-                      {error}
-                    </p>
-                  ))}
-              </div>
-            </div>
-          </div>
+        <div className="rounded-md bg-adminForeground text-gray-50 p-4 md:p-6">
 
-          {/* Post Summary */}
-          <div className="mb-4">
-            <label htmlFor="summary" className="mb-2 block text-sm font-medium">
-              Escreva um sumário
-            </label>
-            <div className="relative mt-2 rounded-md">
-              <div className="relative">
-                <input
-                  id="summary"
-                  name="summary"
-                  type="text"
-                  placeholder="Sumário"
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
-                  defaultValue={post.summary}
-                />
-                <Bars4Icon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
-              </div>
+          <Tabs defaultValue="pt-BR">
+            <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
+              {/* <Search placeholder="Search invoices..." /> */}
+              <TabsList>
+                <TabsTrigger value="pt-BR">
+                  PT-BR
+                </TabsTrigger>
+                <TabsTrigger value="en-US">
+                  EN-US
+                </TabsTrigger>
+              </TabsList>
             </div>
-          </div>
-
-          {/* Post Content */}
-          <div className="mb-4">
-            <label htmlFor="content" className="mb-2 block text-sm font-medium">
-              Escreva o conteúdo
-            </label>
-            <div className="relative mt-2 rounded-md">
-              {/* Container for Textarea and Preview Button */}
-              <div className="relative">
-                {/* Textarea */}
-                <textarea
-                  id="content"
-                  name="content"
-                  placeholder="Conteúdo"
-                  rows={20} // Adjust the number of rows to make it larger
-                  className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm font-mono outline-2 placeholder:text-gray-500"
-                  aria-describedby="content-error"
-                  value={txtContent}
-                  onInput={handleContentChange}
-                />
-                <BookOpenIcon className="pointer-events-none absolute left-3 top-5 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+            <TabsContent value="pt-BR">
+              {/* Portuguese */}
+              {/* Post Title */}
+              <div className="mb-4">
+                <label htmlFor="title" className="mb-2 block text-sm font-medium">
+                  Dê um título top para o post
+                </label>
+                <div className="relative mt-2 rounded-md">
+                  <div className="relative">
+                    <input
+                      id="title"
+                      name="title"
+                      type="text"
+                      placeholder="Título"
+                      className="peer block w-full rounded-md border py-2 pl-10 text-sm outline-2 placeholder:text-gray-300 bg-black border-gray-500"
+                      aria-describedby="title-error"
+                      defaultValue={post.title}
+                    />
+                    <BookmarkIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-300" />
+                  </div>
+                  <div id="title-error" aria-live="polite" aria-atomic="true">
+                    {state?.errors?.title &&
+                      state.errors.title.map((error: string) => (
+                        <p className="mt-2 text-sm text-red-500" key={error}>
+                          {error}
+                        </p>
+                      ))}
+                  </div>
+                </div>
               </div>
-              {/* Error Message */}
-              <div id="content-error" aria-live="polite" aria-atomic="true">
-                {state?.errors?.content &&
-                  state.errors.content.map((error: string) => (
-                    <p className="mt-2 text-sm text-red-500" key={error}>
-                      {error}
-                    </p>
-                  ))}
-              </div>
-            </div>
-          </div>
 
+              {/* Post Summary */}
+              <div className="mb-4">
+                <label htmlFor="summary" className="mb-2 block text-sm font-medium">
+                  Escreva um sumário
+                </label>
+                <div className="relative mt-2 rounded-md">
+                  <div className="relative">
+                    <textarea
+                      id="summary"
+                      name="summary"
+                      rows={4}
+                      placeholder="Sumário"
+                      className="peer block w-full rounded-md border py-2 pl-10 text-sm outline-2 placeholder:text-gray-300 bg-black border-gray-500"
+                      defaultValue={post.summary}
+                    />
+                    <Bars4Icon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-300" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Post Content */}
+              <div className="mb-4">
+                <label htmlFor="content" className="mb-2 block text-sm font-medium">
+                  Escreva o conteúdo
+                </label>
+                <div className="relative mt-2 rounded-md">
+                  {/* Container for Textarea and Preview Button */}
+                  <div className="relative">
+                    {/* Textarea */}
+                    <textarea
+                      id="content"
+                      name="content"
+                      placeholder="Conteúdo"
+                      rows={20} // Adjust the number of rows to make it larger
+                      className="peer block w-full rounded-md border  py-2 pl-10 text-sm font-mono outline-2 placeholder:text-gray-300 bg-black border-gray-500"
+                      aria-describedby="content-error"
+                      value={txtContent}
+                      onInput={handleContentChange}
+                    />
+                    <BookOpenIcon className="pointer-events-none absolute left-3 top-5 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-300" />
+                  </div>
+                  {/* Error Message */}
+                  <div id="content-error" aria-live="polite" aria-atomic="true">
+                    {state?.errors?.content &&
+                      state.errors.content.map((error: string) => (
+                        <p className="mt-2 text-sm text-red-500" key={error}>
+                          {error}
+                        </p>
+                      ))}
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+            <TabsContent value="en-US">
+              {/* English */}
+              {/* Post Title */}
+              <div className="mb-4">
+                <label htmlFor="title_en" className="mb-2 block text-sm font-medium">
+                  Dê um título top para o post
+                </label>
+                <div className="relative mt-2 rounded-md">
+                  <div className="relative">
+                    <input
+                      id="title_en"
+                      name="title_en"
+                      type="text"
+                      placeholder="Título"
+                      className="peer block w-full rounded-md border  py-2 pl-10 text-sm outline-2 placeholder:text-gray-300 bg-black border-gray-500"
+                      defaultValue={post.title_en}
+                    />
+                    <BookmarkIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-300" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Post Summary */}
+              <div className="mb-4">
+                <label htmlFor="summary_en" className="mb-2 block text-sm font-medium">
+                  Escreva um sumário
+                </label>
+                <div className="relative mt-2 rounded-md">
+                  <div className="relative">
+                    <textarea
+                      id="summary_en"
+                      name="summary_en"
+                      rows={4}
+                      placeholder="Sumário"
+                      className="peer block w-full rounded-md border py-2 pl-10 text-sm outline-2 placeholder:text-gray-300 bg-black border-gray-500"
+                      defaultValue={post.summary_en}
+                    />
+                    <Bars4Icon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-300" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Post Content */}
+              <div className="mb-4">
+                <label htmlFor="content_en" className="mb-2 block text-sm font-medium">
+                  Escreva o conteúdo
+                </label>
+                <div className="relative mt-2 rounded-md">
+                  {/* Container for Textarea and Preview Button */}
+                  <div className="relative">
+                    {/* Textarea */}
+                    <textarea
+                      id="content_en"
+                      name="content_en"
+                      placeholder="Conteúdo"
+                      rows={20} // Adjust the number of rows to make it larger
+                      className="peer block w-full rounded-md border  py-2 pl-10 text-sm font-mono outline-2 placeholder:text-gray-300 bg-black border-gray-500"
+                      defaultValue={post.content_en}
+                    />
+                    <BookOpenIcon className="pointer-events-none absolute left-3 top-5 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-300" />
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+          </Tabs>
 
           {/* Insert post images */}
           <div className="mb-4">
@@ -189,7 +271,7 @@ export default function Form({ post, authors }: { post: PostForm; authors: Autho
               Insira imagens de thumbnail do post (URLs)
               <p className='text-xs text-gray-600'>Adicione as imagens no repositório do Github e coloque a URL delas aqui</p>
             </label>
-            
+
             <div className="relative mt-2 rounded-md">
               {imageState.images.map((image: string, index: number) => (
                 <div className="relative mb-2" key={index}>
@@ -200,9 +282,9 @@ export default function Form({ post, authors }: { post: PostForm; authors: Autho
                     value={image}
                     onChange={(e) => handleImageChange(e, index)}
                     placeholder="Copie a URL aqui"
-                    className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                    className="peer block w-full rounded-md border  py-2 pl-10 text-sm outline-2 placeholder:text-gray-300 bg-black border-gray-500"
                   />
-                  <CameraIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
+                  <CameraIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-300" />
                 </div>
               ))}
 
@@ -226,7 +308,7 @@ export default function Form({ post, authors }: { post: PostForm; authors: Autho
               <select
                 id="type"
                 name="typeId"
-                className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full cursor-pointer rounded-md border  py-2 pl-10 text-sm outline-2 placeholder:text-gray-300 bg-black border-gray-500"
                 defaultValue={post.type}
                 aria-describedby="type-error"
               >
@@ -239,7 +321,7 @@ export default function Form({ post, authors }: { post: PostForm; authors: Autho
                   </option>
                 ))}
               </select>
-              <DocumentCheckIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
+              <DocumentCheckIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 placeholder:text-gray-300 bg-black border-gray-500" />
             </div>
             <div id="type-error" aria-live="polite" aria-atomic="true">
               {state?.errors?.type &&
@@ -256,7 +338,7 @@ export default function Form({ post, authors }: { post: PostForm; authors: Autho
             <legend className="mb-2 block text-sm font-medium">
               Selecione o status do post
             </legend>
-            <div className="rounded-md border border-gray-200 bg-white px-[14px] py-3">
+            <div className="rounded-md border border-none bg-adminForeground px-[14px] py-3">
               <div className="flex gap-4">
                 <div className="flex items-center">
                   <input
@@ -270,7 +352,7 @@ export default function Form({ post, authors }: { post: PostForm; authors: Autho
                   />
                   <label
                     htmlFor="false"
-                    className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-600"
+                    className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-gray-600 px-3 py-1.5 text-xs font-medium text-gray-100"
                   >
                     Não Publicado <ClockIcon className="h-4 w-4" />
                   </label>
@@ -314,20 +396,20 @@ export default function Form({ post, authors }: { post: PostForm; authors: Autho
                 id="authorGithub"
                 name="authorGithub"
                 type="text"
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border py-2 pl-10 text-sm outline-2 placeholder:text-gray-300 bg-black border-gray-500"
                 value={githubState.authorGithub} // Assuming `state.authorGithub` holds the input value
                 onChange={(e) => handleInputChange(e)} // Handle input change
                 aria-describedby="authorGithub-error"
                 placeholder="Escreva ou selecione o username"
               />
               <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
-      
+
               {filteredAuthors.length > 0 && (
-                <ul className="list-none absolute z-10 mt-1 w-full bg-white border border-gray-200 rounded-md shadow-lg">
+                <ul className="list-none absolute z-10 mt-1 w-full bg-black border border-gray-500 rounded-md shadow-lg">
                   {filteredAuthors.map((author) => (
                     <li
                       key={author.id}
-                      className="list-none cursor-pointer px-4 py-2 text-sm hover:bg-gray-100"
+                      className="list-none cursor-pointer px-4 py-2 text-sm hover:bg-adminForeground"
                       onClick={() => handleSelect(author.github)}
                     >
                       {author.github}

@@ -12,14 +12,15 @@ export const metadata: Metadata = {
 };
 
 export default async function Page({
-    searchParams,
-  }: {
-    searchParams?: {
-      page?: string;
-    };
-  }) {
-  
-  const currentPage = Number(searchParams?.page) || 1;
+  searchParams,
+}: {
+  searchParams?: {
+    page?: string;
+  };
+}) {
+
+  const pageParam = await Promise.resolve(searchParams?.page);
+  const currentPage = Number(pageParam) || 1;
   const totalPages = await Promise.all(
     postTypes.map((type) => fetchPostsPages(type))
   )
@@ -28,14 +29,14 @@ export default async function Page({
   return (
     <div className="w-full md:mb-16">
       <div className="flex w-full items-center justify-between">
-        <h1 className={`text-2xl`}>Posts</h1>
+        <h1 className={`mx-5 text-2xl text-neutral-100`}>Posts</h1>
       </div>
       <Tabs defaultValue="Todos">
         <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
           {/* <Search placeholder="Search invoices..." /> */}
           <TabsList>
             <TabsTrigger value="Todos">
-                Todos
+              Todos
             </TabsTrigger>
             {postTypes.map((type) => (
               <TabsTrigger key={type} value={type}>

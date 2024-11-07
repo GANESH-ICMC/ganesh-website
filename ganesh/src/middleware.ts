@@ -2,7 +2,7 @@ import NextAuth from 'next-auth';
 import { authConfig } from '@/auth.config';
  
 export default NextAuth(authConfig).auth;
- 
+
 /*
 Here I am initializing NextAuth.js with the authConfig object and 
 exporting the auth property. You're also using the matcher option from 

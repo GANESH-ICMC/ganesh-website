@@ -6,7 +6,7 @@ export function UpdateAuthor({ id }: { id: string }) {
   return (
     <Link
       href={`/admin/dashboard/authors/${id}/edit`}
-      className="rounded-md border p-2 hover:bg-gray-100"
+      className="peer rounded-md border p-2 border-gray-400 hover:border-white hover:bg-adminForeground text-gray-400 hover:text-white"
     >
       <PencilIcon className="w-5" />
     </Link>
@@ -18,7 +18,7 @@ export function DeleteAuthor({ id }: { id: string }) {
   return (
     <>
       <form action={deleteAuthorWithId}>
-        <button className="rounded-md border p-2 hover:bg-gray-100">
+        <button className="rounded-md border p-2 border-gray-400 hover:border-white hover:bg-adminForeground text-gray-400 hover:text-white">
           <span className="sr-only">Delete</span>
           <TrashIcon className="w-5" />
         </button>
