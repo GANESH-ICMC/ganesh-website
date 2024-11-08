@@ -10,19 +10,19 @@ export const generatePagination = (currentPage: number, totalPages: number) => {
   if (totalPages <= 7) {
     return Array.from({ length: totalPages }, (_, i) => i + 1);
   }
-  
+
   // If the current page is among the first 3 pages,
   // show the first 3, an ellipsis, and the last 2 pages.
   if (currentPage <= 3) {
     return [1, 2, 3, '...', totalPages - 1, totalPages];
   }
-  
+
   // If the current page is among the last 3 pages,
   // show the first 2, an ellipsis, and the last 3 pages.
   if (currentPage >= totalPages - 2) {
     return [1, 2, '...', totalPages - 2, totalPages - 1, totalPages];
   }
-  
+
   // If the current page is somewhere in the middle,
   // show the first page, an ellipsis, the current page and its neighbors,
   // another ellipsis, and the last page.
@@ -45,7 +45,7 @@ export function cn(...inputs: ClassValue[]) {
 type Action<State, FormData> = (state: State, formData: FormData) => Promise<State> | State;
 export function useActionState<State, FormData>(action: Action<State, FormData>, initialState: State) {
   const [state, setState] = useState<State>(initialState);
-  
+
   const formAction = async (formData: FormData) => {
     const newState = await action(state, formData);
     setState(newState);
@@ -54,10 +54,12 @@ export function useActionState<State, FormData>(action: Action<State, FormData>,
   return [state, formAction] as [State, (formData: FormData) => Promise<void>];
 }
 
-export function formatDate(date: string) {
+export function formatDate(date: Date) {
+  const dateToCompare = new Date(date.getTime() + new Date().getTimezoneOffset() * 60000);
+
   const now = new Date();
-  const dateToCompare = new Date(date);
   const diff = now.getTime() - dateToCompare.getTime();
+
   if (diff < 1000 * 60 * 60) {
     const minutes = Math.round(diff / (1000 * 60));
     if (minutes === 0) return 'Agora';
@@ -72,5 +74,6 @@ export function formatDate(date: string) {
     if (days === 1) return '1 dia atrás';
     return `${Math.round(diff / (1000 * 60 * 60 * 24))} dias atrás`;
   }
-  return new Date(date).toLocaleDateString('pt-BR');
+  
+  return dateToCompare.toLocaleDateString('pt-BR');
 }

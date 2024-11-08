@@ -11,9 +11,9 @@ export const signInSchema = z.object({
 })
 
 export const PostSchema = z.object({
-  title: z.string().min(5).max(50),
+  title: z.string().min(5).max(100),
   title_en: z.string(),
-  summary: z.string().min(3).max(300),
+  summary: z.string().min(3).max(400),
   summary_en: z.string(),
   content: z.string().min(3),
   content_en: z.string(),
@@ -22,6 +22,7 @@ export const PostSchema = z.object({
   published: z.boolean(),
   authorGithub: z.string(),
   authorId: z.string(),
+  createdAt: z.date(),
 })
 
 export const AuthorSchema = z.object({
@@ -29,4 +30,25 @@ export const AuthorSchema = z.object({
   github: z.string(),
   name: z.string().optional(),
   avatar: z.string().optional(),
+});
+
+export const SponsorSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  logo: z.string(),
+  link: z.string(),
+  description: z.string().optional(),
+  description_en: z.string().optional(),
+});
+
+export const VideoSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  title_en: z.string().optional(),
+  description: z.string().optional(),
+  description_en: z.string().optional(),
+  url: z.string(),
+  thumbnail: z.string().optional(),
+  createdAt: z.date(),
+  updatedAt: z.date(),
 });

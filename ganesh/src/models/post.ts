@@ -29,3 +29,12 @@ export interface PostForm {
   authorName: string
   authorAvatar?: string
 }
+
+export interface PostTxtContent {
+  title: string;
+  title_en?: string;
+  summary?: string;
+  summary_en?: string;
+  content: string;
+  content_en?: string;
+}

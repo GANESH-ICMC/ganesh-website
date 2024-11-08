@@ -7,23 +7,28 @@ import { addAuthor } from "./author";
 import { PostSchema } from "@/lib/zod";
 import { verifyAndRedirect } from "@/lib/session";
 import translate from 'translate';
+import { PostTxtContent } from "@/models/post";
 
 translate.engine = 'deepl';
 translate.key = process.env.DEEPL_API_KEY;
 
-const CreatePost = PostSchema.omit({ authorId: true })
+const CreatePost = PostSchema.omit({ authorId: true, title_en: true, summary_en: true, content_en: true })
 const UpdatePost = PostSchema.omit({ authorId: true })
 
 export type State = {
   errors?: {
     title?: string[];
+    title_en?: string[];
     summary?: string[];
+    summary_en?: string[];
     content?: string[];
+    content_en?: string[];
     status?: string[];
     type?: string[];
     published?: string[];
     images?: string[];
     authorGithub?: string[];
+    createdAt?: string[];
   };
   message?: string | null;
 };
@@ -38,10 +43,12 @@ export const createPost = async (prevState: State, formData: FormData): Promise<
     images: formData.getAll('images'),
     type: formData.get('typeId'),
     published: formData.get('published') === 'true',
-    authorGithub: formData.get('authorGithub')
+    authorGithub: formData.get('authorGithub'),
+    createdAt: new Date(formData.get('date')?.toString() || Date.now()),
   })
 
   if (!validatedFields.success) {
+    console.log(validatedFields.error.flatten().fieldErrors);
     return {
       errors: validatedFields.error.flatten().fieldErrors,
       message: 'Missing Fields. Failed to Create Post.',
@@ -75,7 +82,8 @@ export const createPost = async (prevState: State, formData: FormData): Promise<
               name: newAuthor.name,
               avatar: newAuthor.avatar,
             },
-          }
+          },
+          createdAt: new Date(validatedFields.data.createdAt),
         }
       })
     }
@@ -90,20 +98,21 @@ export const createPost = async (prevState: State, formData: FormData): Promise<
   redirect('/admin/dashboard/posts');
 }
 
-export const updatePost = async (prevState: State, formData: FormData, id: string): Promise<State> => {
+export const updatePost = async (prevState: State, formData: FormData, postTxtContent: PostTxtContent, id: string): Promise<State> => {
   verifyAndRedirect();
 
   const validatedFields = UpdatePost.safeParse({
-    title: formData.get('title'),
-    title_en: formData.get('title_en'),
-    summary: formData.get('summary'),
-    summary_en: formData.get('summary_en'),
-    content: formData.get('content'),
-    content_en: formData.get('content_en'),
+    title: postTxtContent.title,
+    title_en: postTxtContent.title_en,
+    summary: postTxtContent.summary,
+    summary_en: postTxtContent.summary_en,
+    content: postTxtContent.content,
+    content_en: postTxtContent.content_en,
     images: formData.getAll('images'),
     type: formData.get('typeId'),
     published: formData.get('published') === 'true',
-    authorGithub: formData.get('authorGithub')
+    authorGithub: formData.get('authorGithub'),
+    createdAt: new Date(formData.get('date')?.toString() || Date.now()),
   })
 
   if (!validatedFields.success) {
@@ -141,7 +150,8 @@ export const updatePost = async (prevState: State, formData: FormData, id: strin
             name: author.name,
             avatar: author.avatar,
           },
-        }
+        },
+        createdAt: new Date(validatedFields.data.createdAt),
       }
     })
   } catch (e) {

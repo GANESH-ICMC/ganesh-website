@@ -3,7 +3,9 @@
 import {
   HomeIcon,
   DocumentDuplicateIcon,
-  UserGroupIcon
+  UserGroupIcon,
+  HandThumbUpIcon,
+  PlayIcon
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -14,7 +16,9 @@ import clsx from 'clsx';
 const links = [
   { name: 'Dashboard', href: '/admin/dashboard', icon: HomeIcon },
   { name: 'Content', href: '/admin/dashboard/posts', icon: DocumentDuplicateIcon },
+  { name: 'Videos', href: '/admin/dashboard/videos', icon: PlayIcon },
   { name: 'Authors', href: '/admin/dashboard/authors', icon: UserGroupIcon },
+  { name: 'Sponsors', href: '/admin/dashboard/sponsors', icon: HandThumbUpIcon },
 ];
 
 export default function NavLinks() {
@@ -35,7 +39,7 @@ export default function NavLinks() {
             )}
           >
             <LinkIcon className="w-6" />
-            <p className="hidden md:block">{link.name}</p>
+            <p className="hidden xl:block">{link.name}</p>
           </Link>
         );
       })}

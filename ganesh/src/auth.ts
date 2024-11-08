@@ -4,7 +4,7 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import "next-auth/jwt";
 
 import { User } from '@/models/user';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import prisma from '@/services/prisma';
 import { signInSchema } from '@/lib/zod';
 import { authConfig } from '@/auth.config';

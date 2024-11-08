@@ -8,31 +8,30 @@ export const experimental_ppr = true;
 
 export default function SideNav() {
   return (
-    <div className="flex h-full flex-col px-3 py-4 md:px-2">
+    <div className="flex md:h-screen flex-col px-3 py-4 md:px-2">
       <Link
-        className="mb-2 flex h-20 items-end justify-start rounded-md bg-adminForeground p-4 md:h-40"
+        className="mb-2 flex h-fit items-end justify-start rounded-md bg-adminForeground p-2 xl:h-40"
         href="/"
       >
-        <div className="w-32 text-white md:w-40">
-          <Image
-            src="/images/logo/ganesh-logo-coloured.png"
-            height={60}
-            width={60}
-            alt="Ganesh Logo" />
-        </div>
+        <Image
+          className='w-8'
+          src="/images/logo/ganesh-logo-coloured.png"
+          height={60}
+          width={60}
+          alt="Ganesh Logo" />
       </Link>
-      <div className="flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">
+      <div className="flex flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2 h-fit md:w-fit xl:w-full">
         <NavLinks />
-        <div className="hidden h-auto w-full grow rounded-md bg-adminBackground md:block"></div>
+        <div className="hidden md:block h-auto w-full grow rounded-md bg-adminBackground"></div>
         <form
           action={async () => {
             'use server';
             await signOut();
           }}
         >
-          <button className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md bg-adminForeground p-3 text-sm font-medium text-gray-300 hover:bg-red-900 hover:text-white md:flex-none md:justify-start md:p-2 md:px-3">
+          <button className="flex w-full grow items-center justify-center gap-2 rounded-md bg-adminForeground p-3 text-sm font-medium text-gray-300 hover:bg-red-900 hover:text-white md:flex-none md:justify-start md:px-3">
             <PowerIcon className="w-6" />
-            <div className="hidden md:block">Sign Out</div>
+            <div className="hidden xl:block">Sign Out</div>
           </button>
         </form>
       </div>

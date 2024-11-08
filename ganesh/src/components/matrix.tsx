@@ -25,7 +25,10 @@ const renderMatrix = (ref: React.RefObject<HTMLCanvasElement>, color: string | u
   // const alphabet = "GANESHganesh";
   const alphabet = '01'
 
-  const fontSize = 16;
+  let fontSize: number;
+  if (canvas.width < 1080) fontSize = 10;
+  else fontSize = 16;
+  
   const columns = canvas.width / fontSize;
 
   const rainDrops: string | any[] = [];
@@ -79,7 +82,7 @@ const MatrixRainingLetters = ({ color, custom_class, key }: MatrixRainingLetters
 
   return (
     <React.Fragment>
-      <canvas key={keyName} className={clsx("fixed bg-opacity-50 -z-10", custom_class)} ref={ref} />
+      <canvas key={keyName} className={clsx("fixed h-screen bg-opacity-50 -z-20", custom_class)} ref={ref} />
     </React.Fragment>
   );
 };
