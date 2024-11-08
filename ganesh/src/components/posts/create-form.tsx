@@ -19,6 +19,8 @@ import { Author } from '@/models/author';
 import { useState } from 'react';
 import Preview from '@/components/preview/preview';
 import Modal from '@/components/modal';
+import TxtInput from './txt-input';
+import ErrorMessages from './error-messages';
 
 export default function Form({ authors }: { authors: Author[] }) {
 
@@ -27,10 +29,15 @@ export default function Form({ authors }: { authors: Author[] }) {
 
   // to open the markdown modal with the content
   const [isMarkdownOpen, setIsMarkdownOpen] = useState(false);
-  const [txtContent, setTxtContent] = useState('');
+  const [postTxtContent, setPostTxtContent] = useState({
+    title: "",
+    summary: "",
+    content: "",
+  });
   const handleContentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setTxtContent(e.target.value);
-  }
+    const { name, value } = e.target;
+    setPostTxtContent((prevState) => ({ ...prevState, [name]: value }));
+  };
 
   // to filter the github usernames
   const [githubState, setGithubState] = useState({
@@ -78,14 +85,14 @@ export default function Form({ authors }: { authors: Author[] }) {
       {isMarkdownOpen && (
         <Modal onRequestClose={() => setIsMarkdownOpen(false)}>
           <Preview
-            title={'Título do Post'}
+            title={postTxtContent.title}
             authorName='Nome do Autor'
-            date={new Date().toISOString()}
-            txtContent={txtContent} />
+            date={new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000)}
+            txtContent={postTxtContent.content} />
         </Modal>
       )}
 
-      <form className='mb-16 relative' action={formAction}>
+      <form className='md:mb-16 relative' action={formAction}>
         {/* Preview Button */}
         <button
           type="button"
@@ -99,92 +106,40 @@ export default function Form({ authors }: { authors: Author[] }) {
 
         <div className="rounded-md bg-adminForeground text-gray-50 p-4 md:p-6">
           {/* Post Title */}
-          <div className="mb-4">
-            <label htmlFor="title" className="mb-2 block text-sm font-medium">
-              Dê um título para o post
-            </label>
-            <div className="relative mt-2 rounded-md">
-              <div className="relative">
-                <input
-                  id="title"
-                  name="title"
-                  type="text"
-                  placeholder="Título"
-                  className="peer block w-full rounded-md border py-2 pl-10 text-sm outline-2 placeholder:text-gray-300 bg-black border-gray-500"
-                  aria-describedby="title-error"
-                />
-                <BookmarkIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-300" />
-              </div>
-              <div id="title-error" aria-live="polite" aria-atomic="true">
-                {state?.errors?.title &&
-                  state.errors.title.map((error: string) => (
-                    <p className="mt-2 text-sm text-red-500" key={error}>
-                      {error}
-                    </p>
-                  ))}
-              </div>
-            </div>
-          </div>
+          <TxtInput
+            label="Título do Post"
+            name="title"
+            rows={1}
+            placeholder="Título"
+            value={postTxtContent.title}
+            onChange={handleContentChange}
+            Icon={BookmarkIcon}
+          />
+          <ErrorMessages id="title-error" errors={state?.errors?.title} />
 
           {/* Post Summary */}
-          <div className="mb-4">
-            <label htmlFor="summary" className="mb-2 block text-sm font-medium">
-              Escreva um sumário
-            </label>
-            <div className="relative mt-2 rounded-md">
-              <div className="relative">
-                <textarea
-                  id="summary"
-                  name="summary"
-                  rows={4}
-                  placeholder="Sumário"
-                  className="peer block w-full rounded-md border py-2 pl-10 text-sm outline-2 placeholder:text-gray-300 bg-black border-gray-500"
-                />
-                <Bars4Icon className="pointer-events-none absolute left-3 top-5 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-300" />
-              </div>
-              <div id="content-error" aria-live="polite" aria-atomic="true">
-                {state?.errors?.summary &&
-                  state.errors.summary.map((error: string) => (
-                    <p className="mt-2 text-sm text-red-500" key={error}>
-                      {error}
-                    </p>
-                  ))}
-              </div>
-            </div>
-          </div>
+          <TxtInput
+            label="Resumo do Post"
+            name="summary"
+            rows={3}
+            placeholder="Resumo do Post"
+            value={postTxtContent.summary}
+            onChange={handleContentChange}
+            Icon={Bars4Icon}
+          />
+          <ErrorMessages id="summary-error" errors={state?.errors?.summary} />
 
           {/* Post Content */}
-          <div className="mb-4">
-            <label htmlFor="content" className="mb-2 block text-sm font-medium">
-              Escreva o conteúdo
-            </label>
-            <div className="relative mt-2 rounded-md">
-              {/* Container for Textarea and Preview Button */}
-              <div className="relative">
-                {/* Textarea */}
-                <textarea
-                  id="content"
-                  name="content"
-                  placeholder="Conteúdo"
-                  rows={20} // Adjust the number of rows to make it larger
-                  className="peer block w-full rounded-md border py-2 pl-10 text-sm font-mono outline-2 placeholder:text-gray-300 bg-black border-gray-500"
-                  aria-describedby="content-error"
-                  value={txtContent}
-                  onInput={handleContentChange}
-                />
-                <BookOpenIcon className="pointer-events-none absolute left-3 top-5 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-300" />
-              </div>
-              {/* Error Message */}
-              <div id="content-error" aria-live="polite" aria-atomic="true">
-                {state?.errors?.content &&
-                  state.errors.content.map((error: string) => (
-                    <p className="mt-2 text-sm text-red-500" key={error}>
-                      {error}
-                    </p>
-                  ))}
-              </div>
-            </div>
-          </div>
+          <TxtInput
+            label="Conteúdo do Post (Markdown)"
+            name="content"
+            rows={20}
+            placeholder="Conteúdo do Post"
+            value={postTxtContent.content}
+            onChange={handleContentChange}
+            Icon={BookOpenIcon}
+          />
+          <ErrorMessages id="content-error" errors={state?.errors?.content} />
 
           {/* Insert post images */}
           <div className="mb-4">
@@ -223,13 +178,13 @@ export default function Form({ authors }: { authors: Author[] }) {
           {/* Choose the type */}
           <div className="mb-4">
             <label htmlFor="type" className="mb-2 block text-sm font-medium">
-              Choose type
+              Selecione o tipo de post
             </label>
             <div className="relative">
               <select
                 id="type"
                 name="typeId"
-                className="peer block w-full cursor-pointer rounded-md border py-2 pl-10 text-sm outline-2 placeholder:text-gray-300 bg-black border-gray-500"
+                className="h-10 peer block w-full cursor-pointer rounded-md border py-2 pl-10 text-sm outline-2 placeholder:text-gray-300 bg-black border-gray-500"
                 defaultValue=""
                 aria-describedby="type-error"
               >
@@ -242,16 +197,9 @@ export default function Form({ authors }: { authors: Author[] }) {
                   </option>
                 ))}
               </select>
-              <DocumentCheckIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
+              <DocumentCheckIcon className="hidden md:block pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
             </div>
-            <div id="type-error" aria-live="polite" aria-atomic="true">
-              {state?.errors?.type &&
-                state.errors.type.map((error: string) => (
-                  <p className="mt-2 text-sm text-red-500" key={error}>
-                    {error}
-                  </p>
-                ))}
-            </div>
+            <ErrorMessages id="type-error" errors={state?.errors?.type} />
           </div>
 
           {/* Post Status */}
@@ -294,15 +242,25 @@ export default function Form({ authors }: { authors: Author[] }) {
                 </div>
               </div>
             </div>
-            <div id="status-error" aria-live="polite" aria-atomic="true">
-              {state?.errors?.status &&
-                state.errors.status.map((error: string) => (
-                  <p className="mt-2 text-sm text-red-500" key={error}>
-                    {error}
-                  </p>
-                ))}
-            </div>
+            <ErrorMessages id="status-error" errors={state?.errors?.published} />
           </fieldset>
+
+          {/* Date */}
+          <div className="mb-4">
+            <label htmlFor="date" className="mb-2 block text-sm font-medium">
+              Data de publicação [MM/DD/AAAA, HH:MM]
+            </label>
+            <div className='relative'>
+              <input
+                id="date"
+                name="date"
+                type="datetime-local"
+                className="h-10 peer block w-full rounded-md border py-2 pl-10 text-sm outline-2 placeholder:text-gray-300 bg-black border-gray-500"
+                defaultValue={new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16)}
+              />
+              <ClockIcon className="hidden md:block pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-300" />
+            </div>
+          </div>
 
           {/* Author Github */}
           <div className="mb-4">
@@ -336,16 +294,8 @@ export default function Form({ authors }: { authors: Author[] }) {
                 </ul>
               )}
             </div>
-            <div id="authorGithub-error" aria-live="polite" aria-atomic="true">
-              {state?.errors?.authorGithub &&
-                state.errors.authorGithub.map((error: string) => (
-                  <p className="mt-2 text-sm text-red-500" key={error}>
-                    {error}
-                  </p>
-                ))}
-            </div>
+            <ErrorMessages id="authorGithub-error" errors={githubState?.errors.authorGithub} />
           </div>
-
 
           <div aria-live="polite" aria-atomic="true">
             {state?.message &&
@@ -358,8 +308,7 @@ export default function Form({ authors }: { authors: Author[] }) {
         <div className="mt-6 flex justify-end gap-4">
           <Link
             href="/admin/dashboard/posts"
-            className="flex h-10 items-center rounded-lg bg-gray-100 px-4 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-200"
-          >
+            className="flex h-10 items-center rounded-lg bg-gray-100 px-4 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-200">
             Cancel
           </Link>
           <Button type="submit">Create Post</Button>

@@ -13,7 +13,7 @@ export default async function PostsTable({
   const posts = await fetchPosts(currentPage, type);
 
   return (
-    <div className="mt-6 flow-root">
+    <div className="mt-6">
       <div className="inline-block min-w-full align-middle">
         <div className="rounded-lg bg-adminForeground p-2 md:pt-0">
           <div className="md:hidden">
@@ -50,10 +50,10 @@ export default async function PostsTable({
           <table className="hidden min-w-full text-gray-100 md:table">
             <thead className="rounded-lg text-left text-sm font-normal">
               <tr>
-                <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
+                <th scope="col" className="w-80 px-4 py-5 font-medium sm:pl-6">
                   Title
                 </th>
-                <th scope="col" className="px-3 py-5 font-medium">
+                <th scope="col" className="w-96 px-3 py-5 font-medium">
                   Summary
                 </th>
                 <th scope="col" className="px-3 py-5 font-medium">
@@ -81,11 +81,11 @@ export default async function PostsTable({
                 >
                   <td className="whitespace-nowrap py-3 pl-6">
                     <div className="flex items-center gap-3">
-                      <p className="max-w-40 truncate">{post.title}</p>
+                      <p className="max-w-40 xl:max-w-72 truncate">{post.title}</p>
                     </div>
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
-                    <p className="max-w-60 truncate">{post.summary}</p>
+                    <p className="max-w-48 xl:max-w-80 truncate">{post.summary}</p>
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
                     {post.type}
@@ -94,7 +94,7 @@ export default async function PostsTable({
                     {post.authorGithub}
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
-                    {new Intl.DateTimeFormat('pt-BR', { timeZone: 'UTC' }).format(post.createdAt)}
+                    {new Intl.DateTimeFormat('pt-BR').format(post.createdAt)}
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
                     <PostStatus published={post.published} />

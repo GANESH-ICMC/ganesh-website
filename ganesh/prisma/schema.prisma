@@ -39,18 +39,24 @@ model Post {
 }
 
 model Video {
-  id        String   @id @default(cuid())
-  title     String
-  summary   String?
-  content   String
-  date      DateTime
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id             String   @id @default(cuid())
+  title          String
+  title_en       String?
+  description    String?
+  description_en String?
+  url            String
+  thumbnail      String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 }
 
 model Sponsor {
-  id   String @id @default(cuid())
-  name String
-  icon String
-  url  String
+  id             String   @id @default(cuid())
+  name           String
+  logo           String
+  link           String
+  description    String?
+  description_en String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 }

@@ -11,15 +11,17 @@ export const metadata: Metadata = {
   title: 'Posts',
 };
 
+interface PageProps {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
 export default async function Page({
   searchParams,
-}: {
-  searchParams?: {
-    page?: string;
-  };
-}) {
+}: PageProps) {
 
-  const pageParam = await Promise.resolve(searchParams?.page);
+  const currSearchParams = await searchParams;
+  const pageParam = currSearchParams.page;
+
   const currentPage = Number(pageParam) || 1;
   const totalPages = await Promise.all(
     postTypes.map((type) => fetchPostsPages(type))
@@ -27,12 +29,12 @@ export default async function Page({
   const absoluteTotalPages = await fetchPostsPages();
 
   return (
-    <div className="w-full md:mb-16">
+    <div className="w-full md:mb-16 overflow-y-hidden">
       <div className="flex w-full items-center justify-between">
         <h1 className={`mx-5 text-2xl text-neutral-100`}>Posts</h1>
       </div>
       <Tabs defaultValue="Todos">
-        <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
+        <div className="mt-4 flex flex-col md:flex-row items-center justify-between gap-2 md:mt-8">
           {/* <Search placeholder="Search invoices..." /> */}
           <TabsList>
             <TabsTrigger value="Todos">
@@ -50,7 +52,7 @@ export default async function Page({
           <Suspense key={currentPage} fallback={<div />}>
             <Table currentPage={currentPage} />
           </Suspense>
-          <div className="mt-5 flex w-full justify-center">
+          <div className="my-5 flex w-full justify-center">
             <Pagination totalPages={absoluteTotalPages} />
           </div>
         </TabsContent>
@@ -60,7 +62,7 @@ export default async function Page({
               <Suspense key={currentPage} fallback={<div />}>
                 <Table currentPage={currentPage} type={type as PostType} />
               </Suspense>
-              <div className="mt-5 flex w-full justify-center">
+              <div className="my-5 flex w-full justify-center">
                 <Pagination totalPages={totalPages[index]} />
               </div>
             </TabsContent>

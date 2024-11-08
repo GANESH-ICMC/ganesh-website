@@ -85,14 +85,6 @@ export default function Navbar() {
                   News
                 </Link>
               </div>
-
-              <div className="group relative">
-                <Link href="/sponsors" className={clsx("nav-link", {
-                  'active-nav-link': pathname.startsWith('/sponsor'),
-                })}>
-                  Sponsors
-                </Link>
-              </div>
             </div>
 
             <div className="group relative">

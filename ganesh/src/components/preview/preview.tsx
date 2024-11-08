@@ -7,7 +7,7 @@ interface PreviewProps {
   title: string;
   authorName?: string;
   authorAvatar?: string;
-  date: string;
+  date: Date;
   txtContent: string;
 }
 

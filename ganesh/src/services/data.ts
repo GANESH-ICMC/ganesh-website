@@ -1,8 +1,10 @@
 import prisma from '@/services/prisma';
 import { Post, PostForm } from '@/models/post';
 import { Author } from '@/models/author';
+import { Sponsor } from '@/models/sponsor';
+import { Video } from '@/models/video';
 
-const ITEMS_PER_PAGE = 5;
+const ITEMS_PER_PAGE = 10;
 
 export const fetchAuthorsPages = async (): Promise<number> => {
   try {
@@ -91,7 +93,7 @@ export const fetchPostsPages = async (type?: PostForm['type']): Promise<number> 
     const count = await prisma.post.count(
       type ? { where: { type } } : undefined
     );
-    
+
     if (!count) {
       return 1;
     }
@@ -103,10 +105,13 @@ export const fetchPostsPages = async (type?: PostForm['type']): Promise<number> 
   }
 }
 
-export const fetchPosts = async (page: number, type?: PostForm['type']): Promise<Post[]> => {
+export const fetchPosts = async (page: number, type?: PostForm['type'], published?: boolean): Promise<Post[]> => {
   try {
     const data = await prisma.post.findMany({
-      where: type ? { type } : undefined,
+      where: {
+        ...(type && { type }),
+        ...(published && { published }),
+      },
       orderBy: {
         createdAt: 'desc',
       },
@@ -203,5 +208,58 @@ export const fetchPostById = async (id: string): Promise<PostForm | null> => {
   } catch (e) {
     console.error(e);
     return null;
+  }
+}
+
+export const fetchSponsors = async (): Promise<Sponsor[]> => {
+  try {
+    const data = await prisma.sponsor.findMany({
+      orderBy: {
+        name: 'asc',
+      },
+    });
+
+    const sponsors: Sponsor[] = data.map((sponsor) => ({
+      id: sponsor.id,
+      name: sponsor.name,
+      logo: sponsor.logo,
+      link: sponsor.link,
+      description: sponsor.description ?? undefined,
+      description_en: sponsor.description_en ?? undefined,
+      createdAt: new Date(sponsor.createdAt),
+      updatedAt: new Date(sponsor.updatedAt),
+    }));
+
+    return sponsors;
+  } catch (e) {
+    console.error(e);
+    return [];
+  }
+}
+
+export const fetchVideos = async (): Promise<Video[]> => {
+  try {
+    const data = await prisma.video.findMany({
+      orderBy: {
+        createdAt: 'desc',
+      },
+    });
+
+    const videos: Video[] = data.map((video) => ({
+      id: video.id,
+      title: video.title,
+      title_en: video.title_en ?? undefined,
+      description: video.description ?? undefined,
+      description_en: video.description_en ?? undefined,
+      url: video.url,
+      thumbnail: video.thumbnail ?? undefined,
+      createdAt: new Date(video.createdAt),
+      updatedAt: new Date(video.updatedAt),
+    }));
+
+    return videos;
+  } catch (e) {
+    console.error(e);
+    return [];
   }
 }

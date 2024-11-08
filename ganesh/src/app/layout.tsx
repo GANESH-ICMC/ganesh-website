@@ -6,10 +6,10 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Ganesh Backend',
-    default: 'Ganesh Backend',
+    template: '%s | Ganesh',
+    default: 'Ganesh',
   },
-  description: 'Onde conteúdos secretos são criados.',
+  description: 'Information Security Group',
 };
 
 export default function RootLayout({
@@ -20,11 +20,12 @@ export default function RootLayout({
   return (
     <>
       <html lang="pt-br">
-        <body className='bg-black'>
-          <main className="h-screen w-screen bg-gradient-to-br from-transparent to-green-900 overflow-x-hidden">
+        <body className='bg-black overflow-hidden'>
+          <div className='fixed h-screen w-screen bg-gradient-to-br from-transparent to-green-900 -z-10' />
+          <MatrixRainingLetters key={"hallo"} />
+          <main className="h-dvh w-full overflow-y-auto">
             <Navbar />
-            <div className='flex flex-col min-h-screen'>
-              <MatrixRainingLetters key={"hallo"} />
+            <div className='flex flex-col'>
               {children}
               <Footer />
             </div>

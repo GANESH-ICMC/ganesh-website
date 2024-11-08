@@ -1,22 +1,24 @@
 import Pagination from '@/components/pagination';
 import Table from '@/components/authors/table';
-import { Suspense } from 'react';
+import { Suspense, use } from 'react';
 import { fetchAuthorsPages } from '@/services/data';
 
 import type { Metadata } from 'next';
 export const metadata: Metadata = {
-  title: 'Posts',
+  title: 'Authors',
 };
+
+interface PageProps {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
 
 export default async function Page({
   searchParams,
-}: {
-  searchParams?: {
-    page?: string;
-  };
-}) {
-  const currentPage = Number(searchParams?.page) || 1;
+}: PageProps) {
+  const currSearchParams = await searchParams;
+  const pageParam = currSearchParams.page;
 
+  const currentPage = Number(pageParam) || 1;
   const totalPages = await fetchAuthorsPages();
 
   return (
