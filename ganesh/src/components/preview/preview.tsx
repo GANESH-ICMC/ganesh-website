@@ -1,4 +1,6 @@
-import MarkdownEditor from "@uiw/react-markdown-editor";
+"use client"
+
+import MDEditor from '@uiw/react-md-editor';
 import { formatDate } from "@/lib/utils";
 import Image from "next/image";
 import { UserIcon } from "@heroicons/react/16/solid";
@@ -11,14 +13,14 @@ interface PreviewProps {
   txtContent: string;
 }
 
-export default function preview({ title, authorName, authorAvatar, date, txtContent }: PreviewProps) {
+export default function Preview({ title, authorName, authorAvatar, date, txtContent }: PreviewProps) {
   return (
-    <div data-color-mode="light" className="flex flex-col gap-7 w-full">
-      <h1 className="text-5xl font-bold">{title}</h1>
+    <div data-color-mode="dark" className="flex flex-col gap-7 w-full">
+      <h1 className="text-5xl font-bold text-white">{title}</h1>
       <div className="flex gap-5 mb-5">
         <div className="flex gap-2">
           <span className="text-gray-500">Escrito por</span>
-          <span className="font-bold">{authorName}</span>
+          <span className="font-bold text-white">{authorName}</span>
           {authorAvatar ? (
             <Image
               src={authorAvatar}
@@ -31,10 +33,10 @@ export default function preview({ title, authorName, authorAvatar, date, txtCont
             <UserIcon className="w-7 h-7 mr-2 rounded-full" />
           )}
         </div>
-        <p>•</p>
+        <p className="text-gray-500">•</p>
         <span className="text-gray-500">{formatDate(date)}</span>
       </div>
-      <MarkdownEditor.Markdown source={txtContent} />
+      <MDEditor value={txtContent} />
     </div>
   )
 }

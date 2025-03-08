@@ -1,5 +1,5 @@
 import { VideoSchema } from "@/lib/zod";
-import prisma from "./prisma";
+import { prisma } from "./prisma";
 import { verifyAndRedirect } from "@/lib/session";
 
 
@@ -17,9 +17,9 @@ export type State = {
 
 const CreateVideo = VideoSchema.omit({ id: true, createdAt: true, updatedAt: true })
 
-export const createVideo = async (prevState: State, formData: FormData): Promise<State> => { 
+export const createVideo = async (prevState: State, formData: FormData): Promise<State> => {
   verifyAndRedirect();
-  
+
   const validatedFields = CreateVideo.safeParse({
     title: formData.get('title'),
     title_en: formData.get('title_en'),

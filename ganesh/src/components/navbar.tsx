@@ -18,7 +18,7 @@ export default function Navbar() {
     <>
       {!pathname.includes('/admin') && (<>
         <nav className="backdrop-blur fixed w-screen h-20 bg-background bg-opacity-45 transition duration-200 ease-in-out hover:bg-opacity-75 text-white font-mono flex items-center justify-center z-10">
-          <div className="w-full max-w-screen-lg flex items-center justify-between">
+          <div className="w-full max-w-screen-lg flex items-center justify-center md:justify-between">
             <div className="group relative">
               <Link href="/" className={clsx("nav-link", {
                 'active-nav-link': pathname === '/',
@@ -32,7 +32,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            <div className="flex justify-around w-1/3">
+            <div className="hidden md:flex justify-around w-1/3">
               <div className="group relative">
                 <Link href="/about" className={clsx("nav-link", {
                   'active-nav-link': pathname.startsWith('/about'),
@@ -87,7 +87,7 @@ export default function Navbar() {
               </div>
             </div>
 
-            <div className="group relative">
+            <div className="group md:relative">
               <Link href="/content" className="nav-link">
                 Pt-br
               </Link>

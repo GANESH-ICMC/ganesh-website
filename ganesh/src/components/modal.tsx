@@ -33,7 +33,7 @@ function Modal({ children, onRequestClose } : ModalProps) {
       aria-modal="true"
     >
       <div
-        className="flex flex-col items-center p-10 m-6 rounded-md max-w-[70vw] max-h-[90vh] bg-white overflow-y-auto"
+        className="flex flex-col items-center p-4 md:p-10 m-6 rounded-md md:max-w-[70vw] max-h-[90vh] bg-white overflow-y-auto"
         onClick={handleCardClick}
       >
         {children}

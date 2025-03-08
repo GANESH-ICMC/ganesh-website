@@ -21,8 +21,20 @@ import Preview from '@/components/preview/preview';
 import Modal from '@/components/modal';
 import TxtInput from './txt-input';
 import ErrorMessages from './error-messages';
+import { CldImage, CldUploadWidget, CloudinaryUploadWidgetInfo, CloudinaryUploadWidgetInstanceMethodDestroyOptions } from 'next-cloudinary';
 
 export default function Form({ authors }: { authors: Author[] }) {
+
+  const [resource, setResource] = useState<string | CloudinaryUploadWidgetInfo | undefined>();
+  const deleteImage = async (resource: CloudinaryUploadWidgetInfo) => {
+    const res = await fetch(`/api/upload/?url=${process.env.CLOUDINARY_URL}`, {
+      method: "DELETE",
+    });
+    const deletedImageData = await res.json();
+    if (deletedImageData.status === 200) {
+      setResource(undefined);
+    }
+  }
 
   const initialState: State = { message: null, errors: {} };
   const [state, formAction] = useActionState(createPost, initialState);
@@ -149,6 +161,49 @@ export default function Form({ authors }: { authors: Author[] }) {
             </label>
 
             <div className="relative mt-2 rounded-md">
+
+              <CldUploadWidget
+                uploadPreset="bpgw7ceh"
+                onSuccess={(result, { widget }) => {
+                  setResource(result?.info);  // { public_id, secure_url, etc }
+                }}
+                onQueuesEnd={(result, { widget }) => {
+                  widget.close();
+                }}
+              >
+                {({ open }) => {
+                  function handleOnClick() {
+                    setResource(undefined);
+                    open();
+                  }
+                  return (
+                    <button onClick={handleOnClick}>
+                      Upload an Image
+                    </button>
+                  );
+                }}
+              </CldUploadWidget>
+
+              {resource && (
+                <>
+                  <CldImage
+                    src={(resource as CloudinaryUploadWidgetInfo)?.secure_url}
+                    width="100"
+                    height="100"
+                    crop="fill"
+                    alt="Uploaded Image"
+                    className='relative'
+                  />
+                  <button
+                    type="button"
+                    onClick={deleteImage.bind(null, resource as CloudinaryUploadWidgetInfo)}
+                    className="p-1 text-xs text-red-500"
+                  >
+                    Delete
+                  </button>
+                </>
+              )}
+
               {imageState.images.map((image: string, index: number) => (
                 <div className="relative mb-2" key={index}>
                   <input

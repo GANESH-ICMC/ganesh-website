@@ -20,7 +20,7 @@ export default function EditInvoiceForm({
 
   return (
     <form action={updateAuthorWithId}>
-      <div className="rounded-md bg-gray-50 p-4 md:p-6">
+      <div className="rounded-md text-gray-50 bg-adminForeground p-4 md:p-6">
         {/* Author Name */}
         <div className="mb-4">
           <label htmlFor="name" className="mb-2 block text-sm font-medium">
@@ -34,7 +34,7 @@ export default function EditInvoiceForm({
                 type="text"
                 defaultValue={author.name}
                 placeholder="Mude o nome caso queira"
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border py-2 pl-10 text-sm font-mono outline-2 placeholder:text-gray-300 bg-black border-gray-500"
               />
               <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
             </div>
@@ -53,7 +53,7 @@ export default function EditInvoiceForm({
                 name="avatar"
                 type="text"
                 defaultValue={author.avatar}
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border py-2 pl-10 text-sm font-mono outline-2 placeholder:text-gray-300 bg-black border-gray-500"
                 readOnly={true}
               />
               <CameraIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
@@ -73,7 +73,7 @@ export default function EditInvoiceForm({
                 name="github"
                 type="text"
                 defaultValue={author.github}
-                className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                className="peer block w-full rounded-md border py-2 pl-10 text-sm font-mono outline-2 placeholder:text-gray-300 bg-black border-gray-500"
                 readOnly={true}
               />
               <ServerIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />

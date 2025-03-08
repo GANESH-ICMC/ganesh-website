@@ -11,6 +11,7 @@ export interface Post {
   createdAt: Date
   published: boolean
   authorGithub: string
+  images: string[]
 }
 
 export interface PostForm {

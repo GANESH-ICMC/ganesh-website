@@ -1,35 +1,41 @@
 import Image from "next/image";
 import Terminal from "./terminal";
+import Link from "next/link";
 
 export interface NewsProps {
+  id: string;
   image: string;
   title: string;
-  summary: string;
+  summary: string | undefined;
   author: string;
   date: string;
-  onClick: () => void;
 }
 
-export default function News({ image, title, summary, author, date, onClick }: NewsProps) {
+export default function News({ id, image, title, summary, author, date }: NewsProps) {
   return (
-    <div className="w-11/12 flex flex-row gap-5 pb-10">
-      <Image
-        className="object-contain cursor-pointer"
-        onClick={onClick}
-        src={image}
-        alt={title}
-        width={300}
-        height={200} />
+    <div className="w-5/6 flex flex-row gap-10 pb-10 items-center">
+      <Link
+        href={`/news/${id}`}
+        className="relative w-72 h-48 flex-shrink-0 overflow-hidden rounded-md">
+        <Image
+          className="object-cover"
+          src={image}
+          alt={title}
+          fill
+        />
+      </Link>
 
-      <div className="flex flex-col gap-3 text-neutral-50">
-        <div
-          onClick={onClick}
-          className="cursor-pointer text-xl font-mono font-bold hover:text-terminal">
+      <div className="flex flex-col justify-center gap-3 text-neutral-50">
+        <Link
+          href={`/news/${id}`}
+          className="cursor-pointer text-2xl font-mono font-bold hover:text-terminal">
           {title}
-        </div>
-        <div className="text-xs font-mono">
-          {summary}
-        </div>
+        </Link>
+        {summary && (
+          <div className="text-base font-mono">
+            {summary}
+          </div>
+        )}
         <div className="font-mono">
           By {author} on {date}
         </div>

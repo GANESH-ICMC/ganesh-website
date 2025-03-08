@@ -1,7 +1,7 @@
 'use server'
 
 import { z } from "zod";
-import prisma from "@/services/prisma";
+import { prisma } from "@/services/prisma";
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { verifyAndRedirect } from "@/lib/session";

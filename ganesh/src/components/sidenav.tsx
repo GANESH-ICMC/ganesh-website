@@ -2,17 +2,14 @@ import Link from 'next/link';
 import NavLinks from './nav-links';
 import { PowerIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
-import { signOut } from '../auth';
-
-export const experimental_ppr = true;
+import { handleSignOut } from '@/services/auth';
 
 export default function SideNav() {
   return (
     <div className="flex md:h-screen flex-col px-3 py-4 md:px-2">
       <Link
         className="mb-2 flex h-fit items-end justify-start rounded-md bg-adminForeground p-2 xl:h-40"
-        href="/"
-      >
+        href="/" >
         <Image
           className='w-8'
           src="/images/logo/ganesh-logo-coloured.png"
@@ -24,11 +21,7 @@ export default function SideNav() {
         <NavLinks />
         <div className="hidden md:block h-auto w-full grow rounded-md bg-adminBackground"></div>
         <form
-          action={async () => {
-            'use server';
-            await signOut();
-          }}
-        >
+          action={handleSignOut}>
           <button className="flex w-full grow items-center justify-center gap-2 rounded-md bg-adminForeground p-3 text-sm font-medium text-gray-300 hover:bg-red-900 hover:text-white md:flex-none md:justify-start md:px-3">
             <PowerIcon className="w-6" />
             <div className="hidden xl:block">Sign Out</div>

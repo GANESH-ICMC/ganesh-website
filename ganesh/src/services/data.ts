@@ -1,8 +1,9 @@
-import prisma from '@/services/prisma';
+import { prisma } from '@/services/prisma';
 import { Post, PostForm } from '@/models/post';
 import { Author } from '@/models/author';
 import { Sponsor } from '@/models/sponsor';
 import { Video } from '@/models/video';
+import { verifyAndRedirect } from '@/lib/session';
 
 const ITEMS_PER_PAGE = 10;
 
@@ -130,7 +131,8 @@ export const fetchPosts = async (page: number, type?: PostForm['type'], publishe
           select: {
             github: true,
           }
-        }
+        },
+        images: true
       }
     });
 
@@ -148,6 +150,7 @@ export const fetchPosts = async (page: number, type?: PostForm['type'], publishe
       createdAt: new Date(post.createdAt),
       published: post.published,
       authorGithub: post.author.github,
+      images: post.images
     }));
 
     return posts;

@@ -33,10 +33,10 @@ export const AuthorSchema = z.object({
 });
 
 export const SponsorSchema = z.object({
-  id: z.string(),
-  name: z.string(),
-  logo: z.string(),
-  link: z.string(),
+  id: z.string().min(1),
+  name: z.string().min(1),
+  logo: z.string().min(1),
+  link: z.string().min(1),
   description: z.string().optional(),
   description_en: z.string().optional(),
 });

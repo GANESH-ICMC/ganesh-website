@@ -1,6 +1,6 @@
 "use server"
 
-import prisma from "@/services/prisma";
+import { prisma } from "@/services/prisma";
 import { revalidatePath } from 'next/cache';
 import { AuthorSchema } from "@/lib/zod";
 import { verifyAndRedirect } from "@/lib/session";
@@ -8,7 +8,7 @@ import { redirect } from "next/navigation";
 
 export const addAuthor = async (github: string) => {
   verifyAndRedirect();
-  
+
   try {
     const authorExists = await prisma.author.findUnique({
       where: { github },
@@ -27,19 +27,17 @@ export const addAuthor = async (github: string) => {
           avatar: user.avatar_url,
         }
       });
-      
+
       revalidatePath('/authors');
       return newAuthor;
     }
   } catch (e) {
     console.error(e);
-  }  
+  }
 }
 
 export const updateAuthor = async (id: string, formData: FormData) => {
   verifyAndRedirect();
-
-  console.log('updateAuthor', id, formData);
 
   const validatedFields = AuthorSchema.safeParse({
     id,
@@ -65,7 +63,7 @@ export const updateAuthor = async (id: string, formData: FormData) => {
   } catch (e) {
     console.error(e);
   }
-  
+
   revalidatePath('/admin/dashboard/authors');
   redirect('/admin/dashboard/authors');
 }
@@ -85,7 +83,7 @@ export const deleteAuthor = async (id: string) => {
       console.error('Author not found');
       return;
     }
-    
+
     if (author.posts.length > 0) {
       console.error('Author has posts');
       return;

@@ -1,6 +1,6 @@
 'use server'
 
-import prisma from "@/services/prisma";
+import { prisma } from "@/services/prisma";
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { addAuthor } from "./author";
@@ -62,8 +62,6 @@ export const createPost = async (prevState: State, formData: FormData): Promise<
       const title_en = await translate(validatedFields.data.title, { from: 'pt', to: 'en' });
       const summary_en = await translate(validatedFields.data.summary, { from: 'pt', to: 'en' });
       const content_en = await translate(validatedFields.data.content, { from: 'pt', to: 'en' });
-
-      console.log(title_en);
 
       await prisma.post.create({
         data: {

@@ -58,7 +58,7 @@ export default function Footer() {
             </a>
           </div>
 
-          <div>Copyright © 2024 CodeLab</div>
+          <div className="text-xs md:text-base" >© 2024 CodeLab</div>
         </footer>
       </>)}
     </>

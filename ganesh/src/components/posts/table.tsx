@@ -29,8 +29,10 @@ export default async function PostsTable({
                     </div>
                     <p className="text-sm text-gray-500">{post.summary}</p>
                   </div>
-                  <div className='flex p-4'>{post.type}</div>
-                  <PostStatus published={post.published} />
+                  <div className='flex flex-col items-center'>
+                    <div className='flex p-4'>{post.type}</div>
+                    <PostStatus published={post.published} />
+                  </div>
                 </div>
                 <div className="flex w-full items-center justify-between pt-4">
                   <div>

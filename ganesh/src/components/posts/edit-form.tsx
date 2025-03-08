@@ -208,7 +208,7 @@ export default function Form({ post, authors }: { post: PostForm; authors: Autho
           <div className="mb-4">
             <label htmlFor="images" className="mb-2 block text-sm font-medium">
               Insira imagens de thumbnail do post (URLs)
-              <p className='text-xs text-gray-600'>Adicione as imagens no repositório do Github e coloque a URL delas aqui</p>
+              <p className='text-xs text-primary'>Adicione as imagens no repositório do Github e coloque a URL delas aqui</p>
             </label>
 
             <div className="relative mt-2 rounded-md">
