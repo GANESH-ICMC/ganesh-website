@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: "Inter var", "Inter", "sans-serif";
+  --font-mono: "Fira Code", "monospace";
+  --font-header: "Playfair Display", "serif";
+  --font-body: "Lora", "serif";
+
+  --color-background: #2E2C2F;
+  --color-foreground: #475B63;
+  --color-light: #F3E8EE;
+  --color-primary: #40dda5;
+  --color-secondary: #e02862;
+  --color-buttonHover: #40dda5;
+  --color-terminal: #00ff00;
+  --color-adminBackground: #171821;
+  --color-adminForeground: #21222D;
+}
+
 *,
 *::before,
 *::after {

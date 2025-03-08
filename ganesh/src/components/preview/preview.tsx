@@ -1,6 +1,6 @@
 "use client"
 
-import MDEditor from '@uiw/react-md-editor';
+import MarkdownPreview from '@uiw/react-markdown-preview';
 import { formatDate } from "@/lib/utils";
 import Image from "next/image";
 import { UserIcon } from "@heroicons/react/16/solid";
@@ -36,7 +36,7 @@ export default function Preview({ title, authorName, authorAvatar, date, txtCont
         <p className="text-gray-500">•</p>
         <span className="text-gray-500">{formatDate(date)}</span>
       </div>
-      <MDEditor value={txtContent} />
+      <MarkdownPreview source={txtContent} style={{ padding: 32, backgroundColor: 'transparent', color: 'white' }} />
     </div>
   )
 }

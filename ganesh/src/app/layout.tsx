@@ -23,12 +23,10 @@ export default function RootLayout({
         <body className='bg-black overflow-hidden'>
           <div className='fixed h-screen w-screen bg-gradient-to-br from-transparent to-green-900 -z-10' />
           <MatrixRainingLetters key={"hallo"} />
-          <main className="h-dvh w-full overflow-y-auto">
+          <main className="h-dvh w-full overflow-y-auto flex flex-col">
             <Navbar />
-            <div className='flex flex-col'>
-              {children}
-              <Footer />
-            </div>
+            {children}
+            <Footer />
           </main>
         </body>
       </html>
