@@ -3,9 +3,8 @@ import { Post, PostForm } from '@/models/post';
 import { Author } from '@/models/author';
 import { Sponsor } from '@/models/sponsor';
 import { Video } from '@/models/video';
-import { verifyAndRedirect } from '@/lib/session';
 
-const ITEMS_PER_PAGE = 10;
+const ITEMS_PER_PAGE = 5;
 
 export const fetchAuthorsPages = async (): Promise<number> => {
   try {
@@ -251,11 +250,11 @@ export const fetchVideos = async (): Promise<Video[]> => {
     const videos: Video[] = data.map((video) => ({
       id: video.id,
       title: video.title,
-      title_en: video.title_en ?? undefined,
-      description: video.description ?? undefined,
-      description_en: video.description_en ?? undefined,
+      title_en: video.title_en,
+      description: video.description,
+      description_en: video.description_en,
       url: video.url,
-      thumbnail: video.thumbnail ?? undefined,
+      thumbnail: video.thumbnail,
       createdAt: new Date(video.createdAt),
       updatedAt: new Date(video.updatedAt),
     }));

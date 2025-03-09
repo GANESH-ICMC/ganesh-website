@@ -29,6 +29,7 @@
     "react": "^19",
     "react-dom": "^19",
     "react-i18next": "^15.4.1",
+    "swiper": "^11.2.5",
     "tailwind-merge": "^3.0.2",
     "tailwindcss": "^4.0.12",
     "translate": "^3.0.1",

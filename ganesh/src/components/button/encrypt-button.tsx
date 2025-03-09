@@ -1,8 +1,11 @@
+"use client";
+
 import { useRef, useState } from "react";
 import { LockClosedIcon } from "@heroicons/react/24/outline";
 import { InformationCircleIcon } from "@heroicons/react/16/solid";
 import { MagnifyingGlassIcon } from "@heroicons/react/16/solid";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const CYCLES_PER_LETTER = 2;
 const SHUFFLE_TIME = 50;
@@ -51,37 +54,39 @@ export default function EncryptButton({ onClick, targetText }: EncryptButtonProp
   };
 
   return (
-    <motion.button
-      onClick={onClick}
-      whileHover={{
-        scale: 1.025,
-      }}
-      whileTap={{
-        scale: 0.975,
-      }}
-      onMouseEnter={scramble}
-      onMouseLeave={stopScramble}
-      className="group relative overflow-hidden rounded border-[2px] border-neutral-500 bg-transparent px-4 py-2 font-mono text-neutral-100 transition-colors hover:text-terminal hover:border-terminal"
-    >
-      <div className="relative z-10 flex items-center gap-2">
-        <MagnifyingGlassIcon className="w-5" />
-        <span>{text}</span>
-      </div>
-      <motion.span
-        initial={{
-          y: "100%",
+    <Link
+      href={`/about`}>
+      <motion.button
+        whileHover={{
+          scale: 1.025,
         }}
-        animate={{
-          y: "-100%",
+        whileTap={{
+          scale: 0.975,
         }}
-        transition={{
-          repeat: Infinity,
-          repeatType: "mirror",
-          duration: 1,
-          ease: "linear",
-        }}
-        className="duration-300 absolute inset-0 z-0 scale-125 bg-gradient-to-t from-green-400/0 from-40% via-green-400/100 to-green-400/0 to-60% opacity-0 transition-opacity group-hover:opacity-100"
-      />
-    </motion.button>
+        onMouseEnter={scramble}
+        onMouseLeave={stopScramble}
+        className="group relative overflow-hidden rounded border-[2px] border-neutral-500 bg-transparent px-4 py-2 font-mono text-neutral-100 transition-colors hover:text-terminal hover:border-terminal"
+      >
+        <div className="relative z-10 flex items-center gap-2">
+          <MagnifyingGlassIcon className="w-5" />
+          <span>{text}</span>
+        </div>
+        <motion.span
+          initial={{
+            y: "100%",
+          }}
+          animate={{
+            y: "-100%",
+          }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "mirror",
+            duration: 1,
+            ease: "linear",
+          }}
+          className="duration-300 absolute inset-0 z-0 scale-125 bg-gradient-to-t from-green-400/0 from-40% via-green-400/100 to-green-400/0 to-60% opacity-0 transition-opacity group-hover:opacity-100"
+        />
+      </motion.button>
+    </Link>
   );
 };

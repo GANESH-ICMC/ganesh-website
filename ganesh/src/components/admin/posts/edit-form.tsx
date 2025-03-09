@@ -236,6 +236,7 @@ export default function Form({ post, authors }: { post: PostForm; authors: Autho
                 + Adicionar mais URLs
               </button>
             </div>
+            <ErrorMessages id="images-error" errors={state?.errors?.images} />
           </div>
 
           {/* Choose the type */}

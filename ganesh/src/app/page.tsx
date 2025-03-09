@@ -1,13 +1,11 @@
-"use client"
-
-import EncryptButton from "@/components/button/encryptButton";
+import EncryptButton from "@/components/button/encrypt-button";
 import Terminal from "@/components/cards/terminal";
+import { Sponsor } from "@/models/sponsor";
+import { fetchSponsors } from "@/services/data";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
-export default function Page() {
-  const router = useRouter();
-
+export default async function Page() {
+  const sponsors: Sponsor[] = await fetchSponsors();
   return (
     <div className="py-12">
       <div className="h-screen flex flex-col items-center justify-center gap-4">
@@ -23,7 +21,7 @@ export default function Page() {
       </div>
 
       <div className="flex flex-col gap-12 items-center">
-        <div className="w-5/6 md:w-2/3">
+        <div className="w-15/16 md:w-2/3">
           <Terminal>
             <div className="text-2xl font-mono font-bold pb-4">
               About Us
@@ -33,11 +31,27 @@ export default function Page() {
             <br /><br />
             We connect with the public through various outreach initiatives, including our YouTube channel, an annual recruitment process, and participation in <span className="text-terminal">Capture the Flag (CTF)</span> competitions. Our consistent high rankings in these competitions position us among Brazil’s top teams and the country's leading university team. Each study area holds weekly meetings focused on developing mini-courses, tools, and study materials, with most of these resources publicly accessible on GitHub. Through these efforts, we continually contribute to and expand the field of information security in Brazil.
             <br /><br />
-            <EncryptButton targetText="Learn More" onClick={() => { router.push("/about") }} />
+            <EncryptButton targetText="Learn More" />
           </Terminal>
         </div>
-      </div>
 
+        <div className="flex flex-col justify-center items-center">
+          <Terminal>
+            <div className="text-2xl font-mono font-bold pb-4 text-center">
+              Our Sponsors
+            </div>
+            <div className="flex flex-col md:flex-row justify-center items-center">
+              {sponsors.map((sponsor) => (
+                <div key={sponsor.id} className="flex flex-col gap-2">
+                  <img src={sponsor.logo} alt={sponsor.name} className="w-64 object-cover" />
+                  <p className="text-gray-500">{sponsor.description}</p>
+                </div>
+              ))}
+            </div>
+          </Terminal>
+        </div>
+
+      </div>
 
     </div>
   );

@@ -1,8 +1,8 @@
-import { CreateSponsor } from "@/components/sponsors/buttons";
+import { CreateSponsor } from "@/components/admin/sponsors/buttons";
 import { Sponsor } from "@/models/sponsor";
 import { fetchSponsors } from "@/services/data";
 import { Metadata } from "next";
-import Card from "@/components/sponsors/card";
+import Card from "@/components/admin/sponsors/card";
 
 export const metadata: Metadata = {
   title: 'Sponsors',

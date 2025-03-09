@@ -1,5 +1,5 @@
-import Pagination from '@/components/pagination';
-import Table from '@/components/authors/table';
+import Pagination from '@/components/admin/pagination';
+import Table from '@/components/admin/authors/table';
 import { Suspense, use } from 'react';
 import { fetchAuthorsPages } from '@/services/data';
 

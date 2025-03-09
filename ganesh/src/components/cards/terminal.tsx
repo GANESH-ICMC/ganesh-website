@@ -20,5 +20,6 @@ const styles = {
     color: 'white',
     margin: '0 auto',
     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)', // subtle shadow
+    width: '100%',
   } as React.CSSProperties
 };

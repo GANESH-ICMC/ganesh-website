@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import NavLinks from './nav-links';
+import NavLinks from '../nav-links';
 import { PowerIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import { handleSignOut } from '@/services/auth';

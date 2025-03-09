@@ -14,21 +14,19 @@ export default function Breadcrumbs({
 }) {
   return (
     <nav aria-label="Breadcrumb" className="mb-6 block">
-      <ol className={clsx('list-none flex text-xl md:text-2xl')}>
+      <ol className={clsx('list-none flex text-xl md:text-2xl text-white')}>
         {breadcrumbs.map((breadcrumb, index) => (
           <li
             key={breadcrumb.href}
             aria-current={breadcrumb.active}
-            className={clsx(
-              breadcrumb.active ? 'text-neutral-100 list-none' : 'text-neutral-400 list-none',
-            )}
-          >
+            className="list-none">
             <Link href={breadcrumb.href}>{breadcrumb.label}</Link>
             {index < breadcrumbs.length - 1 ? (
               <span className="mx-3 inline-block">/</span>
             ) : null}
           </li>
-        ))}
+        )
+        )}
       </ol>
     </nav>
   );

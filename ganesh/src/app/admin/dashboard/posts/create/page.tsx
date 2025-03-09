@@ -1,5 +1,5 @@
-import Breadcrumbs from '@/components/breadcrumbs';
-import Form from '@/components/posts/create-form';
+import Breadcrumbs from '@/components/admin/breadcrumbs';
+import Form from '@/components/admin/posts/create-form';
 import { fetchAuthors } from '@/services/data';
 
 import type { Metadata } from 'next';

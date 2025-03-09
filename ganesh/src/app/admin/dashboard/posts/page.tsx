@@ -1,11 +1,11 @@
-import Pagination from '@/components/pagination';
-import Table from '@/components/posts/table';
-import { CreatePost } from '@/components/posts/buttons';
+import Pagination from '@/components/admin/pagination';
+import Table from '@/components/admin/posts/table';
+import { CreatePost } from '@/components/admin/posts/buttons';
 import { Suspense } from 'react';
 import { fetchPostsPages } from '@/services/data';
 
 import type { Metadata } from 'next';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/posts/tabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/admin/posts/tabs';
 import { PostType, postTypes } from '@/models/post';
 export const metadata: Metadata = {
   title: 'Posts',

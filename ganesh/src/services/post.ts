@@ -48,7 +48,6 @@ export const createPost = async (prevState: State, formData: FormData): Promise<
   })
 
   if (!validatedFields.success) {
-    console.log(validatedFields.error.flatten().fieldErrors);
     return {
       errors: validatedFields.error.flatten().fieldErrors,
       message: 'Missing Fields. Failed to Create Post.',
@@ -114,7 +113,6 @@ export const updatePost = async (prevState: State, formData: FormData, postTxtCo
   })
 
   if (!validatedFields.success) {
-    console.log(validatedFields.error.flatten().fieldErrors);
     return {
       errors: validatedFields.error.flatten().fieldErrors,
       message: 'Missing Fields. Could not update post',

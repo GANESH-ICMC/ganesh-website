@@ -1,3 +1,5 @@
+"use server"
+
 import { VideoSchema } from "@/lib/zod";
 import { prisma } from "./prisma";
 import { verifyAndRedirect } from "@/lib/session";
@@ -48,7 +50,7 @@ export const createVideo = async (prevState: State, formData: FormData): Promise
   }
 }
 
-export const updateVideo = async (id: string, prevState: State, formData: FormData): Promise<State> => {
+export const updateVideo = async (prevState: State, formData: FormData, id: string): Promise<State> => {
   verifyAndRedirect();
 
   const validatedFields = VideoSchema.safeParse({
@@ -80,17 +82,14 @@ export const updateVideo = async (id: string, prevState: State, formData: FormDa
   }
 }
 
-export const deleteVideo = async (id: string): Promise<State> => {
+export const deleteVideo = async (id: string): Promise<void> => {
   verifyAndRedirect();
 
   try {
     await prisma.video.delete({
       where: { id },
     });
-
-    return { message: 'Video deleted successfully!' };
   } catch (e) {
     console.error(e);
-    return { message: 'Failed to delete Video.' };
   }
 }

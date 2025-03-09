@@ -5,7 +5,7 @@ interface ModalProps {
   onRequestClose: () => void;
 }
 
-function Modal({ children, onRequestClose } : ModalProps) {
+function Modal({ children, onRequestClose }: ModalProps) {
   function handleRootClick() {
     onRequestClose();
   }
@@ -27,13 +27,13 @@ function Modal({ children, onRequestClose } : ModalProps) {
 
   return (
     <div
-      className="flex items-center justify-center fixed w-full h-full max-h-xl left-0 top-0 bg-black/25 z-50"
+      className="flex items-center justify-center fixed w-full h-full max-h-xl left-0 top-0 bg-black/50 z-50"
       onClick={handleRootClick}
       role="dialog"
       aria-modal="true"
     >
       <div
-        className="flex flex-col items-center p-4 md:p-10 m-6 rounded-md md:max-w-[70vw] max-h-[90vh] bg-white overflow-y-auto"
+        className="flex flex-col items-center p-4 md:p-10 m-6 rounded-md md:max-w-[70vw] max-h-[90vh] bg-adminForeground overflow-y-auto"
         onClick={handleCardClick}
       >
         {children}

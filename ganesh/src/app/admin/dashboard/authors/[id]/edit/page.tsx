@@ -1,5 +1,5 @@
-import Form from '@/components/authors/edit-form';
-import Breadcrumbs from '@/components/breadcrumbs';
+import Form from '@/components/admin/authors/edit-form';
+import Breadcrumbs from '@/components/admin/breadcrumbs';
 import { fetchAuthorById } from '@/services/data';
 import { notFound } from 'next/navigation';
 
