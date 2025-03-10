@@ -28,7 +28,7 @@ export const addAuthor = async (github: string) => {
         }
       });
 
-      revalidatePath('/authors');
+      revalidatePath('/br/admin/dashboard/authors');
       return newAuthor;
     }
   } catch (e) {
@@ -64,8 +64,8 @@ export const updateAuthor = async (id: string, formData: FormData) => {
     console.error(e);
   }
 
-  revalidatePath('/admin/dashboard/authors');
-  redirect('/admin/dashboard/authors');
+  revalidatePath('/br/admin/dashboard/authors');
+  redirect('/br/admin/dashboard/authors');
 }
 
 export const deleteAuthor = async (id: string) => {
@@ -93,7 +93,8 @@ export const deleteAuthor = async (id: string) => {
       where: { id },
     });
 
-    revalidatePath('/authors');
+    revalidatePath('/br/admin/dashboard/authors');
+    redirect('/br/admin/dashboard/authors');
   } catch (e) {
     console.error(e);
   }

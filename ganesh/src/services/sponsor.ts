@@ -22,6 +22,7 @@ export type State = {
 };
 
 const CreateSponsor = SponsorSchema.omit({ id: true })
+const UpdateSponsor = SponsorSchema.omit({ id: true })
 
 export const createSponsor = async (prevState: State, formData: FormData): Promise<State> => {
   verifyAndRedirect();
@@ -61,14 +62,14 @@ export const createSponsor = async (prevState: State, formData: FormData): Promi
     return { message: 'Failed to create Sponsor.' };
   }
 
-  revalidatePath('/admin/dashboard/sponsors');
-  redirect('/admin/dashboard/sponsors');
+  revalidatePath('/br/admin/dashboard/sponsors');
+  redirect('/br/admin/dashboard/sponsors');
 }
 
 export const updateSponsor = async (prevState: State, formData: FormData, id: string): Promise<State> => {
   verifyAndRedirect();
 
-  const validatedFields = SponsorSchema.safeParse({
+  const validatedFields = UpdateSponsor.safeParse({
     name: formData.get('name'),
     logo: formData.get('logo'),
     link: formData.get('link'),
@@ -96,8 +97,8 @@ export const updateSponsor = async (prevState: State, formData: FormData, id: st
     return { message: 'Failed to update Sponsor.' };
   }
 
-  revalidatePath('/admin/dashboard/sponsors');
-  redirect('/admin/dashboard/sponsors');
+  revalidatePath('/br/admin/dashboard/sponsors');
+  redirect('/br/admin/dashboard/sponsors');
 }
 
 export const deleteSponsor = async (id: string): Promise<void> => {
@@ -113,4 +114,7 @@ export const deleteSponsor = async (id: string): Promise<void> => {
   } catch (e) {
     console.error(e);
   }
+
+  revalidatePath('/br/admin/dashboard/sponsors');
+  redirect('/br/admin/dashboard/sponsors');
 }

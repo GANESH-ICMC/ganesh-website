@@ -28,7 +28,7 @@ export const authConfig = {
       const isOnDashboard = nextUrl.pathname.startsWith('/br/admin/dashboard');
       if (isOnDashboard) {
         if (isLoggedIn) return true;
-        return Response.redirect(new URL('/br/admin', nextUrl));; // Redirect unauthenticated users to login page
+        return Response.redirect(new URL('/', nextUrl));; // Redirect unauthenticated users to login page
       } else if (isLoggedIn) {
         return Response.redirect(new URL('/br/admin/dashboard', nextUrl));
       }

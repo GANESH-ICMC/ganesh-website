@@ -15,7 +15,7 @@ export default async function Page() {
     <>
       <div className="w-full md:mb-16">
         <div className="flex w-full items-center justify-between">
-          <h1 className={`mx-5 text-xl md:text-2xl text-neutral-100`}>Videos</h1>
+          <h1 className={`mx-5 text-xl md:text-2xl text-neutral-100`}>Videos (NÃO IMPLEMENTADO AINDA)</h1>
         </div>
         <div className='mt-4 flex flex-col items-center md:flex-row md:flex-wrap gap-2 md:mt-8'>
           <CreateVideo />

@@ -18,7 +18,7 @@ export function DeleteAuthor({ id }: { id: string }) {
   return (
     <>
       <form action={deleteAuthorWithId}>
-        <button className="rounded-md border p-2 border-gray-400 hover:border-white hover:bg-adminForeground text-gray-400 hover:text-white">
+        <button className="cursor-pointer rounded-md border p-2 border-gray-400 hover:border-white hover:bg-adminForeground text-gray-400 hover:text-white">
           <span className="sr-only">Delete</span>
           <TrashIcon className="w-5" />
         </button>

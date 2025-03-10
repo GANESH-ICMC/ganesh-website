@@ -17,8 +17,8 @@ const links = [
   { name: 'Dashboard', href: '/br/admin/dashboard', icon: HomeIcon },
   { name: 'Content', href: '/br/admin/dashboard/posts', icon: DocumentDuplicateIcon },
   { name: 'Videos', href: '/br/admin/dashboard/videos', icon: PlayIcon },
-  { name: 'Authors', href: '/br/admin/dashboard/authors', icon: UserGroupIcon },
   { name: 'Sponsors', href: '/br/admin/dashboard/sponsors', icon: HandThumbUpIcon },
+  { name: 'Authors', href: '/br/admin/dashboard/authors', icon: UserGroupIcon },
 ];
 
 export default function NavLinks() {

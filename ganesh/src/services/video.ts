@@ -3,6 +3,8 @@
 import { VideoSchema } from "@/lib/zod";
 import { prisma } from "./prisma";
 import { verifyAndRedirect } from "@/lib/session";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 
 export type State = {
@@ -18,6 +20,7 @@ export type State = {
 };
 
 const CreateVideo = VideoSchema.omit({ id: true, createdAt: true, updatedAt: true })
+const UpdateVideo = VideoSchema.omit({ id: true, createdAt: true, updatedAt: true })
 
 export const createVideo = async (prevState: State, formData: FormData): Promise<State> => {
   verifyAndRedirect();
@@ -42,18 +45,19 @@ export const createVideo = async (prevState: State, formData: FormData): Promise
     await prisma.video.create({
       data: validatedFields.data,
     });
-
-    return { message: 'Video created successfully!' };
   } catch (e) {
     console.error(e);
     return { message: 'Failed to create Video.' };
   }
+
+  revalidatePath('/br/admin/dashboard/videos');
+  redirect('/br/admin/dashboard/videos');
 }
 
 export const updateVideo = async (prevState: State, formData: FormData, id: string): Promise<State> => {
   verifyAndRedirect();
 
-  const validatedFields = VideoSchema.safeParse({
+  const validatedFields = UpdateVideo.safeParse({
     title: formData.get('title'),
     title_en: formData.get('title_en'),
     description: formData.get('description'),
@@ -72,14 +76,22 @@ export const updateVideo = async (prevState: State, formData: FormData, id: stri
   try {
     await prisma.video.update({
       where: { id },
-      data: validatedFields.data,
+      data: {
+        title: validatedFields.data.title,
+        title_en: validatedFields.data.title_en,
+        description: validatedFields.data.description,
+        description_en: validatedFields.data.description_en,
+        url: validatedFields.data.url,
+        thumbnail: validatedFields.data.thumbnail,
+      }
     });
-
-    return { message: 'Video updated successfully!' };
   } catch (e) {
     console.error(e);
     return { message: 'Failed to update Video.' };
   }
+
+  revalidatePath('/br/admin/dashboard/videos');
+  redirect('/br/admin/dashboard/videos');
 }
 
 export const deleteVideo = async (id: string): Promise<void> => {
@@ -92,4 +104,7 @@ export const deleteVideo = async (id: string): Promise<void> => {
   } catch (e) {
     console.error(e);
   }
+
+  revalidatePath('/br/admin/dashboard/videos');
+  redirect('/br/admin/dashboard/videos');
 }

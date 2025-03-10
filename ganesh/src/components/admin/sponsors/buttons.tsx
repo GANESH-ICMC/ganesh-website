@@ -163,7 +163,7 @@ export const DeleteSponsor = ({ id }: { id: string }) => {
       )}
       <button
         onClick={() => setIsModalOpen(true)}
-        className='absolute bottom-1 right-1 flex justify-center items-center text-white text-3xl rounded-md text-mono w-11 h-11 bg-adminBackground border-[2px] border-background hover:bg-adminForeground hover:border-white'>
+        className='cursor-pointer absolute bottom-1 right-1 flex justify-center items-center text-white text-3xl rounded-md text-mono w-11 h-11 bg-adminBackground border-[2px] border-background hover:bg-adminForeground hover:border-white'>
         <TrashIcon className='w-7' />
       </button>
     </>

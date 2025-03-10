@@ -32,7 +32,7 @@ export default function Display({ id, image, title, summary, author, date, type 
         <div className="text-xs font-mono text-neutral-400">
           {date}, {locale === "en" ? "by" : "por"} {author}
         </div>
-        <div className="text-xl font-mono font-bold overflow-hidden text-ellipsis line-clamp-2">
+        <div className="text-xl font-mono font-bold overflow-hidden text-ellipsis line-clamp-2 h-14">
           {title}
         </div>
         {summary && (
