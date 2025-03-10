@@ -1,35 +1,63 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import clsx from 'clsx';
 import { useState } from "react";
 import { MenuToggle } from "./button/menu-toggle";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link as IntlLink } from '@/i18n/navigation';
+import { useLocale, useTranslations } from "next-intl";
 
 const links = [
   { name: 'Home', href: '/' },
   { name: 'About Us', href: '/about' },
   { name: 'Content', href: '/content' },
   { name: 'News', href: '/news' },
+  { name: 'Language', href: '' },
 ];
+
+const aboutSubLinks = [
+  { name: "Core Values", href: "/about" },
+  { name: "Our Institute", href: "/about/institute" },
+  { name: "Our University", href: "/about/university" },
+];
+
+const contentSubLinks = [
+  { name: "All Contents", href: "/content" },
+  { name: "Articles", href: "/content/article" },
+  { name: "Activities", href: "/content/activity" },
+  { name: "Tips :)", href: "/content/tip" },
+  // { name: "Videos", href: "/content/video" },
+];
+
+const languageSubLinks = [
+  { name: "pt-BR", href: "" },
+  { name: "en-US", href: "" },
+];
+
+// Animation variants for the mobile menu
+const mobileMenuVariants = {
+  hidden: { opacity: 0, y: -10 },
+  visible: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -10 },
+};
 
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [contentOpen, setContentOpen] = useState(false);
+  const [languageOpen, setLanguageOpen] = useState(false);
 
-  // Animation variants for the mobile menu
-  const mobileMenuVariants = {
-    hidden: { opacity: 0, y: -10 },
-    visible: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -10 },
-  };
+  const t = useTranslations('Navbar');
+  const locale = useLocale();
 
-  // Animation for desktop flyout menus
-  const flyoutVariants = {
-    initial: { opacity: 0, y: 5 },
-    animate: { opacity: 1, y: 0 },
+  const router = useRouter();
+  const changeLanguage = (lang: string) => {
+    // This will navigate to the new locale while preserving the current path.
+    router.push(`/${lang}${pathname}`);
   };
 
   return (
@@ -64,19 +92,19 @@ export default function Navbar() {
                     <Link href="/about" className={clsx("nav-link", {
                       'active-nav-link': pathname.startsWith('/about'),
                     })}>
-                      About Us
+                      {t('about')}
                     </Link>
 
                     {/* Flyout menu */}
                     <div className="absolute left-0 mt-2 w-48 bg-white text-black rounded shadow-lg opacity-0 invisible transition-all duration-250 ease-in-out group-hover:opacity-100 group-hover:visible transform">
                       <Link href="/about" className="block px-4 py-2 hover:bg-gray-200">
-                        Core Values
+                        {t('us')}
                       </Link>
                       <Link href="/about/institute" className="block px-4 py-2 hover:bg-gray-200">
-                        Our Institute
+                        {t('institute')}
                       </Link>
                       <Link href="/about/university" className="block px-4 py-2 hover:bg-gray-200">
-                        Our University
+                        {t('university')}
                       </Link>
                     </div>
                   </div>
@@ -85,23 +113,23 @@ export default function Navbar() {
                     <Link href="/content" className={clsx("nav-link", {
                       'active-nav-link': pathname.startsWith('/content'),
                     })}>
-                      Content
+                      {t('content')}
                     </Link>
 
                     {/* Flyout menu */}
                     <div className="absolute left-0 mt-2 w-48 bg-white text-black rounded shadow-lg opacity-0 invisible transition-all duration-250 ease-in-out group-hover:opacity-100 group-hover:visible transform">
                       <Link href="/content/article" className="block px-4 py-2 hover:bg-gray-200">
-                        Articles
+                        {t('articles')}
                       </Link>
                       <Link href="/content/activity" className="block px-4 py-2 hover:bg-gray-200">
-                        Activities
+                        {t('activities')}
                       </Link>
                       <Link href="/content/tip" className="block px-4 py-2 hover:bg-gray-200">
-                        Tips :)
+                        {t('tips')}
                       </Link>
-                      <Link href="/content/video" className="block px-4 py-2 hover:bg-gray-200">
-                        Videos
-                      </Link>
+                      {/* <Link href="/content/video" className="block px-4 py-2 hover:bg-gray-200">
+                        {t('videos')}
+                      </Link> */}
                     </div>
                   </div>
 
@@ -109,24 +137,51 @@ export default function Navbar() {
                     <Link href="/news" className={clsx("nav-link", {
                       'active-nav-link': pathname.startsWith('/news'),
                     })}>
-                      News
+                      {t('news')}
                     </Link>
                   </div>
                 </div>
 
                 <div className="group md:relative w-1/3">
                   <Link href="/content" className="nav-link">
-                    Pt-br
+                    {locale === 'br' ?
+                      <div className="flex gap-3 items-center">
+                        <Image
+                          className="w-8 py-2"
+                          src="/images/icons/BR.svg"
+                          height={33}
+                          width={200}
+                          alt="Ganesh Logo"
+                        />
+                        pt-BR
+                      </div>
+                      : <div className="flex gap-3 items-center">
+                        <Image
+                          className="w-8 py-2"
+                          src="/images/icons/US.svg"
+                          height={33}
+                          width={200}
+                          alt="Ganesh Logo"
+                        />
+                        en-US
+                      </div>
+                    }
                   </Link>
 
                   {/* Flyout menu */}
-                  <div className="absolute left-0 mt-2 w-48 bg-white text-black rounded shadow-lg opacity-0 invisible transition-all duration-250 ease-in-out group-hover:opacity-100 group-hover:visible transform">
-                    <Link href="/content/article" className="block px-4 py-2 hover:bg-gray-200">
-                      Pt-br
-                    </Link>
-                    <Link href="/content/activity" className="block px-4 py-2 hover:bg-gray-200">
-                      En
-                    </Link>
+                  <div className="absolute left-0 mt-2 w-48 bg-white text-black rounded-sm shadow-lg opacity-0 invisible transition-all duration-250 ease-in-out group-hover:opacity-100 group-hover:visible transform">
+                    <IntlLink
+                      href="/" locale="br"
+                      className="block px-4 py-2 hover:bg-gray-200"
+                    >
+                      pt-BR
+                    </IntlLink>
+                    <IntlLink
+                      href="/" locale="en"
+                      className="block px-4 py-2 hover:bg-gray-200"
+                    >
+                      en-US
+                    </IntlLink>
                   </div>
                 </div>
               </div>
@@ -139,6 +194,7 @@ export default function Navbar() {
             </div>
           </nav>
 
+
           {/* Mobile Navigation Menu */}
           <AnimatePresence>
             {mobileMenuOpen && (
@@ -148,23 +204,197 @@ export default function Navbar() {
                 animate="visible"
                 exit="exit"
                 variants={mobileMenuVariants}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.2 }}
                 className="md:hidden fixed top-20 left-0 w-full bg-background bg-opacity-95 text-white font-mono z-10"
               >
                 <div className="flex flex-col space-y-4 p-4">
-                  {links.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className={clsx("block nav-link", {
-                        "active-nav-link": pathname === link.href,
-                      })}
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
-                  {/* Language Toggle Option */}
+                  {links.map((link, index) => {
+                    // For About Us, render a collapsible submenu.
+                    if (link.name === "About Us") {
+                      return (
+                        <motion.div
+                          key={link.href}
+                          initial="hidden"
+                          animate="visible"
+                          variants={mobileMenuVariants}
+                          transition={{ delay: 0.1 * index }}
+                        >
+                          <div
+                            onClick={() => setAboutOpen(!aboutOpen)}
+                            className="cursor-pointer nav-link flex justify-between items-center"
+                          >
+                            <span>{link.name}</span>
+                            <span>{aboutOpen ? "-" : "+"}</span>
+                          </div>
+                          <AnimatePresence>
+                            {aboutOpen && (
+                              <motion.div
+                                key="aboutSubMenu"
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: "auto" }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.2 }}
+                                className="ml-4 mb-2 flex flex-col overflow-hidden"
+                              >
+                                {aboutSubLinks.map((sublink, subIndex) => (
+                                  <motion.div
+                                    key={sublink.href}
+                                    initial="hidden"
+                                    animate="visible"
+                                    variants={mobileMenuVariants}
+                                    transition={{ delay: 0.1 * subIndex }}
+                                  >
+                                    <Link
+                                      href={sublink.href}
+                                      onClick={() => {
+                                        setMobileMenuOpen(false);
+                                        setAboutOpen(false);
+                                      }}
+                                      className={clsx("block nav-link", {
+                                        "active-nav-link": pathname === sublink.href,
+                                      })}
+                                    >
+                                      {sublink.name}
+                                    </Link>
+                                  </motion.div>
+                                ))}
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </motion.div>
+                      );
+                    }
+
+                    // For Content, render a collapsible submenu.
+                    else if (link.name === "Content") {
+                      return (
+                        <motion.div
+                          key={link.href}
+                          initial="hidden"
+                          animate="visible"
+                          variants={mobileMenuVariants}
+                          transition={{ delay: 0.1 * index }}
+                        >
+                          <div
+                            onClick={() => setContentOpen(!contentOpen)}
+                            className="cursor-pointer nav-link flex justify-between items-center"
+                          >
+                            <span>{link.name}</span>
+                            <span>{contentOpen ? "-" : "+"}</span>
+                          </div>
+                          <AnimatePresence>
+                            {contentOpen && (
+                              <motion.div
+                                key="contentSubMenu"
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: "auto" }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.2 }}
+                                className="ml-4 flex flex-col overflow-hidden"
+                              >
+                                {contentSubLinks.map((sublink, subIndex) => (
+                                  <motion.div
+                                    key={sublink.href}
+                                    initial="hidden"
+                                    animate="visible"
+                                    variants={mobileMenuVariants}
+                                    transition={{ delay: 0.1 * subIndex }}
+                                  >
+                                    <Link
+                                      href={sublink.href}
+                                      onClick={() => {
+                                        setMobileMenuOpen(false);
+                                        setContentOpen(false);
+                                      }}
+                                      className={clsx("block nav-link", {
+                                        "active-nav-link": pathname === sublink.href,
+                                      })}
+                                    >
+                                      {sublink.name}
+                                    </Link>
+                                  </motion.div>
+                                ))}
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </motion.div>
+                      );
+                    }
+
+                    // For Content, render a collapsible submenu.
+                    else if (link.name === "Language") {
+                      return (
+                        <motion.div
+                          key={link.href}
+                          initial="hidden"
+                          animate="visible"
+                          variants={mobileMenuVariants}
+                          transition={{ delay: 0.1 * index }}
+                        >
+                          <div
+                            onClick={() => setLanguageOpen(!languageOpen)}
+                            className="cursor-pointer nav-link flex justify-between items-center"
+                          >
+                            <span>{link.name}</span>
+                            <span>{languageOpen ? "-" : "+"}</span>
+                          </div>
+                          <AnimatePresence>
+                            {languageOpen && (
+                              <motion.div
+                                key="contentSubMenu"
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: "auto" }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.2 }}
+                                className="ml-4 flex flex-col overflow-hidden"
+                              >
+                                {languageSubLinks.map((sublink, subIndex) => (
+                                  <motion.div
+                                    key={subIndex}
+                                    initial="hidden"
+                                    animate="visible"
+                                    variants={mobileMenuVariants}
+                                    transition={{ delay: 0.1 * subIndex }}
+                                  >
+                                    <IntlLink
+                                      href="/" locale={sublink.name === "pt-BR" ? "br" : "en"}
+                                      className="block px-4 py-2 hover:bg-gray-200"
+                                    >
+                                      {sublink.name}
+                                    </IntlLink>
+                                  </motion.div>
+                                ))}
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </motion.div>
+                      );
+                    }
+
+                    // For other links, render a standard menu item.
+                    else {
+                      return (
+                        <motion.div
+                          key={link.href}
+                          initial="hidden"
+                          animate="visible"
+                          variants={mobileMenuVariants}
+                          transition={{ delay: 0.1 * index }}
+                        >
+                          <Link
+                            href={link.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className={clsx("block nav-link", {
+                              "active-nav-link": pathname === link.href,
+                            })}
+                          >
+                            {link.name}
+                          </Link>
+                        </motion.div>
+                      );
+                    }
+                  })}
+                  {/* Additional options (e.g. language toggle) can be added here */}
                 </div>
               </motion.div>
             )}

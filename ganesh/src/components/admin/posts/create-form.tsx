@@ -99,7 +99,7 @@ export default function Form({ authors }: { authors: Author[] }) {
           onClick={() => {
             setIsMarkdownOpen(true);
           }}
-          className="absolute right-3 top-2 px-3 py-1 text-base font-medium text-white bg-green-600 rounded-md hover:bg-green-700"
+          className="cursor-pointer absolute right-3 top-2 px-3 py-1 text-base font-medium text-white bg-green-600 rounded-md hover:bg-green-700"
         >
           Preview Markdown
         </button>

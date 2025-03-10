@@ -1,5 +1,5 @@
-import { UpdatePost, DeletePost } from '@/components/posts/buttons';
-import PostStatus from '@/components/posts/status';
+import { UpdatePost, DeletePost } from '@/components/admin/posts/buttons';
+import PostStatus from '@/components/admin/posts/status';
 import { fetchPosts } from '@/services/data';
 import { PostType } from '@/models/post';
 

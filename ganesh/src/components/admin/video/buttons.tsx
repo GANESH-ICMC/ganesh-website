@@ -19,44 +19,44 @@ export const CreateVideo = () => {
           onRequestClose={() => { setIsModalOpen(false) }}>
           <form action={formAction}>
             <div className="md:p-4">
-              <h2 className="md:text-lg font-bold text-black">Adicionar um vídeo</h2>
+              <h2 className="md:text-lg font-bold">Adicionar um vídeo</h2>
               <div className="mt-4">
-                <label htmlFor="title" className="text-sm font-medium text-black">Título do vídeo</label>
+                <label htmlFor="title" className="text-sm font-medium">Título do vídeo</label>
                 <input type="text" name="title" id="title" className="w-full p-2 border border-gray-400 rounded-md" />
                 <ErrorMessages id="title-error" errors={state?.errors?.title} />
               </div>
               <div className="mt-4">
-                <label htmlFor="title_en" className="text-sm font-medium text-black">Título do vídeo [inglês]</label>
+                <label htmlFor="title_en" className="text-sm font-medium">Título do vídeo [inglês]</label>
                 <input type="text" name="title_en" id="title_en" className="w-full p-2 border border-gray-400 rounded-md" />
                 <ErrorMessages id="title_en-error" errors={state?.errors?.title_en} />
               </div>
               <div className="mt-4">
-                <label htmlFor="description" className="text-sm font-medium text-black">Descrição do vídeo</label>
+                <label htmlFor="description" className="text-sm font-medium">Descrição do vídeo</label>
                 <input type="text" name="description" id="description" className="w-full p-2 border border-gray-400 rounded-md" />
                 <ErrorMessages id="description-error" errors={state?.errors?.description} />
               </div>
               <div className="mt-4">
-                <label htmlFor="description_en" className="text-sm font-medium text-black">Descrição do vídeo [inglês]</label>
+                <label htmlFor="description_en" className="text-sm font-medium">Descrição do vídeo [inglês]</label>
                 <input type="text" name="description_en" id="description_en" className="w-full p-2 border border-gray-400 rounded-md" />
                 <ErrorMessages id="description_en-error" errors={state?.errors?.description_en} />
               </div>
               <div className="mt-4">
-                <label htmlFor="url" className="text-sm font-medium text-black">URL</label>
+                <label htmlFor="url" className="text-sm font-medium">URL</label>
                 <input type="text" name="url" id="url" className="w-full p-2 border border-gray-400 rounded-md" />
                 <ErrorMessages id="url-error" errors={state?.errors?.url} />
               </div>
               <div className="mt-4">
-                <label htmlFor="thumbnail" className="text-sm font-medium text-black">Thumbnail</label>
+                <label htmlFor="thumbnail" className="text-sm font-medium">Thumbnail</label>
                 <input type="text" name="thumbnail" id="thumbnail" className="w-full p-2 border border-gray-400 rounded-md" />
                 <ErrorMessages id="thumbnail-error" errors={state?.errors?.thumbnail} />
               </div>
               <div className="flex justify-around mt-4">
                 <button
                   onClick={() => setIsModalOpen(false)}
-                  className="rounded-md border p-2 border-gray-400 hover:border-white hover:bg-adminForeground text-gray-400 hover:text-white">
+                  className="cursor-pointer rounded-md border p-2 border-gray-400 hover:border-white hover:bg-adminForeground text-gray-400 hover:text-white">
                   Cancel
                 </button>
-                <button className="rounded-md border p-2 bg-green-600 text-white hover:bg-green-700">Create</button>
+                <button className="cursor-pointer rounded-md border p-2 bg-green-600 text-white hover:bg-green-700">Create</button>
               </div>
             </div>
           </form>
@@ -65,7 +65,7 @@ export const CreateVideo = () => {
 
       <button
         onClick={() => setIsModalOpen(true)}
-        className='flex items-center justify-center text-white text-3xl rounded-md text-mono w-48 h-48 bg-adminBackground border-[2px] border-background hover:bg-adminForeground hover:border-white'>
+        className='cursor-pointer flex items-center justify-center text-white text-3xl rounded-md text-mono w-48 h-48 bg-adminBackground border-[2px] border-background hover:bg-adminForeground hover:border-white'>
         <PlusIcon className='w-10' />
       </button>
     </>
@@ -96,44 +96,44 @@ export const UpdateVideo = ({ id, title, title_en, description, description_en, 
           onRequestClose={() => { setIsModalOpen(false) }}>
           <form action={formAction}>
             <div className="md:p-4 overflow-y-auto text-base">
-              <h2 className="md:text-lg font-bold text-black">Atualizar um patrocinador</h2>
+              <h2 className="md:text-lg font-bold">Atualizar um patrocinador</h2>
               <div className="mt-4">
-                <label htmlFor="title" className="text-sm font-medium text-black">Nome do patrocinador</label>
+                <label htmlFor="title" className="text-sm font-medium">Nome do patrocinador</label>
                 <input
                   defaultValue={title}
                   type="text" name="title" id="title" className="w-full p-2 border border-gray-400 rounded-md" />
                 <ErrorMessages id="title-error" errors={state?.errors?.title} />
               </div>
               <div className="mt-4">
-                <label htmlFor="title_en" className="text-sm font-medium text-black">Nome do patrocinador [inglês]</label>
+                <label htmlFor="title_en" className="text-sm font-medium">Nome do patrocinador [inglês]</label>
                 <input
                   defaultValue={title_en}
                   type="text" name="title_en" id="title_en" className="w-full p-2 border border-gray-400 rounded-md" />
                 <ErrorMessages id="title_en-error" errors={state?.errors?.title_en} />
               </div>
               <div className="mt-4">
-                <label htmlFor="description" className="text-sm font-medium text-black">Descrição do patrocinador</label>
+                <label htmlFor="description" className="text-sm font-medium">Descrição do patrocinador</label>
                 <input
                   defaultValue={description}
                   type="text" name="description" id="description" className="w-full p-2 border border-gray-400 rounded-md" />
                 <ErrorMessages id="description-error" errors={state?.errors?.description} />
               </div>
               <div className="mt-4">
-                <label htmlFor="description_en" className="text-sm font-medium text-black">Descrição do patrocinador [inglês]</label>
+                <label htmlFor="description_en" className="text-sm font-medium">Descrição do patrocinador [inglês]</label>
                 <input
                   defaultValue={description_en}
                   type="text" name="description_en" id="description_en" className="w-full p-2 border border-gray-400 rounded-md" />
                 <ErrorMessages id="description_en-error" errors={state?.errors?.description_en} />
               </div>
               <div className="mt-4">
-                <label htmlFor="url" className="text-sm font-medium text-black">URL</label>
+                <label htmlFor="url" className="text-sm font-medium">URL</label>
                 <input
                   defaultValue={url}
                   type="text" name="url" id="url" className="w-full p-2 border border-gray-400 rounded-md" />
                 <ErrorMessages id="url-error" errors={state?.errors?.url} />
               </div>
               <div className="mt-4">
-                <label htmlFor="thumbnail" className="text-sm font-medium text-black">Thumbnail</label>
+                <label htmlFor="thumbnail" className="text-sm font-medium">Thumbnail</label>
                 <input
                   defaultValue={thumbnail}
                   type="text" name="thumbnail" id="thumbnail" className="w-full p-2 border border-gray-400 rounded-md" />
@@ -143,10 +143,10 @@ export const UpdateVideo = ({ id, title, title_en, description, description_en, 
               <div className="flex justify-around mt-4">
                 <button
                   onClick={() => setIsModalOpen(false)}
-                  className="rounded-md border p-2 border-gray-400 hover:border-white hover:bg-adminForeground text-gray-400 hover:text-white">
+                  className="cursor-pointer rounded-md border p-2 border-gray-400 hover:border-white hover:bg-adminForeground hover:text-white">
                   Cancel
                 </button>
-                <button className="rounded-md border p-2 bg-green-600 text-white hover:bg-green-700">Update</button>
+                <button className="cursor-pointer rounded-md border p-2 bg-green-600 text-white hover:bg-green-700">Update</button>
               </div>
             </div>
           </form>
@@ -155,7 +155,7 @@ export const UpdateVideo = ({ id, title, title_en, description, description_en, 
 
       <button
         onClick={() => setIsModalOpen(true)}
-        className='absolute bottom-1 right-[3.25rem] flex justify-center items-center text-white text-3xl rounded-md text-mono w-11 h-11 bg-adminBackground border-[2px] border-background hover:bg-adminForeground hover:border-white'>
+        className='cursor-pointer absolute bottom-1 right-[3.25rem] flex justify-center items-center text-white text-3xl rounded-md text-mono w-11 h-11 bg-adminBackground border-[2px] border-background hover:bg-adminForeground hover:border-white'>
         <PencilIcon className='w-7' />
       </button>
     </>

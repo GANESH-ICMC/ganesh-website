@@ -5,7 +5,7 @@ import { deleteAuthor } from '@/services/author';
 export function UpdateAuthor({ id }: { id: string }) {
   return (
     <Link
-      href={`/admin/dashboard/authors/${id}/edit`}
+      href={`/br/admin/dashboard/authors/${id}/edit`}
       className="peer rounded-md border p-2 border-gray-400 hover:border-white hover:bg-adminForeground text-gray-400 hover:text-white"
     >
       <PencilIcon className="w-5" />

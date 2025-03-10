@@ -6,7 +6,7 @@ import {
   ExclamationCircleIcon,
 } from '@heroicons/react/24/outline';
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
-import { Button } from '../button/button';
+import { Button } from '@/components/button/button';
 import { useActionState } from '@/lib/utils';
 import { authenticate } from '@/services/auth';
 

@@ -9,8 +9,8 @@ import { useState } from 'react';
 export function CreatePost() {
   return (
     <Link
-      href="/admin/dashboard/posts/create"
-      className="flex h-10 w-11/12 md:w-fit justify-center items-center rounded-lg bg-green-600 px-4 text-sm font-medium text-white transition-colors hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
+      href="/br/admin/dashboard/posts/create"
+      className="flex h-10 w-11/12 md:w-fit justify-center items-center rounded-lg bg-green-600 px-4 text-sm font-medium text-white transition-colors hover:bg-green-500 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-green-600"
     >
       <span className="hidden md:block">Create Post</span>{' '}
       <PlusIcon className="h-5 md:ml-4" />
@@ -21,7 +21,7 @@ export function CreatePost() {
 export function UpdatePost({ id }: { id: string }) {
   return (
     <Link
-      href={`/admin/dashboard/posts/${id}/edit`}
+      href={`/br/admin/dashboard/posts/${id}/edit`}
       className="rounded-md border p-2 border-gray-400 hover:border-white hover:bg-adminForeground text-gray-400 hover:text-white"
     >
       <PencilIcon className="w-5" />
@@ -37,11 +37,11 @@ export function DeletePost({ id }: { id: string }) {
       {isModalOpen && (
         <Modal onRequestClose={() => setIsModalOpen(false)}>
           <div className="p-4">
-            <h2 className="text-lg font-bold text-black">Você tem certeza de que quer deletar o post?</h2>
+            <h2 className="text-lg font-bold">Você tem certeza de que quer deletar o post?</h2>
             <div className="flex justify-around mt-4">
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="rounded-md border p-2 border-gray-400 hover:border-white hover:bg-adminForeground text-gray-400 hover:text-white">
+                className="rounded-md border p-2 border-gray-400 hover:border-white hover:bg-adminForeground hover:text-white">
                 Cancelar
               </button>
               <form action={deletePostWithId}>
@@ -51,7 +51,7 @@ export function DeletePost({ id }: { id: string }) {
           </div>
         </Modal>
       )}
-      <button onClick={() => setIsModalOpen(true)} className="rounded-md border p-2 border-gray-400 hover:border-white hover:bg-adminForeground text-gray-400 hover:text-white">
+      <button onClick={() => setIsModalOpen(true)} className="cursor-pointer rounded-md border p-2 border-gray-400 hover:border-white hover:bg-adminForeground text-gray-400 hover:text-white">
         <span className="sr-only">Delete</span>
         <TrashIcon className="w-5" />
       </button>

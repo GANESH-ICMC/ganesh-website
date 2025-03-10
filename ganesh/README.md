@@ -32,3 +32,16 @@ Rode todos os passos a seguir no diretório `/ganesh`.
 ### Alguns prints de tela
 ![image](https://github.com/user-attachments/assets/716faa2a-e72d-47f2-8e82-a6089babc849)
 ![image](https://github.com/user-attachments/assets/9ff10f76-7b14-4a6b-af40-1783f023bbc3)
+
+### TBD
+
+- [ ] Adicionar informações sobre as frentes
+- [ ] Adicionar informações sobre os projetos
+- [ ] Adicionar informações sobre os membros
+- [ ] Adicionar informações sobre faq
+- [ ] Adicionar informações sobre contato
+- [ ] Implementar vídeos
+
+### Alguns erros conhecidos
+
+- [ ] Depois de deslogar, é preciso recarregar a página para logar novamente.

@@ -43,6 +43,7 @@ export function MenuToggle({ toggle, isOpen }: MenuToggleProps) {
           transition={{ duration: 0.2 }}
         />
         <Path
+          initial="closed"
           d="M 2 9.423 L 20 9.423"
           variants={{
             closed: { opacity: 1 },

@@ -24,11 +24,11 @@ model Author {
 model Post {
   id         String   @id @default(cuid())
   title      String
-  title_en   String?
+  title_en   String
   summary    String?
   summary_en String?
   content    String
-  content_en String?
+  content_en String
   images     String[]
   type       String
   published  Boolean  @default(false)

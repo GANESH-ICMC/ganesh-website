@@ -1,3 +1,5 @@
+import { ArrowRightCircleIcon } from "@heroicons/react/24/outline";
+import { useLocale } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,6 +14,7 @@ export interface ContentProps {
 }
 
 export default function Content({ id, image, title, summary, author, date, type }: ContentProps) {
+  const locale = useLocale();
   return (
     <div className="w-5/6 flex flex-col lg:flex-row gap-10 items-center">
       <Link
@@ -22,6 +25,7 @@ export default function Content({ id, image, title, summary, author, date, type 
           src={image}
           alt={title}
           fill
+          sizes="300px"
         />
       </Link>
 
@@ -37,8 +41,15 @@ export default function Content({ id, image, title, summary, author, date, type 
           </div>
         )}
         <div className="text-xs md:text-sm font-mono text-neutral-400">
-          By {author} on {date}
+          {locale === "en" ? "By" : "Por"} {author}, {locale === "en" ? "on" : "em"} {date}
         </div>
+
+        <Link
+          href={`/content/${type}/${id}`}
+          className="cursor-pointer text-sm font-mono text-light hover:text-terminal">
+          {locale === "en" ? "Read more" : "Leia mais"}
+          <ArrowRightCircleIcon className="w-5 h-5 inline-block ml-1" />
+        </Link>
       </div>
     </div>
   )

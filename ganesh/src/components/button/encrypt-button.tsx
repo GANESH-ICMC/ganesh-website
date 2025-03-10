@@ -65,7 +65,7 @@ export default function EncryptButton({ onClick, targetText }: EncryptButtonProp
         }}
         onMouseEnter={scramble}
         onMouseLeave={stopScramble}
-        className="group relative overflow-hidden rounded border-[2px] border-neutral-500 bg-transparent px-4 py-2 font-mono text-neutral-100 transition-colors hover:text-terminal hover:border-terminal"
+        className="cursor-pointer group relative overflow-hidden rounded border-[2px] border-neutral-500 bg-transparent px-4 py-2 font-mono text-neutral-100 transition-colors hover:text-terminal hover:border-terminal"
       >
         <div className="relative z-10 flex items-center gap-2">
           <MagnifyingGlassIcon className="w-5" />

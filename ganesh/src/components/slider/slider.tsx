@@ -9,6 +9,7 @@ import './slider.css';
 import { Pagination, Autoplay } from 'swiper/modules';
 import { Post } from '@/models/post';
 import Display from '@/components/cards/display';
+import { useLocale } from 'next-intl';
 
 interface SliderProps {
   posts: Post[];
@@ -16,12 +17,12 @@ interface SliderProps {
 }
 
 export default function Slider({ posts, type }: SliderProps) {
+  const locale = useLocale();
   return (
     <Swiper
       pagination={{
         dynamicBullets: true,
       }}
-      loop={true}
       autoplay={{
         delay: 5000,
         disableOnInteraction: false,
@@ -51,10 +52,10 @@ export default function Slider({ posts, type }: SliderProps) {
             <Display
               id={post.id}
               image={post.images[0]}
-              title={post.title}
-              summary={post.summary}
+              title={locale === 'en' ? post.title_en : post.title}
+              summary={locale === 'en' ? post.summary_en : post.summary}
               author={post.authorGithub}
-              date={new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo' }).format(post.createdAt)}
+              date={new Intl.DateTimeFormat(locale === 'en' ? 'en-US' : 'pt-BR', { timeZone: 'America/Sao_Paulo' }).format(post.createdAt)}
               type={type}
             />
           </SwiperSlide>

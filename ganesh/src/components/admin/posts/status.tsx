@@ -8,7 +8,7 @@ export default function PostStatus({ published }: { published: boolean }) {
         'inline-flex items-center rounded-full px-2 py-1 text-xs',
         {
           'bg-gray-100 text-gray-500': !published,
-          'bg-green-500 text-white': published,
+          'bg-green-500 text-black': published,
         },
       )}
     >
@@ -21,7 +21,7 @@ export default function PostStatus({ published }: { published: boolean }) {
       {published ? (
         <>
           <p className='hidden md:block'>Published</p>
-          <CheckIcon className="md:ml-1 w-4 text-white" />
+          <CheckIcon className="md:ml-1 w-4 text-black" />
         </>
       ) : null}
     </span>

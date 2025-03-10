@@ -2,6 +2,7 @@ import Image from "next/image";
 import Terminal from "./terminal";
 import Link from "next/link";
 import { ArrowRightCircleIcon } from "@heroicons/react/24/outline";
+import { useLocale } from "next-intl";
 
 export interface NewsProps {
   id: string;
@@ -13,6 +14,7 @@ export interface NewsProps {
 }
 
 export default function News({ id, image, title, summary, author, date }: NewsProps) {
+  const locale = useLocale();
   return (
     <div className="w-5/6 flex flex-col lg:flex-row gap-5 md:gap-10">
       <Link
@@ -23,6 +25,7 @@ export default function News({ id, image, title, summary, author, date }: NewsPr
           src={image}
           alt={title}
           fill
+          sizes="300px"
         />
       </Link>
 
@@ -38,13 +41,13 @@ export default function News({ id, image, title, summary, author, date }: NewsPr
           </div>
         )}
         <div className="text-sm font-mono text-neutral-400">
-          By {author} on {date}
+          {locale === "en" ? "By" : "Por"} {author}, {locale === "en" ? "on" : "em"} {date}
         </div>
 
         <Link
           href={`/news/${id}`}
           className="cursor-pointer text-sm font-mono text-light hover:text-terminal">
-          Read More
+          {locale === "en" ? "Read more" : "Leia mais"}
           <ArrowRightCircleIcon className="w-5 h-5 inline-block ml-1" />
         </Link>
       </div>

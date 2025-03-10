@@ -12,7 +12,7 @@ export async function authenticate(
     await signIn('credentials', {
       email: formData.get('email') as string,
       password: formData.get('password') as string,
-      redirectTo: '/admin/dashboard',
+      redirectTo: '/br/admin/dashboard',
     });
   } catch (error) {
     if (error instanceof AuthError) {
