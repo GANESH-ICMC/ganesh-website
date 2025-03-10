@@ -1,6 +1,14 @@
+"use server";
+
 import { SponsorSchema } from "@/lib/zod";
 import { verifyAndRedirect } from "@/lib/session";
-import prisma from "./prisma";
+import { prisma } from "./prisma";
+import translate from "translate";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
+
+translate.engine = 'deepl';
+translate.key = process.env.DEEPL_API_KEY;
 
 export type State = {
   errors?: {
@@ -14,16 +22,16 @@ export type State = {
 };
 
 const CreateSponsor = SponsorSchema.omit({ id: true })
+const UpdateSponsor = SponsorSchema.omit({ id: true })
 
-export const createSponsor = async (prevState: State, formData: FormData): Promise<State> => { 
+export const createSponsor = async (prevState: State, formData: FormData): Promise<State> => {
   verifyAndRedirect();
-  
+
   const validatedFields = CreateSponsor.safeParse({
     name: formData.get('name'),
     logo: formData.get('logo'),
     link: formData.get('link'),
     description: formData.get('description'),
-    description_en: formData.get('description_en'),
   })
 
   if (!validatedFields.success) {
@@ -33,22 +41,35 @@ export const createSponsor = async (prevState: State, formData: FormData): Promi
     };
   }
 
+  let description_en = '';
+  if (validatedFields.data.description !== undefined && validatedFields.data.description !== '') {
+    description_en = await translate(validatedFields.data.description, { from: 'pt', to: 'en' });
+  }
+
   try {
     await prisma.sponsor.create({
-      data: validatedFields.data,
+      data: {
+        name: validatedFields.data.name,
+        logo: validatedFields.data.logo,
+        link: validatedFields.data.link,
+        description: validatedFields.data.description,
+        description_en: description_en,
+      },
     });
 
-    return { message: 'Sponsor created successfully!' };
   } catch (e) {
     console.error(e);
     return { message: 'Failed to create Sponsor.' };
   }
+
+  revalidatePath('/br/admin/dashboard/sponsors');
+  redirect('/br/admin/dashboard/sponsors');
 }
 
-export const updateSponsor = async (id: string, prevState: State, formData: FormData): Promise<State> => {
+export const updateSponsor = async (prevState: State, formData: FormData, id: string): Promise<State> => {
   verifyAndRedirect();
 
-  const validatedFields = SponsorSchema.safeParse({
+  const validatedFields = UpdateSponsor.safeParse({
     name: formData.get('name'),
     logo: formData.get('logo'),
     link: formData.get('link'),
@@ -71,14 +92,16 @@ export const updateSponsor = async (id: string, prevState: State, formData: Form
       data: validatedFields.data,
     });
 
-    return { message: 'Sponsor updated successfully!' };
   } catch (e) {
     console.error(e);
     return { message: 'Failed to update Sponsor.' };
   }
+
+  revalidatePath('/br/admin/dashboard/sponsors');
+  redirect('/br/admin/dashboard/sponsors');
 }
 
-export const deleteSponsor = async (id: string): Promise<State> => {
+export const deleteSponsor = async (id: string): Promise<void> => {
   verifyAndRedirect();
 
   try {
@@ -88,9 +111,10 @@ export const deleteSponsor = async (id: string): Promise<State> => {
       },
     });
 
-    return { message: 'Sponsor deleted successfully!' };
   } catch (e) {
     console.error(e);
-    return { message: 'Failed to delete Sponsor.' };
   }
+
+  revalidatePath('/br/admin/dashboard/sponsors');
+  redirect('/br/admin/dashboard/sponsors');
 }

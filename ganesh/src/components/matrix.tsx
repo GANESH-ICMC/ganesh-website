@@ -28,7 +28,7 @@ const renderMatrix = (ref: React.RefObject<HTMLCanvasElement>, color: string | u
   let fontSize: number;
   if (canvas.width < 1080) fontSize = 10;
   else fontSize = 16;
-  
+
   const columns = canvas.width / fontSize;
 
   const rainDrops: string | any[] = [];
@@ -70,7 +70,7 @@ interface MatrixRainingLettersProps {
 }
 
 const MatrixRainingLetters = ({ color, custom_class, key }: MatrixRainingLettersProps) => {
-  const ref = useRef<HTMLCanvasElement>(null);
+  const ref = useRef<HTMLCanvasElement>(null!);
   const keyName = "mrl-" + key;
   useEffect(() => {
     const render = renderMatrix(ref, color);

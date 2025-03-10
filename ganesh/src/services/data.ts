@@ -1,4 +1,4 @@
-import prisma from '@/services/prisma';
+import { prisma } from '@/services/prisma';
 import { Post, PostForm } from '@/models/post';
 import { Author } from '@/models/author';
 import { Sponsor } from '@/models/sponsor';
@@ -130,7 +130,8 @@ export const fetchPosts = async (page: number, type?: PostForm['type'], publishe
           select: {
             github: true,
           }
-        }
+        },
+        images: true
       }
     });
 
@@ -148,6 +149,7 @@ export const fetchPosts = async (page: number, type?: PostForm['type'], publishe
       createdAt: new Date(post.createdAt),
       published: post.published,
       authorGithub: post.author.github,
+      images: post.images
     }));
 
     return posts;
@@ -248,11 +250,11 @@ export const fetchVideos = async (): Promise<Video[]> => {
     const videos: Video[] = data.map((video) => ({
       id: video.id,
       title: video.title,
-      title_en: video.title_en ?? undefined,
-      description: video.description ?? undefined,
-      description_en: video.description_en ?? undefined,
+      title_en: video.title_en,
+      description: video.description,
+      description_en: video.description_en,
       url: video.url,
-      thumbnail: video.thumbnail ?? undefined,
+      thumbnail: video.thumbnail,
       createdAt: new Date(video.createdAt),
       updatedAt: new Date(video.updatedAt),
     }));

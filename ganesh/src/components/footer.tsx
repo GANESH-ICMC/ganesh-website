@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <>
       {!pathname.includes('/admin') && (<>
-        <footer className="w-full mt-auto bg-black text-white font-mono bg-opacity-50 h-24 flex items-center justify-around">
+        <footer className="w-full mt-auto bg-black text-white font-mono bg-opacity-50 min-h-24 flex items-center justify-around">
           <div className="flex gap-4">
             <a target="_blank" href="https://twitter.com/GaneshICMC" rel="noopener noreferrer">
               <Image
@@ -58,7 +58,7 @@ export default function Footer() {
             </a>
           </div>
 
-          <div>Copyright © 2024 CodeLab</div>
+          <div className="text-xs md:text-base" >© 2025 Ganesh</div>
         </footer>
       </>)}
     </>

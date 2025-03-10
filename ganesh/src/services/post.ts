@@ -1,6 +1,6 @@
 'use server'
 
-import prisma from "@/services/prisma";
+import { prisma } from "@/services/prisma";
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { addAuthor } from "./author";
@@ -48,7 +48,6 @@ export const createPost = async (prevState: State, formData: FormData): Promise<
   })
 
   if (!validatedFields.success) {
-    console.log(validatedFields.error.flatten().fieldErrors);
     return {
       errors: validatedFields.error.flatten().fieldErrors,
       message: 'Missing Fields. Failed to Create Post.',
@@ -62,8 +61,6 @@ export const createPost = async (prevState: State, formData: FormData): Promise<
       const title_en = await translate(validatedFields.data.title, { from: 'pt', to: 'en' });
       const summary_en = await translate(validatedFields.data.summary, { from: 'pt', to: 'en' });
       const content_en = await translate(validatedFields.data.content, { from: 'pt', to: 'en' });
-
-      console.log(title_en);
 
       await prisma.post.create({
         data: {
@@ -94,8 +91,8 @@ export const createPost = async (prevState: State, formData: FormData): Promise<
     }
   }
 
-  revalidatePath('/admin/dashboard/posts');
-  redirect('/admin/dashboard/posts');
+  revalidatePath('/br/admin/dashboard/posts');
+  redirect('/br/admin/dashboard/posts');
 }
 
 export const updatePost = async (prevState: State, formData: FormData, postTxtContent: PostTxtContent, id: string): Promise<State> => {
@@ -116,7 +113,6 @@ export const updatePost = async (prevState: State, formData: FormData, postTxtCo
   })
 
   if (!validatedFields.success) {
-    console.log(validatedFields.error.flatten().fieldErrors);
     return {
       errors: validatedFields.error.flatten().fieldErrors,
       message: 'Missing Fields. Could not update post',
@@ -161,8 +157,8 @@ export const updatePost = async (prevState: State, formData: FormData, postTxtCo
     }
   }
 
-  revalidatePath('/admin/dashboard/posts');
-  redirect('/admin/dashboard/posts');
+  revalidatePath('/br/admin/dashboard/posts');
+  redirect('/br/admin/dashboard/posts');
 }
 
 export const deletePost = async (id: string) => {
@@ -172,7 +168,7 @@ export const deletePost = async (id: string) => {
     await prisma.post.delete({
       where: { id }
     })
-    revalidatePath('/admin/dashboard/posts');
+    revalidatePath('/br/admin/dashboard/posts');
     console.log('Deleted post with id:', id);
   } catch (e) {
     console.error(e);
