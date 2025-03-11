@@ -1,3 +1,5 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+
 'use client';
 
 import React from "react";
@@ -6,10 +8,10 @@ import { useEffect } from "react";
 import clsx from "clsx";
 
 const renderMatrix = (ref: React.RefObject<HTMLCanvasElement>, color: string | undefined) => {
-  let canvas = ref.current;
+  const canvas = ref.current;
 
   if (!canvas) return;
-  let context = canvas.getContext("2d");
+  const context = canvas.getContext("2d");
 
   if (!context) return;
 

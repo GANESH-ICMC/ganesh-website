@@ -1,5 +1,5 @@
 import { fetchPosts, fetchPostsPages } from "@/services/data";
-import { Post, postTypes } from "@/models/post";
+import { Post } from "@/models/post";
 import ClientArticlesComponent from "@/components/client/articles";
 
 interface PageProps {

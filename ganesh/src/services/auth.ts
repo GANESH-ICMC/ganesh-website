@@ -13,6 +13,7 @@ export async function authenticate(
       email: formData.get('email') as string,
       password: formData.get('password') as string,
       redirectTo: '/br/admin/dashboard',
+      callbackUrl: '/br/admin/dashboard'
     });
   } catch (error) {
     if (error instanceof AuthError) {

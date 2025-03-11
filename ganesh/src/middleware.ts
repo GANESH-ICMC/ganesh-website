@@ -1,8 +1,10 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+
 import NextAuth from 'next-auth';
 import { authConfig } from '@/auth.config';
 import createIntlMiddleware from 'next-intl/middleware';
 import { routing } from './i18n/routing';
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
 // Create middleware functions for each feature.
 const { auth } = NextAuth(authConfig)
@@ -35,7 +37,7 @@ export default auth(async function middleware(request: any) {
 export const config = {
   matcher: [
     // For auth: ignore api routes, Next.js internals and static assets
-    '/((?!api|_next/static|_next/image|favicon.ico|.*\\.png$).*)',
+    '/((?!api|_next/static|_next/image|.*\\.png$).*)',
     // For internationalized paths
     '/',
     '/(en|br)/:path*',

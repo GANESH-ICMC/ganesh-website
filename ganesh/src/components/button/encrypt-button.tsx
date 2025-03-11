@@ -1,8 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { LockClosedIcon } from "@heroicons/react/24/outline";
-import { InformationCircleIcon } from "@heroicons/react/16/solid";
 import { MagnifyingGlassIcon } from "@heroicons/react/16/solid";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -16,7 +14,7 @@ interface EncryptButtonProps {
   targetText: string;
 }
 
-export default function EncryptButton({ onClick, targetText }: EncryptButtonProps) {
+export default function EncryptButton({ targetText }: EncryptButtonProps) {
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const [text, setText] = useState(targetText);

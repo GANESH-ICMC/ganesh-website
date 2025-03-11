@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Terminal from "./terminal";
 import Link from "next/link";
 import { ArrowRightCircleIcon } from "@heroicons/react/24/outline";
 import { useLocale } from "next-intl";

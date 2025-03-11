@@ -1,22 +1,22 @@
 "use client";
 
 import { Post } from "@/models/post";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import Container from "../container";
 import Link from "next/link";
 import { ArrowRightCircleIcon } from "@heroicons/react/24/outline";
 import Slider from "../slider/slider";
+import { Video } from "@/models/video";
 
 interface ContentsProps {
   activities: Post[];
   articles: Post[];
   tips: Post[];
-  videos: any;
+  videos: Video[];
 }
 
 export default function Contents({ activities, articles, tips }: ContentsProps) {
   const t = useTranslations('Navbar');
-  const locale = useLocale();
   return (
     <div className="flex flex-col gap-12 items-center pt-32 pb-12">
       <Container>

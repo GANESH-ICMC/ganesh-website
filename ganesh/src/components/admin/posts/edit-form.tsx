@@ -17,7 +17,7 @@ import { useActionState } from '@/lib/utils';
 import { PostForm, PostTxtContent, postTypes } from '@/models/post';
 import { State, updatePost } from '@/services/post';
 import { Author } from '@/models/author';
-import { Suspense, useState } from 'react';
+import { useState } from 'react';
 import Preview from '@/components/preview/preview';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './tabs';
 import TxtInput from './txt-input';

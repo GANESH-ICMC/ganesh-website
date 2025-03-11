@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import clsx from 'clsx';
 import { useState } from "react";
@@ -53,12 +53,6 @@ export default function Navbar() {
 
   const t = useTranslations('Navbar');
   const locale = useLocale();
-
-  const router = useRouter();
-  const changeLanguage = (lang: string) => {
-    // This will navigate to the new locale while preserving the current path.
-    router.push(`/${lang}${pathname}`);
-  };
 
   return (
     <>
