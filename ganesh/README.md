@@ -25,6 +25,12 @@ Rode todos os passos a seguir no diretório `/ganesh`.
 9. Na rota '/admin', você poderá logar com email: `admin@example.com` e senha: `password`.
 10. Caso queira terminar, `docker compose down`.
 
+##### Para produção
+
+1. Rode `docker compose build`.
+2. Rode `docker compose up -d`.
+
+
 ##### Caso queira deletar o usuário
 
 Rode `npm run delete`.
