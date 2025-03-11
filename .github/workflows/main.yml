@@ -1,0 +1,37 @@
+name: React CI/CD
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+env:
+  PROJECT_DIR: /home/ganesh/ganesh-website-2025/ganesh-website
+  DOCKER_DIR: /home/ganesh/ganesh-website-2025/ganesh-website/ganesh
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - name: Ensure Clean Git State
+        working-directory: ${{ env.PROJECT_DIR }}
+        run: |
+          git fetch origin main
+          git reset --hard origin/master
+
+      - name: Install Dependencies
+        working-directory: ${{ env.PROJECT_DIR }}
+        run: npm ci
+
+      - name: Stop Containers
+        working-directory: ${{ env.DOCKER_DIR }}
+        run: sudo docker compose down --rmi all --volumes --remove-orphans
+
+      - name: Remove Old Images
+        run: sudo docker image prune -af
+
+      - name: Start Containers
+        working-directory: ${{ env.DOCKER_DIR }}
+        run: sudo docker compose up -d
