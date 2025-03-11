@@ -1,6 +1,6 @@
 import Pagination from '@/components/admin/pagination';
 import Table from '@/components/admin/authors/table';
-import { Suspense, use } from 'react';
+import { Suspense } from 'react';
 import { fetchAuthorsPages } from '@/services/data';
 
 import type { Metadata } from 'next';

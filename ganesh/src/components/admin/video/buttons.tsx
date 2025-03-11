@@ -6,7 +6,6 @@ import { createVideo, deleteVideo, State, updateVideo } from '@/services/video';
 import { useState } from 'react';
 import ErrorMessages from '../posts/error-messages';
 import { PencilIcon, PlusIcon, TrashIcon } from '@heroicons/react/24/outline';
-import { VideoForm } from '@/models/video';
 
 export const CreateVideo = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

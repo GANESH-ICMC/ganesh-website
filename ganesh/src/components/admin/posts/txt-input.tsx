@@ -1,5 +1,3 @@
-import { State } from "@/services/post";
-
 export default function TxtInput({
   label,
   name,

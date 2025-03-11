@@ -45,7 +45,14 @@ export default function AboutPage() {
             <div className="text-2xl font-mono font-bold pb-4 flex items-center gap-5">
               {t("ctf_title")}
               <a href="https://ctf-br.org/" target="_blank">
-                <img className="w-8" src='/images/pages/aboutus_ctfbr_256x256.gif' alt='CTF.br Website Logo' />
+                <Image
+                  className="w-8"
+                  src="/images/pages/aboutus_ctfbr_256x256.gif"
+                  alt="CTF.br Website Logo"
+                  width={32}
+                  height={32}
+                  unoptimized
+                />
               </a>
             </div>
             <div dangerouslySetInnerHTML={{ __html: t.raw('ctf') }} />

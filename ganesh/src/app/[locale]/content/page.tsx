@@ -8,7 +8,6 @@ interface ContentPageProps {
 }
 
 export default async function ContentPage({
-  searchParams
 }: ContentPageProps) {
 
   const [activities, articles, tips, videos]: [Post[], Post[], Post[], Video[]] = await Promise.all([

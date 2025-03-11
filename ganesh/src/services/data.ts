@@ -1,3 +1,5 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+
 import { prisma } from '@/services/prisma';
 import { Post, PostForm } from '@/models/post';
 import { Author } from '@/models/author';
@@ -25,7 +27,7 @@ export const fetchAuthors = async (): Promise<Author[]> => {
   try {
     const data = await prisma.author.findMany({});
 
-    const authors: Author[] = data.map((author) => ({
+    const authors: Author[] = data.map((author: any) => ({
       id: author.id,
       github: author.github,
       name: author.name ?? undefined,
@@ -49,7 +51,7 @@ export const fetchAuthorsByPage = async (page: number): Promise<Author[]> => {
       }
     });
 
-    const authors: Author[] = data.map((author) => ({
+    const authors: Author[] = data.map((author: any) => ({
       id: author.id,
       github: author.github,
       name: author.name ?? undefined,
@@ -139,7 +141,7 @@ export const fetchPosts = async (page: number, type?: PostForm['type'], publishe
       return [];
     }
 
-    const posts: Post[] = data.map((post) => ({
+    const posts: Post[] = data.map((post: any) => ({
       id: post.id,
       title: post.title,
       title_en: post.title_en ?? undefined,
@@ -221,7 +223,7 @@ export const fetchSponsors = async (): Promise<Sponsor[]> => {
       },
     });
 
-    const sponsors: Sponsor[] = data.map((sponsor) => ({
+    const sponsors: Sponsor[] = data.map((sponsor: any) => ({
       id: sponsor.id,
       name: sponsor.name,
       logo: sponsor.logo,
@@ -247,7 +249,7 @@ export const fetchVideos = async (): Promise<Video[]> => {
       },
     });
 
-    const videos: Video[] = data.map((video) => ({
+    const videos: Video[] = data.map((video: any) => ({
       id: video.id,
       title: video.title,
       title_en: video.title_en,

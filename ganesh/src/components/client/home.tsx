@@ -47,7 +47,13 @@ export default function ClientHomeComponent({ sponsors }: HomeProps) {
             <div className="flex flex-col md:flex-row justify-center items-center">
               {sponsors.map((sponsor) => (
                 <div key={sponsor.id} className="flex flex-col gap-2">
-                  <img src={sponsor.logo} alt={sponsor.name} className="w-64 object-cover" />
+                  <Image
+                    className="w-64 object-cover"
+                    alt={sponsor.name}
+                    src={sponsor.logo}
+                    width={200}
+                    height={200}
+                  />
                   <p className="text-gray-500">{sponsor.description}</p>
                 </div>
               ))}

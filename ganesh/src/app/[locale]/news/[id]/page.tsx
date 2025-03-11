@@ -2,7 +2,6 @@ import { fetchPostById } from '@/services/data';
 import { notFound } from 'next/navigation';
 
 import type { Metadata } from 'next';
-import Terminal from '@/components/cards/terminal';
 import Preview from '@/components/preview/preview';
 import Container from '@/components/container';
 export const metadata: Metadata = {
