@@ -1,4 +1,4 @@
-name: Docker CI/CD
+name: React CI/CD
 
 on:
   push:
@@ -25,13 +25,17 @@ jobs:
         working-directory: ${{ env.PROJECT_DIR }}
         run: npm ci
 
+      - name: Build Docker Image
+        working-directory: ${{ env.DOCKER_DIR }}
+        run: sudo docker compose -f docker-compose.prod.yaml build
+
       - name: Stop Containers
         working-directory: ${{ env.DOCKER_DIR }}
-        run: docker compose -f docker-compose.prod.yaml down --rmi all
+        run: sudo docker compose -f docker-compose.prod.yaml down --rmi all
 
       - name: Remove Old Images
-        run: docker image prune -af
+        run: sudo docker image prune -af
 
       - name: Start Containers
         working-directory: ${{ env.DOCKER_DIR }}
-        run: docker compose -f docker-compose.prod.yaml up -d
+        run: sudo docker compose -f docker-compose.prod.yaml up -d
