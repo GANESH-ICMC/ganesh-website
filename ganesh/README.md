@@ -6,7 +6,7 @@ Algumas funcionalidades:
 - Criação de conteúdo (artigo, dicas, atividades ou notícias)
 - Alteração de dados do autor
 
-### Como rodar?
+### Como rodar para desenvolvimento?
 
 Rode todos os passos a seguir no diretório `/ganesh`. 
 
@@ -15,7 +15,7 @@ Rode todos os passos a seguir no diretório `/ganesh`.
 
 ###### Apenas na primeira vez
 3. Rode o backend com `docker compose up -d`.
-4. Realize as migrations no postgres com `npx prisma migrate dev` em um outro terminal.
+4. Realize as migrations no postgres com `npx prisma migrate dev`.
 5. Adicione o primeiro dado ao bd com `npx prisma db seed`.
 6. Termine o backend com `docker compose down`.
 
@@ -27,8 +27,8 @@ Rode todos os passos a seguir no diretório `/ganesh`.
 
 ##### Para produção
 
-1. Rode `docker compose build`.
-2. Rode `docker compose up -d`.
+1. Rode `docker compose -f docker-compose.prod.yaml build`.
+2. Rode `docker compose -f docker-compose.prod.yaml up -d`.
 
 
 ##### Caso queira deletar o usuário

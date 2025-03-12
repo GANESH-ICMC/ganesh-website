@@ -4,42 +4,32 @@ import NextAuth from 'next-auth';
 import { authConfig } from '@/auth.config';
 import createIntlMiddleware from 'next-intl/middleware';
 import { routing } from './i18n/routing';
-import { NextResponse } from 'next/server';
+import { NextRequest } from 'next/server';
 
 // Create middleware functions for each feature.
 const { auth } = NextAuth(authConfig)
 const intlMiddleware = createIntlMiddleware(routing);
 
-export default auth(async function middleware(request: any) {
-  // Your custom middleware logic goes here
-  const { pathname } = request.nextUrl;
-
-  const isAuthenticated = !!request.auth
-  if (pathname.startsWith('/br/admin') && !isAuthenticated) {
-    return;
+const authMiddleware = auth((req: any) => {
+  if (!req.auth) {
+    const newUrl = new URL("/admin", req.nextUrl.origin)
+    return Response.redirect(newUrl)
   }
-
-  // Bypass middleware for static assets like images
-  if (pathname.match(/\.(png|jpg|jpeg|gif|svg)$/)) {
-    return NextResponse.next();
-  }
-
-  const intlResponse = intlMiddleware(request);
-  if (intlResponse) {
-    return intlResponse;
-  }
-
-  return NextResponse.next();
 })
 
-// Merge the matcher configurations from both middlewares.
-// Adjust the matcher array as needed so that it covers both cases.
+export default function middleware(req: NextRequest) {
+  const { pathname } = req.nextUrl;
+
+  const adminPathnameRegex = /^\/(en|br)?\/admin\/dashboard(\/.*)?$/;
+  const isAdminPage = adminPathnameRegex.test(pathname);
+
+  if (!isAdminPage) {
+    return intlMiddleware(req);
+  } else {
+    return (authMiddleware as any)(req);
+  }
+}
+
 export const config = {
-  matcher: [
-    // For auth: ignore api routes, Next.js internals and static assets
-    '/((?!api|_next/static|_next/image|.*\\.png$).*)',
-    // For internationalized paths
-    '/',
-    '/(en|br)/:path*',
-  ],
+  matcher: ['/((?!api|_next|.*\\..*).*)']
 };

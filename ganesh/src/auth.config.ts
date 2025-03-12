@@ -22,16 +22,8 @@ export const authConfig = {
     signIn: '/admin',
   },
   callbacks: {
-    authorized({ auth, request: { nextUrl } }) {
-      const isLoggedIn = !!auth?.user;
-      const isOnDashboard = nextUrl.pathname.startsWith('/br/admin/dashboard');
-      if (isOnDashboard) {
-        if (isLoggedIn) return true;
-        return Response.redirect(new URL('/', nextUrl));; // Redirect unauthenticated users to login page
-      } else if (isLoggedIn) {
-        return Response.redirect(new URL('/br/admin/dashboard', nextUrl));
-      }
-      return true;
+    authorized({ auth }) {
+      return !!auth;
     },
   },
   providers: [
