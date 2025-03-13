@@ -1,15 +1,18 @@
 {
   "Navbar": {
+    "home": "Home",
     "about": "About Us",
     "us": "Core Values",
     "institute": "Our Institute",
     "university": "Our University",
     "content": "Content",
+    "all": "All Content",
     "articles": "Articles",
     "activities": "Activities",
     "tips": "Tips",
     "videos": "Videos",
-    "news": "News"
+    "news": "News",
+    "language": "Language"
   },
   "Home": {
     "extragroup": "Extracurricular Group",
@@ -51,7 +54,7 @@
     "introduction3": "The ICMC's vision is to <span class='terminal'>become a worldwide reference in teaching and research</span> contributing decisively to the evolution of knowledge in its areas of expertise, training high-level human resources and supporting the scientific, technological and social development of the region, state and country.",
     "videoTitle": "Representative Video",
     "historyTitle": "History and Infrastructure",
-    "history1": "Established in <span class='terminal'>1971</span>, the Institute of Computer and Mathematical Sciences (ICMC) at the University of São Paulo (USP) spans 18,000 square meters and serves around 2,000 students across eight undergraduate programs and five graduate courses, supported by approximately 150 faculty members and 120 administrative staff. ICMC students receive a robust education that equips them for successful professional careers.",
+    "history1": "<span class='terminal'>Established in 1971</span>, the Institute of Computer and Mathematical Sciences (ICMC) at the University of São Paulo (USP) spans 18,000 square meters and serves around 2,000 students across eight undergraduate programs and five graduate courses, supported by approximately 150 faculty members and 120 administrative staff. ICMC students receive a robust education that equips them for successful professional careers.",
     "history2": "Globally recognized as a center of excellence, ICMC impacts society by training skilled professionals and engaging in cutting-edge research and community outreach.",
     "history3": "Our modern facilities feature extensive green spaces, a library with about 140,000 volumes and 23,000 electronic journals, and state-of-the-art educational environments, including auditoriums and 24-hour open laboratories. The campus provides high-speed wireless internet throughout. Explore ICMC further through our virtual tour.",
     "history4": "Additionally, the USP campus in São Carlos offers various amenities, such as a restaurant, accommodation, transportation, medical and dental services, a daycare center, and a sports facility.",
