@@ -6,6 +6,11 @@ Algumas funcionalidades:
 - Criação de conteúdo (artigo, dicas, atividades ou notícias)
 - Alteração de dados do autor
 
+### Tecnologias usadas
+
+O projeto foi feito com Nextjs 15.2.1, Prisma, Postgres e Docker.
+A autenticação foi feita utilizando o NextAuth V5 (Beta).
+
 ### Como rodar para desenvolvimento?
 
 Rode todos os passos a seguir no diretório `/ganesh`. 
@@ -27,17 +32,19 @@ Rode todos os passos a seguir no diretório `/ganesh`.
 
 ##### Para produção
 
-1. Rode `docker compose -f docker-compose.prod.yaml build`.
-2. Rode `docker compose -f docker-compose.prod.yaml up -d`.
+O projeto possui um **action-runner** que realiza o deploy automaticamente no servidor de produção. Ele é configurado para, ao realizar um push na branch principal (master), realizar o deploy no servidor de produção.
 
+O projeto está configurado para rodar em produção com docker compose. Ele é configurado para rodar na porta 3000, e usamos o **nginx** para fazer o **proxy reverso**. Os comandos úteis na produção são:
 
-##### Caso queira deletar o usuário
+- `docker compose -f docker-compose.prod.yaml build` para buildar o projeto (ele criará uma imagem nova do projeto). Tome cuidado pois ele não deleta a imagem antiga, então você terá que deletar manualmente.
+- `docker compose -f docker-compose.prod.yaml up -d` para rodar o projeto em produção.
+- `docker compose -f docker-compose.prod.yaml down` para terminar o projeto.
 
-Rode `npm run delete`.
+##### Adicionando ou deletando usuários
 
-### Próximos passos
+Caso queira criar um usuário, altere o arquivo `/prisma/seed.ts` com o email e senha, e então rode `npx prisma db seed` na raiz do projeto.
 
-- Trazer parte dos códigos do site antigo para o novo.
+Caso queira deletar um usuário, altere o arquivo /prisma/delete.sql com o email que queres deletar, e então rode `npm run delete` na raiz do projeto.
 
 ### Alguns prints de tela
 

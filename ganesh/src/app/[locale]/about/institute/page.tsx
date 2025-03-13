@@ -63,15 +63,15 @@ export default function Institute() {
                   <div className="text-2xl font-mono font-bold pb-4">
                     {t("historyTitle")}
                   </div>
-                  {t("history1")}
-                  <br /><br />
-                  {t("history2")}
-                  <br /><br />
-                  {t("history3")}
-                  <br /><br />
-                  {t("history4")}
-                  <br /><br />
-                  {t("history5")}
+                  <div dangerouslySetInnerHTML={{ __html: t.raw('history1') }} />
+                  <br />
+                  <div dangerouslySetInnerHTML={{ __html: t.raw('history2') }} />
+                  <br />
+                  <div dangerouslySetInnerHTML={{ __html: t.raw('history3') }} />
+                  <br />
+                  <div dangerouslySetInnerHTML={{ __html: t.raw('history4') }} />
+                  <br />
+                  <div dangerouslySetInnerHTML={{ __html: t.raw('history5') }} />
                 </Terminal>
               </div>
             </div>
@@ -94,7 +94,7 @@ export default function Institute() {
                   <div className="text-2xl font-mono font-bold pb-4">
                     {t("teachingTitle")}
                   </div>
-                  {t("teaching1")}
+                  <div dangerouslySetInnerHTML={{ __html: t.raw('teaching1') }} />
                 </div>
               </div>
 
@@ -111,9 +111,9 @@ export default function Institute() {
                   <div className="text-2xl font-mono font-bold pb-4">
                     {t("researchTitle")}
                   </div>
-                  {t("research1")}
-                  <br /><br />
-                  {t("research2")}
+                  <div dangerouslySetInnerHTML={{ __html: t.raw('research1') }} />
+                  <br />
+                  <div dangerouslySetInnerHTML={{ __html: t.raw('research2') }} />
                 </div>
               </div>
 
@@ -130,7 +130,7 @@ export default function Institute() {
                   <div className="text-2xl font-mono font-bold pb-4">
                     {t("cultureTitle")}
                   </div>
-                  {t("culture1")}
+                  <div dangerouslySetInnerHTML={{ __html: t.raw('culture1') }} />
                 </div>
               </div>
             </Terminal>
