@@ -1,15 +1,18 @@
 {
   "Navbar": {
+    "home": "Início",
     "about": "Sobre Nós",
     "us": "Nossos Valores",
     "institute": "Nosso Instituto",
     "university": "Nossa Universidade",
     "content": "Conteúdo",
+    "all": "Todos",
     "articles": "Artigos",
     "activities": "Atividades",
     "tips": "Dicas",
     "videos": "Vídeos",
-    "news": "Notícias"
+    "news": "Notícias",
+    "language": "Idioma"
   },
   "Home": {
     "extragroup": "Grupo Extracurricular",

@@ -10,28 +10,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Link as IntlLink } from '@/i18n/navigation';
 import { useLocale, useTranslations } from "next-intl";
 
-const links = [
-  { name: 'Home', href: '/' },
-  { name: 'About Us', href: '/about' },
-  { name: 'Content', href: '/content' },
-  { name: 'News', href: '/news' },
-  { name: 'Language', href: '' },
-];
-
-const aboutSubLinks = [
-  { name: "Core Values", href: "/about" },
-  { name: "Our Institute", href: "/about/institute" },
-  { name: "Our University", href: "/about/university" },
-];
-
-const contentSubLinks = [
-  { name: "All Contents", href: "/content" },
-  { name: "Articles", href: "/content/article" },
-  { name: "Activities", href: "/content/activity" },
-  { name: "Tips :)", href: "/content/tip" },
-  // { name: "Videos", href: "/content/video" },
-];
-
 const languageSubLinks = [
   { name: "pt-BR", href: "" },
   { name: "en-US", href: "" },
@@ -53,6 +31,28 @@ export default function Navbar() {
 
   const t = useTranslations('Navbar');
   const locale = useLocale();
+
+  const links = [
+    { name: t('home'), href: '/' },
+    { name: t('about'), href: '/about' },
+    { name: t('content'), href: '/content' },
+    { name: t('news'), href: '/news' },
+    { name: t('language'), href: '/language' },
+  ];
+
+  const aboutSubLinks = [
+    { name: t('us'), href: "/about" },
+    { name: t('institute'), href: "/about/institute" },
+    { name: t('university'), href: "/about/university" },
+  ];
+
+  const contentSubLinks = [
+    { name: t('all'), href: "/content" },
+    { name: t('articles'), href: "/content/article" },
+    { name: t('activities'), href: "/content/activity" },
+    { name: t('tips'), href: "/content/tip" },
+    // { name: "Videos", href: "/content/video" },
+  ];
 
   return (
     <>
@@ -204,7 +204,7 @@ export default function Navbar() {
                 <div className="flex flex-col space-y-4 p-4">
                   {links.map((link, index) => {
                     // For About Us, render a collapsible submenu.
-                    if (link.name === "About Us") {
+                    if (link.href === "/about") {
                       return (
                         <motion.div
                           key={link.href}
@@ -260,7 +260,7 @@ export default function Navbar() {
                     }
 
                     // For Content, render a collapsible submenu.
-                    else if (link.name === "Content") {
+                    else if (link.href === "/content") {
                       return (
                         <motion.div
                           key={link.href}
@@ -316,7 +316,7 @@ export default function Navbar() {
                     }
 
                     // For Content, render a collapsible submenu.
-                    else if (link.name === "Language") {
+                    else if (link.href === "/language") {
                       return (
                         <motion.div
                           key={link.href}
