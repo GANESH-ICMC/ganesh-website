@@ -36,10 +36,8 @@ export default async function RootLayout({
     <>
       <html lang={locale}>
         <head>
-          <link
-            rel="icon"
-            href="/icon.ico"
-          />
+          <link rel="icon" href="/icon.ico" />
+          <meta name="google-site-verification" content="BF2o1z2zFV-S2rdOG6buktm7Vd_RdXAKwsfBM-KAaqw" />
         </head>
         <body className='bg-black overflow-hidden'>
           <NextIntlClientProvider messages={messages}>
