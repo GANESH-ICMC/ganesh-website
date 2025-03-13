@@ -3,8 +3,6 @@ name: Docker CI/CD
 on:
   push:
     branches: [master]
-  pull_request:
-    branches: [master]
 
 env:
   REPO_DIR: /home/ganesh/ganesh-website-2025/ganesh-website
