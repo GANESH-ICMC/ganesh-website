@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "@/i18n/navigation";
 import Image from 'next/image';
 import clsx from 'clsx';
 import { useState } from "react";
@@ -164,18 +164,16 @@ export default function Navbar() {
 
                   {/* Flyout menu */}
                   <div className="absolute left-0 mt-2 w-48 bg-white text-black rounded-sm shadow-lg opacity-0 invisible transition-all duration-250 ease-in-out group-hover:opacity-100 group-hover:visible transform">
-                    <IntlLink
-                      href="/" locale="br"
-                      className="block px-4 py-2 hover:bg-gray-200"
-                    >
-                      pt-BR
-                    </IntlLink>
-                    <IntlLink
-                      href="/" locale="en"
-                      className="block px-4 py-2 hover:bg-gray-200"
-                    >
-                      en-US
-                    </IntlLink>
+                    {languageSubLinks.map((sublink, subIndex) => (
+                      <IntlLink
+                        key={subIndex}
+                        href={pathname}
+                        locale={sublink.name === "pt-BR" ? "br" : "en"}
+                        className="block px-4 py-2 hover:bg-gray-200"
+                      >
+                        {sublink.name}
+                      </IntlLink>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -351,7 +349,7 @@ export default function Navbar() {
                                     transition={{ delay: 0.1 * subIndex }}
                                   >
                                     <IntlLink
-                                      href="/" locale={sublink.name === "pt-BR" ? "br" : "en"}
+                                      href={pathname} locale={sublink.name === "pt-BR" ? "br" : "en"}
                                       className="block px-4 py-2 hover:bg-gray-200"
                                     >
                                       {sublink.name}
