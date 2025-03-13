@@ -6,7 +6,7 @@ services:
       - 3000:3000
     environment:
       DATABASE_URL: ${DATABASE_URL_PRODUCTION}
-      AUTH_SECRET: ${NEXTAUTH_SECRET}
+      AUTH_SECRET: ${AUTH_SECRET}
     volumes:
       - .:/app # Mount the local directory into the container
       - node_modules:/app/node_modules # Ensure node_modules inside the container is not overwritten
