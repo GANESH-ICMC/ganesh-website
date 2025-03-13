@@ -27,15 +27,15 @@ jobs:
 
       - name: Build Docker Image
         working-directory: ${{ env.PROJECT_DIR }}
-        run: sudo docker compose -f docker-compose.prod.yaml build
+        run: docker compose -f docker-compose.prod.yaml build
 
       - name: Stop Containers
         working-directory: ${{ env.PROJECT_DIR }}
-        run: sudo docker compose -f docker-compose.prod.yaml down --rmi all
+        run: docker compose -f docker-compose.prod.yaml down --rmi all
 
       - name: Remove Old Images
-        run: sudo docker image prune -af
+        run: docker image prune -af
 
       - name: Start Containers
         working-directory: ${{ env.PROJECT_DIR }}
-        run: sudo docker compose -f docker-compose.prod.yaml up -d
+        run: docker compose -f docker-compose.prod.yaml up -d
