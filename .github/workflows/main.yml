@@ -1,4 +1,4 @@
-name: React CI/CD
+name: Docker CI/CD
 
 on:
   push:
@@ -7,8 +7,8 @@ on:
     branches: [master]
 
 env:
-  PROJECT_DIR: /home/ganesh/ganesh-website-2025/ganesh-website
-  DOCKER_DIR: /home/ganesh/ganesh-website-2025/ganesh-website/ganesh
+  REPO_DIR: /home/ganesh/ganesh-website-2025/ganesh-website
+  PROJECT_DIR: /home/ganesh/ganesh-website-2025/ganesh-website/ganesh
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Ensure Clean Git State
-        working-directory: ${{ env.PROJECT_DIR }}
+        working-directory: ${{ env.REPO_DIR }}
         run: |
           git fetch origin master
           git reset --hard origin/master
@@ -26,16 +26,16 @@ jobs:
         run: npm ci
 
       - name: Build Docker Image
-        working-directory: ${{ env.DOCKER_DIR }}
+        working-directory: ${{ env.PROJECT_DIR }}
         run: sudo docker compose -f docker-compose.prod.yaml build
 
       - name: Stop Containers
-        working-directory: ${{ env.DOCKER_DIR }}
+        working-directory: ${{ env.PROJECT_DIR }}
         run: sudo docker compose -f docker-compose.prod.yaml down --rmi all
 
       - name: Remove Old Images
         run: sudo docker image prune -af
 
       - name: Start Containers
-        working-directory: ${{ env.DOCKER_DIR }}
+        working-directory: ${{ env.PROJECT_DIR }}
         run: sudo docker compose -f docker-compose.prod.yaml up -d
