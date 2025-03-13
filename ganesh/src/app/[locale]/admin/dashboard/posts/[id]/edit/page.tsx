@@ -23,7 +23,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
     <main>
       <Breadcrumbs
         breadcrumbs={[
-          { label: 'Posts', href: '/admin/dashboard/posts' },
+          { label: 'Content', href: '/admin/dashboard/posts' },
           {
             label: 'Edit Post',
             href: `/admin/dashboard/posts/${id}/edit`,
