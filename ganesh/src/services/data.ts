@@ -6,7 +6,7 @@ import { Author } from '@/models/author';
 import { Sponsor } from '@/models/sponsor';
 import { Video } from '@/models/video';
 
-const ITEMS_PER_PAGE = 10;
+const ITEMS_PER_PAGE = 5;
 
 export const fetchAuthorsPages = async (): Promise<number> => {
   try {

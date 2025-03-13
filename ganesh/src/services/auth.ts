@@ -12,8 +12,8 @@ export async function authenticate(
     await signIn('credentials', {
       email: formData.get('email') as string,
       password: formData.get('password') as string,
-      redirectTo: '/br/admin/dashboard',
-      callbackUrl: '/br/admin/dashboard'
+      redirectTo: '/admin/dashboard',
+      callbackUrl: '/admin/dashboard'
     });
   } catch (error) {
     if (error instanceof AuthError) {
@@ -29,5 +29,5 @@ export async function authenticate(
 }
 
 export async function handleSignOut() {
-  await signOut({ redirectTo: '/br/admin' });
+  await signOut({ redirectTo: '/admin' });
 }

@@ -1,12 +1,11 @@
 "use client";
 
-import { usePathname } from "@/i18n/navigation";
+import { usePathname, Link } from "@/i18n/navigation";
 import Image from 'next/image';
 import clsx from 'clsx';
 import { useState } from "react";
 import { MenuToggle } from "./button/menu-toggle";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link } from '@/i18n/navigation';
 import { useLocale, useTranslations } from "next-intl";
 
 const languageSubLinks = [
