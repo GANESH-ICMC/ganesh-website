@@ -1,0 +1,159 @@
+{
+  "Navbar": {
+    "home": "Início",
+    "about": "Sobre Nós",
+    "us": "Nossos Valores",
+    "institute": "Nosso Instituto",
+    "university": "Nossa Universidade",
+    "content": "Conteúdo",
+    "all": "Todos",
+    "articles": "Artigos",
+    "activities": "Atividades",
+    "tips": "Dicas",
+    "videos": "Vídeos",
+    "news": "Notícias",
+    "language": "Idioma"
+  },
+  "Home": {
+    "extragroup": "Grupo Extracurricular",
+    "description": "Grupo extracurricular focado em segurança da informação",
+    "mission": "Nós temos como a nossa missão adquirir e divulgar conhecimentos na área de segurança da informação para estudantes de graduação e para a comunidade geral. Isso é realizado pelo desenvolvimento de materiais de ensino em salas de aula, cursos especializados, workshops em escolas públicas e privadas e apoiando o desenvolvimento de projetos.",
+    "based": "Nosso grupo é baseado na USP - Universidade de São Paulo - Campus de São Carlos, no Instituto de Ciências Matemáticas e de Computação(ICMC), onde nós constantemente desenvolvemos e aprendemos novas técnicas. A maioria do material do grupo é considerado público e está hospedado no nosso Github. Em grande parte o material é em português, dado que um dos nossos grandes focos é na comunidade da nossa região.",
+    "activities": "Atividades",
+    "about": "Sobre o Ganesh",
+    "about1": "<span class='terminal'>Ganesh</span> é um grupo extracurricular sediado na USP São Carlos, dedicado ao avanço do conhecimento em <span class='terminal'>Segurança da Informação</span> entre estudantes de graduação e a comunidade em geral. Buscamos essa missão desenvolvendo materiais didáticos, cursos especializados e workshops, além de criar projetos educacionais para escolas públicas e privadas. Organizados em cinco principais áreas de estudo — <span class='terminal'>Criptografia</span>, <span class='terminal'>Engenharia Reversa</span>, <span class='terminal'>Redes</span>, <span class='terminal'>Hardware Hacking</span> e <span class='terminal'>Segurança Web</span> — nossos membros produzem conteúdos educacionais valiosos, tanto de forma independente quanto colaborativa.",
+    "about2": "Nos conectamos com o público por meio de diversas iniciativas de divulgação, incluindo nosso canal no YouTube, um processo seletivo anual e a participação em competições de <span class='terminal'>Capture the Flag (CTF)</span>. Nosso desempenho consistente e classificações elevadas nesses torneios nos posicionam entre os melhores times do Brasil e como a principal equipe universitária do país. Cada área de estudo realiza reuniões semanais focadas no desenvolvimento de minicursos, ferramentas e materiais de estudo, com a maioria desses recursos disponíveis publicamente no GitHub. Através desses esforços, contribuímos continuamente para a expansão da área de segurança da informação no Brasil.",
+    "learnmore": "Saiba Mais",
+    "sponsors": "Patrocinadores",
+    "areas": "Frentes de Estudo",
+    "areas1": "Nos organizamos em 5 frentes de estudo, sendo elas: Criptografia, Engenharia Reversa, Redes, Hardware Hacking e Segurança Web. Cada uma delas desenvolve materiais tanto independentemente como em conjunto, interfaceando as diferentes áreas.",
+    "areas2": "Cada frente se reúne semanalmente para desenvolver minicursos, ferramentas e materiais de estudo, que em maioria são disponibilizados publicamente no nosso Github.",
+    "viewareas": "VER FRENTES",
+    "otheractivities": "Outras Atividades",
+    "otheractivities1": "O grupo constantemente estuda e desenvolve técnicas e materiais referentes à área de Segurança da Informação. Um dos nossos objetivos é desenvolver projetos e atividades que interagem com o público externo, como o nosso canal do YouTube, o processo anual de ingresso e participações em competições da área de Segurança da Informação - Capture The Flag (CTF).",
+    "otheractivities2": "Frequentemente obtemos boas classificações nas competições que participamos e somos considerados um dos melhores times do Brasil, além do melhor time universitário do país.",
+    "viewactivities": "VER ATIVIDADES",
+    "material": "Conheça nosso material de estudos para iniciantes em Segurança da Informação!",
+    "viewgitbook": "VER GITBOOK"
+  },
+  "About": {
+    "title": "Sobre Nós",
+    "goals_title": "Objetivos do Ganesh",
+    "goals": "Ganesh é um dos deuses mais venerados do hinduísmo, referido como o <span class='terminal'> \"Destruidor de Obstáculos\" </span> e o <span class='terminal'> \"Mestre do Intelecto\" </span>. Inspirados por essa divindade e pela crescente importância da <span class='terminal'> Segurança da Informação </span> no contexto da vida atual, alguns alunos do ICMC-USP decidiram criar um grupo extracurricular nessa área. <br /><br /> Através do estudo e desenvolvimento de técnicas e algoritmos voltados para a segurança de sistemas e redes de computadores, o grupo tem como objetivo proporcionar aos membros uma experiência de aprendizado e troca de conhecimento facilitada. <br /><br /> Além disso, o grupo também busca integrar e interagir com grupos externos à Universidade, bem como disseminar suas experiências e conhecimentos adquiridos junto à comunidade externa por meio de atividades, minicursos e palestras públicas.",
+    "organization_title": "Organização do Grupo",
+    "organization": "Com o início formal em 2017, o Ganesh está organizado em <span class='terminal'> Áreas de Estudo e Pesquisa </span>, sendo atualmente composto pelas seguintes áreas ativas: Criptografia, Redes e Pentesting, Engenharia Reversa, Segurança da Web e Hardware Hacking. <br /><br /> Dessa forma, cabe aos membros decidir quais tópicos são os mais interessantes e participar de diversas reuniões semanais que acontecem durante o semestre escolar. <br /><br /> Além disso, o grupo permite que pessoas que não estão ligadas à Universidade de São Paulo participem como colaboradores, permitindo que elas participem de suas atividades e reuniões. O grupo possui uma estrutura realmente flexível e horizontal, que pode ser conferida com mais detalhes em nosso Estatuto.",
+    "ping_title": "Quero me tornar Membro!",
+    "ping": "Para se tornar um membro do Ganesh, o único pré-requisito é participar do nosso <span class='terminal'> PIng (Processo de Ingresso) </span>, que ocorre ao longo do primeiro semestre do ano letivo, anualmente. <br /><br /> Durante o processo, cada participante participará de aulas que os introduzirão a conceitos básicos de diferentes áreas, além de resolver desafios práticos semanais de Capture the Flag elaborados para o processo. Não é necessário ter conhecimento prévio para participar. <br /><br /> Ao final do PIng, os participantes que estiverem interessados em continuar no grupo podem iniciar sua participação nas reuniões semanais da área após assinar um Termo de Responsabilidade. Este termo define as diretrizes éticas que devem ser seguidas, sob risco de serem temporariamente ou permanentemente removidos do grupo em caso de infrações.",
+    "ctf_title": "Capture the Flags",
+    "ctf": "Além dos objetivos educacionais, o Ganesh também atua como uma equipe de CTF (Capture the Flag), sendo atualmente a <span class='terminal'> 2ª melhor equipe nacional </span> e <span class='terminal'> 1ª na categoria universitária </span>. Nessas competições, nossos membros são desafiados a encontrar vulnerabilidades em diferentes cenários e localizar as Flags, textos específicos que comprovam a solução para um desafio. <br /><br /> Os CTFs são uma ótima maneira de testar o conhecimento de segurança adquirido em cenários controlados e emocionantes, além de proporcionar o aprendizado de novos tópicos e o networking com outros entusiastas de segurança. <br /><br /> Para saber mais sobre nossa equipe e as competições em que participamos, visite nossa página no CTF Time. Se você quiser saber mais sobre os CTFs nacionais, recomendamos uma visita ao site do CTF-BR, onde estamos afiliados."
+  },
+  "Icmc": {
+    "topTitle": "Nosso Instituto - ICMC",
+    "introduction1": "O <span class='terminal'>Instituto de Ciências da Computação e Matemática</span> (ICMC) da <span class='terminal'>Universidade de São Paulo</span> (USP) é uma das mais importantes instituições brasileiras nas áreas de Ciência da Computação, Matemática, Matemática Aplicada e Estatística.",
+    "introduction2": "Nossa missão é produzir, evoluir e disseminar conhecimento e inovação nas áreas de <span class='terminal'>Matemática</span>, <span class='terminal'>Ciência da Computação</span> e <span class='terminal'>Estatística</span>, formar recursos humanos na graduação e pós-graduação e promover ações de inserção cultural e social. Esta missão é definida pelo seu compromisso com a necessidade de evolução social, científica e tecnológica da região de <span class='terminal'>São Carlos</span>, do estado de <span class='terminal'>São Paulo</span> e do <span class='terminal'>Brasil</span>.",
+    "introduction3": "A visão do ICMC é <span class='terminal'>se tornar uma referência mundial em ensino e pesquisa</span> contribuindo de forma decisiva para a evolução do conhecimento em suas áreas de atuação, formando recursos humanos de alto nível e apoiando o desenvolvimento científico, tecnológico e social da região, estado e país.",
+    "videoTitle": "Vídeo Institucional",
+    "historyTitle": "História e Infraestrutura",
+    "history1": "<span class='terminal'>Fundado em 1971</span>, o Instituto de Ciências Matemáticas e de Computação (ICMC) da Universidade de São Paulo (USP) ocupa 18.000 metros quadrados e atende cerca de 2.000 estudantes em oito cursos de graduação e cinco programas de pós-graduação, com o suporte de aproximadamente 150 docentes e 120 funcionários administrativos. Os alunos do ICMC recebem uma formação robusta que os prepara para carreiras profissionais de sucesso.",
+    "history2": "Reconhecido globalmente como um centro de excelência, o ICMC impacta a sociedade ao formar profissionais qualificados e ao se envolver em pesquisas de ponta e ações de extensão.",
+    "history3": "Nossas instalações modernas contam com amplos espaços verdes, uma biblioteca com cerca de 140.000 volumes e 23.000 periódicos eletrônicos, além de ambientes educacionais de ponta, incluindo auditórios e laboratórios abertos 24 horas. O campus oferece internet sem fio de alta velocidade em toda a sua extensão. Explore o ICMC mais a fundo por meio de nosso tour virtual.",
+    "history4": "Além disso, o campus da USP em São Carlos oferece diversas comodidades, como restaurante, moradia, transporte, serviços médicos e odontológicos, creche e uma instalação esportiva.",
+    "history5": "Localizada a 230 km de São Paulo, São Carlos é conhecida como a <span class='terminal'>\"Capital da Ciência e Tecnologia\"</span>, renomada por suas universidades e pesquisadores. A cidade apresenta todas as quatro estações em um único dia, refletindo seu clima único. São Carlos possui a maior proporção de doutores per capita da América do Sul e se destaca pela inovação, abrigando duas grandes universidades públicas (USP e UFSCar), uma universidade privada, faculdades de tecnologia, centros de pesquisa, parques tecnológicos e diversas empresas de tecnologia.",
+    "areasOfActivity": "Áreas de Atuação",
+    "teachingTitle": "Ensino",
+    "teaching1": "Em adição a oferecer 8 cursos de graduação, o ICMC é responsável por prover treinamentos e disciplinas para estudantes dos cursos de Arquitetura, Engenharias, Química e Física, coordenadas por outras unidades do campus de São Carlos. No nível de pós graduação, os programas do ICMC estão dentre os melhores do país, tendo formado mestres e doutores que agora ocupam posições de ensino e pesquisa prestigiosa em instituições de pesquisa, organizações governamentais e companhias no Brasil e afora. Pós graduandos do ICMC possuem um background dinâmico que se sobressai no mercado, seja em carreira acadêmica ou em qualquer área de atividade profissional.",
+    "researchTitle": "Pesquisa",
+    "research1": "As pesquisas do ICMC resultam em publicações de alto impacto, tecnologias inovadoras e patentes de relevância nacional e internacional. Com forte apoio de agências como FAPESP, CNPq, CAPES, FINEP e Comissão Europeia, docentes, pós-doutorandos e estudantes participam ativamente de eventos científicos e colaborações internacionais. A inovação tecnológica impulsiona o desenvolvimento de soluções econômicas e sociais em parceria com a indústria, centros de pesquisa e órgãos governamentais.",
+    "research2": "Pesquisas do ICMC frequentemente recebem destaque em eventos e na mídia. Docentes coordenam e participam de grandes redes de pesquisa, como o INCT, NAPs e CEPID, ampliando o impacto acadêmico e científico do instituto.",
+    "cultureTitle": "Cultura e Extensão",
+    "culture1": "O ICMC compartilha os benefícios de suas atividades culturais e de extensão com a comunidade por meio de cursos, eventos, exposições, apresentações culturais e projetos sociais. Um dos principais recursos do instituto é o Museu De Computação Professor Odelar Leite Linhares, que possui mais de duzentas peças em sua coleção. Além disso, temos estendido nossa participação na sociedade, com o objetivo de realizar ações de amplo impacto e alcance. Essas atividades envolvem parcerias com a indústria, centros de pesquisa, agencias governamentais, associações privadas e ONGs.",
+    "part1": "O Instituto de Ciências Matemáticas e de Computação (ICMC) é uma unidade de ensino e pesquisa da Universidade de São Paulo (USP), criada em 1971 e situada no campus da USP em São Carlos, a 230 km da capital paulista. O Instituto ocupa uma área de 18 mil m² e possui em torno 2 mil alunos divididos em oito cursos de Graduação e cinco programas de Pós-Graduação, com um quadro formado por 126 docentes e 103 funcionários técnico-administrativos. O ICMC é uma das principais instituições brasileiras nas áreas de matemática, matemática aplicada, computação e estatística, sendo reconhecido mundialmente como centro de excelência na produção e disseminação de conhecimento. Nosso impacto na sociedade se dá por meio da formação de recursos humanos em nível de graduação e de pós-graduação, do desenvolvimento de pesquisas de ponta e da extensão de serviços à comunidade."
+  },
+  "Usp": {
+    "topTitle": "Nossa Universidade",
+    "introduction1": "A <span class='terminal'>Universidade de São Paulo</span> (em português: Universidade de São Paulo, USP) é uma universidade pública no estado de São Paulo, Brasil. É a maior universidade pública brasileira e a instituição educacional mais prestigiada do país, sendo considerada a melhor universidade da Ibero-América e possuindo uma alta reputação entre as universidades do mundo, ocupando a 100ª posição mundial em reputação no ranking Times Higher Education World University Rankings. A USP está envolvida em ensino, pesquisa e extensão universitária em todas as áreas do conhecimento, oferecendo uma ampla gama de cursos.",
+    "introduction2": "A universidade foi fundada em 1934, reunindo escolas já existentes no estado de São Paulo, como a Faculdade de Direito do Largo de São Francisco, a Escola Politécnica e a Escola Superior de Agricultura Luiz de Queiroz. A fundação da universidade é marcada pela criação, em 1934, da Faculdade de Filosofia, Ciências e Letras (1934-1968) e, desde então, foram criados novos departamentos, tornando-se uma das maiores instituições de ensino superior da América Latina, com aproximadamente 90.000 alunos matriculados. Atualmente, possui onze campi, quatro deles na cidade de São Paulo. Os demais campi estão localizados nas cidades de Bauru, Lorena, Piracicaba, Pirassununga, Ribeirão Preto e dois em São Carlos.",
+    "curiosityTitle": "Curiosidades",
+    "statsTitle": "Estatísticas",
+    "stats": "Hoje, a USP possui seis hospitais e oferece 247 programas de graduação e 239 programas de pós-graduação em todas as áreas de estudo. A universidade abriga ao todo 24 museus e galerias – com meio milhão de visitantes por ano – dois teatros, um cinema, um canal de TV e uma orquestra. A Universidade de São Paulo acolhe pessoas de todos os continentes e estimula esse processo por meio de redes e consórcios (Escritório Internacional – USP), como Erasmus Mundus, Associação das Universidades de Língua Portuguesa e Rede Magalhães (SMILE - Mobilidade Estudantil na América Latina, Caribe e Europa), entre outros.<br /><br />A universidade hoje tem <b>3.362.298</b> participantes em atividades culturais e de extensão, <b>97.982</b> alunos matriculados e <b>5.631</b> professores.",
+    "intlTitle": "Cooperação Internacional",
+    "intl": "A Universidade de São Paulo possui um Escritório de Cooperação Internacional cujo objetivo é promover a mobilidade de estudantes, docentes e pesquisadores, aprimorando a cooperação e auxiliando na logística de mobilidade. Atualmente, a USP tem mais de <b>1.000</b> acordos internacionais com várias instituições em todo o mundo. Estudantes e membros do corpo docente desfrutam de um ambiente multicultural com pessoas de diferentes origens culturais.<br /><br />Acesso: <a class='terminal underline' href='https://internationaloffice.usp.br/en/'>AUCANI USP</a>."
+  },
+  "Areas": {
+    "cripto": "Esta frente foca nos princípios de métodos de codificação em comunicações para que a informação seja ininteligível para terceiros não autorizados.",
+    "rev": "Esta frente estuda linguagens assembly, arquiteturas de computadores, técnicas de engenharia reversa, malwares e sistemas linux em baixo nível.",
+    "web": "Esta frente estuda vulnerabilidades web, métodos de ataque, contramedidas e mitigações em implementações de serviços web e arquiteturas.",
+    "network": "Esta frente foca nos estudos de redes computacionais, contemplando protocolos de comunicação, tecnologias com ou sem fio assim como sniffing, DoS, ataques MITM e remoção de criptografias.",
+    "hardware": "Esta frente estuda a segurança em nível próximo ao eletrônico, com temas como IoT Hacking, SDR, Protocolos de Comunicação e Engenharia Reversa em circuitos eletrônicos.",
+    "tcripto": "Criptografia",
+    "trev": "Engenharia Reversa",
+    "tweb": "Segurança Web",
+    "thardware": "Hardware Hacking",
+    "tnetwork": "Segurança de Redes",
+    "title": "Frentes"
+  },
+  "Faq": {
+    "dropdown": [
+      {
+        "id": "q1",
+        "question": "Como faço para entrar no Ganesh?",
+        "answer": "No início de todos os anos desde que o grupo se consolidou realizamos o nosso Processo de Ingresso (PIng), no qual ensinamos conteúdos do que consideramos como uma base para se ter uma visão geral das diferentes áreas presentes na segurança da informação. Assim, os novos membros conseguem ter um conhecimento básico sobre o hacking e conhecer um pouco mais de cada área para saber em qual ou quais frentes do grupo quer frequentar.\n Essas aulas, acompanhadas de desafios práticos, costumam durar em aproximadamente três meses e ao fim delas os alunos que tiverem interesse assinam o termo de compromisso e entram no grupo."
+      },
+      {
+        "id": "q2",
+        "question": "Tenho chance de não ser selecionado para o Ganesh?",
+        "answer": "Não! Desde que você assista as aulas do PIng até o fim a sua entrada no grupo está garantida (caso assim queira). Não fazemos quaisquer seleções a não ser que você literalmente cometa um crime durante o PIng."
+      },
+      {
+        "id": "q3",
+        "question": "Preciso estudar na USP para participar do grupo?",
+        "answer": "Não! O grupo não é restrito apenas para estudantes da USP, porém para que possa ser considerada um membro oficial do grupo é necessário que a pessoa seja vinculada à USP. No caso em que não seja, ainda é possível a entrada como colaborador, o que permite a participação nas reuniões, palestras, competições e afins que o grupo participará."
+      },
+      {
+        "id": "q4",
+        "question": "Preciso ter conhecimentos prévios para participar do grupo?",
+        "answer": "Não! Apenas é necessário que possua acesso a um computador e, no caso do ensino remoto, uma conexão à internet para participar. Todo o resto necessário será ensinado ao longo do PIng."
+      },
+      {
+        "id": "q5",
+        "question": "Mas eu não sei nada de programação, posso entrar mesmo assim?",
+        "answer": "Sim. Vamos te ensinar tudo que precisar para que possa acompanhar junto às suas primeiras matérias da graduação."
+      },
+      {
+        "id": "q6",
+        "question": "Preciso ser um aluno do BCC/BSI/EngComp para participar?",
+        "answer": "Não! Apesar da maioria dos membros serem desses três cursos, temos membros de outros cursos como a matemática aplicada, engenharia elétrica e outros institutos como o IFSC."
+      },
+      {
+        "id": "q7",
+        "question": "Depois que entrar no grupo, preciso ficar apenas em uma frente?",
+        "answer": "Não! Nós encorajamos que os membros experimentem as diferentes áreas e frequentem reuniões e atividades de múltiplas frentes do grupo para descobrir a área que gostam mais. Também não é necessário ficar um determinado tempo em cada frente, você tem a disponibilidade de frequentar (ou deixar de) uma frente quando quiser."
+      },
+      {
+        "id": "q8",
+        "question": "O que é o termo de compromisso que tenho que assinar para entrar no grupo?",
+        "answer": "É um termo obrigatório para todos os membros do grupo. Ao assiná-lo você concorda que não irá causar danos a terceiros em nome do Ganesh e caso venha a causá-los deverá arcar com as consequências como indivíduo e o grupo não é responsável pelas suas ações."
+      },
+      {
+        "id": "q9",
+        "question": "Quanta dedicação é necessária para participar do Ganesh?",
+        "answer": "A boa notícia é que quanto mais se dedicar mais você vai aprender! Mas para ser um membro fazendo o \"mínimo\" no grupo pedimos apenas que frequente as reuniões gerais, que duram uma hora por semana e as reuniões de pelo menos uma frente, que duram duas horas por semana."
+      },
+      {
+        "id": "q10",
+        "question": "O que são CTFs?",
+        "answer": "Capture The Flags, mais conhecidos como CTFs, são competições da área de segurança de informação. Existem diversos tipos dessas competições, porém no mais comum deles são apresentados sistemas ou aplicações vulneráveis a serem invadidas ou quebradas pelos participantes. \nUma vez que o participante cumpre o objetivo do desafio é obtido o acesso a uma flag, que usualmente é um texto do formato Flag{Um4_Fl4g_Aqu1}, que comprova a resolução do problema e pode ser submetida na plataforma da competição, assim ganhando pontos e contabilizando as qualificações dos times. \nCaso tenha mais interesse em CTFs, acesse o site ctftime.org ou a nossa plataforma de CTFs."
+      },
+      {
+        "id": "q11",
+        "question": "Como faço para entrar em contato com o grupo?",
+        "answer": "Na página Contato deste site, por qualquer uma das nossas redes sociais @GaneshICMC ou por meio de membros que conheça. Faça como preferir!"
+      },
+      {
+        "id": "q12",
+        "question": "Vou ser o próximo Mr. Robot se participar do grupo?",
+        "answer": "Não podemos prometer nada.. mas quem sabe?"
+      }
+    ]
+  }
+}
